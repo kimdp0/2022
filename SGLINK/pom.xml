@@ -92,14 +92,7 @@
 			<groupId>org.thymeleaf.extras</groupId>
 			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
 		</dependency>
-<<<<<<< HEAD
 
-=======
-		<dependency>
-			<groupId>nz.net.ultraq.thymeleaf</groupId>
-			<artifactId>thymeleaf-layout-dialect</artifactId>
-		</dependency>
->>>>>>> branch 'sub' of https://github.com/SilverCastle123/project.git
 	</dependencies>
 
 	<build>
