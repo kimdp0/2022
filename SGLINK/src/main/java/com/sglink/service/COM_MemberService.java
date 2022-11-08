@@ -15,7 +15,7 @@ import lombok.RequiredArgsConstructor;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class MemberService implements UserDetailsService {
+public class COM_MemberService implements UserDetailsService {
 	private final COM_MemberRepository memberRepository;
 
 	public COM_Member saveMember(COM_Member member) {

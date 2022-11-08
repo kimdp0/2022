@@ -8,7 +8,7 @@ import com.sglink.entity.COM_Member;
 
 public interface COM_MemberRepository extends JpaRepository<COM_Member,Long> {
 	
-	@Query("Select * from COMPANYUSER COMUSER_EMAIL = :COMUSER_EMAIL")
+	@Query("Select * from COMPANYUSER sglink.COMUSER_EMAIL = :COMUSER_EMAIL")
 	COM_Member findByCOMUSER_EMAIL(@Param("COMUSER_EMAIL") String Email);
 
 }

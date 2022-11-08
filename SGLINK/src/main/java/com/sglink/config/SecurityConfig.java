@@ -12,14 +12,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import com.sglink.service.MemberService;
+import com.sglink.service.COM_MemberService;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
-	MemberService memberService;
+	COM_MemberService memberService;
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
