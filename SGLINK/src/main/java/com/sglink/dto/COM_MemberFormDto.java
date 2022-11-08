@@ -17,6 +17,12 @@ public class COM_MemberFormDto {
 	@NotBlank(message = "아이디는 필수 입력 값입니다.")
 	private String comuserId;
 	
+<<<<<<< HEAD
+=======
+	@NotBlank(message = "담당자이름은 필수 입력 값입니다.")
+	private String comuserName;
+	
+>>>>>>> branch 'sub' of https://github.com/SilverCastle123/project.git
 	@NotEmpty(message = "이메일은 필수 입력 값입니다.")
 	@Email(message = "이메일 형식으로 입력해주세요.")
 	private String comuserEmail;
@@ -28,10 +34,17 @@ public class COM_MemberFormDto {
 	@NotBlank(message = "기관명은 필수 입력 값입니다.")
 	private String comuserUniname;
 	
+<<<<<<< HEAD
 	@NotBlank(message = "담당자이름은 필수 입력 값입니다.")
 	private String comuserName;
+=======
+>>>>>>> branch 'sub' of https://github.com/SilverCastle123/project.git
 	
 	@Pattern(regexp="\\d{3}-\\d{4}-\\d{4}",
 			message="Invalid. Not the form XXX-XXXX-XXX: ")
 	private String comuserTel;
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'sub' of https://github.com/SilverCastle123/project.git
 }
