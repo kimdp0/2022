@@ -42,7 +42,7 @@ public class COM_Member {
 		String password = passwordEncoder.encode(memberFormDto.getComuserPw());
 		member.setComuserPw(password);
 		member.setComuserTel(memberFormDto.getComuserTel());
-		member.setComuserUniname(member.getComuserUniname());
+		member.setComuserUniname(memberFormDto.getComuserUniname());
 		member.setRole(Role.USER);
 		return member;
 	}
