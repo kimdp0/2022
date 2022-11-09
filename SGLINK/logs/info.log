@@ -9625,3 +9625,91 @@ java.lang.IllegalStateException: Neither BindingResult nor plain target object f
 	at java.base/java.lang.Thread.run(Thread.java:834)
 [2022-11-08 23:13:10.480] [ERROR] [http-nio-8090-exec-3] org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$StaticView
 				Cannot render error page for request [/members/new] and exception [An error happened during template parsing (template: "class path resource [templates/member/memberForm.html]")] as the response has already been committed. As a result, the response may have the wrong status code.
+[2022-11-08 23:15:46.120] [INFO ] [RMI TCP Connection(98)-127.0.0.1] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin
+				Application shutdown requested.
+[2022-11-08 23:15:46.647] [INFO ] [RMI TCP Connection(98)-127.0.0.1] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean
+				Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-11-08 23:15:46.649] [INFO ] [RMI TCP Connection(98)-127.0.0.1] com.zaxxer.hikari.HikariDataSource
+				HikariPool-17 - Shutdown initiated...
+[2022-11-08 23:15:46.666] [INFO ] [RMI TCP Connection(98)-127.0.0.1] com.zaxxer.hikari.HikariDataSource
+				HikariPool-17 - Shutdown completed.
+[2022-11-08 23:20:16.665] [INFO ] [restartedMain] com.sglink.SglinkApplication
+				Starting SglinkApplication using Java 11.0.15.1 on DESKTOP-8P9P724 with PID 19488 (C:\Users\j6296\git\project\SGLINK\target\classes started by j6296 in C:\Users\j6296\git\project\SGLINK)
+[2022-11-08 23:20:16.669] [INFO ] [background-preinit] org.hibernate.validator.internal.util.Version
+				HV000001: Hibernate Validator 6.2.0.Final
+[2022-11-08 23:20:16.681] [INFO ] [restartedMain] com.sglink.SglinkApplication
+				No active profile set, falling back to default profiles: default
+[2022-11-08 23:20:18.044] [INFO ] [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor
+				Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2022-11-08 23:20:18.046] [INFO ] [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor
+				For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2022-11-08 23:20:19.985] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate
+				Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-11-08 23:20:20.129] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate
+				Finished Spring Data repository scanning in 124 ms. Found 1 JPA repository interfaces.
+[2022-11-08 23:20:21.432] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+				Tomcat initialized with port(s): 8090 (http)
+[2022-11-08 23:20:21.439] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol
+				Initializing ProtocolHandler ["http-nio-8090"]
+[2022-11-08 23:20:21.439] [INFO ] [restartedMain] org.apache.catalina.core.StandardService
+				Starting service [Tomcat]
+[2022-11-08 23:20:21.454] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine
+				Starting Servlet engine: [Apache Tomcat/9.0.52]
+[2022-11-08 23:20:21.773] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]
+				Initializing Spring embedded WebApplicationContext
+[2022-11-08 23:20:21.773] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext
+				Root WebApplicationContext: initialization completed in 3725 ms
+[2022-11-08 23:20:21.818] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource
+				HikariPool-1 - Starting...
+[2022-11-08 23:20:22.391] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource
+				HikariPool-1 - Start completed.
+[2022-11-08 23:20:22.393] [INFO ] [restartedMain] org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration
+				H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sglink?serverTimezone=UTC'
+[2022-11-08 23:20:22.758] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper
+				HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-11-08 23:20:22.896] [INFO ] [restartedMain] org.hibernate.Version
+				HHH000412: Hibernate ORM core version 5.4.32.Final
+[2022-11-08 23:20:23.178] [INFO ] [restartedMain] org.hibernate.annotations.common.Version
+				HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2022-11-08 23:20:23.478] [INFO ] [restartedMain] org.hibernate.dialect.Dialect
+				HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[2022-11-08 23:20:24.997] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator
+				HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-11-08 23:20:25.015] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean
+				Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-11-08 23:20:25.132] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration
+				spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-11-08 23:20:26.485] [INFO ] [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure Ant [pattern='/css/**'] with []
+[2022-11-08 23:20:26.490] [INFO ] [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure Ant [pattern='/js/**'] with []
+[2022-11-08 23:20:26.490] [INFO ] [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure Ant [pattern='/img/**'] with []
+[2022-11-08 23:20:26.592] [INFO ] [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@175a9d9c, org.springframework.security.web.context.SecurityContextPersistenceFilter@3dd995a8, org.springframework.security.web.header.HeaderWriterFilter@48097cd0, org.springframework.security.web.csrf.CsrfFilter@5dbcdf34, org.springframework.security.web.authentication.logout.LogoutFilter@44c3de26, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4ed80cb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69b163fc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@571a2ed4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@474d143d, org.springframework.security.web.session.SessionManagementFilter@593183cb, org.springframework.security.web.access.ExceptionTranslationFilter@383cee1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@77ed6639]
+[2022-11-08 23:20:27.486] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer
+				LiveReload server is running on port 35729
+[2022-11-08 23:20:27.515] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol
+				Starting ProtocolHandler ["http-nio-8090"]
+[2022-11-08 23:20:27.554] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+				Tomcat started on port(s): 8090 (http) with context path ''
+[2022-11-08 23:20:27.570] [INFO ] [restartedMain] com.sglink.SglinkApplication
+				Started SglinkApplication in 11.897 seconds (JVM running for 15.185)
+[2022-11-08 23:20:37.604] [INFO ] [http-nio-8090-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]
+				Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-11-08 23:20:37.605] [INFO ] [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet
+				Initializing Servlet 'dispatcherServlet'
+[2022-11-08 23:20:37.608] [INFO ] [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet
+				Completed initialization in 3 ms
+[2022-11-08 23:20:41.118] [WARN ] [http-nio-8090-exec-1] nz.net.ultraq.thymeleaf.fragments.FragmentProcessor
+				You don't need to put the layout:fragment/data-layout-fragment attribute into the <head> section - the decoration process will automatically copy the <head> section of your content templates into your layout page.
+[2022-11-08 23:20:45.465] [WARN ] [http-nio-8090-exec-4] org.apache.catalina.util.SessionIdGeneratorBase
+				Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [1,378] milliseconds.
+[2022-11-08 23:22:40.265] [INFO ] [RMI TCP Connection(10)-127.0.0.1] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin
+				Application shutdown requested.
+[2022-11-08 23:22:41.373] [INFO ] [RMI TCP Connection(10)-127.0.0.1] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean
+				Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-11-08 23:22:41.380] [INFO ] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource
+				HikariPool-1 - Shutdown initiated...
+[2022-11-08 23:22:41.415] [INFO ] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource
+				HikariPool-1 - Shutdown completed.
