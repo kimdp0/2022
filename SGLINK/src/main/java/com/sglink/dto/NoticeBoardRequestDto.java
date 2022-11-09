@@ -1,6 +1,6 @@
 package com.sglink.dto;
 
-import com.sglink.entity.noticeBoard;
+import com.sglink.entity.NoticeBoard;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,14 +9,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class noticeBoardRequestDto {
+public class NoticeBoardRequestDto {
 	private Long id;
 	private String title;
 	private String content;
 	private String registerId;
 	
-	public noticeBoard toEntity() {
-		return noticeBoard.builder()
+	public NoticeBoard toEntity() {
+		return NoticeBoard.builder()
 				.title(title)
 				.content(content)
 				.registerId(registerId)

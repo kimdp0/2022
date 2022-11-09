@@ -2,12 +2,12 @@ package com.sglink.dto;
 
 import java.time.LocalDate;
 
-import com.sglink.entity.noticeBoard;
+import com.sglink.entity.NoticeBoard;
 
 import lombok.Getter;
 
 @Getter
-public class noticeBoardResponseDto {
+public class NoticeBoardResponseDto {
 	private Long id;
 	private String title;
 	private String content;
@@ -15,7 +15,7 @@ public class noticeBoardResponseDto {
 	private String registerId;
 	private LocalDate registerTime;
 	
-	public noticeBoardResponseDto(noticeBoard entity) {
+	public NoticeBoardResponseDto(NoticeBoard entity) {
 		this.id =entity.getId();
 		this.title= entity.getTitle();
 		this.content = entity.getContent();
