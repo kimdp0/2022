@@ -12445,3 +12445,63 @@ org.springframework.beans.NotReadablePropertyException: Invalid property 'comuse
 	at java.base/java.lang.Thread.run(Thread.java:834)
 [2022-11-09 16:56:33.175] [ERROR] [http-nio-8090-exec-9] org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$StaticView
 				Cannot render error page for request [/members/com/new] and exception [An error happened during template parsing (template: "class path resource [templates/member/com/memberForm.html]")] as the response has already been committed. As a result, the response may have the wrong status code.
+[2022-11-09 16:57:01.935] [INFO ] [Thread-11] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean
+				Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-11-09 16:57:01.936] [INFO ] [Thread-11] com.zaxxer.hikari.HikariDataSource
+				HikariPool-3 - Shutdown initiated...
+[2022-11-09 16:57:01.943] [INFO ] [Thread-11] com.zaxxer.hikari.HikariDataSource
+				HikariPool-3 - Shutdown completed.
+[2022-11-09 16:57:02.006] [INFO ] [restartedMain] com.sglink.SglinkApplication
+				Starting SglinkApplication using Java 11.0.16 on DESKTOP-BS665DE with PID 16884 (C:\Project\project\SGLINK\target\classes started by HANSUNG in C:\Project\project\SGLINK)
+[2022-11-09 16:57:02.006] [INFO ] [restartedMain] com.sglink.SglinkApplication
+				No active profile set, falling back to default profiles: default
+[2022-11-09 16:57:02.138] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate
+				Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-11-09 16:57:02.149] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate
+				Finished Spring Data repository scanning in 10 ms. Found 2 JPA repository interfaces.
+[2022-11-09 16:57:02.208] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+				Tomcat initialized with port(s): 8090 (http)
+[2022-11-09 16:57:02.208] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol
+				Initializing ProtocolHandler ["http-nio-8090"]
+[2022-11-09 16:57:02.208] [INFO ] [restartedMain] org.apache.catalina.core.StandardService
+				Starting service [Tomcat]
+[2022-11-09 16:57:02.208] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine
+				Starting Servlet engine: [Apache Tomcat/9.0.52]
+[2022-11-09 16:57:02.224] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]
+				Initializing Spring embedded WebApplicationContext
+[2022-11-09 16:57:02.224] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext
+				Root WebApplicationContext: initialization completed in 217 ms
+[2022-11-09 16:57:02.232] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource
+				HikariPool-4 - Starting...
+[2022-11-09 16:57:02.241] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource
+				HikariPool-4 - Start completed.
+[2022-11-09 16:57:02.241] [INFO ] [restartedMain] org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration
+				H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sglink?serverTimezone=UTC'
+[2022-11-09 16:57:02.259] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper
+				HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-11-09 16:57:02.263] [INFO ] [restartedMain] org.hibernate.dialect.Dialect
+				HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[2022-11-09 16:57:02.348] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator
+				HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-11-09 16:57:02.349] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean
+				Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-11-09 16:57:02.367] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration
+				spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-11-09 16:57:02.464] [INFO ] [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure Ant [pattern='/css/**'] with []
+[2022-11-09 16:57:02.464] [INFO ] [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure Ant [pattern='/js/**'] with []
+[2022-11-09 16:57:02.464] [INFO ] [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure Ant [pattern='/img/**'] with []
+[2022-11-09 16:57:02.469] [INFO ] [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@68d8afd4, org.springframework.security.web.context.SecurityContextPersistenceFilter@c62dbab, org.springframework.security.web.header.HeaderWriterFilter@caa18fc, org.springframework.security.web.csrf.CsrfFilter@57fa3784, org.springframework.security.web.authentication.logout.LogoutFilter@5c7382cf, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5da72603, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@400aaa8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@58312f2c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@226e5302, org.springframework.security.web.session.SessionManagementFilter@a229b7c, org.springframework.security.web.access.ExceptionTranslationFilter@797e2285, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5f435b25]
+[2022-11-09 16:57:02.505] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer
+				LiveReload server is running on port 35729
+[2022-11-09 16:57:02.511] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol
+				Starting ProtocolHandler ["http-nio-8090"]
+[2022-11-09 16:57:02.512] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+				Tomcat started on port(s): 8090 (http) with context path ''
+[2022-11-09 16:57:02.516] [INFO ] [restartedMain] com.sglink.SglinkApplication
+				Started SglinkApplication in 0.531 seconds (JVM running for 534.965)
+[2022-11-09 16:57:02.518] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener
+				Condition evaluation unchanged
