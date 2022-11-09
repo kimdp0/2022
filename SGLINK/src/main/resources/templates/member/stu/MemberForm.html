@@ -23,60 +23,58 @@
 </script>
 </th:block>
 <div layout:fragment="content">
-	<form action="/members/new" role="form" method="post" th:object="${memberFormDto}">
+	<form action="/members/stu/new" role="form" method="post" th:object="${memberFormDto}">
 		<div class="form-group">
-			<label th:for="comuserid">아이디</label>
-			 <input type="text" th:field="*{comuserid}" class="form-control"
+			<label th:for="stuuserId">아이디</label>
+			 <input type="text" th:field="*{stuuserId}" class="form-control"
 				placeholder="아이디를 입력해주세요">
-			<p th:if="${#fields.hasErrors('comuserid')}" th:errors="*{comuserid}"
+			<p th:if="${#fields.hasErrors('stuuserId')}" th:errors="*{stuuserId}"
 				class="fieldError">Incorrect data</p>
 		</div>
 		<div class="form-group">
-			<label th:for="comusername">이름</label> <input type="text"
-				th:field="*{comusername}" class="form-control"
+			<label th:for="stuuserName">이름</label> <input type="text"
+				th:field="*{stuuserName}" class="form-control"
 				placeholder="이름을 입력해주세요">
-			<p th:if="${#fields.hasErrors('comusername')}"
-				th:errors="*{comusername}" class="fieldError">Incorrect data</p>
+			<p th:if="${#fields.hasErrors('stuuserName')}"
+				th:errors="*{stuuserName}" class="fieldError">Incorrect data</p>
 		</div>
 
 		<div class="form-group">
-			<label th:for="comuseremail">이메일</label> <input type="email"
-				th:field="*{comuseremail}" class="form-control"
+			<label th:for="stuuserEmail">이메일</label> <input type="email"
+				th:field="*{stuuserEmail}" class="form-control"
 				placeholder="이메일을 입력해주세요">
-			<p th:if="${#fields.hasErrors('comuseremail')}"
-				th:errors="*{comuseremail}" class="fieldError">Incorrect data</p>
+			<p th:if="${#fields.hasErrors('stuuserEmail')}"
+				th:errors="*{stuuserEmail}" class="fieldError">Incorrect data</p>
 		</div>
 
 		<div class="form-group">
-			<label th:for="comuserpw">비밀번호</label> <input type="password"
-				th:field="*{comuserpw}" class="form-control" placeholder="비밀번호 입력">
-			<p th:if="${#fields.hasErrors('comuserpw')}" th:errors="*{comuserpw}"
+			<label th:for="stuuserPw">비밀번호</label> <input type="password"
+				th:field="*{stuuserPw}" class="form-control" placeholder="비밀번호 입력">
+			<p th:if="${#fields.hasErrors('stuuserPw')}" th:errors="*{stuuserPw}"
 				class="fieldError">Incorrect data</p>
 		</div>
 		
-		<div class="form-group">
-			<label th:for="comuserpw2">비밀번호확인</label> <input type="password"
-				th:field="*{comuserpw2}" class="form-control" placeholder="비밀번호 입력">
-			<p th:if="${#fields.hasErrors('comuserpw2')}" th:errors="*{comuserpw2}"
+<!-- 		<div class="form-group">
+			<label th:for="stuuserPw2">비밀번호확인</label> <input type="password"
+				th:field="*{stuuserPw2}" class="form-control" placeholder="비밀번호확인 입력">
+			<p th:if="${#fields.hasErrors('stuuserPw2')}" th:errors="*{stuuserPw2}"
 				class="fieldError">Incorrect data</p>
-			<p th:if="${#fields.hasErrors('comuserpw2')}" th:errors="*{comuserpw2}"
-				class="fieldError">Incorrect data</p>
-		</div>
+		</div> -->
 		
 		<div class="form-group">
-			<label th:for="comuseruniname">기관명</label> <input type="text"
-				th:field="*{comuseruniname}" class="form-control"
-				placeholder="기관명을 입력해주세요">
-			<p th:if="${#fields.hasErrors('comuseruniname')}"
-				th:errors="*{comuseruniname}" class="fieldError">Incorrect data</p>
+			<label th:for="stuuserUniname">대학명</label> <input type="text"
+				th:field="*{stuuserUniname}" class="form-control"
+				placeholder="대학교명을 입력해주세요">
+			<p th:if="${#fields.hasErrors('stuuserUniname')}"
+				th:errors="*{stuuserUniname}" class="fieldError">Incorrect data</p>
 		</div>
 
 		<div class="form-group">
-			<label th:for="comusertel">전화번호</label> <input type="text"
-				th:field="*{comusertel}" class="form-control"
+			<label th:for="stuuserTel">전화번호</label> <input type="text"
+				th:field="*{stuuserTel}" class="form-control"
 				placeholder="휴대폰번호를 입력해주세요">
-			<p th:if="${#fields.hasErrors('comusertel')}"
-				th:errors="*{comusertel}" class="fieldError">Incorrect data</p>
+			<p th:if="${#fields.hasErrors('stuuserTel')}"
+				th:errors="*{stuuserTel}" class="fieldError">Incorrect data</p>
 		</div>
 		<div style="text-align: center">
 			<button type="submit" class="btn btn-primary" style="">Submit</button>
