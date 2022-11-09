@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>header 공통 양식</title>
+    <link rel="stylesheet" href="slide.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "맑은 고딕";
+        }
+
+        #header {
+            margin-top: 10px;
+            margin-bottom: -5px;
+            height: 45px;
+            border-bottom: 2px #d3d3d3 solid;
+        }
+
+        #header>a {
+            margin-left: 15px;
+            font-size: 25px;
+            letter-spacing: -1px;
+            text-decoration: none;
+            font-weight: 550;
+            float: left;
+        }
+
+        #login {
+            float: right;
+            margin-right: 20px;
+            font-weight: 550;
+        }
+
+        #login>a {
+            font-size: 25px;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            font-weight: 550;
+            float: left;
+        }
+
+        #login>h {
+            margin-left: 8px;
+            margin-right: 8px;
+            font-size: 25px;
+            text-decoration: none;
+            font-weight: 550;
+            float: left;
+        }
+
+        #sns {
+            margin-right: 25px;
+            letter-spacing: 5px;
+            float: right;
+        }
+
+        #sns img {
+            margin-top: 3px;
+            width: 30px;
+            height: 30px;
+        }
+
+        #TopMenu {
+            height: 65px;
+            border-bottom: 2px #d3d3d3 solid;
+        }
+
+        #home img {
+            position: absolute;
+            margin-top: 2px;
+            margin-left: 10px;
+            width: 17%;
+        }
+
+        #Menu {
+            margin-top: 15px;
+            margin-left: 10%;
+            text-align: center;
+            letter-spacing: 100px;
+        }
+
+        #Menu a {
+            font-size: 40px;
+            font-weight: 550;
+            letter-spacing: -1px;
+            text-decoration: none;
+        }
+        #slidebtn{
+            width: 35px;
+            height: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <a href="https://www.sogang.ac.kr/index.do">서강대학교 공식 홈페이지</a>
+        <div id="sns">
+            <a href=""><img src="image/facebookimg.png"></a>
+            <a href=""><img src="image/twitterimg.png"></a>
+        </div>
+        <div id="login">
+            <a href="">(권한)</a>
+            <h>|</h>
+            <a href="">로그인</a>
+            <h>|</h>
+            <a href="">회원가입</a>
+        </div>
+    </div>
+    <div id="TopMenu">
+        <div id="home">
+            <a href=""><img src="/image/home.png"></a>
+        </div>
+        <div id="Menu">
+            <a href="">사업단 소개</a>
+            <a href="">기업지원</a>
+            <a href="">학생지원</a>
+            <a href="">커뮤니티</a>
+        </div>
+    </div>
+    <div class="slide slide_wrap">
+        <div class="slide_item item1">1</div>
+        <div class="slide_item item2">2</div>
+        <div class="slide_item item3">3</div>
+        <div class="slide_item item4">4</div>
+        <div class="slide_item item5">5</div>
+        <div class="slide_prev_button slide_button"><img src="image/left.png" id="slidebtn"></div>
+        <div class="slide_next_button slide_button"><img src="image/right.png" id="slidebtn"></div>
+        <ul class="slide_pagination"></ul>
+    </div>
+    <script src="/slide.js"></script>
+</body>
+
+</html
