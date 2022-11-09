@@ -21,7 +21,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor(access= AccessLevel.PROTECTED)
 @Table(name= "notice_board")
-public class noticeBoard extends BaseTimeEntity{
+public class NoticeBoard extends BaseTimeEntity{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -34,7 +34,7 @@ public class noticeBoard extends BaseTimeEntity{
 	
 	
 	@Builder
-	public noticeBoard(Long id, String title, String content, int readCnt, String registerId) {
+	public NoticeBoard(Long id, String title, String content, int readCnt, String registerId) {
 		this.id = id;
 		this.title = title;
 		this.content = content;
