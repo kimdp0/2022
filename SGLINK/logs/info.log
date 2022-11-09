@@ -10222,3 +10222,117 @@ Caused by: java.lang.IllegalStateException: Using named parameters for method pu
 				Started SglinkApplication in 0.58 seconds (JVM running for 2371.615)
 [2022-11-09 15:49:59.663] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener
 				Condition evaluation unchanged
+[2022-11-09 15:50:59.287] [INFO ] [RMI TCP Connection(65)-127.0.0.1] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin
+				Application shutdown requested.
+[2022-11-09 15:50:59.400] [INFO ] [RMI TCP Connection(65)-127.0.0.1] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean
+				Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-11-09 15:50:59.400] [INFO ] [RMI TCP Connection(65)-127.0.0.1] com.zaxxer.hikari.HikariDataSource
+				HikariPool-5 - Shutdown initiated...
+[2022-11-09 15:50:59.409] [INFO ] [RMI TCP Connection(65)-127.0.0.1] com.zaxxer.hikari.HikariDataSource
+				HikariPool-5 - Shutdown completed.
+[2022-11-09 15:51:01.417] [INFO ] [restartedMain] com.sglink.SglinkApplication
+				Starting SglinkApplication using Java 11.0.16 on DESKTOP-BS665DE with PID 1760 (C:\Project\project\SGLINK\target\classes started by HANSUNG in C:\Project\project\SGLINK)
+[2022-11-09 15:51:01.419] [INFO ] [restartedMain] com.sglink.SglinkApplication
+				No active profile set, falling back to default profiles: default
+[2022-11-09 15:51:01.418] [INFO ] [background-preinit] org.hibernate.validator.internal.util.Version
+				HV000001: Hibernate Validator 6.2.0.Final
+[2022-11-09 15:51:01.626] [INFO ] [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor
+				Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2022-11-09 15:51:01.626] [INFO ] [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor
+				For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2022-11-09 15:51:02.112] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate
+				Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-11-09 15:51:02.151] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate
+				Finished Spring Data repository scanning in 34 ms. Found 2 JPA repository interfaces.
+[2022-11-09 15:51:02.565] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+				Tomcat initialized with port(s): 8090 (http)
+[2022-11-09 15:51:02.572] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol
+				Initializing ProtocolHandler ["http-nio-8090"]
+[2022-11-09 15:51:02.573] [INFO ] [restartedMain] org.apache.catalina.core.StandardService
+				Starting service [Tomcat]
+[2022-11-09 15:51:02.573] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine
+				Starting Servlet engine: [Apache Tomcat/9.0.52]
+[2022-11-09 15:51:02.648] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]
+				Initializing Spring embedded WebApplicationContext
+[2022-11-09 15:51:02.648] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext
+				Root WebApplicationContext: initialization completed in 1021 ms
+[2022-11-09 15:51:02.672] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource
+				HikariPool-1 - Starting...
+[2022-11-09 15:51:02.883] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource
+				HikariPool-1 - Start completed.
+[2022-11-09 15:51:02.888] [INFO ] [restartedMain] org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration
+				H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sglink?serverTimezone=UTC'
+[2022-11-09 15:51:02.976] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper
+				HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-11-09 15:51:03.018] [INFO ] [restartedMain] org.hibernate.Version
+				HHH000412: Hibernate ORM core version 5.4.32.Final
+[2022-11-09 15:51:03.124] [INFO ] [restartedMain] org.hibernate.annotations.common.Version
+				HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2022-11-09 15:51:03.221] [INFO ] [restartedMain] org.hibernate.dialect.Dialect
+				HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[2022-11-09 15:51:03.771] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator
+				HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-11-09 15:51:03.777] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean
+				Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-11-09 15:51:03.809] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration
+				spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-11-09 15:51:04.274] [INFO ] [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure Ant [pattern='/css/**'] with []
+[2022-11-09 15:51:04.274] [INFO ] [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure Ant [pattern='/js/**'] with []
+[2022-11-09 15:51:04.274] [INFO ] [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure Ant [pattern='/img/**'] with []
+[2022-11-09 15:51:04.297] [INFO ] [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41ca4ab8, org.springframework.security.web.context.SecurityContextPersistenceFilter@618452f2, org.springframework.security.web.header.HeaderWriterFilter@729dc6b9, org.springframework.security.web.csrf.CsrfFilter@239d46a6, org.springframework.security.web.authentication.logout.LogoutFilter@375de2ba, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5b95b587, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19fc5962, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2606c28, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e32d6e6, org.springframework.security.web.session.SessionManagementFilter@3904b881, org.springframework.security.web.access.ExceptionTranslationFilter@66fbd773, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4963f50b]
+[2022-11-09 15:51:04.580] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer
+				LiveReload server is running on port 35729
+[2022-11-09 15:51:04.592] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol
+				Starting ProtocolHandler ["http-nio-8090"]
+[2022-11-09 15:51:04.605] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+				Tomcat started on port(s): 8090 (http) with context path ''
+[2022-11-09 15:51:04.612] [INFO ] [restartedMain] com.sglink.SglinkApplication
+				Started SglinkApplication in 3.523 seconds (JVM running for 4.201)
+[2022-11-09 15:52:03.875] [INFO ] [main] com.sglink.SglinkApplicationTests
+				Starting SglinkApplicationTests using Java 11.0.16 on DESKTOP-BS665DE with PID 2096 (started by HANSUNG in C:\Project\project\SGLINK)
+[2022-11-09 15:52:03.877] [INFO ] [main] com.sglink.SglinkApplicationTests
+				No active profile set, falling back to default profiles: default
+[2022-11-09 15:52:03.888] [INFO ] [background-preinit] org.hibernate.validator.internal.util.Version
+				HV000001: Hibernate Validator 6.2.0.Final
+[2022-11-09 15:52:04.646] [INFO ] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate
+				Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-11-09 15:52:04.699] [INFO ] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate
+				Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+[2022-11-09 15:52:05.220] [INFO ] [main] org.hibernate.jpa.internal.util.LogHelper
+				HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-11-09 15:52:05.273] [INFO ] [main] org.hibernate.Version
+				HHH000412: Hibernate ORM core version 5.4.32.Final
+[2022-11-09 15:52:05.404] [INFO ] [main] org.hibernate.annotations.common.Version
+				HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2022-11-09 15:52:05.641] [INFO ] [main] com.zaxxer.hikari.HikariDataSource
+				HikariPool-1 - Starting...
+[2022-11-09 15:52:05.910] [INFO ] [main] com.zaxxer.hikari.HikariDataSource
+				HikariPool-1 - Start completed.
+[2022-11-09 15:52:05.924] [INFO ] [main] org.hibernate.dialect.Dialect
+				HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[2022-11-09 15:52:06.581] [INFO ] [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator
+				HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-11-09 15:52:06.589] [INFO ] [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean
+				Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-11-09 15:52:06.665] [WARN ] [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration
+				spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-11-09 15:52:07.433] [INFO ] [main] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure Ant [pattern='/css/**'] with []
+[2022-11-09 15:52:07.434] [INFO ] [main] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure Ant [pattern='/js/**'] with []
+[2022-11-09 15:52:07.434] [INFO ] [main] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure Ant [pattern='/img/**'] with []
+[2022-11-09 15:52:07.561] [INFO ] [main] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5605a59b, org.springframework.security.web.context.SecurityContextPersistenceFilter@4552e288, org.springframework.security.web.header.HeaderWriterFilter@487bc2fe, org.springframework.security.web.csrf.CsrfFilter@6f53295e, org.springframework.security.web.authentication.logout.LogoutFilter@7e577eed, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1e9b0c92, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6bc8d8bd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@389a9ff6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e8b36af, org.springframework.security.web.session.SessionManagementFilter@42fb2be9, org.springframework.security.web.access.ExceptionTranslationFilter@178c4480, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@71f042b1]
+[2022-11-09 15:52:08.160] [INFO ] [main] com.sglink.SglinkApplicationTests
+				Started SglinkApplicationTests in 4.623 seconds (JVM running for 5.472)
+[2022-11-09 15:52:08.521] [INFO ] [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean
+				Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-11-09 15:52:08.523] [INFO ] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource
+				HikariPool-1 - Shutdown initiated...
+[2022-11-09 15:52:08.539] [INFO ] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource
+				HikariPool-1 - Shutdown completed.
