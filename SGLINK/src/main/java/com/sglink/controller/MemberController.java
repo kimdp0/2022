@@ -1,12 +1,12 @@
 package com.sglink.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -16,30 +16,30 @@ import com.sglink.service.COM_MemberService;
 
 import lombok.RequiredArgsConstructor;
 
-@RequestMapping("/members/com")
+@RequestMapping("/members")
 @Controller
 @RequiredArgsConstructor
-public class COM_MemberController {
+public class MemberController {
 	private final COM_MemberService memberService;
 	private final PasswordEncoder passwordEncoder;
 
 	@GetMapping(value = "/new")
 	public String memberForm(Model model) {
 		model.addAttribute("memberFormDto", new COM_MemberFormDto());
-		return "member/com/memberForm";
+		return "member/memberForm";
 	}
 
 	@PostMapping(value = "/new")
-	public String newMember(@Validated @ModelAttribute("memberFormDto")COM_MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
+	public String newMember(@Valid COM_MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
-			return "member/com/memberForm";
+			return "member/memberForm";
 		}
 		try {
 			COM_Member member = COM_Member.createMember(memberFormDto, passwordEncoder);
 			memberService.saveMember(member);
 		} catch (IllegalStateException e) {
 			model.addAttribute("errorMessage", e.getMessage());
-			return "member/com/memberForm";
+			return "member/memberForm";
 		}
 		return "redirect:/";
 	}

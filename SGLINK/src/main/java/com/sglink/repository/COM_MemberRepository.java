@@ -6,5 +6,6 @@ import com.sglink.entity.COM_Member;
 
 
 public interface COM_MemberRepository extends JpaRepository<COM_Member, String> {
-	COM_Member findByComuseremail(String email);
+	COM_Member findByComuserEmail(String email);
+	COM_Member findByComuserId(String id);
 }
