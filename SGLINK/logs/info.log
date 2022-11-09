@@ -10336,3 +10336,11 @@ Caused by: java.lang.IllegalStateException: Using named parameters for method pu
 				HikariPool-1 - Shutdown initiated...
 [2022-11-09 15:52:08.539] [INFO ] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource
 				HikariPool-1 - Shutdown completed.
+[2022-11-09 16:19:25.349] [INFO ] [RMI TCP Connection(38)-127.0.0.1] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin
+				Application shutdown requested.
+[2022-11-09 16:19:25.470] [INFO ] [RMI TCP Connection(38)-127.0.0.1] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean
+				Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-11-09 16:19:25.473] [INFO ] [RMI TCP Connection(38)-127.0.0.1] com.zaxxer.hikari.HikariDataSource
+				HikariPool-1 - Shutdown initiated...
+[2022-11-09 16:19:25.483] [INFO ] [RMI TCP Connection(38)-127.0.0.1] com.zaxxer.hikari.HikariDataSource
+				HikariPool-1 - Shutdown completed.
