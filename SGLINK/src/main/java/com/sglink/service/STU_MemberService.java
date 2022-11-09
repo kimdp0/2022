@@ -8,25 +8,25 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sglink.entity.COM_Member;
-import com.sglink.repository.COM_MemberRepository;
-
+import com.sglink.entity.STU_Member;
+import com.sglink.repository.STU_MemberRepository;
 
 import lombok.RequiredArgsConstructor;
 
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class COM_MemberService implements UserDetailsService {
-	private final COM_MemberRepository memberRepository;
+public class STU_MemberService implements UserDetailsService {
+	private final STU_MemberRepository memberRepository;
 
-	public COM_Member saveMember(COM_Member member) {
+	public STU_Member saveMember(STU_Member member) {
 		validateDuplicateMember(member);
 		return memberRepository.save(member);
 	}
 
-	private void validateDuplicateMember(COM_Member member) {
-		COM_Member findMember = memberRepository.findByComuserEmail(member.getComuserEmail());
-		COM_Member userId = memberRepository.findByComuserId(member.getComuserId());
+	private void validateDuplicateMember(STU_Member member) {
+		STU_Member findMember = memberRepository.findByStuuserEmail(member.getStuuserEmail());
+		STU_Member userId = memberRepository.findByStuuserId(member.getStuuserId());
 		if (findMember != null) {
 			throw new IllegalStateException("이미 가입된 회원입니다."); // 이미 가입된 회원의 경우 예외를 발생시킨다.
 		}else if(userId != null) {
@@ -36,11 +36,11 @@ public class COM_MemberService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-		COM_Member member = memberRepository.findByComuserEmail(email);
+		STU_Member member = memberRepository.findByStuuserEmail(email);
 		if (member == null) {
 			throw new UsernameNotFoundException(email);
 		}
-		return User.builder().username(member.getComuserEmail()).password(member.getComuserPw())
+		return User.builder().username(member.getStuuserEmail()).password(member.getStuuserPw())
 				.roles(member.getRole().toString()).build();
 	}
 

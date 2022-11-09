@@ -10,36 +10,36 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.sglink.dto.COM_MemberFormDto;
-import com.sglink.entity.COM_Member;
-import com.sglink.service.COM_MemberService;
+import com.sglink.dto.STU_MemberFormDto;
+import com.sglink.entity.STU_Member;
+import com.sglink.service.STU_MemberService;
 
 import lombok.RequiredArgsConstructor;
 
-@RequestMapping("/members/com")
+@RequestMapping("/members/stu")
 @Controller
 @RequiredArgsConstructor
-public class COM_MemberController {
-	private final COM_MemberService memberService;
+public class STU_MemberController {
+	private final STU_MemberService memberService;
 	private final PasswordEncoder passwordEncoder;
 
 	@GetMapping(value = "/new")
 	public String memberForm(Model model) {
-		model.addAttribute("memberFormDto", new COM_MemberFormDto());
-		return "member/com/memberForm";
+		model.addAttribute("memberFormDto", new STU_MemberFormDto());
+		return "member/stu/memberForm";
 	}
 
 	@PostMapping(value = "/new")
-	public String newMember(@Validated @ModelAttribute("memberFormDto")COM_MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
+	public String newMember(@Validated @ModelAttribute("memberFormDto")STU_MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
-			return "member/com/memberForm";
+			return "member/stu/memberForm";
 		}
 		try {
-			COM_Member member = COM_Member.createMember(memberFormDto, passwordEncoder);
+			STU_Member member = STU_Member.createMember(memberFormDto, passwordEncoder);
 			memberService.saveMember(member);
 		} catch (IllegalStateException e) {
 			model.addAttribute("errorMessage", e.getMessage());
-			return "member/com/memberForm";
+			return "member/stu/memberForm";
 		}
 		return "redirect:/";
 	}
