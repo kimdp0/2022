@@ -53,6 +53,14 @@
 			<p th:if="${#fields.hasErrors('comuserpw')}" th:errors="*{comuserpw}"
 				class="fieldError">Incorrect data</p>
 		</div>
+		
+		<div class="form-group">
+			<label th:for="comuserpw">비밀번호</label> <input type="password"
+				th:field="*{comuserpw}" class="form-control" placeholder="비밀번호 입력">
+			<p th:if="${#fields.hasErrors('comuserpw')}" th:errors="*{comuserpw}"
+				class="fieldError">Incorrect data</p>
+		</div>
+		
 		<div class="form-group">
 			<label th:for="comuseruniname">기관명</label> <input type="text"
 				th:field="*{comuseruniname}" class="form-control"
