@@ -12505,3 +12505,53 @@ org.springframework.beans.NotReadablePropertyException: Invalid property 'comuse
 				Started SglinkApplication in 0.531 seconds (JVM running for 534.965)
 [2022-11-09 16:57:02.518] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener
 				Condition evaluation unchanged
+[2022-11-09 17:03:30.786] [INFO ] [restartedMain] com.sglink.SglinkApplication
+				Starting SglinkApplication using Java 11.0.16 on DESKTOP-BS665DE with PID 16884 (C:\Project\project\SGLINK\target\classes started by HANSUNG in C:\Project\project\SGLINK)
+[2022-11-09 17:03:30.786] [INFO ] [restartedMain] com.sglink.SglinkApplication
+				No active profile set, falling back to default profiles: default
+[2022-11-09 17:03:30.917] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate
+				Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-11-09 17:03:30.926] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate
+				Finished Spring Data repository scanning in 9 ms. Found 2 JPA repository interfaces.
+[2022-11-09 17:03:30.983] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+				Tomcat initialized with port(s): 8090 (http)
+[2022-11-09 17:03:30.984] [INFO ] [restartedMain] org.apache.catalina.core.StandardService
+				Starting service [Tomcat]
+[2022-11-09 17:03:30.984] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine
+				Starting Servlet engine: [Apache Tomcat/9.0.52]
+[2022-11-09 17:03:31.000] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/]
+				Initializing Spring embedded WebApplicationContext
+[2022-11-09 17:03:31.000] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext
+				Root WebApplicationContext: initialization completed in 213 ms
+[2022-11-09 17:03:31.011] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource
+				HikariPool-10 - Starting...
+[2022-11-09 17:03:31.021] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource
+				HikariPool-10 - Start completed.
+[2022-11-09 17:03:31.021] [INFO ] [restartedMain] org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration
+				H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sglink?serverTimezone=UTC'
+[2022-11-09 17:03:31.040] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper
+				HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-11-09 17:03:31.044] [INFO ] [restartedMain] org.hibernate.dialect.Dialect
+				HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[2022-11-09 17:03:31.123] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator
+				HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-11-09 17:03:31.123] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean
+				Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-11-09 17:03:31.138] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration
+				spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-11-09 17:03:31.233] [INFO ] [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure Ant [pattern='/css/**'] with []
+[2022-11-09 17:03:31.233] [INFO ] [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure Ant [pattern='/js/**'] with []
+[2022-11-09 17:03:31.233] [INFO ] [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure Ant [pattern='/img/**'] with []
+[2022-11-09 17:03:31.237] [INFO ] [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain
+				Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4975d818, org.springframework.security.web.context.SecurityContextPersistenceFilter@3f4dae7, org.springframework.security.web.header.HeaderWriterFilter@2c689257, org.springframework.security.web.csrf.CsrfFilter@6d280900, org.springframework.security.web.authentication.logout.LogoutFilter@7524e97e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7236532c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b5b99d7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@334942c1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d75fc70, org.springframework.security.web.session.SessionManagementFilter@2e39b629, org.springframework.security.web.access.ExceptionTranslationFilter@7bd4746a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1904b266]
+[2022-11-09 17:03:31.270] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer
+				LiveReload server is running on port 35729
+[2022-11-09 17:03:31.277] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+				Tomcat started on port(s): 8090 (http) with context path ''
+[2022-11-09 17:03:31.280] [INFO ] [restartedMain] com.sglink.SglinkApplication
+				Started SglinkApplication in 0.514 seconds (JVM running for 923.729)
+[2022-11-09 17:03:31.283] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener
+				Condition evaluation unchanged
