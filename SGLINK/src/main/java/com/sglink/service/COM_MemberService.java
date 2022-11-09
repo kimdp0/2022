@@ -25,7 +25,7 @@ public class COM_MemberService implements UserDetailsService {
 	}
 
 	private void validateDuplicateMember(COM_Member member) {
-		COM_Member findMember = memberRepository.findByComuserEmail(member.getComuserEmail());
+		COM_Member findMember = memberRepository.findByComuseremail(member.getComuseremail());
 		if (findMember != null) {
 			throw new IllegalStateException("이미 가입된 회원입니다."); // 이미 가입된 회원의 경우 예외를 발생시킨다.
 		}
@@ -33,11 +33,11 @@ public class COM_MemberService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-		COM_Member member = memberRepository.findByComuserEmail(email);
+		COM_Member member = memberRepository.findByComuseremail(email);
 		if (member == null) {
 			throw new UsernameNotFoundException(email);
 		}
-		return User.builder().username(member.getComuserEmail()).password(member.getComuserPw())
+		return User.builder().username(member.getComuseremail()).password(member.getComuserpw())
 				.roles(member.getRole().toString()).build();
 	}
 

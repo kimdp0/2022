@@ -23,26 +23,26 @@ import lombok.ToString;
 @ToString
 public class COM_Member {
 	@Id
-	@Column(name = "comuserId")
-	private String comuserId;
-	private String comuserName;
+	@Column(name = "comuserid")
+	private String comuserid;
+	private String comusername;
 	@Column(unique = true)
-	private String comuserEmail;
-	private String comuserPw;
-	private String comuserTel;
-	private String comuserUniname;
+	private String comuseremail;
+	private String comuserpw;
+	private String comusertel;
+	private String comuseruniname;
 	@Enumerated(EnumType.STRING)
 	private Role role;
 
 	public static COM_Member createMember(COM_MemberFormDto memberFormDto, PasswordEncoder passwordEncoder) {
 		COM_Member member = new COM_Member();
-		member.setComuserId(memberFormDto.getComuserId());
-		member.setComuserName(memberFormDto.getComuserName());
-		member.setComuserEmail(memberFormDto.getComuserEmail());
-		String password = passwordEncoder.encode(memberFormDto.getComuserPw());
-		member.setComuserPw(password);
-		member.setComuserTel(memberFormDto.getComuserTel());
-		member.setComuserUniname(memberFormDto.getComuserUniname());
+		member.setComuserid(memberFormDto.getComuserid());
+		member.setComusername(memberFormDto.getComusername());
+		member.setComuseremail(memberFormDto.getComuseremail());
+		String password = passwordEncoder.encode(memberFormDto.getComuserpw());
+		member.setComuserpw(password);
+		member.setComusertel(memberFormDto.getComusertel());
+		member.setComuseruniname(memberFormDto.getComuseruniname());
 		member.setRole(Role.USER);
 		return member;
 	}
