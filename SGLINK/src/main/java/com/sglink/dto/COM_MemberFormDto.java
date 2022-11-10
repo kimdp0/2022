@@ -29,9 +29,9 @@ public class COM_MemberFormDto {
 	@Length(min = 8, max = 16, message = "비밀번호는 8자 이상, 16자 이하로 입력해주세요")
 	private String comuserPw;
 	
-	@NotEmpty(message = "비밀번호확인은 필수 입력 값입니다.")
-	@Length(min = 8, max = 16, message = "비밀번호는 8자 이상, 16자 이하로 입력해주세요")
-	private String comuserPw2;
+//	@NotEmpty(message = "비밀번호확인은 필수 입력 값입니다.")
+//	@Length(min = 8, max = 16, message = "비밀번호는 8자 이상, 16자 이하로 입력해주세요")
+//	private String comuserPw2;
 	
 	
 	@NotBlank(message = "기관명은 필수 입력 값입니다.")
