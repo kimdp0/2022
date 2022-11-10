@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -32,7 +33,9 @@ public class NoticeBoardService {
 		
 		HashMap<String, Object> resultMap= new HashMap<String, Object>();
 		
-		Page<NoticeBoard> list= boardRepository.findAll(PageRequest.of(page, size));
+		
+//		게시글 순서를 내림차순으로 변경Sort.by(Sort.Direncion.DESC,"registerTime")
+		Page<NoticeBoard> list= boardRepository.findAll(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC,"registerTime")));
 		
 		resultMap.put("list", list.stream().map(NoticeBoardResponseDto::new).collect(Collectors.toList()));
 		resultMap.put("paging", list.getPageable());
