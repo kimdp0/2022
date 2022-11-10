@@ -76,6 +76,7 @@
 			<p th:if="${#fields.hasErrors('comuserTel')}"
 				th:errors="*{comuserTel}" class="fieldError">Incorrect data</p>
 		</div>
+		
 		<div style="text-align: center">
 			<button type="submit" class="btn btn-primary" style="">Submit</button>
 		</div>
@@ -83,4 +84,3 @@
 			th:value="${_csrf.token}">
 	</form>
 </div>
-</html>
