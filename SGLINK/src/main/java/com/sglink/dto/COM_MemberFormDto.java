@@ -14,6 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class COM_MemberFormDto {
+
 	@NotBlank(message = "아이디는 필수 입력 값입니다.")
 	private String comuserId;
 
@@ -37,7 +38,6 @@ public class COM_MemberFormDto {
 	private String comuserUniname;
 
 	@Pattern(regexp = "\\d{3}-\\d{4}-\\d{4}", message = "Invalid. Not the form XXX-XXXX-XXX: ")
-	private String comuserTel;
-	
+	private String comusertel;
 	
 }
