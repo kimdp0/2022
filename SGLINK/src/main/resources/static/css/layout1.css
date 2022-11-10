@@ -26,3 +26,342 @@ body {
 	margin-left: 200px;
 	margin-right: 200px;
 }
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+.login {
+  width: 410px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.login h2 {
+  padding: 0 0 20px;
+  border-bottom: 2px solid #111;
+  text-align: center;
+  line-height: 1;
+  font-size: 32px;
+  color: #111;
+}
+.login > ul {
+  padding: 40px 0 33px;
+}
+.login > ul li {
+  padding: 0 0 12px;
+  text-align: left;
+}
+.login > ul li input {
+  width: 100%;
+  height: 46px;
+  box-sizing: border-box;
+  
+}
+.cb{
+    text-indent: 16px;
+}
+.login > ul li input::-webkit-input-placeholder {
+  font-size: 16px;
+  color: #9fa19f;
+}
+.login > ul li input[type="checkbox"] {
+  position: absolute;
+  left: -3000%;
+}
+.login > ul li input[type="checkbox"] + label {
+  height: 36px;
+  line-height: 36px;
+}
+.login > ul li input[type="checkbox"] + label:before {
+  content: "";
+  display: inline-block;
+  margin: 0 10px 0 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #666;
+  background: #fff;
+  vertical-align: -5px;
+}
+.login > ul li input[type="checkbox"]:checked + label:before {
+  background: url(../images/ico_check_on.png) no-repeat center #333;
+  border-color: #333;
+}
+
+.login div {
+  padding: 0 0 45px;
+}
+.login div ul {
+  display: flex;
+  justify-content: center;
+}
+.login div ul li {
+  position: relative;
+  padding: 0 18px;
+} 
+.login .cust{
+    float: left;
+    width: 130px; 
+    margin: 37px;
+    
+    
+}
+.login .cust_txt{
+    float: left;
+    line-height: 30px;
+   
+}
+.login .cust_btn{
+    float: right;
+    line-height: 30px;
+   
+      
+}
+.login div ul li ~ li:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  height: 14px;
+  width: 1px;
+  background: #111;
+  transform: rotate(25deg);
+}
+.login div ul li a {
+  font-size: 14px;
+  color: #111;
+}
+.login > a {
+  font-size: 14px;
+  color: #666;
+  border-bottom: 1px solid #666;
+}
+.cust input {
+  list-style: none;
+  text-align: center;
+    
+}
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "맑은 고딕";
+}
+
+#header {
+	margin-top: 10px;
+	margin-bottom: -5px;
+	height: 45px;
+	border-bottom: 2px #d3d3d3 solid;
+}
+
+#header>a {
+	margin-left: 15px;
+	font-size: 25px;
+	letter-spacing: -1px;
+	text-decoration: none;
+	font-weight: 550;
+	float: left;
+}
+
+#login {
+	float: right;
+	margin-right: 20px;
+	font-weight: 550;
+}
+
+#login>a {
+	font-size: 25px;
+	letter-spacing: -0.5px;
+	text-decoration: none;
+	font-weight: 550;
+	float: left;
+}
+
+#login>h {
+	margin-left: 8px;
+	margin-right: 8px;
+	font-size: 25px;
+	text-decoration: none;
+	font-weight: 550;
+	float: left;
+}
+
+#sns {
+	margin-right: 25px;
+	letter-spacing: 5px;
+	float: right;
+}
+
+#sns img {
+	margin-top: 3px;
+	width: 30px;
+	height: 30px;
+}
+
+#TopMenu {
+	height: 65px;
+	border-bottom: 2px #d3d3d3 solid;
+}
+
+#home img {
+	position: absolute;
+	margin-top: 2px;
+	margin-left: 10px;
+	width: 17%;
+}
+
+#pMenu {
+	margin-top: 15px;
+	margin-left: 10%;
+	text-align: center;
+	letter-spacing: 100px;
+}
+
+#pMenu a {
+	font-size: 40px;
+	font-weight: 550;
+	letter-spacing: -1px;
+	text-decoration: none;
+}
+
+#slidebtn {
+	width: 35px;
+	height: 35px;
+}
+.slide {
+    /* layout */
+    display: flex;
+    flex-wrap: nowrap;
+    /* 컨테이너의 내용물이 컨테이너 크기(width, height)를 넘어설 때 보이지 않도록 하기 위해 hidden을 준다. */
+    overflow: hidden;
+
+    /* position */
+    /* slide_button의 position absolute가 컨테이너 안쪽에서 top, left, right offset이 적용될 수 있도록 relative를 준다. (기본값이 static인데, static인 경우 그 상위 컨테이너로 나가면서 현재 코드에선 html을 기준으로 offset을 적용시키기 때문) */
+    position: relative;
+
+    /* size */
+    width: 100%;
+
+    /* slide drag를 위해 DOM요소가 드래그로 선택되는것을 방지 */
+    user-select: none;
+}
+
+.slide_item {
+    /* layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* position - 버튼 클릭시 left offset값을 적용시키기 위해 */
+    position: relative;
+    left: 0px;
+
+    /* size */
+    width: 100%;
+    height: 300px;
+    /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
+    flex-shrink: 0;
+
+    /* transition */
+    transition: left 0.15s;
+}
+
+.slide_button {
+    /* layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* position */
+    position: absolute;
+    /* 버튼이 중앙에 위치하게 하기위해 계산 */
+    top: calc(50% - 16px);
+
+    /* size */
+    width: 15px;
+    height: 15px;
+
+    /* style */
+    border-radius: 100%;
+    background-color: #cccc;
+    cursor: pointer;
+}
+
+.slide_prev_button {
+    left: 10px;
+}
+
+.slide_next_button {
+    right: 10px;
+}
+
+/* 각 슬라이드가 변경되는 것을 시각적으로 확인하기 쉽도록 각 슬라이드별 색상 적용 */
+.slide_item.item1 {
+    background-color: darkgoldenrod;
+}
+
+.slide_item.item2 {
+    background-color: aqua;
+}
+
+.slide_item.item3 {
+    background-color: blueviolet;
+}
+
+.slide_item.item4 {
+    background-color: burlywood;
+}
+
+.slide_item.item5 {
+    background-color: cornflowerblue;
+}
+
+/* 페이지네이션 스타일 */
+ul,
+li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.slide_pagination {
+    /* layout */
+    display: flex;
+    gap: 5px;
+
+    /* position */
+    position: absolute;
+    bottom: 0;
+    /* left:50%, translateX(-50%)를 하면 가로 가운데로 위치시킬 수 있다. */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slide_pagination > li {
+    /* 현재 슬라이드가 아닌 것은 투명도 부여 */
+    color: #7fb5ff88;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.slide_pagination > li.active {
+    /* 현재 슬라이드 색상은 투명도 없이 */
+    color: #7fb5ff;
+}
+
+.slide_item_duplicate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 0px;
+    width: 100%;
+    height: 300px;
+    flex-shrink: 0;
+    transition: left 0.15s;
+}
+
