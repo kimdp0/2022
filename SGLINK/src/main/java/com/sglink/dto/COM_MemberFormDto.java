@@ -38,6 +38,6 @@ public class COM_MemberFormDto {
 	private String comuserUniname;
 
 	@Pattern(regexp = "\\d{3}-\\d{4}-\\d{4}", message = "Invalid. Not the form XXX-XXXX-XXX: ")
-	private String comusertel;
+	private String comuserTel;
 	
 }
