@@ -43,7 +43,7 @@ public class COM_Member {
 		member.setComuserPw(password);
 		member.setComuserTel(memberFormDto.getComuserTel());
 		member.setComuserUniname(memberFormDto.getComuserUniname());
-		member.setRole(Role.USER);
+		member.setRole(Role.COM);
 		return member;
 	}
 }
