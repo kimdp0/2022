@@ -35,10 +35,10 @@ public class STU_MemberService implements UserDetailsService {
 	}
 
 	@Override
-	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-		STU_Member member = memberRepository.findByStuuserEmail(email);
+	public UserDetails loadUserByUsername(String id) throws UsernameNotFoundException {
+		STU_Member member = memberRepository.findByStuuserId(id);
 		if (member == null) {
-			throw new UsernameNotFoundException(email);
+			throw new UsernameNotFoundException(id);
 		}
 		return User.builder().username(member.getStuuserId()).password(member.getStuuserPw())
 				.roles(member.getRole().toString()).build();

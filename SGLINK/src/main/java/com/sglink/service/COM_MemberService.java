@@ -35,12 +35,12 @@ public class COM_MemberService implements UserDetailsService {
 	}
 
 	@Override
-	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-		COM_Member member = memberRepository.findByComuserEmail(email);
+	public UserDetails loadUserByUsername(String id) throws UsernameNotFoundException {
+		COM_Member member = memberRepository.findByComuserId(id);
 		if (member == null) {
-			throw new UsernameNotFoundException(email);
+			throw new UsernameNotFoundException(id);
 		}
-		return User.builder().username(member.getComuserEmail()).password(member.getComuserPw())
+		return User.builder().username(member.getComuserId()).password(member.getComuserPw())
 				.roles(member.getRole().toString()).build();
 	}
 
