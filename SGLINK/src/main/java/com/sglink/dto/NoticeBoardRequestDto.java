@@ -22,5 +22,11 @@ public class NoticeBoardRequestDto {
 				.registerId(registerId)
 				.build();
 	}
+	
+	@Override
+	public String toString() {
+		return "Notice_BoardRequestDto [id=" + id + ", title=" + title + ", content=" + content + ", registerId=" + registerId
+				+ "]";
+	}
 
 }

@@ -16,8 +16,10 @@ import lombok.RequiredArgsConstructor;
 public class NoticeBoardController {
 	private final NoticeBoardService boardService;
 	
+	
+//	@RequestParam(required = false, defaultValue= "10")  defaultValue= "10"<-숫자 변경시 페이지당 게시글숫자달라짐
 	@GetMapping("/board/notice/list")
-	public String getBoardListPage(Model model, @RequestParam(required= false, defaultValue= "0") Integer page, @RequestParam(required = false, defaultValue= "5") Integer size)throws Exception{
+	public String getBoardListPage(Model model, @RequestParam(required= false, defaultValue= "0") Integer page, @RequestParam(required = false, defaultValue= "10") Integer size)throws Exception{
 		try {
 			model.addAttribute("resultMap", boardService.findAll(page, size));
 		}catch(Exception e) {
@@ -61,6 +63,42 @@ public class NoticeBoardController {
 		
 		}
 	
+	@PostMapping("/board/notice/view/action")
+	public String getBoardViewAction(Model model, NoticeBoardRequestDto boardRequestDto) throws Exception{
+
+		try {
+			int result = boardService.updateBoard(boardRequestDto);
+			if (result<1) {
+				throw new Exception("#Exception boardViewAction!");
+			}
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return "redirect:/board/notice/list";
+	}
+	
+	@PostMapping("/board/notice/view/delete")
+	public String BoardViewDeleteAction(Model model, @RequestParam() Long id) throws Exception{
+
+		try {
+			boardService.deleteById(id);
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		
+		return "redirect:/board/notice/list";
+	}
+	
+	@PostMapping("/board/notice/delete")
+	public String BoardDeleteAction(Model model, @RequestParam() Long[] deleteId) throws Exception{
+		
+		try {
+			boardService.deleteAll(deleteId);
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return "redirect:/board/notice/list";
+	}
 	
 
 }
