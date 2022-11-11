@@ -21,13 +21,10 @@
 			<div id="login">
 				<a href="">(권한)</a>
 				<h>|</h>
-				<a href="/members/com/login" sec:authorize="isAnonymous()">기업로그인</a> 
-				<a href="/members/com/logout"
-					sec:authorize="isAuthenticated()">로그아웃</a>
+				<a href="/members/login" sec:authorize="isAnonymous()">로그인</a>
 				<h>|</h>
-				<a href="/members/stu/login" sec:authorize="isAnonymous()">학생로그인</a>
-				<h>|</h>
-				<a href="/members/stu/logout" sec:authorize="isAuthenticated()">로그아웃</a>
+				<a href="/members/logout" sec:authorize="isAuthenticated()">로그아웃</a>
+				<a href="/members/signup" sec:authorize="isAnonymous()">회원가입</a>
 			</div>
 		</div>
 		<div id="TopMenu">
@@ -53,7 +50,7 @@
 			</div>
 			<ul class="slide_pagination"></ul>
 		</div>
-		<script src="js/slide.js"></script>
+		<script src="/js/slide.js"></script>
 	</div>
 </body>
 

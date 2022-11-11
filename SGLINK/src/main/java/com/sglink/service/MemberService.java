@@ -7,26 +7,25 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sglink.entity.COM_Member;
-import com.sglink.repository.COM_MemberRepository;
-
+import com.sglink.entity.Member;
+import com.sglink.repository.MemberRepository;
 
 import lombok.RequiredArgsConstructor;
 
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class COM_MemberService implements UserDetailsService {
-	private final COM_MemberRepository memberRepository;
+public class MemberService implements UserDetailsService {
+	private final MemberRepository memberRepository;
 
-	public COM_Member saveMember(COM_Member member) {
+	public Member saveMember(Member member) {
 		validateDuplicateMember(member);
 		return memberRepository.save(member);
 	}
 
-	private void validateDuplicateMember(COM_Member member) {
-		COM_Member findMember = memberRepository.findByComuserEmail(member.getComuserEmail());
-		COM_Member userId = memberRepository.findByComuserId(member.getComuserId());
+	private void validateDuplicateMember(Member member) {
+		Member findMember = memberRepository.findByUserEmail(member.getUserEmail());
+		Member userId = memberRepository.findByUserId(member.getUserId());
 		if (findMember != null) {
 			throw new IllegalStateException("이미 가입된 회원입니다."); // 이미 가입된 회원의 경우 예외를 발생시킨다.
 		}else if(userId != null) {
@@ -36,11 +35,11 @@ public class COM_MemberService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String id) throws UsernameNotFoundException {
-		COM_Member member = memberRepository.findByComuserId(id);
+		Member member = memberRepository.findByUserId(id);
 		if (member == null) {
 			throw new UsernameNotFoundException(id);
 		}
-		return User.builder().username(member.getComuserId()).password(member.getComuserPw())
+		return User.builder().username(member.getUserId()).password(member.getUserPw())
 				.roles(member.getRole().toString()).build();
 	}
 

@@ -12,22 +12,22 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import com.sglink.service.STU_MemberService;
+import com.sglink.service.MemberService;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
    
    @Autowired
-   STU_MemberService memberService;
+   MemberService memberService;
    
    @Override
    protected void configure(HttpSecurity http) throws Exception {
-      http.formLogin().loginPage("/members/stu/login") // 로그인 페이지 url을 설정
+      http.formLogin().loginPage("/members/login") // 로그인 페이지 url을 설정
             .defaultSuccessUrl("/") // 로그인 성공 시 이동할 url
-            .usernameParameter("stuuserId") // 로그인 시 사용할 파라미터 이름으로 email을 지정
-            .failureUrl("/members/stu/login/error") // 로그인 실패 시 이동할 url을 설정
-            .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/members/stu/logout")) // 로그아웃 url을 설정
+            .usernameParameter("userId") // 로그인 시 사용할 파라미터 이름으로 email을 지정
+            .failureUrl("/members/login/error") // 로그인 실패 시 이동할 url을 설정
+            .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/members/logout")) // 로그아웃 url을 설정
             .logoutSuccessUrl("/") // 로그아웃 성공 시 이동할 url을 설정
       ;
       http.authorizeRequests()
