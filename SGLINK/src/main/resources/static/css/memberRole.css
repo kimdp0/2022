@@ -4,14 +4,14 @@ h3 {
 }
 
 .agree {
-	width: 650px;
-	height: 250px;
+	width: 900px;
+	height: 300px;
 	border: 1px solid #000;
 	overflow-y: scroll;
-	margin-left: 300px;
+	margin-left: 250px;
 }
 #agree1{
-	height:20px;
+	height:10px;
 }
 .import {
 	float: left;
@@ -22,20 +22,21 @@ h3 {
 }
 
 .ck_ck {
-	margin-left: 600px;
-	font-size: 14px;
+	margin-left:800px;
+	font-size: 17px;
 }
 
 .company_btn {
 	width: 130px;
 	height: 50px;
 	font-size: 16px;
-	margin-left: 19px;
+	margin-left: 10px;
 	background-color: darkred;
 	color: white;
 	outline: 0;
 	border: 0;
 	font-weight: bold;
+	cursor:pointer;
 }
 
 .user_btn {
@@ -48,4 +49,5 @@ h3 {
 	outline: 0;
 	border: 0;
 	font-weight: bold;
+	cursor:pointer;
 }
