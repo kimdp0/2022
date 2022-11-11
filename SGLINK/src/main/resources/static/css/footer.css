@@ -1,0 +1,16 @@
+.sns {
+	margin-top: -50px;
+	height: 35px;
+	float: right;
+}
+
+.adress {
+	position: absolute;
+	float: left;
+}
+
+.menu li {
+	list-style: none;
+	float: left;
+	margin-left: 10px;
+}

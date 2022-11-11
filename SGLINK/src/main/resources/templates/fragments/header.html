@@ -19,17 +19,20 @@
 					src="/img/twitterimg.png"></a>
 			</div>
 			<div id="login">
-				<a href="">(권한)</a>
+				<a href="" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">관리자</a>
+				<a href="" sec:authorize="hasAnyAuthority('ROLE_STU')">학생회원</a>
+				<a href="" sec:authorize="hasAnyAuthority('ROLE_COM')">기업회원</a>
 				<h>|</h>
 				<a href="/members/login" sec:authorize="isAnonymous()">로그인</a>
-				<h>|</h>
 				<a href="/members/logout" sec:authorize="isAuthenticated()">로그아웃</a>
-				<a href="/members/signup" sec:authorize="isAnonymous()">회원가입</a>
+				<h>|</h>
+				<a href="/members/memberRole" sec:authorize="isAnonymous()">회원가입</a>
+				<h>|</h>
 			</div>
 		</div>
 		<div id="TopMenu">
 			<div id="home">
-				<a href=""><img src="/img/home.png"></a>
+				<a href="/"><img src="/img/home.png"></a>
 			</div>
 			<div id="pMenu">
 				<a href="">사업단 소개</a> <a href="">기업지원</a> <a href="">학생지원</a> <a
