@@ -27,7 +27,10 @@ public interface NoticeBoardRepository extends JpaRepository<NoticeBoard, Long>{
 	
 	String UPDATE_BOARD_READ_CNT_INC = "UPDATE notice_board "
 			+ "SET READ_CNT = READ_CNT + 1 "
-			+ "WHERE ID = : id";
+			+ "WHERE ID = \\: id";
+	
+	String DELETE_BOARD = "DELETE FROM notice_board "
+			+ "WHERE ID IN (:deleteList)";
 	
 	@Transactional
 	@Modifying
@@ -38,4 +41,9 @@ public interface NoticeBoardRepository extends JpaRepository<NoticeBoard, Long>{
 	@Modifying
 	@Query(value = UPDATE_BOARD_READ_CNT_INC, nativeQuery = true)
 	public int updateBoardReadCntInc(@Param("id") Long id);
+	
+	@Transactional
+	@Modifying
+	@Query(value = DELETE_BOARD, nativeQuery = true)
+	public int deleteBoard(@Param("deleteList") Long[] deleteList);
 }

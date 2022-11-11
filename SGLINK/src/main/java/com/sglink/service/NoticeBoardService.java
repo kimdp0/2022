@@ -49,6 +49,7 @@ public class NoticeBoardService {
 	}
 	
 	public NoticeBoardResponseDto findById(Long id) {
+		boardRepository.updateBoardReadCntInc(id);
 		return new NoticeBoardResponseDto(boardRepository.findById(id).get());
 	}
 	
@@ -62,5 +63,9 @@ public class NoticeBoardService {
 	
 	public void deleteById(Long id) {
 		boardRepository.deleteById(id);
+	}
+	
+	public void deleteAll(Long[] deleteId) {
+		boardRepository.deleteBoard(deleteId);
 	}
 }
