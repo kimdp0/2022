@@ -40,7 +40,7 @@ public class STU_MemberService implements UserDetailsService {
 		if (member == null) {
 			throw new UsernameNotFoundException(email);
 		}
-		return User.builder().username(member.getStuuserEmail()).password(member.getStuuserPw())
+		return User.builder().username(member.getStuuserId()).password(member.getStuuserPw())
 				.roles(member.getRole().toString()).build();
 	}
 
