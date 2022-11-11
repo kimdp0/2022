@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -32,7 +33,7 @@ public class MemberController {
 	
 
 	@PostMapping(value = "/com/new")
-	public String newComMember(@Valid COM_MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
+	public String newComMember(@Valid @ModelAttribute("memberFormDto")COM_MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			return "member/com/memberForm";
 		}
@@ -54,7 +55,7 @@ public class MemberController {
 
 	
 	@PostMapping(value = "/stu/new")
-	public String newStuMember(@Valid STU_MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
+	public String newStuMember(@Valid @ModelAttribute("memberFormDto")STU_MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			return "member/stu/memberForm";
 		}
