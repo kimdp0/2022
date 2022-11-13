@@ -1,6 +1,7 @@
 package com.sglink.entity;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
@@ -17,8 +18,10 @@ import lombok.Getter;
 public class BaseTimeEntity {
 //공통적으로 날짜 필드를 관리할 클래스
 	
+	
+//	@Column(updatable = false)
 	@CreatedDate
-	private LocalDate registerTime;
+	private LocalDateTime registerTime;
 	
 	@LastModifiedDate
 	private LocalDate updateTime;

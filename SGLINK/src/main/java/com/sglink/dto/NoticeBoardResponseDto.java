@@ -1,6 +1,7 @@
 package com.sglink.dto;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import com.sglink.entity.NoticeBoard;
 
@@ -13,7 +14,7 @@ public class NoticeBoardResponseDto {
 	private String content;
 	private int readCnt;
 	private String registerId;
-	private LocalDate registerTime;
+	private LocalDateTime registerTime;
 	
 	public NoticeBoardResponseDto(NoticeBoard entity) {
 		this.id =entity.getId();
