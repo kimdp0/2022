@@ -19,7 +19,7 @@
 					src="/img/twitterimg.png"></a>
 			</div>
 			<div id="login">
-				<a href="" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">관리자</a>
+				<a href="/admin/member/list" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">관리자</a>
 				<a href="" sec:authorize="hasAnyAuthority('ROLE_STU')">학생회원</a>
 				<a href="" sec:authorize="hasAnyAuthority('ROLE_COM')">기업회원</a>
 				<h>|</h>

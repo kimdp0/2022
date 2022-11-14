@@ -22,7 +22,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Member {
+public class Member  extends BaseTimeEntity{
 	@Id
 	@Column(name = "userId")
 	private String userId;
@@ -44,7 +44,13 @@ public class Member {
 		member.setUserPw(password);
 		member.setUserTel(memberFormDto.getComuserTel());
 		member.setUserUniname(memberFormDto.getComuserUniname());
-		member.setRole(Role.COM);
+		if(memberFormDto.getComuserId().equals("admin")) {
+			member.setRole(Role.ADMIN);
+		}else {
+			member.setRole(Role.COM);
+		}
+		member.getRegisterTime();
+		member.getUpdateTime();
 		return member;
 	}
 	
@@ -57,7 +63,13 @@ public class Member {
 		member.setUserPw(password);
 		member.setUserTel(memberFormDto.getStuuserTel());
 		member.setUserUniname(memberFormDto.getStuuserUniname());
-		member.setRole(Role.STU);
+		if(memberFormDto.getStuuserId().equals("admin")) {
+			member.setRole(Role.ADMIN);
+		}else {
+			member.setRole(Role.STU);
+		}
+		member.getRegisterTime();
+		member.getUpdateTime();
 		return member;
 	}
 }
