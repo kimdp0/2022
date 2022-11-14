@@ -1,6 +1,5 @@
 package com.sglink.dto;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import com.sglink.entity.NoticeBoard;

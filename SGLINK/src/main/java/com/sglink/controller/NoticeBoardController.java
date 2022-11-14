@@ -1,5 +1,6 @@
 package com.sglink.controller;
 
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,11 +35,11 @@ public class NoticeBoardController {
 	}
 	
 	@GetMapping("/board/notice/view")
-	public String getBoardViewPage(Model model, NoticeBoardRequestDto boardRequestDto) throws Exception{
+	public String getBoardViewPage(@Param("id")Long id, Model model, NoticeBoardRequestDto boardRequestDto) throws Exception{
 		
 		try {
 			if (boardRequestDto.getId() != null) {
-				model.addAttribute("info", boardService.findById(boardRequestDto.getId()));
+				model.addAttribute("info", boardService.findById(id));
 			}
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());

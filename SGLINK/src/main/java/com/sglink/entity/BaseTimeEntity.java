@@ -1,6 +1,6 @@
 package com.sglink.entity;
 
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 
 import javax.persistence.EntityListeners;
@@ -24,5 +24,5 @@ public class BaseTimeEntity {
 	private LocalDateTime registerTime;
 	
 	@LastModifiedDate
-	private LocalDate updateTime;
+	private LocalDateTime updateTime;
 }
