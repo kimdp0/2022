@@ -5,27 +5,31 @@
 	border-bottom: 2px #d3d3d3 solid;
 }
 
-#header>a {
+ #header>a {
 	margin-left: 15px;
 	font-size: 25px;
 	letter-spacing: -1px;
 	text-decoration: none;
 	font-weight: 550;
 	float: left;
-}
+} 
 
 #login {
+	position: relative;
 	float: right;
 	margin-right: 20px;
-	font-weight: 550;
+	text-align: center;
+	height: 50px;
 }
 
-#login>a {
-	font-size: 25px;
+.topmenu {
+	margin-top:20px;
+	margin-left:20px;
+	font-size: 18px;
 	letter-spacing: -0.5px;
 	text-decoration: none;
 	font-weight: 550;
-	float: left;
+	
 }
 
 #login>h {

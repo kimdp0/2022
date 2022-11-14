@@ -7,10 +7,9 @@ html {
 body {
 	min-height: 100%;
 }
-a {
-	text-decoration-line: none;
-	
-}
+ a:link { color: red; text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color: blue; text-decoration: underline;}
 
 a:hover {
 	text-decoration-line: none;

@@ -19,15 +19,12 @@
 					src="/img/twitterimg.png"></a>
 			</div>
 			<div id="login">
-				<a href="/admin/member/list" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">관리자</a>
-				<a href="" sec:authorize="hasAnyAuthority('ROLE_STU')">학생회원</a>
-				<a href="" sec:authorize="hasAnyAuthority('ROLE_COM')">기업회원</a>
-				<h>|</h>
-				<a href="/members/login" sec:authorize="isAnonymous()">로그인</a>
-				<a href="/members/logout" sec:authorize="isAuthenticated()">로그아웃</a>
-				<h>|</h>
-				<a href="/members/memberRole" sec:authorize="isAnonymous()">회원가입</a>
-				<h>|</h>
+				<a class="topmenu" href="/admin/member/list" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">관리자</a>
+				<a class="topmenu" href="" sec:authorize="hasAnyAuthority('ROLE_STU')">학생회원</a>
+				<a class="topmenu" href="" sec:authorize="hasAnyAuthority('ROLE_COM')">기업회원</a>
+				<a class="topmenu" href="/members/login" sec:authorize="isAnonymous()">로그인</a>
+				<a class="topmenu" href="/members/logout" sec:authorize="isAuthenticated()">로그아웃</a>
+				<a class="topmenu" href="/members/memberRole">회원가입</a>
 			</div>
 		</div>
 		<div id="TopMenu">
