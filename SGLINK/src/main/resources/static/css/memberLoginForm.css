@@ -1,46 +1,120 @@
-#signup{
-            width: 1000px;
-            padding: 0px;
-            margin: 0px;
-        }
-        #content {
-            margin-top: 30px;
-        }
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+.login {
+  width: 440px;
+  position: relative;
+  left: 550px;
+  bottom: 430px;
+  text-align: center;
+}
+.login h2 {
+  padding: 0 0 20px;
+  text-align: left;
+  line-height: 1;
+  font-size: 45px;
+  color: #111;
+}
+.login > ul {
+  padding: 40px 0 33px;
+}
+.login > ul li {
+  padding: 0 0 12px;
+  text-align: left;
+}
+.login > ul li input {
+  width: 100%;
+  height: 46px;
+  box-sizing: border-box;
+  
+}
+.cb{
+    text-indent: 16px;
+}
+.login > ul li input::-webkit-input-placeholder {
+  font-size: 18px;
+  color: #9fa19f;
+}
+.login > ul li input[type="checkbox"] {
+  position: absolute;
+  left: -3000%;
+}
+.login > ul li input[type="checkbox"] + label {
+  height: 36px;
+  line-height: 36px;
+}
+.login > ul li input[type="checkbox"] + label:before {
+  content: "";
+  display: inline-block;
+  margin: 0 10px 0 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #666;
+  background: #fff;
+  vertical-align: -5px;
+}
+.login > ul li input[type="checkbox"]:checked + label:before {
+  background: url(../images/ico_check_on.png) no-repeat center #333;
+  border-color: #333;
+}
 
-        #Title {
-            height: 60px;
-            font-size: 40px;
-            font-weight: bold;
-            border-bottom: 2px #d3d3d3 solid;
-            letter-spacing: 2px;
-        }
-        .main2 {
-            margin-top: 30px;
-        }
+.login div {
+  padding: 0 0 45px;
+}
+.login div ul {
+  display: flex;
+  justify-content: center;
+}
+.login div ul li {
+  position: relative;
+  padding: 0 18px;
+} 
+.login .cust{
+    float: left;
+    width: 120px; 
+    margin-left: 20px;
+    margin-top: 30px;
+    
+}
+.login div ul li ~ li:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  height: 14px;
+  width: 1px;
+  background: #111;
+  transform: rotate(25deg);
+}
+.login div ul li a {
+  font-size: 14px;
+  color: #111;
+}
+.login > a {
+  font-size: 14px;
+  color: #666;
+  border-bottom: 1px solid #666;
+}
+.cust input {
+  list-style: none;
+  text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
 
-        .id {
-            float: left;
-            font-size: 30px;
-            font-weight: bold;
-            text-align: center;
-            letter-spacing: -0.5px;
-            width: 300px;
-            height: 40px;
-            position: relative;
-        }
+.bg_ip {
+    width: 300px;
+}
+.box_line{
+    border:1px solid #111; 
+    width: 1000PX;
+    height: 500px;
+    margin-left: 2px;
+    
+}
 
-        .text{
-            padding: 0;
-            margin: 0;
-            width: 400px;
-            height: 40px;
-            font-size: 20px;
-            border: 2px #d2d2d2 solid;
-            border-radius: 5px;
-        }
 
-        .pwt {
-            font-size: 20px;
-            text-align: center;
-            margin-left: 23%;
-        }

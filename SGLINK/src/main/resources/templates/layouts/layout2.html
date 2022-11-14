@@ -9,7 +9,6 @@
 <link th:href="@{/css/footer.css}" rel="stylesheet">
 <link th:href="@{/css/header.css}" rel="stylesheet">
 <link th:href="@{/css/slide.css}" rel="stylesheet">
-<link th:href="@{/css/sidebar.css}" rel="stylesheet">
 
 <script src="https://kit.fontawesome.com/24c2da1160.js"
 	crossorigin="anonymous"></script>
@@ -29,7 +28,6 @@
 </head>
 <body>
 	<div th:replace="fragments/header::header"></div>
-	<div th:replace="fragments/sidebar::sidebar" class="side"></div> 
 	<div layout:fragment="content" class="content"></div>
 	<div th:replace="fragments/footer::footer" class="foot"></div>
 </body>
