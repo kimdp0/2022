@@ -4,6 +4,17 @@
 	layout:decorate="~{layouts/layout1}">
 <meta charset=UTF-8>
 <title>회원가입 동의창</title>
+
+<th:block layout:fragment="css">
+	<style>
+.fieldError {
+	margin-left: 300px;
+	color: #bd2130;
+}
+
+<link th:href="@{/css/memberRole.css}" rel="stylesheet"> 
+</style>
+</th:block>
 </head>
 <body>
 	<div layout:fragment="content">
