@@ -49,7 +49,7 @@ public class NoticeBoardService {
 	}
 	
 	public NoticeBoardResponseDto findById(Long id) {
-//		boardRepository.updateBoardReadCntInc(id);
+		boardRepository.updateBoardReadCntInc(id);
 		return new NoticeBoardResponseDto(boardRepository.findById(id).get());
 	}
 	
