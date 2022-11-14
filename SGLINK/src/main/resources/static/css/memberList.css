@@ -1,0 +1,43 @@
+.memberlist {
+	margin-left: 150px;
+	text-align: center;
+	font-weight:bold;
+}
+
+.listtable {
+	border-top: 2px solid #A4A4A4;
+	height: 150px;
+}
+.listhead{
+	font-size:20px;
+	border-bottom: 1px solid #A4A4A4;
+}
+
+table, th, td {
+	border-collapse: collapse;
+}
+
+.listhead{
+	background: #D8D8D8;
+}
+
+.listbody tr{
+	border-bottom: 1px solid #A4A4A4;
+}
+.page{
+	margin-top: 10px;
+	font-size:20px;
+	text-align:center;
+}
+.pagingnum{
+	width:35px;
+	height:35px;
+	margin:auto;
+	background:#E6E6E6;
+	border-radius:7px;
+}
+.page a{
+	padding:0.3px;
+	color:black;
+	font-size: 0.8em;
+}
