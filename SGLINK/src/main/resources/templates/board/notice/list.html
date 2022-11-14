@@ -6,75 +6,77 @@
 <title>Board List</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!--부트스트랩 css 추가-->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-	
+
+
 </head>
 <body>
 	<div layout:fragment="content">
-		<div id="wrapper">
-			<div class="container">
-				<form action="/boards/list" id="frm" method="get">
-					<div class="col-md-12 mt-4">
-						<button type="button" class="btn btn-danger" onclick="fnDelete()">삭제하기</button>
-						<button type="button" class="btn btn-primary"
-							onclick="javascript:location.href='/boards/notice/write'">글쓰기</button>
-						<table
-							class="table table-striped table-horizontal table-bordered mt-3">
-							<thead class="thead-strong">
-								<tr>
-									<th width="5%"><input type="checkbox" id="chkAll"></th>
-									<th width="10%">게시글번호</th>
-									<th width="">제목</th>
-									<th width="20%">작성자</th>
-									<th width="10%">조회수</th>
-									<th width="20%">작성일</th>
+	<div id="wrapper">
+		<div class="container">
+			<form id="frm" method="get">
+				<div class="col-md-12 mt-4">
+					<button type="button" class="btn btn-danger" onclick="fnDelete()">삭제하기</button>
+					<button type="button" class="btn btn-primary"
+						onclick="javascript:location.href='/boards/notice/write'">글쓰기</button>
+					<table
+						class="table table-striped table-horizontal table-bordered mt-3">
+						<thead class="thead-strong">
+							<tr>
+								<th width="5%"><input type="checkbox" id="chkAll"></th>
+								<th width="10%">게시글번호</th>
+								<th width="">제목</th>
+								<th width="20%">작성자</th>
+								<th width="10%">조회수</th>
+								<th width="20%">작성일</th>
 
-								</tr>
-							</thead>
-							<tbody id="tbody">
-								<tr th:each="list,index : ${resultMap.list}"
-									th:with="paging=${resultMap.paging}">
+							</tr>
+						</thead>
+						<tbody id="tbody">
+							<tr th:each="list,index : ${resultMap.list}"
+								th:with="paging=${resultMap.paging}">
 
-									<td><input type="checkbox" name="deleteId"
-										th:value="${list.id}"></td>
-									<td><span
-										th:text="${(resultMap.totalCnt - index.index) - (paging.pageNumber * paging.pageSize)}"></span>
-									</td>
-									<td><a th:href="@{./view(id=${list.id})}"><span
-											th:text="${list.title}"></span></a></td>
-									<td><span th:text="${list.registerId}"></span></td>
-									<td><span th:text="${list.readCnt}"></span></td>
-									<td>
-										<!-- 년월일로만 표시${#temporals.format(list.registerTime, 'yyyy-MM-dd')} -->
-										<span
-										th:text="${#temporals.format(list.registerTime, 'yyyy-MM-dd')}"></span>
-									</td>
-								<tr>
-							</tbody>
-						</table>
-						<div class="row">
-							<div class="col">
-								<ul class="pagination">
-									<li class="page-item"
-										th:each="index : ${#numbers.sequence(1, resultMap.totalPage)}"
-										th:with="paging=${resultMap.paging}"><a class="page-link"
-										th:href="@{./list(page=${index - 1},page=${paging.pageSize})}"><span
-											th:text="${index}"></span></a></li>
-								</ul>
-							</div>
+								<td><input type="checkbox" name="deleteId"
+									th:value="${list.id}"></td>
+								<td><span
+									th:text="${(resultMap.totalCnt - index.index) - (paging.pageNumber * paging.pageSize)}"></span>
+								</td>
+								<td><a th:href="@{./view(id=${list.id})}"><span
+										th:text="${list.title}"></span></a></td>
+								<td><span th:text="${list.registerId}"></span></td>
+								<td><span th:text="${list.readCnt}"></span></td>
+								<td>
+									<!-- 년월일로만 표시${#temporals.format(list.registerTime, 'yyyy-MM-dd')} -->
+									<span
+									th:text="${#temporals.format(list.registerTime, 'yyyy-MM-dd')}"></span>
+								</td>
+							<tr>
+						</tbody>
+					</table>
+					<div class="row">
+						<div class="col">
+							<ul class="pagination">
+								<li class="page-item"
+									th:each="index : ${#numbers.sequence(1, resultMap.totalPage)}"
+									th:with="paging=${resultMap.paging}"><a class="page-link"
+									th:href="@{./list(page=${index - 1},page=${paging.pageSize})}"><span
+										th:text="${index}"></span></a></li>
+							</ul>
 						</div>
-
 					</div>
-				</form>
-			</div>
 
+				</div>
+			</form>
 		</div>
 
-
-
 	</div>
+
+
+	<!--     스크립트 추가 -->
 	<script th:inline="javascript">
 		// header checkbox event
 		$("#chkAll").click(function() {
@@ -103,8 +105,8 @@
 			if (delInpChkLen > 0) {
 				if (confirm("삭제하시겠습니까?")) {
 					let frm = $("#frm");
-					frm.attr("action", "/board/notice/delete");
-					frm.attr("method", "post");
+					frm.attr("action", "/boards/notice/delete");
+					frm.attr("method", "get");
 					frm.submit();
 				}
 			} else {
@@ -112,6 +114,6 @@
 			}
 		}
 	</script>
+	</div>
 </body>
-
 </html>

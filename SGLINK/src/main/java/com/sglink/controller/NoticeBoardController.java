@@ -91,7 +91,7 @@ public class NoticeBoardController {
 		return "redirect:/boards/notice/list";
 	}
 	
-	@PostMapping("/notice/delete")
+	@GetMapping("/notice/delete")
 	public String BoardDeleteAction(Model model, @RequestParam() Long[] deleteId) throws Exception{
 		
 		try {
@@ -99,7 +99,7 @@ public class NoticeBoardController {
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());
 		}
-		return "redirect:/board/notice/list";
+		return "redirect:/boards/notice/list";
 	}
 	
 
