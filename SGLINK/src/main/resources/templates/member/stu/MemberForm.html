@@ -20,96 +20,98 @@
 <th:block layout:fragment="css">
 	<style>
 .fieldError {
-	margin-left:300px;
+	margin-left: 300px;
 	color: #bd2130;
 }
 </style>
-<link th:href="@{/css/memberForm.css}" rel="stylesheet"> 
+	<link th:href="@{/css/memberForm.css}" rel="stylesheet">
 </th:block>
 </head>
 <body>
-	<div layout:fragment="content">
-		<div id="Title">
-			<div id="TopTitle" style="padding: 0px 20px 15px;">회원가입</div>
+	<div id="signup">
+		<div layout:fragment="content">
+			<div id="Title">
+				<div id="TopTitle" style="padding: 0px 20px 15px;">회원가입</div>
 
-		</div>
-		<div id="content">
-			<form action="/members/stu/new" role="form" method="post"
-				th:object="${memberFormDto}">
-				<div id="main">
-					<div class="id">
-						<label th:for="stuuserId">아이디</label>
+			</div>
+			<div id="content">
+				<form action="/members/stu/new" role="form" method="post"
+					th:object="${memberFormDto}">
+					<div id="main">
+						<div class="id">
+							<label th:for="stuuserId">아이디</label>
+						</div>
+						<input type="text" th:field="*{stuuserId}"
+							class="text" placeholder="아이디를 입력해주세요">
+						<p th:if="${#fields.hasErrors('stuuserId')}"
+							th:errors="*{stuuserId}" class="fieldError">Incorrect data</p>
 					</div>
-					<input type="text" th:field="*{stuuserId}" class="form-control input"
-						placeholder="아이디를 입력해주세요">
-					<p th:if="${#fields.hasErrors('stuuserId')}"
-						th:errors="*{stuuserId}" class="fieldError">Incorrect data</p>
-				</div>
 
-				<div class="main2">
-					<div class="id">
-						<label th:for="stuuserName">이름</label>
+					<div class="main2">
+						<div class="id">
+							<label th:for="stuuserName">이름</label>
+						</div>
+						<input type="text" th:field="*{stuuserName}"
+							class="text" placeholder="이름을 입력해주세요">
+						<p th:if="${#fields.hasErrors('stuuserName')}"
+							th:errors="*{stuuserName}" class="fieldError">Incorrect data</p>
+
 					</div>
-					<input type="text" th:field="*{stuuserName}" class="form-control input"
-						placeholder="이름을 입력해주세요">
-					<p th:if="${#fields.hasErrors('stuuserName')}"
-						th:errors="*{stuuserName}" class="fieldError">Incorrect data</p>
+					<div class="main2">
+						<div class="id">
+							<label th:for="stuuserEmail">이메일</label>
+						</div>
+						<input type="email" th:field="*{stuuserEmail}"
+							class="text" placeholder="이메일을 입력해주세요">
+						<p th:if="${#fields.hasErrors('stuuserEmail')}"
+							th:errors="*{stuuserEmail}" class="fieldError">Incorrect data</p>
 
-				</div>
-				<div class="main2">
-					<div class="id">
-						<label th:for="stuuserEmail">이메일</label>
 					</div>
-					<input type="email" th:field="*{stuuserEmail}" class="form-control input"
-						placeholder="이메일을 입력해주세요">
-					<p th:if="${#fields.hasErrors('stuuserEmail')}"
-						th:errors="*{stuuserEmail}" class="fieldError">Incorrect data</p>
-
-				</div>
 
 
-				<div class="main2">
-					<div class="id">
-						<label th:for="stuuserPw">비밀번호</label>
+					<div class="main2">
+						<div class="id">
+							<label th:for="stuuserPw">비밀번호</label>
+						</div>
+						<input type="password" th:field="*{stuuserPw}"
+							class="text" placeholder="비밀번호 입력">
+						<p th:if="${#fields.hasErrors('stuuserPw')}"
+							th:errors="*{stuuserPw}" class="fieldError">Incorrect data</p>
+
 					</div>
-					<input type="password" th:field="*{stuuserPw}" class="form-control input"
-						placeholder="비밀번호 입력">
-					<p th:if="${#fields.hasErrors('stuuserPw')}"
-						th:errors="*{stuuserPw}" class="fieldError">Incorrect data</p>
-
-				</div>
-				<div class="pwt">* 8~15자 이내 영문, 숫자, 특수문자로 작성해야합니다.</div>
+					<div class="pwt">* 8~15자 이내 영문, 숫자, 특수문자로 작성해야합니다.</div>
 
 
-				<div class="main2">
-					<div class="id">
-						<label th:for="stuuserUniname">대학교명</label>
+					<div class="main2">
+						<div class="id">
+							<label th:for="stuuserUniname">대학교명</label>
+						</div>
+						<input type="text" th:field="*{stuuserUniname}"
+							class="text" placeholder="대학명을 입력해주세요">
+						<p th:if="${#fields.hasErrors('stuuserUniname')}"
+							th:errors="*{stuuserUniname}" class="fieldError">Incorrect
+							data</p>
+
 					</div>
-					<input type="text" th:field="*{stuuserUniname}"
-						class="form-control input" placeholder="대학명을 입력해주세요">
-					<p th:if="${#fields.hasErrors('stuuserUniname')}"
-						th:errors="*{stuuserUniname}" class="fieldError">Incorrect
-						data</p>
 
-				</div>
+					<div class="main2">
+						<div class="id">
+							<label th:for="stuuserTel">전화번호</label>
+						</div>
+						<input type="text" th:field="*{stuuserTel}"
+							class="text" placeholder="휴대폰번호를 입력해주세요">
+						<p th:if="${#fields.hasErrors('stuuserTel')}"
+							th:errors="*{stuuserTel}" class="fieldError">Incorrect data</p>
 
-				<div class="main2">
-					<div class="id">
-						<label th:for="stuuserTel">전화번호</label>
 					</div>
-					<input type="text" th:field="*{stuuserTel}" class="form-control input"
-						placeholder="휴대폰번호를 입력해주세요">
-					<p th:if="${#fields.hasErrors('stuuserTel')}"
-						th:errors="*{stuuserTel}" class="fieldError">Incorrect data</p>
 
-				</div>
-
-				<div style="text-align: center">
-					<button type="submit" class="btn btn-primary" style="">회원가입하기</button>
-				</div>
-				<input type="hidden" th:name="${_csrf.parameterName}"
-					th:value="${_csrf.token}">
-			</form>
+					<div>
+						<button type="submit" class="signupbtn">회원가입하기</button>
+					</div>
+					<input type="hidden" th:name="${_csrf.parameterName}"
+						th:value="${_csrf.token}">
+				</form>
+			</div>
 		</div>
 	</div>
 </body>

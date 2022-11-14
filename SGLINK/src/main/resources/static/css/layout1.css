@@ -7,6 +7,14 @@ html {
 body {
 	min-height: 100%;
 }
+a {
+	text-decoration-line: none;
+	
+}
+
+a:hover {
+	text-decoration-line: none;
+}
 .footer {
 	margin-top: 30%;
 }
