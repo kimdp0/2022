@@ -26,14 +26,14 @@ public class MemberController {
 	private final PasswordEncoder passwordEncoder;
 
 	@GetMapping(value = "/com/new")
-	public String memberComForm(Model model) {
+	public String MemberComForm(Model model) {
 		model.addAttribute("memberFormDto", new COM_MemberFormDto());
 		return "member/com/memberForm";
 	}
 	
 
 	@PostMapping(value = "/com/new")
-	public String newComMember(@Valid @ModelAttribute("memberFormDto")COM_MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
+	public String NewComMember(@Valid @ModelAttribute("memberFormDto")COM_MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			return "member/com/memberForm";
 		}
@@ -48,14 +48,14 @@ public class MemberController {
 	}
 	
 	@GetMapping(value = "/stu/new")
-	public String memberStuForm(Model model) {
+	public String MemberStuForm(Model model) {
 		model.addAttribute("memberFormDto", new STU_MemberFormDto());
 		return "member/stu/memberForm";
 	}
 
 	
 	@PostMapping(value = "/stu/new")
-	public String newStuMember(@Valid @ModelAttribute("memberFormDto")STU_MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
+	public String NewStuMember(@Valid @ModelAttribute("memberFormDto")STU_MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			return "member/stu/memberForm";
 		}
@@ -70,19 +70,19 @@ public class MemberController {
 	}
 
 	@GetMapping(value = "/login")
-	public String loginMember() {
+	public String LoginMember() {
 		return "/member/memberLoginForm";
 	}
 
 	@GetMapping(value = "/login/error")
-	public String loginError(Model model) {
+	public String LoginError(Model model) {
 		model.addAttribute("loginErrorMsg", "아이디 또는 비밀번호를 확인해주세요");
 		return "/member/memberLoginForm";
 	}
 	
 	
 	@GetMapping(value = "/memberRole")
-	public String memberRole(Model model) {
+	public String MemberRole(Model model) {
 		return "member/memberRole";
 	}
 
