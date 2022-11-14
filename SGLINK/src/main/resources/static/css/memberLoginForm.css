@@ -7,9 +7,11 @@ li{
 }
 .login {
   width: 440px;
-  position: absolute;
-  left: 58%;
+  position: relative;
+  rigth: 500px;
+  bottom: 430px;
   text-align: center;
+  float:right;
 }
 .login h2 {
   padding: 0 0 20px;
