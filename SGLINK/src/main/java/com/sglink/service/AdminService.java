@@ -40,8 +40,8 @@ public class AdminService {
 		return resultMap;	
 	}
 	
-	public void deleteMember(Long[] deleteId) {
-		memberRepository.deleteMember(deleteId);
+	public void deleteMember(String userId) {
+		memberRepository.deleteById(userId);
 	}
 
 }

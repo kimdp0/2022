@@ -30,11 +30,21 @@ public class AdminController {
 		return "/admins/memberList";
 	}
 	
-	@PostMapping("/member/list/delete")
-	public String BoardDeleteAction(Model model, @RequestParam() Long[] deleteId) throws Exception{
-		
+//	@PostMapping("/member/list/delete")
+//	public String BoardDeleteAction(Model model, @RequestParam() Long[] deleteId) throws Exception{
+//		
+//		try {
+//			adminService.deleteMember(deleteId);
+//		}catch(Exception e) {
+//			throw new Exception(e.getMessage());
+//		}
+//		return "redirect:/admin/member/list";
+//	}
+	
+	@GetMapping("/member/list/delete")
+	public String DeleteMember(Model model,@RequestParam("userId")String userId) throws Exception{
 		try {
-			adminService.deleteMember(deleteId);
+			adminService.deleteMember(userId);
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());
 		}
