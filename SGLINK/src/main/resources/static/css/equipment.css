@@ -1,0 +1,111 @@
+ .search {
+     float: right;
+
+ }
+
+ .bl.sq {
+     background: url(/img/bullet_h2.gif) no-repeat;
+ }
+
+ h2.bl.sq {
+     padding-left: 18px;
+     background-position: 0.2em 0.5em;
+ }
+
+ .h1 {
+     position: static;
+     padding-top: 13px;
+     border-top: 1px solid #cccccc;
+     margin-right: 900px;
+     max-width: 800px;
+     min-width: 800px;
+     width: 800px;
+ }
+
+ /*       .h1.contents:after {
+            display: block;
+            clear: both;
+            content: " ";
+        }*/
+
+ .app_list ul li {
+     overflow: hidden;
+     position: relative;
+     float: left;
+     width: 220px;
+     height: 225px;
+     margin: 0 10px 10px 0;
+     padding: 9px;
+     border: 1px solid #d3d3d3;
+ }
+
+ .app_list ul li .photo img {
+     min-width: 220px;
+     min-height: 164px;
+     max-width: 220px;
+     max-height: 164px;
+ }
+
+ .app_list ul li .state {
+     position: absolute;
+     right: -55px;
+     width: 130px;
+ }
+
+ .page_wrap {
+     text-align: center;
+     font-size: 0;
+ }
+
+ .page_nation {
+     display: inline-block;
+ }
+
+ .page_nation .none {
+     display: none;
+ }
+
+ .page_nation a {
+     display: block;
+     margin: 0 3px;
+     float: left;
+     border: 1px solid #e6e6e6;
+     width: 28px;
+     height: 28px;
+     line-height: 28px;
+     text-align: center;
+     background-color: #fff;
+     font-size: 13px;
+     color: #999;
+     text-decoration: none;
+ }
+
+ .page_nation .arrow {
+     border: 1px solid #ccc;
+ }
+
+ .page_nation .pprev {
+     background: #f8f8f8 url('img/page_pprev.png') no-repeat center center;
+     margin-left: 0;
+ }
+
+ .page_nation .prev {
+     background: #f8f8f8 url('img/page_prev.png') no-repeat center center;
+     margin-right: 7px;
+ }
+
+ .page_nation .next {
+     background: #f8f8f8 url('img/page_next.png') no-repeat center center;
+     margin-left: 7px;
+ }
+
+ .page_nation .nnext {
+     background: #f8f8f8 url('img/page_nnext.png') no-repeat center center;
+     margin-right: 0;
+ }
+
+ .page_nation a.active {
+     background-color: #42454c;
+     color: #fff;
+     border: 1px solid #42454c;
+ }
