@@ -1,5 +1,7 @@
 package com.sglink.controller;
 
+import java.security.Principal;
+
 import javax.validation.Valid;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sglink.dto.COM_MemberFormDto;
 import com.sglink.dto.STU_MemberFormDto;
@@ -85,5 +88,15 @@ public class MemberController {
 	public String MemberRole(Model model) {
 		return "member/memberRole";
 	}
+	
+	@ResponseBody
+	@GetMapping(value="/userid")
+	public String getUserId(Principal pirncipal) {
+		String userId = memberService.getUserId(pirncipal);
+		Member member = memberService.getMember(userId);
+		return member.getUserName();
+		
+	}
+	
 
 }
