@@ -1,5 +1,7 @@
 package com.sglink.service;
 
+import java.security.Principal;
+
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -41,6 +43,14 @@ public class MemberService implements UserDetailsService {
 		}
 		return User.builder().username(member.getUserId()).password(member.getUserPw())
 				.roles(member.getRole().toString()).build();
+	}
+	
+	public String getUserId(Principal pirncipal) {
+		return pirncipal.getName();	
+	}
+	
+	public Member getMember(String userId) {
+		return memberRepository.getById(userId);
 	}
 	
 	
