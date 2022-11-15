@@ -94,7 +94,7 @@ public class NoticeBoardController {
 	}
 	
 	@GetMapping("/notice/view/delete")
-	public String BoardViewDeleteAction(Model model, @RequestParam("id")Long id) throws Exception{
+	public String BoardViewDeleteAction(Model model, @RequestParam()Long id) throws Exception{
 
 		try {
 			boardService.deleteById(id);
