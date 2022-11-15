@@ -1,0 +1,86 @@
+#cont {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        #btn_group {
+            height: 400px;
+            width: 1000px;
+        }
+
+        .sh {
+            margin: 0px;
+            width: 450px;
+            height: 45px;
+            border: 1px solid darkgray;
+            float: left;
+            box-sizing: border-box;
+            padding-top: 10px;
+            
+
+        }
+
+        input {
+            font-size: 17px;
+            width: 325px;
+            height:
+                padding: 10px;
+            border: 0px;
+            outline: none;
+            float: left;
+        }
+
+        button {
+            width: 50px;
+            height: 45px;
+            border: 0px;
+            background-color: darkgrey;
+            outline: none;
+            float: right;
+            color: white;
+            font-weight: bold;
+            margin-top: -10px;
+        }
+
+        select {
+            position: relative;
+            width: 80px;
+            padding: .7em .6em;
+            margin-left: 10px;
+            margin-bottom: 10;
+            border: 1px solid darkgray;
+        }
+
+        .ep {
+            width: 500px;
+            height: 250px;
+            padding: 20px 0 0 0;
+            background-color: lightgray;
+            word-wrap: break-word;
+            font-size: 16px;
+            margin-right:
+
+        }
+
+        #search_group {
+            width: 800px;
+        }
+
+        .st_st select {
+            display: block;
+            height: 45px;
+            width: 95px;
+            margin-right: 10px;
+        }
+
+        .st_st {
+            margin-left: 0px;
+            width: 150px;
+            float: left;
+        }
+
+        #search {
+            margin: -5px;
+            width: 700px;
+            
+        }
