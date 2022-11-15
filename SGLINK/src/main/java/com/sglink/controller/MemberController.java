@@ -29,14 +29,14 @@ public class MemberController {
 	private final PasswordEncoder passwordEncoder;
 
 	@GetMapping(value = "/com/new")
-	public String MemberComForm(Model model) {
+	public String memberComForm(Model model) {
 		model.addAttribute("memberFormDto", new COM_MemberFormDto());
 		return "member/com/memberForm";
 	}
 	
 
 	@PostMapping(value = "/com/new")
-	public String NewComMember(@Valid @ModelAttribute("memberFormDto")COM_MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
+	public String mewComMember(@Valid @ModelAttribute("memberFormDto")COM_MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			return "member/com/memberForm";
 		}
@@ -51,14 +51,14 @@ public class MemberController {
 	}
 	
 	@GetMapping(value = "/stu/new")
-	public String MemberStuForm(Model model) {
+	public String memberStuForm(Model model) {
 		model.addAttribute("memberFormDto", new STU_MemberFormDto());
 		return "member/stu/memberForm";
 	}
 
 	
 	@PostMapping(value = "/stu/new")
-	public String NewStuMember(@Valid @ModelAttribute("memberFormDto")STU_MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
+	public String newStuMember(@Valid @ModelAttribute("memberFormDto")STU_MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			return "member/stu/memberForm";
 		}
@@ -73,19 +73,19 @@ public class MemberController {
 	}
 
 	@GetMapping(value = "/login")
-	public String LoginMember() {
+	public String loginMember() {
 		return "/member/memberLoginForm";
 	}
 
 	@GetMapping(value = "/login/error")
-	public String LoginError(Model model) {
+	public String loginError(Model model) {
 		model.addAttribute("loginErrorMsg", "아이디 또는 비밀번호를 확인해주세요");
 		return "/member/memberLoginForm";
 	}
 	
 	
 	@GetMapping(value = "/memberRole")
-	public String MemberRole(Model model) {
+	public String memberRole(Model model) {
 		return "member/memberRole";
 	}
 	
@@ -96,6 +96,14 @@ public class MemberController {
 		Member member = memberService.getMember(userId);
 		return member.getUserName();
 		
+	}
+	
+	@GetMapping(value="/mypage")
+	public String mypageForm(Model model, Principal pirncipal) {
+		String userId = memberService.getUserId(pirncipal);
+		Member member = memberService.getMember(userId);
+		model.addAttribute("info",member);
+		return "/member/mypage/memberUpdateForm";
 	}
 	
 
