@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sglink.dto.COM_MemberFormDto;
+import com.sglink.dto.MemberUpdateDto;
 import com.sglink.dto.STU_MemberFormDto;
 import com.sglink.entity.Member;
 import com.sglink.service.MemberService;
@@ -99,11 +100,30 @@ public class MemberController {
 	}
 	
 	@GetMapping(value="/mypage")
-	public String mypageForm(Model model, Principal pirncipal) {
-		String userId = memberService.getUserId(pirncipal);
+	public String mypageForm(Model model, Principal principal) {
+		String userId = memberService.getUserId(principal);
 		Member member = memberService.getMember(userId);
-		model.addAttribute("info",member);
-		return "/member/mypage/memberUpdateForm";
+		System.out.println(member);
+		model.addAttribute("info", member);
+		model.addAttribute("memberUpdateDto", new MemberUpdateDto());
+		return "member/mypage/memberUpdateForm";
+	}
+	
+	@PostMapping(value="/mypage")
+	public String modifyMember(@Valid @ModelAttribute("memberUpdateDto")MemberUpdateDto memberFormDto
+			, BindingResult bindingResult,Model model,Principal principal) {	
+		if (bindingResult.hasErrors()) {
+			return "member/mypage/memberUpdateForm";			
+		}
+		try {
+			Member member = Member.modifyMember(memberFormDto, passwordEncoder);
+			String userId = memberService.getUserId(principal);
+			memberService.updateMember(member,userId);
+		} catch (IllegalStateException e) {
+			model.addAttribute("errorMessage", e.getMessage());
+			return "member/mypage/memberUpdateForm";
+		}
+		return "redirect:/members/mypage";
 	}
 	
 
