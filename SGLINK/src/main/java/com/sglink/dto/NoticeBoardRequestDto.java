@@ -14,19 +14,19 @@ public class NoticeBoardRequestDto {
 	private Long id;
 	private String title;
 	private String content;
-	private Member registerId;
+	private Member member;
 	
 	public NoticeBoard toEntity() {
 		return NoticeBoard.builder()
 				.title(title)
 				.content(content)
-				.registerId(registerId)
+				.member(member)
 				.build();
 	}
 	
 	@Override
 	public String toString() {
-		return "Notice_BoardRequestDto [id=" + id + ", title=" + title + ", content=" + content + ", registerId=" + registerId
+		return "Notice_BoardRequestDto [id=" + id + ", title=" + title + ", content=" + content + ", registerId=" + member
 				+ "]";
 	}
 

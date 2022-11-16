@@ -52,8 +52,6 @@ public class Member  extends BaseTimeEntity{
 		}else {
 			member.setRole(Role.COM);
 		}
-		member.getRegisterTime();
-		member.getUpdateTime();
 		return member;
 	}
 	
@@ -71,8 +69,6 @@ public class Member  extends BaseTimeEntity{
 		}else {
 			member.setRole(Role.STU);
 		}
-		member.getRegisterTime();
-		member.getUpdateTime();
 		return member;
 	}
 	
