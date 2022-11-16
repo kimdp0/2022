@@ -28,6 +28,7 @@
 				<a class="topmenu" href="/members/logout"
 					sec:authorize="isAuthenticated()">로그아웃</a> <a class="topmenu"
 					href="/members/memberRole" sec:authorize="isAnonymous()">회원가입</a>
+					<a class="topmenu" href="/members/mypage" ></a>
 					<a class="topmenu" href="/mypage/view"
 					sec:authorize="isAuthenticated()">마이페이지</a>
 					
@@ -41,10 +42,10 @@
 				<ul>
 					<li><a href="">사업단소개</a>
 						<ul style="margin-left: 60px">
-							<li><a href="#" style="margin-left: 3px">인사말</a></li>
-							<li><a href="#" style="margin-left: 3px">비전과목표</a></li>
-							<li><a href="#" style="margin-left: 3px">조직구성</a></li>
-							<li><a href="#" style="margin-left: 3px">오시는길</a></li>
+							<li><a href="/introduce/greeting" style="margin-left: 3px">인사말</a></li>
+							<li><a href="/introduce/vision" style="margin-left: 3px">비전과목표</a></li>
+							<li><a href="/introduce/organization" style="margin-left: 3px">조직구성</a></li>
+							<li><a href="/introduce/direction" style="margin-left: 3px">오시는길</a></li>
 						</ul></li>
 					<li><a href="">기업지원</a>
 						<ul style="margin-left: 50px">

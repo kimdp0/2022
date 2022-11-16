@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout=http://www.ultraq.net.nz/thymeleaf/layout
+	layout:decorate="~{layouts/layout1}">
+<head>
+<meta charset="UTF-8">
+<title>주직구성 페이지</title>
+<link href="/css/organization.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div layout:fragment="content">
+		<div id="organization">
+			<div class="head">
+				<div class="title">
+					<p>조직구성</p>
+				</div>
+				<div class="subtitle">
+					<p>서강대학교 LINC의 조직 구성 정보입니다.</p>
+				</div>
+			</div>
+			<div class="body">
+				<div class="contents">
+					<h2 class="bl sq">
+						사업단 조직도<br>
+					</h2>
+					<p>
+						<img width="740" class="txc-image"
+							style="clear: none; float: none;"
+							src="http://linc.sogang.ac.kr/dataview/temp/DEI20160115150148.jpg">
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
