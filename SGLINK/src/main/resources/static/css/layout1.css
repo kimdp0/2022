@@ -9,7 +9,7 @@ body {
 }
  a:link { color: red; text-decoration: none;}
  a:visited { color: black; text-decoration: none;}
- a:hover { color: blue; text-decoration: underline;}
+ a:hover { color: #FA5858; text-decoration: underline;}
 
 a:hover {
 	text-decoration-line: none;

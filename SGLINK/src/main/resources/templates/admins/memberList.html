@@ -3,13 +3,17 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{layouts/layout1}">
 <head>
-<title>Board List</title>
+<title>관리자 회원관리창</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link th:href="@{/css/memberList.css}" rel="stylesheet">
 </head>
 <body>
 	<div layout:fragment="content">
+	<div id="Title">
+			<div id="TopTitle" style="padding: 0px 20px 15px;">회원관리</div>
+
+		</div>
 		<div id="wrapper">
 			<div class="container">
 				<form action="/admin/member/list" method="get">
