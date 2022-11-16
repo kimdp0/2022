@@ -48,7 +48,7 @@
 								</td>
 								<td><a th:href="@{./view(id=${list.id})}"><span
 										th:text="${list.title}"></span></a></td>
-								<td><span th:text="${list.registerId}"></span></td>
+								<td><span th:text="${list.registerId.userId}"></span></td>
 								<td><span th:text="${list.readCnt}"></span></td>
 								<td>
 									<!-- 년월일로만 표시${#temporals.format(list.registerTime, 'yyyy-MM-dd')} -->

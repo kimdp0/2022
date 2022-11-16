@@ -33,6 +33,8 @@ public class MypageController {
 	@GetMapping(value="/update")
 	public String mypageForm(Model model, Principal principal) {
 		model.addAttribute("memberUpdateDto", new MemberUpdateDto());
+		String userId = principal.getName();
+		model.addAttribute("userId",userId);
 		return "/mypage/memberUpdateForm";
 	}
 	
@@ -40,6 +42,8 @@ public class MypageController {
 	public String modifyMember(@Valid @ModelAttribute("memberUpdateDto")MemberUpdateDto memberFormDto
 			, BindingResult bindingResult,Model model,Principal principal) {	
 		if (bindingResult.hasErrors()) {
+			String userId = principal.getName();
+			model.addAttribute("userId",userId);
 			return "/mypage/memberUpdateForm";			
 		}
 		try {

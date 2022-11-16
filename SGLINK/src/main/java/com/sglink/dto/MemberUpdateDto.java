@@ -15,9 +15,6 @@ import lombok.Setter;
 @Setter
 public class MemberUpdateDto {
 	
-	@NotBlank(message = "아이디는 필수 입력 값 입니다.")
-	private String userId;
-	
 	@NotBlank(message = "이름을 바꿔주세요.")
 	private String userName;
 
