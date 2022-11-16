@@ -14,7 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class MemberUpdateDto {
-
+	
 	@NotBlank(message = "이름을 바꿔주세요.")
 	private String userName;
 

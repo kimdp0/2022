@@ -26,8 +26,12 @@ public class NoticeBoardController {
 	
 //	@RequestParam(required = false, defaultValue= "10")  defaultValue= "10"<-숫자 변경시 페이지당 게시글숫자달라짐
 	@GetMapping("/notice/list")
-	public String getBoardListPage(Model model, @RequestParam(required= false, defaultValue= "0") Integer page, @RequestParam(required = false, defaultValue= "10") Integer size)throws Exception{
+	public String getBoardListPage(Model model, @RequestParam(required= false, defaultValue= "0") Integer page, 
+			@RequestParam(required = false, defaultValue= "10") Integer size
+			,Principal principal)throws Exception{
 		try {
+			String userId = memberService.getUserId(principal);
+			model.addAttribute("userId",userId);
 			model.addAttribute("resultMap", boardService.findAll(page, size));
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());
@@ -36,9 +40,9 @@ public class NoticeBoardController {
 	}
 	
 	@GetMapping("/notice/write")
-	public String getBoardWritePage(Model model, NoticeBoardRequestDto boardRequestDto,Principal pirncipal) {
+	public String getBoardWritePage(Model model, NoticeBoardRequestDto boardRequestDto,Principal principal) {
 		
-		String userId = memberService.getUserId(pirncipal);
+		String userId = memberService.getUserId(principal);
 		Member member = memberService.getMember(userId);
 		
 		model.addAttribute("info", member);
