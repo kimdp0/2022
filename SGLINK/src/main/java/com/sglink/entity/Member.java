@@ -76,6 +76,7 @@ public class Member  extends BaseTimeEntity{
 	
 	public static Member modifyMember(MemberUpdateDto memberFormDto, PasswordEncoder passwordEncoder) {
 		Member member = new Member();
+		member.setUserId(memberFormDto.getUserId());
 		member.setUserName(memberFormDto.getUserName());
 		String password = passwordEncoder.encode(memberFormDto.getUserPw());
 		member.setUserPw(password);

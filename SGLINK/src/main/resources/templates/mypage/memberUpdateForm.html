@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
 	layout:decorate="~{layouts/layout1}">
 <head>
 <meta charset="UTF-8">
@@ -32,37 +33,18 @@
 			<div id="TopTitle" style="padding: 0px 20px 15px;">회원정보 수정창</div>
 
 		</div>
-		<div class="container">
-			<div class="memberlist">
-				<table class="listtable">
-					<tr class="listhead">
-						<th width="10%">아이디</th>
-						<th width="10%">권한</th>
-						<th width="10%">이메일</th>
-						<th width="10%">이름</th>
-						<th width="13%">전화번호</th>
-						<th width="10%">소속명</th>
-						<th width="10%">가입일</th>
-					</tr>
-					<tbody class="listbody">
-						<tr th:each="info: ${info}">
-							<td><span th:text="${info.userId}"></span></td>
-							<td><span th:text="${info.role}"></span></td>
-							<td><span th:text="${info.userEmail}"></span></td>
-							<td><span th:text="${info.userName}"></span></td>
-							<td><span th:text="${info.userTel}"></span></td>
-							<td><span th:text="${info.userUniname}"></span></td>
-							<td><span
-								th:text="${#temporals.format(info.registerTime, 'yyyy-MM-dd')}"></span>
-							</td>
-						<tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
 		<div id="content">
-			<form action="/members/mypage" method="post"
+			<form action="/mypage/update" method="post"
 				th:object="${memberUpdateDto}" role="form">
+				
+				<div class="main2">
+					<div class="id">
+						<label th:for="userId">아이디</label>
+					</div>
+					<input type="text" th:field="*{userId}" class="text">
+					<p th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}"
+						class="fieldError">Incorrect data</p>
+				</div> 
 
 				<div class="main2">
 					<div class="id">
@@ -71,6 +53,7 @@
 					<input type="text" th:field="*{userName}" class="text">
 					<p th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"
 						class="fieldError">Incorrect data</p>
+				</div>
 
 				<div class="main2">
 					<div class="id">

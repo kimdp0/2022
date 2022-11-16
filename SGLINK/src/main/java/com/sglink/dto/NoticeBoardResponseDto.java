@@ -2,6 +2,7 @@ package com.sglink.dto;
 
 import java.time.LocalDateTime;
 
+import com.sglink.entity.Member;
 import com.sglink.entity.NoticeBoard;
 
 import lombok.Getter;
@@ -12,7 +13,7 @@ public class NoticeBoardResponseDto {
 	private String title;
 	private String content;
 	private int readCnt;
-	private String registerId;
+	private Member registerId;
 	private LocalDateTime registerTime;
 	
 	public NoticeBoardResponseDto(NoticeBoard entity) {
