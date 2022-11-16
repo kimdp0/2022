@@ -14,59 +14,64 @@
 </head>
 <body>
 	<div layout:fragment="content">
-<!-- 	<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  -->
-	<div id="wrapper">
+
 		<div class="board_wrap">
-			  <div class="board_title">
-            <strong>공지사항</strong>
-            <p>공지사항 게시판</p>
-        	</div>
+			 
 			<form id="frm" method="get">
 				<div class="board_list_wrap">
-					<button type="button" class="bt_wrap" onclick="fnDelete()">삭제하기</button>
-					<button type="button" class="bt_wrap"
-						onclick="javascript:location.href='/boards/notice/write'">글쓰기</button>
-					<table class="board_list">
 					
+					<table class="board_list">				
 						<thead>
 							
 							<tr class="top">
-								<th ><input type="checkbox" id="chkAll"></th>
-								<th class="num">게시글번호</th>
-								<th class="title">제목</th>
-								<th class="writer">작성자</th>
-								<th class="count">조회수</th>
-								<th class="date">작성일</th>
+							 	<th class="num borderside">삭제<input type="checkbox" id="chkAll"></th>
+								<th class="num borderside">번호</th>
+								<th class="title borderside centertit">제목</th>
+								<th class="writer borderside">작성자</th>
+								<th class="count borderside">조회수</th>
+								<th class="date borderside">작성일</th>
 
 							</tr>
 						
 						</thead>
-						<tbody id="" >
-							<tr th:each="list,index : ${resultMap.list}"
+						<tbody >
+						
+							<tr  th:each="list,index : ${resultMap.list}"
 								th:with="paging=${resultMap.paging}">
 
-								<td class=""><input type="checkbox" name="deleteId"
+								<td class="num borderside"><input type="checkbox" name="deleteId"
 									th:value="${list.id}"></td>
-								<td class="num"><span
+									
+								<td class="num borderside"><span
 									th:text="${(resultMap.totalCnt - index.index) - (paging.pageNumber * paging.pageSize)}"></span>
 								</td>
-								<td class="title"><a th:href="@{./view(id=${list.id})}"><span
+								
+								<td class="title borderside"><a th:href="@{./view(id=${list.id})}"><span
 										th:text="${list.title}"></span></a></td>
-						<td class="writer"><span th:text="${list.Member.userId}"></span></td> 
-								<td class="count"><span th:text="${list.readCnt}"></span></td>
-								<td class="date">
+								
+										
+								<td class="writer borderside"><span th:text="${list.Member.userId}"></span></td>
+								
+								
+								<td class="count borderside"><span th:text="${list.readCnt}"></span></td>
+								
+								
+								<td class="date borderside">
+
 									<!-- 년월일로만 표시${#temporals.format(list.registerTime, 'yyyy-MM-dd')} -->
 									<span
 									th:text="${#temporals.format(list.registerTime, 'MM-dd')}"></span>
 								</td>
+								
+								
 								</tr>
-												
+								
+											
 						</tbody>
 					</table>
 					<div >
-						<div>
-							<ul class="num on" >
+						<div class="board_page">
+							<ul class="" >
 								<li class="page-item"
 									th:each="index : ${#numbers.sequence(1, resultMap.totalPage)}"
 									th:with="paging=${resultMap.paging}"><a class="page-link"
@@ -75,12 +80,28 @@
 							</ul>
 						</div>
 					</div>
+					
+					
+					
+					
+					
+					
+					
+				 	<div class="bt_wrap">
+						<a onclick="fnDelete()"> 삭제하기</a> 
+					</div>
+					<div class="bt_wrap">
+						<a onclick="javascript:location.href='/boards/notice/write'">글쓰기</a>
+					</div>
+				<!-- 	<button type="button" class="bt_wrap" onclick="fnDelete()">삭제하기</button>
+					<button type="button" class="bt_wrap"
+						onclick="javascript:location.href='/boards/notice/write'">글쓰기</button> -->
 
 				</div>
 			</form>
 		</div>
 
-	</div>
+	
 
 
 	<!--     스크립트 추가 -->

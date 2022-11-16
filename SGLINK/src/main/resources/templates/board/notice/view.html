@@ -29,7 +29,7 @@
 			</div>
 			<!-- 이용자 출력 화면 끝------------------------------------------------- -->
 		
-		<div sec:authorize="hasAnyAuthority('ROLE_ADMIN')">
+		<div th:if="${loginUserId == registerId}">
 		<div class="mb-3">
 		    <label class="form-label">제목</label>
 		    <input type="text" class="form-control" name="title" th:value="${info.title}">
