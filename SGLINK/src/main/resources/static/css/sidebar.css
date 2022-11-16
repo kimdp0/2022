@@ -1,5 +1,5 @@
 body {
-	margin: 0;
+	/* margin: 0; */
 	font-family: 'Poppins', sans-serif;
 }
 
@@ -30,7 +30,6 @@ body {
 	display: block;
 	padding: 15px 20px;
 	color: #fff;
-	position: relative;
 	font-size: 15px;
 	text-align: left;
 	list-style: circle;
@@ -42,7 +41,7 @@ body {
 	background: #fff;
 }
 
-.subMenu a:hover:after {
+ .subMenu a:hover:after {
 	content: '';
 	position: absolute;
 	height: 0;
@@ -50,7 +49,7 @@ body {
 	right: 0px;
 	top: 0;
 	opacity: 1;
-}
+} 
 
 .subMenu a:last-child {
 	border: none;
@@ -60,7 +59,7 @@ body {
 	max-height: 14em;
 }
 
-.sideMenu {
+ .sideMenu {
 	height: 1000px;
 	position: absolute;
 	background: #f1f1f1;
@@ -68,9 +67,9 @@ body {
 	transition: 0.5s;
 	padding-top: 10px;
 	font-size: 20px;
-}
+} 
 
-.sideMenu a {
+ .sideMenu a {
 	padding: 8px 8px 8px 32px;
 	text-decoration: none;
 	color: #111;
@@ -79,7 +78,7 @@ body {
 	margin-bottom: 10.6px;
 	text-transform: uppercase;
 	font-weight: 600;
-}
+} 
 
 .sideMenu a i {
 	padding-right: 39px;
