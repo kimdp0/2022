@@ -28,7 +28,7 @@
 				<a class="topmenu" href="/members/logout"
 					sec:authorize="isAuthenticated()">로그아웃</a> <a class="topmenu"
 					href="/members/memberRole" sec:authorize="isAnonymous()">회원가입</a>
-					<a class="topmenu" href="/members/mypage"
+					<a class="topmenu" href="/members/mypage" 
 					sec:authorize="isAuthenticated()">마이페이지</a>
 					
 			</div>
@@ -60,20 +60,11 @@
 							<li><a href="#" style="margin-left: 3px">2</a></li>
 							<li><a href="#" style="margin-left: 3px">3</a></li>
 						</ul></li>
-<<<<<<< HEAD
-					<li><a href="">커뮤니티</a>
-						<ul style="margin-left: 50px">
-							<li><a href="#" style="margin-left: 3px">1</a></li>
-							<li><a href="#" style="margin-left: 3px">2</a></li>
-							<li><a href="#" style="margin-left: 3px">3</a></li>
-							<li><a href="#" style="margin-left: 3px">4</a></li>
-=======
 					<li><a href="/boards/notice/list">커뮤니티</a>
 						<ul style="margin-left: 50px">
 							<li><a href="/boards/notice/list" style="margin-left: 3px">공지사항</a></li>
 							<li><a href="#" style="margin-left: 3px">행사일정</a></li>
 							<li><a href="#" style="margin-left: 3px">행사소식</a></li>
->>>>>>> branch 'sub' of https://github.com/SilverCastle123/project.git
 						</ul></li>
 				</ul>
 			</div>
