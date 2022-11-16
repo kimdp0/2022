@@ -19,10 +19,16 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class MemberService implements UserDetailsService {
 	private final MemberRepository memberRepository;
+	
 
 	public Member saveMember(Member member) {
 		validateDuplicateMember(member);
 		return memberRepository.save(member);
+	}
+	
+	public int updateMember(Member member,String userId) {
+		duplicateMember(member, userId);
+		return memberRepository.updateMember(member,userId);
 	}
 
 	private void validateDuplicateMember(Member member) {
@@ -33,6 +39,24 @@ public class MemberService implements UserDetailsService {
 		}else if(userId != null) {
 			throw new IllegalStateException("이미 가입된 회원입니다.");
 		}
+	}
+	
+	private void duplicateMember(Member member ,String userId) {
+		String userPw = memberRepository.duplicatePw(userId, member.getUserPw());
+		System.out.println("------------------------------------------------------------------------------------------");
+		System.out.println(member.getUserPw());
+		System.out.println(userPw);
+		System.out.println("------------------------------------------------------------------------------------------");
+		String userName = memberRepository.duplicateName(userId, member.getUserName());
+		String userUniname = memberRepository.duplicateUniname(userId, member.getUserUniname());
+		if (userPw != null) {
+			throw new IllegalStateException("비밀번호가 이전과 동일합니다."); // 이미 가입된 회원의 경우 예외를 발생시킨다.
+		}else if(userName != null) {
+			throw new IllegalStateException("이름이 이전과 동일합니다.");
+		}else if(userUniname != null) {
+			throw new IllegalStateException("기관명이 이전과 동일합니다.");
+		}
+		
 	}
 
 	@Override

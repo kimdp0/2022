@@ -93,8 +93,8 @@ public class NoticeBoardController {
 		return "redirect:/boards/notice/list";
 	}
 	
-	@PostMapping("/notice/view/delete")
-	public String BoardViewDeleteAction(Model model, @RequestParam() Long id) throws Exception{
+	@GetMapping("/notice/view/delete")
+	public String BoardViewDeleteAction(Model model, @RequestParam()Long id) throws Exception{
 
 		try {
 			boardService.deleteById(id);

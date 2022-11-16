@@ -1,10 +1,11 @@
- .search {
+
+.search {
      float: right;
 
  }
 
  .bl.sq {
-     background: url(/img/bullet_h2.gif) no-repeat;
+     background: url(/img/equipment/equip_bullet.gif) no-repeat;
  }
 
  h2.bl.sq {
@@ -16,17 +17,15 @@
      position: static;
      padding-top: 13px;
      border-top: 1px solid #cccccc;
-     margin-right: 900px;
+/*      margin-left: 250px;  */
      max-width: 800px;
      min-width: 800px;
      width: 800px;
  }
 
- /*       .h1.contents:after {
-            display: block;
-            clear: both;
-            content: " ";
-        }*/
+ .app_list {
+ 	width: 900px;
+ }
 
  .app_list ul li {
      overflow: hidden;
@@ -34,7 +33,7 @@
      float: left;
      width: 220px;
      height: 225px;
-     margin: 0 10px 10px 0;
+     margin: 0 35px 35px 0;
      padding: 9px;
      border: 1px solid #d3d3d3;
  }
@@ -46,11 +45,11 @@
      max-height: 164px;
  }
 
- .app_list ul li .state {
+/*  .app_list ul li .state {
      position: absolute;
      right: -55px;
      width: 130px;
- }
+ } */
 
  .page_wrap {
      text-align: center;
@@ -85,22 +84,22 @@
  }
 
  .page_nation .pprev {
-     background: #f8f8f8 url('img/page_pprev.png') no-repeat center center;
+     background: #f8f8f8 url('/img/equipment/page_pprev.png') no-repeat center center;
      margin-left: 0;
  }
 
  .page_nation .prev {
-     background: #f8f8f8 url('img/page_prev.png') no-repeat center center;
+     background: #f8f8f8 url('/img/equipment/page_prev.png') no-repeat center center;
      margin-right: 7px;
  }
 
  .page_nation .next {
-     background: #f8f8f8 url('img/page_next.png') no-repeat center center;
+     background: #f8f8f8 url('/img/equipment/page_next.png') no-repeat center center;
      margin-left: 7px;
  }
 
  .page_nation .nnext {
-     background: #f8f8f8 url('img/page_nnext.png') no-repeat center center;
+     background: #f8f8f8 url('/img/equipment/page_nnext.png') no-repeat center center;
      margin-right: 0;
  }
 

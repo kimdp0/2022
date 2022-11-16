@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.sglink.constant.Role;
 import com.sglink.dto.COM_MemberFormDto;
+import com.sglink.dto.MemberUpdateDto;
 import com.sglink.dto.STU_MemberFormDto;
 
 import lombok.Getter;
@@ -69,6 +70,16 @@ public class Member  extends BaseTimeEntity{
 			member.setRole(Role.STU);
 		}
 		member.getRegisterTime();
+		member.getUpdateTime();
+		return member;
+	}
+	
+	public static Member modifyMember(MemberUpdateDto memberFormDto, PasswordEncoder passwordEncoder) {
+		Member member = new Member();
+		member.setUserName(memberFormDto.getUserName());
+		String password = passwordEncoder.encode(memberFormDto.getUserPw());
+		member.setUserPw(password);
+		member.setUserUniname(memberFormDto.getUserUniname());
 		member.getUpdateTime();
 		return member;
 	}
