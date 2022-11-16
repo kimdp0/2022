@@ -25,6 +25,7 @@
 
  .app_list {
  	width: 900px;
+ 	height: 600px;
  }
 
  .app_list ul li {

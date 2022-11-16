@@ -50,13 +50,14 @@
 										th:text="${list.title}"></span></a></td>
 								
 										
-								<td class="writer borderside"><span th:text="${list.registerId.userId}"></span></td>
+								<td class="writer borderside"><span th:text="${list.Member.userId}"></span></td>
 								
 								
 								<td class="count borderside"><span th:text="${list.readCnt}"></span></td>
 								
 								
 								<td class="date borderside">
+
 									<!-- 년월일로만 표시${#temporals.format(list.registerTime, 'yyyy-MM-dd')} -->
 									<span
 									th:text="${#temporals.format(list.registerTime, 'MM-dd')}"></span>

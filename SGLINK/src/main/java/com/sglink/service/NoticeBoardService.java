@@ -1,6 +1,7 @@
 package com.sglink.service;
 
 import java.util.HashMap;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.data.domain.Page;
@@ -51,6 +52,10 @@ public class NoticeBoardService {
 	public NoticeBoardResponseDto findById(Long id) {
 		boardRepository.updateBoardReadCntInc(id);
 		return new NoticeBoardResponseDto(boardRepository.findById(id).get());
+	}
+	
+	public Optional<NoticeBoard> viewfindById(Long id) {
+		return boardRepository.findById(id);
 	}
 	
 	public int updateBoard(NoticeBoardRequestDto boardRequestDto) {

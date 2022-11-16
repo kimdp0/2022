@@ -52,8 +52,6 @@ public class Member  extends BaseTimeEntity{
 		}else {
 			member.setRole(Role.COM);
 		}
-		member.getRegisterTime();
-		member.getUpdateTime();
 		return member;
 	}
 	
@@ -71,14 +69,11 @@ public class Member  extends BaseTimeEntity{
 		}else {
 			member.setRole(Role.STU);
 		}
-		member.getRegisterTime();
-		member.getUpdateTime();
 		return member;
 	}
 	
 	public static Member modifyMember(MemberUpdateDto memberFormDto, PasswordEncoder passwordEncoder) {
 		Member member = new Member();
-		member.setUserId(memberFormDto.getUserId());
 		member.setUserName(memberFormDto.getUserName());
 		String password = passwordEncoder.encode(memberFormDto.getUserPw());
 		member.setUserPw(password);

@@ -34,17 +34,17 @@ public class NoticeBoard extends BaseTimeEntity{
 	
 	@OneToOne
 	@JoinColumn(name = "registerId")
-	private Member registerId;
+	private Member member;
 	
 	
 	
 	@Builder
-	public NoticeBoard(Long id, String title, String content, int readCnt, Member registerId) {
+	public NoticeBoard(Long id, String title, String content, int readCnt, Member member) {
 		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.readCnt = readCnt;
-		this.registerId = registerId;
+		this.member = member;
 	}
 
 }

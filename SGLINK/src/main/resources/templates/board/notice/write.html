@@ -23,9 +23,8 @@
 					<textarea class="form-control" rows="5" cols="" name="content"></textarea>
 				</div>
 				<div class="mb-3">
-					<label class="form-label">작성자</label> <input type="text"
-						class="form-control" id="" name="registerId" th:value="${info.userId}" readonly>
-					
+					 <label class="form-label">작성자</label> <input type="text"
+						class="form-control" id="member" name="member" th:value="${userId}" readonly>
 				</div>
 				<button type="button" class="btn btn-success"
 					onclick="javascript:location.href='/boards/notice/list'">이전</button>
