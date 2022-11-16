@@ -1,25 +1,27 @@
 .cards-list {
-	margin-right: 30px;
+	margin-right: 90px;
 	z-index: 0;
 	width: 90%;
+	z-index: 0;
 }
 
 .card {
-	margin-top: 110px;
+	margin-top: 120px;
 	margin-left: 40px;
-	width: 115px;
-	height: 115px;
-	border-radius: 40px;
+	width: 150px;
+	height: 150px;
+	border-radius: 50px;
 	box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px
 		rgba(0, 0, 0, 0.22);
 	cursor: pointer;
 	transition: 0.4s;
 	float: left;
+	margin-left: 85px;
 }
 
 .card .card_image {
-	width: 115px;
-	height: 115px;
+	width: 150px;
+	height: 150px;
 	border-radius: 40px;
 }
 
@@ -33,10 +35,9 @@
 .card .card_title {
 	text-align: center;
 	border-radius: 0px 0px 40px 40px;
-	font-family: sans-serif;
 	font-weight: bold;
 	font-size: 30px;
-	margin-top: -80px;
+	margin-top: -60px;
 	height: 40px;
 }
 
@@ -47,7 +48,7 @@
 }
 
 .title-white {
-	color: white;
+	color: #800000;
 }
 
 .title-black {
@@ -64,11 +65,45 @@
 #cont {
 	width: 800px;
 	margin: 0 auto;
+	padding-bottom: 200px;
 }
 
 #btn_group {
-	height: 550px;
+	height: 600px;
 	width: 1000px;
+}
+
+input {
+	width: 325px;
+	height: padding: 10px;
+	border: 0px;
+	outline: none;
+	float: left;
+	font-size: 15px;
+}
+
+button {
+	width: 50px;
+	height: 44px;
+	border: 0px;
+	background-color: darkgrey;
+	outline: none;
+	float: right;
+	color: white;
+	font-weight: bold;
+	margin-top: -14px;
+	font-size: 14px;
+}
+
+select {
+	position: relative;
+	width: 100px;
+	padding: .5em .6em;
+	margin-left: 50px;
+	margin-bottom: 10;
+	border: 1px solid darkgray;
+	padding-top: 11px;
+	font-size: 17px;
 }
 
 .sh {
@@ -78,44 +113,14 @@
 	border: 1px solid darkgray;
 	float: left;
 	box-sizing: border-box;
-	padding-top: 10px;
-}
-
-input {
-	font-size: 17px;
-	width: 325px;
-	height: padding: 10px;
-	border: 0px;
-	outline: none;
-	float: left;
-}
-
-button {
-	width: 50px;
-	height: 45px;
-	border: 0px;
-	background-color: darkgrey;
-	outline: none;
-	float: right;
-	color: white;
-	font-weight: bold;
-	margin-top: -10px;
-}
-
-select {
-	position: relative;
-	width: 80px;
-	padding: .7em .6em;
-	margin-left: 10px;
-	margin-bottom: 10;
-	border: 1px solid darkgray;
+	padding-top: 13px;
 }
 
 .ep {
 	width: 500px;
 	height: 250px;
 	padding: 20px 0 0 0;
-	background-color: lightgray;
+	background-color: #F2F2F2;
 	word-wrap: break-word;
 	font-size: 16px;
 	margin-right:
@@ -133,13 +138,13 @@ select {
 }
 
 .st_st {
-	margin-left: 0px;
+	margin-left: 18px;
 	width: 150px;
 	float: left;
 }
 
 #search {
-	margin: -5px;
+	margin-top: -240px;
 	width: 700px;
 }
 
@@ -148,6 +153,11 @@ select {
 	padding: 0;
 }
 
+body {
+	margin: 30px;
+	font-size: 14px;
+	color: #999;
+}
 
 a {
 	text-decoration: none;
@@ -155,8 +165,10 @@ a {
 }
 
 .tabBox {
-	position: relative;
-	padding: 20px 0 0 0;
+	position: absolute;
+	margin-top: 90px;
+	margin-left: -200px;
+	padding: 29px 0 0 0;
 	width: 500px;
 }
 
@@ -171,14 +183,14 @@ a {
 .tabBox h3 a {
 	display: block;
 	padding: 5px;
-	width: 90px;
+	width: 130px;
 	height: 20px;
 	line-height: 20px;
 	text-align: center;
-	background: #ddd;
-	border: 1px solid #bbb;
+	background: #800000;
+	border: 1px solid white;
 	border-bottom: none;
-	border-radius: 5px 5px 0 0;
+	border-radius: 7px 7px 0 0;
 }
 
 .tabBox .box {
@@ -186,10 +198,9 @@ a {
 	margin: 0;
 	padding: 15px;
 	height: 200px;
-	border: 1px solid #bbb;
+	border: 1px solid black;
 	border-radius: 0 5px 5px 5px;
 }
-
 .tabBox .btnMore {
 	display: none;
 	position: absolute;
@@ -201,12 +212,17 @@ a {
 	left: 0;
 }
 
-.tabBox .ctn2 h3 {
-	left: 102px;
+.tabBox .ctn1 h3 a {
+	color: white;
 }
 
-.tabBox .ctn3 h3 {
-	left: 204px;
+.tabBox .ctn2 h3 a {
+	color: white;
+}
+
+.tabBox .ctn2 h3 {
+	left: 140px;
+	
 }
 
 .tabBox .ctnOn .box {
@@ -226,4 +242,28 @@ a {
 	line-height: 21px;
 	font-size: 16px;
 	font-weight: bold;
+}
+
+.tabBox2 .ctn3 {
+	float: right;
+	font-size: 15px;
+	line-height: 2.6em;
+	width: 100px height:80px;
+	margin-right: 250px;
+	margin-top: 87px;
+}
+.tabBox2 a {
+	display: block;
+	padding: 5px;
+	width: 130px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	background: #800000;
+	border: 1px solid white;
+	border-bottom: none;
+	border-radius: 7px 7px 0 0;
+}
+.tabBox2 .d_clear img{
+	margin-left: 409px;
 }
