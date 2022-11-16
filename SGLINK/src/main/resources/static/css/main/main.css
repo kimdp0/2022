@@ -1,0 +1,213 @@
+.cards-list {
+	position: relative;
+	height: 500px;
+	width: 1300px;
+	background-color: brown;
+}
+
+.card {
+	margin-top: 150px;
+	width: 170px;
+	height: 170px;
+	border-radius: 50px;
+	box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px
+		rgba(0, 0, 0, 0.22);
+	cursor: pointer;
+	transition: 0.4s;
+	float: left;
+	margin-left: 75px;
+}
+.card_image {
+	width: 180px;
+	height: 180px;
+	border-radius: 40px;
+}
+
+.card .card_image img {
+	/* 	width: inherit;
+	height: inherit;
+	border-radius: 40px;
+	object-fit: cover; */
+	
+}
+
+.card_title {
+	text-align: center;
+	font-weight: bold;
+	font-size: 30px;
+	margin-top: -px;
+	height: 40px; 
+	
+}
+
+.card:hover {
+	transform: scale(0.9, 0.9);
+	box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25), -5px -5px 30px 15px
+		rgba(0, 0, 0, 0.22);
+}
+
+.title-white {
+	color: #800000;
+}
+
+.title-black {
+	color: black;
+}
+
+@media all and (max-width: 500px) {
+	.card-list {
+		/* On small screens, we are no longer using row direction but column */
+		flex-direction: column;
+	}
+}
+
+#cont {
+	position:relative;
+	width: 1300px;
+	background-color: fuchsia;
+}
+
+#search {
+	height:200px;
+	width:700px;
+	margin-left:300px;
+	background-color: gray;
+	
+}
+
+.input {
+	margin-top:60px;
+	width: 570px;
+	height: 70px;
+	border:0;
+	border-radius:10px;
+	outline: none;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.button {
+	margin-left:10px;
+	width: 100px;
+	height: 70px;
+	border: 0px;
+	background-color: darkgrey;
+	border-radius:10px;
+	outline: none;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.select {
+	margin-left:30px;
+	position:absolute;
+	width:100px;
+	height:40px;
+	border: 1px solid darkgray;
+	font-weight: bold;
+	border-radius:10px;
+
+}
+
+
+
+.ep {
+	width: 650px;
+	margin-top:30px;
+	height: 400px;
+
+	padding: 20px 0 0 0;
+	background-color: #F2F2F2;
+	word-wrap: break-word;
+	font-size: 16px;
+	box-sizing: border-box;
+	
+}
+
+
+
+.tabBox {
+	position: absolute;
+	width: 650px;
+	height: 500px;
+	background-color: aqua;
+}
+.tabBox2 {
+	position: absolute;
+	left:650px;
+	width: 650px;
+	height: 500px;
+	background-color: olive;
+}
+
+
+.tabBox h3 {
+	float:left;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	font-size: 14px;
+}
+
+.tabBox h3 a {
+	display: block;
+	padding: 5px;
+	width: 130px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	background: #800000;
+	border: 1px solid white;
+	border-bottom: none;
+	border-radius: 7px 7px 0 0;
+}
+
+.tabBox .box {
+	display: none;
+	margin: 0;
+	padding: 15px;
+	height: 200px;
+	border: 1px solid black;
+	border-radius: 0 5px 5px 5px;
+}
+.tabBox .btnMore {
+	display: none;
+	right: 5px;
+	top: 10px;
+}
+
+.tabBox .ctn1 h3 {
+	left: 0;
+}
+
+.tabBox .ctn1 h3 a {
+	color: white;
+}
+
+.tabBox .ctn2 h3 a {
+	color: white;
+}
+
+.tabBox .ctn2 h3 {
+	left: 140px;
+	
+}
+
+.tabBox2 a {
+	display: block;
+	padding: 5px;
+	width: 130px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	background: #800000;
+	border: 1px solid white;
+	border-bottom: none;
+	border-radius: 7px 7px 0 0;
+}
+
+.d_clear img{
+	width: 650px;
+	height: 400px;
+}
