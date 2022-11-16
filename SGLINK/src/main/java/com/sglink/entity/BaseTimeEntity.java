@@ -3,6 +3,7 @@ package com.sglink.entity;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 
@@ -21,6 +22,7 @@ public class BaseTimeEntity {
 	
 //	@Column(updatable = false)
 	@CreatedDate
+	@Column(updatable = false)
 	private LocalDateTime registerTime;
 	
 	@LastModifiedDate
