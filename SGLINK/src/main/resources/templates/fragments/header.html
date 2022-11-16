@@ -27,7 +27,10 @@
 					class="topmenu" href="/members/login" sec:authorize="isAnonymous()">로그인</a>
 				<a class="topmenu" href="/members/logout"
 					sec:authorize="isAuthenticated()">로그아웃</a> <a class="topmenu"
-					href="/members/memberRole">회원가입</a>
+					href="/members/memberRole" sec:authorize="isAnonymous()">회원가입</a>
+					<a class="topmenu" href="/members/mypage"
+					sec:authorize="isAuthenticated()">마이페이지</a>
+					
 			</div>
 		</div>
 		<div id="TopMenu">
