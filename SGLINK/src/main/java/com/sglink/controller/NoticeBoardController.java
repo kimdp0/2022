@@ -63,6 +63,8 @@ public class NoticeBoardController {
 	@PostMapping("/notice/write/action")
 	public String boardWriteAction(Model model, NoticeBoardRequestDto boardRequestDto) throws Exception{
 		try {
+			
+			
 			Long result = boardService.save(boardRequestDto);
 			
 			if (result<0) {
@@ -80,17 +82,19 @@ public class NoticeBoardController {
 
 		try {
 			int result = boardService.updateBoard(boardRequestDto);
+			
 			if (result<1) {
 				throw new Exception("#Exception boardViewAction!");
 			}
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());
 		}
+		
 		return "redirect:/boards/notice/list";
 	}
 	
-	@PostMapping("/notice/view/delete")
-	public String BoardViewDeleteAction(Model model, @RequestParam() Long id) throws Exception{
+	@GetMapping("/notice/view/delete")
+	public String BoardViewDeleteAction(Model model, @RequestParam()Long id) throws Exception{
 
 		try {
 			boardService.deleteById(id);
