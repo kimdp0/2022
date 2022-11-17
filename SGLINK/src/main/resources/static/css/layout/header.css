@@ -1,10 +1,10 @@
-#header {
+.header {
 	margin-top: 5px;
 	height: 40px;
 	border-bottom: 2px #d3d3d3 solid;
 }
 
-#header>a {
+.header>a {
 	margin-left: 15px;
 	font-size: 25px;
 	letter-spacing: -1px;

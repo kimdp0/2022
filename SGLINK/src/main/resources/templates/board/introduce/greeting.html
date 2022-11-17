@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout=http://www.ultraq.net.nz/thymeleaf/layout
-	layout:decorate="~{layouts/layout1}">
+	layout:decorate="~{layouts/layoutBsn}">
 <head>
 <meta charset="UTF-8">
 <title>인사말 페이지</title>
-<link href="/css/greeting.css" rel="stylesheet" type="text/css">
+<link href="/css/board/introduce/greeting.css" rel="stylesheet" >
+
 </head>
 <body>
-	<div layout:fragment="content">
-		<div id="greeting">
-			<div class="head">
-				<div class="title">
-					<p>인사말</p>
-				</div>
+	<div layout:fragment="content" id= "content">
+		<div id="greeting">   
+		<div id="Title">
+		<div id="TopTitle" style="padding: 15px 15px 15px 0px;">인사말</div>
+		</div>
 				<div class="subtitle">
 					<p>서강대학교 LINC 입니다.</p>
 				</div>

@@ -10,5 +10,11 @@ public class MainController {
 	public String main() {
 		return "/main/main";
 	}
+	
+	
+	@RequestMapping(value="/layout", method = RequestMethod.GET)
+	public String layout() {
+		return "/layouts/content";
+	}
 
 }

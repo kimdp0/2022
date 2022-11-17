@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
@@ -31,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .logoutSuccessUrl("/") // 로그아웃 성공 시 이동할 url을 설정
       ;
       http.authorizeRequests()
-      .mvcMatchers("/", "/members/**","/equipment/**","/introduce/**").permitAll() // 모든 사용자 인증없이 해당경로에 접근하도록 설정
+      .mvcMatchers("/", "/members/**","/equipment/**","/introduce/**,/layout").permitAll() // 모든 사용자 인증없이 해당경로에 접근하도록 설정
       .mvcMatchers("/boards/**").hasAnyRole("STU","COM","ADMIN")
       .mvcMatchers("/admin/**").hasRole("ADMIN") // /admin 경로 접근자는 ADMIN Role일 경우만 접근가능하도록 설정
       .anyRequest().authenticated() // 나머지 경로들은 모두 인증을 요구하도록 설정
@@ -39,6 +40,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       http.exceptionHandling() // 인증되지 않은 사용자가 리소스에 접근하였을 때 수행되는 핸들러 등록.
       .authenticationEntryPoint(new CustomAuthenticationEntryPoint())
       ;
+      http.sessionManagement()
+      .sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
    }
 
    @Bean
