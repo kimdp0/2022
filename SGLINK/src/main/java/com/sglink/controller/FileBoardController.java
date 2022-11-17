@@ -22,10 +22,11 @@ public class FileBoardController {
 	
 	@GetMapping
 	public String fileboard(Model model) {
-		System.out.println("내가수정한 것");
-		
+
+		System.out.println("은비꺼");
 
 		return "fileboard/fileboard";
+		
 	}
 	
 
