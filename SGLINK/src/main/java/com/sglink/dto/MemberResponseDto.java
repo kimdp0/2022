@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 import com.sglink.constant.Role;
 import com.sglink.entity.Member;
-import com.sglink.entity.NoticeBoard;
+import com.sglink.entity.Board;
 
 import lombok.Getter;
 

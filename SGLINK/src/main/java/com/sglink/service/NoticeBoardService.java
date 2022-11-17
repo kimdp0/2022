@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.sglink.dto.NoticeBoardRequestDto;
 import com.sglink.dto.NoticeBoardResponseDto;
-import com.sglink.entity.NoticeBoard;
+import com.sglink.entity.Board;
 import com.sglink.repository.NoticeBoardRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -36,7 +36,7 @@ public class NoticeBoardService {
 		
 		
 //		게시글 순서를 내림차순으로 변경Sort.by(Sort.Direncion.DESC,"registerTime")
-		Page<NoticeBoard> list= boardRepository.findAll(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC,"registerTime")));
+		Page<Board> list= boardRepository.findAll(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC,"registerTime")));
 		
 		resultMap.put("list", list.stream().map(NoticeBoardResponseDto::new).collect(Collectors.toList()));
 		resultMap.put("paging", list.getPageable());
@@ -54,7 +54,7 @@ public class NoticeBoardService {
 		return new NoticeBoardResponseDto(boardRepository.findById(id).get());
 	}
 	
-	public Optional<NoticeBoard> viewfindById(Long id) {
+	public Optional<Board> viewfindById(Long id) {
 		return boardRepository.findById(id);
 	}
 	

@@ -25,8 +25,8 @@
 						<thead>
 							
 							<tr class="top">
-							 	<th class="num1 borderside" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">삭제<input type="checkbox" id="chkAll" ></th>
-								<th class="num borderside">번호</th>
+							 	<!-- <th class="num1 borderside" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">삭제<input type="checkbox" id="chkAll" ></th> -->
+								<th class="num borderside"><input type="checkbox" id="chkAll" sec:authorize="hasAnyAuthority('ROLE_ADMIN')" >번호</th>
 								<th class="title borderside centertit">제목</th>
 								<th class="writer borderside">작성자</th>
 								<th class="count borderside">조회수</th>
@@ -41,10 +41,13 @@
 							<tr  th:each="list,index : ${resultMap.list}"
 								th:with="paging=${resultMap.paging}">
 
-								<td class="num1 borderside" sec:authorize="hasAnyAuthority('ROLE_ADMIN')"><input type="checkbox" name="deleteId"
-									th:value="${list.id}"></td>
+								<!-- <td class="num1 border side" sec:authorize="hasAnyAuthority('ROLE_ADMIN')"><input type="checkbox" name="deleteId"
+									th:value="${list.id}"></td> -->
 									
-								<td class="num borderside"><span
+								<td class="num borderside">
+								<input type="checkbox" name="deleteId"
+									th:value="${list.id}" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">
+								<span
 									th:text="${(resultMap.totalCnt - index.index) - (paging.pageNumber * paging.pageSize)}"></span>
 								</td>
 								
@@ -95,9 +98,6 @@
 					<div class="bt_wrap">
 						<a onclick="javascript:location.href='/boards/notice/write'">글쓰기</a>
 					</div>
-				<!-- 	<button type="button" class="bt_wrap" onclick="fnDelete()">삭제하기</button>
-					<button type="button" class="bt_wrap"
-						onclick="javascript:location.href='/boards/notice/write'">글쓰기</button> -->
 
 				</div>
 			</form>
