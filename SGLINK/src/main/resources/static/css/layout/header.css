@@ -110,12 +110,11 @@
 }
 
 #pMenu li ul {
-	margin-left:40px;
-	margin-right:92px;
+	margin-left:-10px;
 	background: #FAFAFA;
 	display: none;
 	position: absolute;
-	width: 170px;
+	width: 160px;
 	z-index: 400;
 	border: 1px solid #f2f2f2;
 	border-top:none;
@@ -131,20 +130,19 @@
 	display: block;
 	float: center;
 	height:80px;
-	width:210px;
+	width:190px;
 	padding: 0px;
 	border-bottom: 1px solid #f2f2f2;
 	text-align:center;
 }
 #pMenu li li a{
-	padding-left:40px;
+	padding-left:32px;
 }
 #pMenu li:hover li a {
 	background: none;
 }
 
 #pMenu li ul a {
-	margin-left: -20px;
 	text-align: center;
 	color:black;
 	display: block;
