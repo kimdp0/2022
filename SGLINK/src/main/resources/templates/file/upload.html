@@ -1,39 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>파일 보내기 예제</title>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
-    const ButtonElement = document.querySelector('#Button');
-    const FileElement = document.querySelector('#File');
-
-    const getData = async () => {
-        try{
-            const formData = new FormData();
-            formData.append("user", "Pyo");
-            formData.append("content", "this is content");
-            for(let i = 0; i < FileElement.files.length; i++){
-                formData.append("files", FileElement.files[i]);
-            }
-            const url = 'http://localhost:8080/board';
-
-            const response = await axios.post(url, formData);
-            console.log(response)
-        }
-        catch (error){
-            console.error(error);
-        }
-    }
-
-    ButtonElement.addEventListener('click', getData);
-    </script>
-</head>
-<body>
-	<input type="file" id="File" name="files" multiple="multiple" />
-	<button id="Button">전송</button>
-
-	<script src="./index.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>파일 보내기 예제</title>
+    
+ 	<script type="text/javascript">
+ 	function uploadFileAdded() {
+ 	    var uploadFiles = document.getElementById("uploadFiles")
+ 	    for (var i = 0; i < uploadFiles.files.length; i++) {
+ 	        var file = uploadFiles.files[i];
+ 	        // 비동기 파일 업로드를 시작한다.
+ 	        var uploader = new Uploader(file);
+ 	        uploader.startUpload();
+ 	    }
+ 	    // 폼을 리셋해서 uploadFiles에 출력된 선택 파일을 초기화시킨다.
+ 	    document.getElementById("uploadForm").reset();
+ 	}
+ 	
+ 	</script>
+  </head>
+  <body>
+    <form name="form" method="post" action="/upload/multi" enctype="multipart/form-data">
+      <input id= "uploadFiles" type="file" name="files" multiple="multiple"/>
+      <input type="submit" id="submit" value="전송"/>
+	<input type="button" value="추가하기" onclick="uploadFileAdded()">
+    </form>
+  </body>
 </html>
