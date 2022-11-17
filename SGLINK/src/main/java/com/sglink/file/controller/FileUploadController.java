@@ -43,7 +43,7 @@ public class FileUploadController {
 	@PostMapping("/multi")
 	public ResponseEntity<?> createFile(@Valid @RequestParam("files") List<MultipartFile> files, Principal principal)
 			throws Exception {
-		fileUploadService.addFile(files);
+		fileUploadService.addFile(files, principal);
 		URI uriLocation = new URI("/multi" + principal.getName());
 		return ResponseEntity.created(uriLocation).body("{}");
 	}

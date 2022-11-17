@@ -1,6 +1,7 @@
 package com.sglink.file.handler;
 
 import java.io.File;
+import java.security.Principal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,7 +16,7 @@ import com.sglink.file.entity.FileEntity;
 
 @Component
 public class FileHandler {
-	public List<FileEntity> parseFileInfo(List<MultipartFile> multipartFiles) throws Exception {
+	public List<FileEntity> parseFileInfo(List<MultipartFile> multipartFiles,Principal principal) throws Exception {
 
 		// 반환을 할 파일 리스트
 		List<FileEntity> fileList = new ArrayList<>();
@@ -33,7 +34,7 @@ public class FileHandler {
 		String absolutePath = new File("").getAbsolutePath() + "\\";
 
 		// 경로를 지정하고 그곳에다가 저장할 심산이다
-		String path = "images/" + current_date;
+		String path = "images/" + principal.getName() +"/" + current_date ;
 		File file = new File(path);
 		// 저장할 위치의 디렉토리가 존지하지 않을 경우
 		if (!file.exists()) {
