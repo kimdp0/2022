@@ -1,7 +1,14 @@
+*{
+	font-family: 'LINESeedKR-Bd';
+}
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: local('line'), url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
 .header {
-	margin-top: 5px;
 	height: 40px;
-	border-bottom: 2px #d3d3d3 solid;
 }
 
 .header>a {
@@ -28,12 +35,12 @@
 }
 
 .topmenu {
-	margin-top: 20px;
 	margin-left: 20px;
 	font-size: 18px;
 	letter-spacing: -0.5px;
 	text-decoration: none;
 	font-weight: 550;
+	
 }
 
 #login>h {
@@ -58,17 +65,20 @@
 }
 
 #TopMenu {
+	position:absolute;
+	line-height:80px;
 	height: 60px;
 }
 
 #home img {
 	position: absolute;
+	height: 60px;
 	margin-left: 10px;
-	width: 17%;
+	margin-top:10px;
 }
 
 #pMenu {
-	margin-top: 20px;
+	height:50px;
 	margin-left: 450px;
 }
 
@@ -100,12 +110,12 @@
 }
 
 #pMenu li ul {
-	margin-left:80px;
+	margin-left:40px;
 	margin-right:92px;
 	background: #FAFAFA;
 	display: none;
 	position: absolute;
-	width: 200px;
+	width: 170px;
 	z-index: 400;
 	border: 1px solid #f2f2f2;
 	border-top:none;
@@ -117,17 +127,17 @@
 }
 
 #pMenu li li {
+	margin-left:-40px;
 	display: block;
 	float: center;
-	height:60px;
-	width:170px;
+	height:80px;
+	width:210px;
 	padding: 0px;
 	border-bottom: 1px solid #f2f2f2;
+	text-align:center;
 }
 #pMenu li li a{
-	margin-left:25px;
-	margin-top:15px;
-	padding-left:35px;
+	padding-left:40px;
 }
 #pMenu li:hover li a {
 	background: none;
@@ -140,7 +150,7 @@
 	display: block;
 	width:122px;
 	height: 25px;
-	font-size: 23px;
+	font-size: 25px;
 }
 
 #pMenu li ul a:hover, li ul li:hover a {
