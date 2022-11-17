@@ -8,28 +8,24 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sglink.dto.NoticeBoardRequestDto;
-import com.sglink.entity.NoticeBoard;
+import com.sglink.entity.Board;
 
 @Repository
-public interface NoticeBoardRepository extends JpaRepository<NoticeBoard, Long>{
-//	String UPDATE_BOARD = "UPDATE notice_board"+
-//			"SET TITLE = :#{#boardRequestDto.title}, "+
-//			"CONTENT = :#{#boardRequestDto.content}, "+
-//			"UPDATE_TIME = SYSDATE() "+
-//			"WHERE ID = :#{#boardRequestDto.id} ";
+public interface NoticeBoardRepository extends JpaRepository<Board, Long>{
+
 	
-	static final String UPDATE_BOARD = "UPDATE notice_board "
+	static final String UPDATE_BOARD = "UPDATE board "
 			+ "SET TITLE = :#{#boardRequestDto.title}, "
 			+ "CONTENT = :#{#boardRequestDto.content}, "
 			+ "REGISTER_ID = :#{#boardRequestDto.member}, "
 			+ "UPDATE_TIME = SYSDATE() "
 			+ "WHERE ID = :#{#boardRequestDto.id}";
 	
-	static final String UPDATE_BOARD_READ_CNT_INC = "UPDATE notice_board "
+	static final String UPDATE_BOARD_READ_CNT_INC = "UPDATE board "
 			+ "SET READ_CNT = READ_CNT + 1 "
 			+ "WHERE ID = :id";
 	
-	static final String DELETE_BOARD = "DELETE FROM notice_board "
+	static final String DELETE_BOARD = "DELETE FROM board "
 			+ "WHERE ID IN (:deleteList)";
 	
 	@Transactional
