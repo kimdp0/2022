@@ -64,20 +64,17 @@ a:hover{
 	border-bottom: 1px solid #ddd;
 }
 
-
-
-
 .board_list .title {
     display: inline-block;
     padding: 15px 0;
     text-align: center;
     font-size: 1.4rem;
     
-    
+   
 } 
 .board_list .num1 {
     display: inline-block;
-    padding: 15px 0;
+    padding: 14px 0;
     text-align: center;
     font-size: 1.4rem;
 }
