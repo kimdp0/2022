@@ -26,7 +26,7 @@ public class NoticeBoardRequestDto {
 	
 	@Override
 	public String toString() {
-		return "Notice_BoardRequestDto [id=" + id + ", title=" + title + ", content=" + content + ", registerId=" + member
+		return "Notice_BoardRequestDto [id=" + id + ", title=" + title + ", content=" + content + ", Member=" + member
 				+ "]";
 	}
 
