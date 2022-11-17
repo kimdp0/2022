@@ -34,7 +34,7 @@
 
 #container{
 	position: relative;
-	height: 2000px;
+	height: 1500px;
 	
 }
 #side {
@@ -42,12 +42,7 @@
     left: 310px;
 	z-index: 1;
 	width: 300px;
-<<<<<<< HEAD
 	height: 500px;
-	background-color: green;
-=======
-	height: 900px;
->>>>>>> branch 'sub' of https://github.com/SilverCastle123/project.git
 }
 #content{
 	position: absolute;
