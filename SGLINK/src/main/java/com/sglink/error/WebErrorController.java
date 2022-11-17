@@ -25,11 +25,11 @@ public class WebErrorController implements ErrorController {
 			} else if (statusCode == HttpStatus.FORBIDDEN.value()) {
 				return "/error/403error";
 			} else {
-				return "/error/error";
+				return "/error";
 			}
 		}
 
-		return "/error/error";
+		return "/error";
 	}
 
 }

@@ -1,57 +1,55 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout=http://www.ultraq.net.nz/thymeleaf/layout
-	layout:decorate="~{layouts/layout2}">
+	layout:decorate="~{layouts/layoutMain}">
 <head>
 <meta charset="UTF-8">
 <title>메인페이지</title>
-
+<link href="/css/main/main.css" rel="stylesheet">
 </head>
 <body>
-	<div layout:fragment="content">
+	<div layout:fragment="content" id = "content">
 		<div class="cards-list">
-
-			<div class="card 1">
+			<div class="card">
 				<div class="card_image"></div>
 				<div class="card_title title-white">
 					<p>A</p>
 				</div>
 			</div>
 
-			<div class="card 2">
+			<div class="card">
 				<div class="card_image"></div>
 				<div class="card_title title-white">
 					<p>B</p>
 				</div>
 			</div>
 
-			<div class="card 3">
+			<div class="card">
 				<div class="card_image"></div>
 				<div class="card_title title-white">
 					<p>C</p>
 				</div>
 			</div>
 
-			<div class="card 4">
+			<div class="card">
 				<div class="card_image"></div>
 				<div class="card_title title-white">
 					<p>D</p>
 				</div>
 			</div>
 
-			<div class="card 5">
+			<div class="card">
 				<div class="card_image"></div>
 				<div class="card_title title-white">
 					<p>E</p>
 				</div>
 			</div>
-
 		</div>
 		<div id="cont">
 			<div id="btn_group"></div>
 			<div id="search">
 				<div class="st_st">
-					<select name="st">
+					<select name="st" class="select">
 						<option value="title" selected>제목</option>
 						<option value="contents">내용</option>
 						<option value="writer">작성자</option>
@@ -59,18 +57,10 @@
 				</div>
 				<div class="sh">
 					<input type="text" style="margin-left: 7px;"
-						placeholder="검색어를 입력하세요.">
-					<button>검색</button>
+						placeholder="검색어를 입력하세요." class="input">
+					<button class="button">검색</button>
 				</div>
 			</div>
-
-
-
-			<br> <br> <br> <br>
-
-
-
-
 			<div class="tabBox">
 				<div class="ctn ctn1">
 					<h3>
