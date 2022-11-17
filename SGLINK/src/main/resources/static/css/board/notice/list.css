@@ -79,6 +79,12 @@ a:hover{
     
     
 } 
+.board_list .num1 {
+    display: inline-block;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 1.4rem;
+}
 .board_list .num {
     display: inline-block;
     padding: 15px 0;
@@ -119,6 +125,9 @@ a:hover{
 
 
 .board_list .num {
+    width: 10%;
+}
+.board_list .num1 {
     width: 10%;
 }
 

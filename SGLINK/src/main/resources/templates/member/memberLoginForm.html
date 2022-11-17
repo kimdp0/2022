@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout=http://www.ultraq.net.nz/thymeleaf/layout
-	layout:decorate="~{layouts/layout1}">
+	layout:decorate="~{layouts/layoutMb}">
 
 <head>
 <meta charset="UTF-8" />
@@ -10,7 +10,7 @@
 <title>로그인창</title>
 <!-- 사용자 CSS 추가 -->
 <th:block layout:fragment="css">
-<link th:href="@{/css/memberLoginForm.css}" rel="stylesheet">
+<link th:href="@{/css/member/memberLoginForm.css}" rel="stylesheet">
 	<style>
 .error {
 	color: #bd2130;
@@ -20,7 +20,7 @@
 </head>
 
 <body>
-	<div layout:fragment="content" class="content">
+	<div layout:fragment="content" class="content" id="content">
 		<div class="box_line">
 			<img src="/img/logo.JPG" width="650" height="500">
 			<div class="login">

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="~{layouts/cmnt}">
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	layout:decorate="~{layouts/layoutCmnt}">
 <head>
 <title>공지게시판</title>
 <meta charset="UTF-8">
@@ -13,7 +14,7 @@
 <link th:href="@{/css/board/notice/list.css}" rel="stylesheet">
 </head>
 <body>
-	<div layout:fragment="content">
+	<div layout:fragment="content" id="content">
 
 		<div class="board_wrap">
 			 
@@ -24,7 +25,7 @@
 						<thead>
 							
 							<tr class="top">
-							 	<th class="num borderside">삭제<input type="checkbox" id="chkAll"></th>
+							 	<th class="num1 borderside" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">삭제<input type="checkbox" id="chkAll" ></th>
 								<th class="num borderside">번호</th>
 								<th class="title borderside centertit">제목</th>
 								<th class="writer borderside">작성자</th>
@@ -32,6 +33,7 @@
 								<th class="date borderside">작성일</th>
 
 							</tr>
+							
 						
 						</thead>
 						<tbody >
@@ -39,7 +41,7 @@
 							<tr  th:each="list,index : ${resultMap.list}"
 								th:with="paging=${resultMap.paging}">
 
-								<td class="num borderside"><input type="checkbox" name="deleteId"
+								<td class="num1 borderside" sec:authorize="hasAnyAuthority('ROLE_ADMIN')"><input type="checkbox" name="deleteId"
 									th:value="${list.id}"></td>
 									
 								<td class="num borderside"><span
@@ -87,7 +89,7 @@
 					
 					
 					
-				 	<div class="bt_wrap">
+				 	<div class="bt_wrap" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">
 						<a onclick="fnDelete()"> 삭제하기</a> 
 					</div>
 					<div class="bt_wrap">
