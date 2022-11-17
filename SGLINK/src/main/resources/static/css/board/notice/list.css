@@ -20,19 +20,21 @@ a {
 
 a:hover{
     text-decoration: none;
-    color: green;
+  
     
 }
 
 .board_wrap {
     width: 1000px;
-    margin: 100px auto;
+
+  /*   margin: 100px auto; */
+/*   background:red; */
 }
 
 .board_wrap {
 	width: 100%;
-	min-width: 320px;
-	padding: 0 30px;
+ 	min-width: 320px; 
+/* 	padding: 0 30px; */
 	box-sizing: border-box;
 }
 
