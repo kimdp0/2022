@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.sglink.dto.NoticeBoardRequestDto;
+
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -21,8 +23,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor(access= AccessLevel.PROTECTED)
-@Table(name= "notice_board")
-public class NoticeBoard extends BaseTimeEntity{
+@Table(name= "board")
+public class Board extends BaseTimeEntity{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -31,6 +33,7 @@ public class NoticeBoard extends BaseTimeEntity{
 	@Column(nullable = true, length = 1000)
 	private String content;
 	private int readCnt;
+	private String boardName;
 	
 	@OneToOne
 	@JoinColumn(name = "registerId")
@@ -39,12 +42,25 @@ public class NoticeBoard extends BaseTimeEntity{
 	
 	
 	@Builder
-	public NoticeBoard(Long id, String title, String content, int readCnt, Member member) {
+	public Board(Long id, String title, String content, int readCnt, Member member, String boardName) {
 		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.readCnt = readCnt;
 		this.member = member;
+		this.boardName= boardName;
 	}
+	
+//	public static Board createNoticeBoard(NoticeBoardRequestDto noticeboardRequestDto) {
+//		Board board= new Board();
+//		board.setId(noticeboardRequestDto.getId());
+//		board.setTitle(noticeboardRequestDto.getTitle());
+//		board.setContent(noticeboardRequestDto.getContent());
+//		board.setMember(noticeboardRequestDto.getMember());
+//		
+//		
+//		return board;
+//	}
+	
 
 }
