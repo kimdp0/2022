@@ -17,7 +17,7 @@ ul {
     font-size: 35px;
     font-weight: 350px;
     text-align: center;
-    margin-bottom: 50px;
+    position: relative;
 }
 
 #subMenu a {
@@ -29,6 +29,10 @@ ul {
     text-align: left;
     list-style: circle;
     text-indent: 50px;
+}
+
+.depth1 {
+	position: relative;
 }
 
 .depth2 {
@@ -67,7 +71,7 @@ ul {
 }
 
 #leftMenu {
-    height: 1000px;
+    height: 500px;
     margin: 0;
     position: absolute;
     background: #f1f1f1;
@@ -75,7 +79,7 @@ ul {
     transition: 0.5s;
     padding-top: 100px;
 /*     font-size: 20px; */
-    width: 250px;
+    width: 300px;
 }
 
 #leftMenu a {

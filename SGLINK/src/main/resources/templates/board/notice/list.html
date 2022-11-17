@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="~{layouts/cmnt}">
+	layout:decorate="~{layouts/layoutCmnt}">
 <head>
 <title>공지게시판</title>
 <meta charset="UTF-8">
@@ -13,7 +13,7 @@
 <link th:href="@{/css/board/notice/list.css}" rel="stylesheet">
 </head>
 <body>
-	<div layout:fragment="content">
+	<div layout:fragment="content" id="content">
 
 		<div class="board_wrap">
 			 

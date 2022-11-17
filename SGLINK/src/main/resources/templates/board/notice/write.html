@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="~{layouts/layout1}">
+	layout:decorate="~{layouts/layoutCmnt}">
 <head>
 <title>Board List</title>
 <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-	<div layout:fragment="content">
+	<div layout:fragment="content" id="content">
 		<div class="container">
 			<h1>글 내용</h1>
 			<form action="/boards/notice/write/action" method="post">

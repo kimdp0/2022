@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cmnt</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="sidebar_2.css" rel="stylesheet">
+</head>
+
+<body>
+	<div th:fragment="sidebar" id="side">
+		<div id="leftMenu">
+			<div id="leftTitle">
+				<a href="#">커뮤니티</a>
+			</div>
+			<div id="subMenu">
+				<div class="depth1">
+					<li class="item"><a href="#" id="left" class="lnb">공지사항</a></li>
+					<li class="item"><a href="#" id="left1" class="lnb">Q&A</a></li>
+					<li class="item"><a href="#" id="left2" class="lnb">자료실</a></li>
+					<li class="item"><a href="#" id="left2" class="lnb">행사소식</a></li>
+				</div>
+			</div>
+		</div>
+	</div>
+</body></html>
