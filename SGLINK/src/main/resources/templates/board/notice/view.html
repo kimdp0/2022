@@ -40,7 +40,8 @@
 		</div>
 		<div class="mb-3">
 		    <label class="form-label">작성자</label>
-		    <input type="text" class="form-control" name="registerId" th:value="${info.member.userId}" readonly>
+<!-- 		    <input type="hidden" class="form-control" name="registerId" th:value="${info.member}">
+ -->		     <input type="text" class="form-control" name="member" th:value="${info.member.userId}" readonly="readonly">
 		</div>
 		<div class="float-left">
 				<button type="button" class="btn btn-success" onclick="javascript:location.href='/boards/notice/list'">뒤로가기</button>
@@ -59,6 +60,7 @@
 		function fnViewDelete() {
 			if (confirm("삭제하시겠습니까?")) {
 				let frm = $("#frm");
+				frm.attr("method","get")
 				frm.attr("action","/boards/notice/view/delete");
 				frm.submit();
 			}

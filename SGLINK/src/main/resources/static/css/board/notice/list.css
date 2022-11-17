@@ -11,6 +11,11 @@ ul, li {
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 a:hover{
     text-decoration: none;
     color: green;
@@ -117,26 +122,26 @@ a:hover{
 }
 
 
-.centertit{
-	
-	 
-	 
-}
+
 
 
 .board_list .num {
     width: 10%;
 }
-.board_list .num1 {
-    width: 10%;
-}
 
 .board_list .title {
-    width: 50%;
-    text-align: left;
+    width: 60%;
+}
+.board_list>tbody .title {
+    text-align:left;
 }
 
-
+.centertit{
+	
+ 	text-align:center;	 
+	 
+}
+	
 
 .board_list .writer {
     width: 10%;

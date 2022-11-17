@@ -21,7 +21,7 @@ public interface NoticeBoardRepository extends JpaRepository<NoticeBoard, Long>{
 	static final String UPDATE_BOARD = "UPDATE notice_board "
 			+ "SET TITLE = :#{#boardRequestDto.title}, "
 			+ "CONTENT = :#{#boardRequestDto.content}, "
-			+ "REGISTER_ID = :#{#boardRequestDto.registerId}, "
+			+ "REGISTER_ID = :#{#boardRequestDto.member}, "
 			+ "UPDATE_TIME = SYSDATE() "
 			+ "WHERE ID = :#{#boardRequestDto.id}";
 	

@@ -6,7 +6,9 @@ import com.sglink.entity.NoticeBoard;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
+@ToString
 @Getter
 @Setter
 @NoArgsConstructor
@@ -24,10 +26,10 @@ public class NoticeBoardRequestDto {
 				.build();
 	}
 	
-	@Override
-	public String toString() {
-		return "Notice_BoardRequestDto [id=" + id + ", title=" + title + ", content=" + content + ", registerId=" + member
-				+ "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Notice_BoardRequestDto [id=" + id + ", title=" + title + ", content=" + content + ", member=" + member
+//				+ "]";
+//	}
 
 }
