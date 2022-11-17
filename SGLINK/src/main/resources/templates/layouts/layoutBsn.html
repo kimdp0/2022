@@ -13,8 +13,7 @@
 <link th:href="@{/css/layout/layout.css}" rel="stylesheet">
 <link th:href="@{/css/layout/header.css}" rel="stylesheet">
 <link th:href="@{/css/layout/slide.css}" rel="stylesheet">
-<<<<<<< HEAD
-<link th:href="@{/css/layout/sidebar.css}" rel="stylesheet">
+<link th:href="@{/css/sidebar/sidebar_2.css}" rel="stylesheet">
 <link th:href="@{/css/layout/footer.css}" rel="stylesheet">
 </th:block>
 
@@ -24,20 +23,7 @@
 		<div th:replace="myfragments/header::header"></div>
 		<div th:replace="myfragments/slide::slide"></div>
 		<div id="container">
-			<div th:replace="myfragments/sidebar::sidebar"></div>
-=======
-<link th:href="@{/css/sidebar/sidebar_1.css}" rel="stylesheet">
-<link th:href="@{/css/layout/footer.css}" rel="stylesheet">
-</th:block>
-
-</head>
-<body>
-	<div id="wrap">
-		<div th:replace="myfragments/header::header"></div>
-		<div th:replace="myfragments/slide::slide"></div>
-		<div id="container">
-			<div th:replace="myfragments/sidebar_com::sidebar"></div>
->>>>>>> branch 'sub' of https://github.com/SilverCastle123/project.git
+			<div th:replace="myfragments/sidebar_bsn::sidebar"></div>
 			<div layout:fragment="content"></div>
 		</div>
 

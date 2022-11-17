@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="~{layouts/layout1}">
+	layout:decorate="~{layouts/layoutMb}">
 <head>
 <meta charset="UTF-8">
 <title>학생 회원가입 페이지</title>
@@ -23,17 +23,17 @@
 	color: #bd2130;
 }
 </style>
-	<link th:href="@{/css/memberForm.css}" rel="stylesheet">
+	<link th:href="@{/css/member/memberForm.css}" rel="stylesheet">
 </th:block>
 </head>
 <body>
 
-	<div layout:fragment="content">
+	<div layout:fragment="content" id="content">
 		<div id="Title">
 			<div id="TopTitle" style="padding: 0px 20px 15px;">회원가입</div>
 
 		</div>
-		<div id="content">
+		<div>
 			<form action="/members/stu/new" role="form" method="post"
 				th:object="${memberFormDto}">
 				<div id="main">
