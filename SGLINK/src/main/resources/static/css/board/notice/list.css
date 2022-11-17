@@ -1,11 +1,12 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
 }
-
+ */
 html {
     font-size: 10px;
 }
+
 
 ul, li {
     list-style: none;
@@ -15,6 +16,7 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
 
 a:hover{
     text-decoration: none;
@@ -73,20 +75,17 @@ a:hover{
 	border-bottom: 1px solid #ddd;
 }
 
-
-
-
 .board_list .title {
     display: inline-block;
     padding: 15px 0;
     text-align: center;
     font-size: 1.4rem;
     
-    
+   
 } 
 .board_list .num1 {
     display: inline-block;
-    padding: 15px 0;
+    padding: 14px 0;
     text-align: center;
     font-size: 1.4rem;
 }

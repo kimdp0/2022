@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="~{layouts/layout1}">
+	layout:decorate="~{layouts/layoutAd}">
 <head>
 <title>관리자 회원관리창</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link th:href="@{/css/memberList.css}" rel="stylesheet">
+<link th:href="@{/css/admins/memberList.css}" rel="stylesheet">
 </head>
 <body>
-	<div layout:fragment="content">
+	<div layout:fragment="content" id="content">
 	<div id="Title">
 			<div id="TopTitle" style="padding: 0px 20px 15px;">회원관리</div>
 
