@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="~{layouts/layout1}">
+	layout:decorate="~{layouts/layoutMypage}">
 <head>
 <meta charset="UTF-8">
 <title>마이페이지 회원정보창</title>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <th:block layout:fragment="css">
-	<link th:href="@{/css/memberForm.css}" rel="stylesheet">
+	<link th:href="@{/css/member/memberForm.css}" rel="stylesheet">
 </th:block>
 </head>
 <body>
-	<div layout:fragment="content">
+	<div layout:fragment="content" id="content">
 		<div id="Title">
 			<div id="TopTitle" style="padding: 0px 20px 15px;">회원정보창</div>
 
