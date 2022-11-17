@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class FileBoardRequestDto {
 	
-	private Long uid;
+	private Long id;
 	private String title;
 	private String content;
 	private String writer;
@@ -21,14 +21,14 @@ public class FileBoardRequestDto {
 				.title(title)
 				.content(content)
 				.writer(writer)
-				.uid(uid)
+				.id(id)
 				.build();
 	}
 	
 	
 	@Override
 	public String toString() {
-		return "File_BoardRequestDto [id=" + uid + ", title=" + title + ", content=" + content + ", writer=" + writer
+		return "File_BoardRequestDto [id=" + id + ", title=" + title + ", content=" + content + ", writer=" + writer
 				+ "]";
 	}
 
