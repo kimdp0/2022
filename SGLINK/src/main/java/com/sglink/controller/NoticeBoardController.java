@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -88,11 +89,11 @@ public class NoticeBoardController {
 		}
 	
 	@PostMapping("/notice/view/action")
-	public String getBoardViewAction(Model model, NoticeBoardRequestDto boardRequestDto) throws Exception{
+	public String getBoardViewAction(Model model, @ModelAttribute NoticeBoardRequestDto boardRequestDto) throws Exception{
 
 		try {
 			int result = boardService.updateBoard(boardRequestDto);
-			
+			System.out.println(boardRequestDto.getMember().getUserId());
 			if (result<1) {
 				throw new Exception("#Exception boardViewAction!");
 			}
@@ -104,9 +105,10 @@ public class NoticeBoardController {
 	}
 	
 	@GetMapping("/notice/view/delete")
-	public String BoardViewDeleteAction(Model model, @RequestParam()Long id) throws Exception{
+	public String BoardViewDeleteAction(Model model, @RequestParam("id")Long id) throws Exception{
 
 		try {
+			System.out.println(id);
 			boardService.deleteById(id);
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());
