@@ -8,7 +8,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <th:block layout:fragment="css">
-	<link th:href="@{/css/member/memberForm.css}" rel="stylesheet">
+	<link th:href="@{/css/member/memberList.css}" rel="stylesheet">
 </th:block>
 </head>
 <body>
@@ -17,35 +17,36 @@
 			<div id="TopTitle" style="padding: 0px 20px 15px;">회원정보창</div>
 
 		</div>
-		<div class="container">
-			<div class="memberlist">
-				<table class="listtable">
-					<tr class="listhead">
-						<th width="10%">아이디</th>
-						<th width="10%">권한</th>
-						<th width="10%">이메일</th>
-						<th width="10%">이름</th>
-						<th width="13%">전화번호</th>
-						<th width="10%">소속명</th>
-						<th width="10%">가입일</th>
-					</tr>
-					<tbody class="listbody">
-						<tr th:each="info: ${info}">
-							<td><span th:text="${info.userId}"></span></td>
-							<td><span th:text="${info.role}"></span></td>
-							<td><span th:text="${info.userEmail}"></span></td>
-							<td><span th:text="${info.userName}"></span></td>
-							<td><span th:text="${info.userTel}"></span></td>
-							<td><span th:text="${info.userUniname}"></span></td>
-							<td><span
-								th:text="${#temporals.format(info.registerTime, 'yyyy-MM-dd')}"></span>
-							</td>
-						<tr>
-					</tbody>
-				</table>
+		<div class="wrapper">
+			<div class="container">
+				<div class="memberlist">
+					<table class="listtable">
+						<tr class="listhead">
+							<th width="10%">아이디</th>
+							<th width="10%">권한</th>
+							<th width="10%">이메일</th>
+							<th width="10%">이름</th>
+							<th width="13%">전화번호</th>
+							<th width="10%">소속명</th>
+							<th width="10%">가입일</th>
+						</tr>
+						<tbody class="listbody">
+							<tr th:each="info: ${info}">
+								<td><span th:text="${info.userId}"></span></td>
+								<td><span th:text="${info.role}"></span></td>
+								<td><span th:text="${info.userEmail}"></span></td>
+								<td><span th:text="${info.userName}"></span></td>
+								<td><span th:text="${info.userTel}"></span></td>
+								<td><span th:text="${info.userUniname}"></span></td>
+								<td><span
+									th:text="${#temporals.format(info.registerTime, 'yyyy-MM-dd')}"></span>
+								</td>
+							<tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
-
 	</div>
 </body>
 

@@ -7,15 +7,14 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.sglink.file.entity.FileEntity;
 import com.sglink.file.service.FileUploadService;
 
 import lombok.RequiredArgsConstructor;
@@ -41,11 +40,11 @@ public class FileUploadController {
 	}
 
 	@PostMapping("/multi")
-	public ResponseEntity<?> createFile(@Valid @RequestParam("files") List<MultipartFile> files, Principal principal)
+	public String createFile(@Valid @RequestParam("files") List<MultipartFile> files, Principal principal,Model model)
 			throws Exception {
 		fileUploadService.addFile(files, principal);
 		URI uriLocation = new URI("/multi" + principal.getName());
-		return ResponseEntity.created(uriLocation).body("{}");
+		return "redirect:/upload/view";
 	}
 
 }

@@ -19,17 +19,19 @@
 					src="/img/twitterimg.png"></a>
 			</div>
 			<div id="login">
-				<a class="topmenu" href="/admin/member/list"
-					sec:authorize="hasAnyAuthority('ROLE_ADMIN')">관리자</a> <a
+				<a class="topmenu" href="/members/memberRole"
+					sec:authorize="isAnonymous()">회원가입</a> <a class="topmenu"
+					href="/admin/member/list"
+					sec:authorize="hasAnyAuthority('ROLE_ADMIN')">관리자</a>
+					<a class="topmenu"> <a
 					class="topmenu" href="" sec:authorize="hasAnyAuthority('ROLE_STU')">학생회원</a>
 				<a class="topmenu" href=""
 					sec:authorize="hasAnyAuthority('ROLE_COM')">기업회원</a> <a
 					class="topmenu" href="/members/login" sec:authorize="isAnonymous()">로그인</a>
 				<a class="topmenu" href="/members/logout"
-					sec:authorize="isAuthenticated()">로그아웃</a> <a class="topmenu"
-					href="/members/memberRole" sec:authorize="isAnonymous()">회원가입</a> <a
-					class="topmenu" href="/members/mypage"></a> <a class="topmenu"
-					href="/mypage/view" sec:authorize="isAuthenticated()">마이페이지</a>
+					sec:authorize="isAuthenticated()">로그아웃</a> </a><a class="topmenu"
+					href="/members/mypage"></a> <a class="topmenu" href="/mypage/view"
+					sec:authorize="isAuthenticated()">마이페이지</a>
 
 			</div>
 		</div>
@@ -43,12 +45,14 @@
 						<ul style="margin-left: 60px">
 							<li><a href="/introduce/greeting" style="margin-left: 3px">인사말</a></li>
 							<li><a href="/introduce/vision" style="margin-left: 3px">비전과목표</a></li>
-							<li><a href="/introduce/organization" style="margin-left: 3px">조직구성</a></li>
+							<li><a href="/introduce/organization"
+								style="margin-left: 3px">조직구성</a></li>
 							<li><a href="/introduce/direction" style="margin-left: 3px">오시는길</a></li>
 						</ul></li>
 					<li><a href="/comsup/family/introduce">기업지원</a>
 						<ul style="margin-left: 45px">
-							<li><a href="/comsup/family/introduce" style="margin-left: 3px">가족기업</a></li>
+							<li><a href="/comsup/family/introduce"
+								style="margin-left: 3px">가족기업</a></li>
 							<li><a href="#" style="margin-left: 3px"></a></li>
 							<li><a href="#" style="margin-left: 3px"></a></li>
 							<li><a href="#" style="margin-left: 3px"></a></li>

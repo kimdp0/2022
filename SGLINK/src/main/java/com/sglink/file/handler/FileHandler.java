@@ -34,7 +34,8 @@ public class FileHandler {
 		String absolutePath = new File("").getAbsolutePath() + "\\";
 
 		// 경로를 지정하고 그곳에다가 저장할 심산이다
-		String path = "images/" + principal.getName() +"/" + current_date ;
+		String path = "src/main/resources/static/img/company/" + principal.getName() +"/" + current_date ;
+		String staticPath = "/img/company/" + principal.getName() +"/" + current_date ;
 		File file = new File(path);
 		// 저장할 위치의 디렉토리가 존지하지 않을 경우
 		if (!file.exists()) {
@@ -70,7 +71,7 @@ public class FileHandler {
 				// 생성 후 리스트에 추가
 				FileEntity fileEntity = FileEntity.builder()
 						.original_file_name(multipartFile.getOriginalFilename())
-						.stored_file_path(path + "/" + new_file_name).file_size(multipartFile.getSize()).build();
+						.stored_file_path(staticPath + "/" + new_file_name).file_size(multipartFile.getSize()).build();
 				fileList.add(fileEntity);
 
 				// 저장된 파일로 변경하여 이를 보여주기 위함
