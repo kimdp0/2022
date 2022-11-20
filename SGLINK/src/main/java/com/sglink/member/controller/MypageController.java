@@ -1,4 +1,4 @@
-package com.sglink.controller;
+package com.sglink.member.controller;
 
 import java.security.Principal;
 
@@ -12,13 +12,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.sglink.dto.COM_MemberFormDto;
-import com.sglink.dto.MemberUpdateDto;
-import com.sglink.dto.STU_MemberFormDto;
 import com.sglink.entity.Member;
-import com.sglink.service.MemberService;
+import com.sglink.member.dto.MemberUpdateDto;
+import com.sglink.member.service.MemberService;
 
 import lombok.RequiredArgsConstructor;
 

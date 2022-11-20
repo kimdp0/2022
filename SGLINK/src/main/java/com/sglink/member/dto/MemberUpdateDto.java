@@ -1,4 +1,4 @@
-package com.sglink.dto;
+package com.sglink.member.dto;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;

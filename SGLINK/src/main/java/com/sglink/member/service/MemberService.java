@@ -1,4 +1,4 @@
-package com.sglink.service;
+package com.sglink.member.service;
 
 import java.security.Principal;
 

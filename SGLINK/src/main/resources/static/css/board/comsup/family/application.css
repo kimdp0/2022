@@ -78,7 +78,7 @@ h2.bl.sq {
 
 .content {
 	width: 620px;
-	height: 1050px;
+	height: 600px;
 	border: 2px solid #bebebe;
 	border-radius: 5px;
 	position: absolute;
@@ -141,7 +141,7 @@ textarea::placeholder {
 .nt {
 	position: absolute;
 	margin-left: 110px;
-	top: 1100px;
+	top: 600px;
 }
 
 .appl {

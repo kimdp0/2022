@@ -13,7 +13,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import com.sglink.service.MemberService;
+import com.sglink.member.service.MemberService;
+
+
 
 @Configuration
 @EnableWebSecurity

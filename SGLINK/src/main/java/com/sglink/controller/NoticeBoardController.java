@@ -1,8 +1,6 @@
 package com.sglink.controller;
 
 import java.security.Principal;
-import java.util.HashMap;
-import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sglink.dto.NoticeBoardRequestDto;
 import com.sglink.entity.Board;
-import com.sglink.service.MemberService;
+import com.sglink.member.service.MemberService;
 import com.sglink.service.NoticeBoardService;
 
 import lombok.RequiredArgsConstructor;
