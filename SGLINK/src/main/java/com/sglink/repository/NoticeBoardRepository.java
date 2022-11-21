@@ -28,6 +28,14 @@ public interface NoticeBoardRepository extends JpaRepository<Board, Long>{
 	static final String DELETE_BOARD = "DELETE FROM board "
 			+ "WHERE ID IN (:deleteList)";
 	
+	static final String NOTICE_BOARD = "SELECT boardName FROM board "
+			+ "WHERE BOARD_NAME = NoticeBoard";
+	
+	
+	
+	
+	
+	
 	@Transactional
 	@Modifying
 	@Query(value = UPDATE_BOARD, nativeQuery = true)

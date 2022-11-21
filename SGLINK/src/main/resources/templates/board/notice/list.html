@@ -38,7 +38,7 @@
 						</thead>
 						<tbody >
 						
-							<tr  th:each="list,index : ${resultMap.list}"
+							<tr th:if="${list.BoardName == 'NoticeBoard'}" th:each="list,index : ${resultMap.list}"
 								th:with="paging=${resultMap.paging}">
 
 								<!-- <td class="num1 border side" sec:authorize="hasAnyAuthority('ROLE_ADMIN')"><input type="checkbox" name="deleteId"
