@@ -20,25 +20,15 @@ public class AdminController {
 	AdminService adminService;
 	
 	@GetMapping("/member/list")
-	public String getBoardListPage(Model model, @RequestParam(required= false, defaultValue= "0") Integer page, @RequestParam(required = false, defaultValue= "10") Integer size)throws Exception{
+	public String memberListPage(Model model, @RequestParam(required= false, defaultValue= "0") Integer page, @RequestParam(required = false, defaultValue= "10") Integer size)throws Exception{
 		try {
-			model.addAttribute("resultMap", adminService.selectAll(page, size));
+			model.addAttribute("resultMap", adminService.selectAllMember(page, size));
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());
 		}
-		return "/admins/memberList";
+		return "/admin/memberList";
 	}
 	
-//	@PostMapping("/member/list/delete")
-//	public String BoardDeleteAction(Model model, @RequestParam() Long[] deleteId) throws Exception{
-//		
-//		try {
-//			adminService.deleteMember(deleteId);
-//		}catch(Exception e) {
-//			throw new Exception(e.getMessage());
-//		}
-//		return "redirect:/admin/member/list";
-//	}
 	
 	@GetMapping("/member/list/delete")
 	public String DeleteMember(Model model,@RequestParam("userId")String userId) throws Exception{
@@ -48,6 +38,16 @@ public class AdminController {
 			throw new Exception(e.getMessage());
 		}
 		return "redirect:/admin/member/list";
+	}
+	
+	@GetMapping("/company/list")
+	public String companyListPage(Model model, @RequestParam(required= false, defaultValue= "0") Integer page, @RequestParam(required = false, defaultValue= "10") Integer size)throws Exception{
+		try {
+			model.addAttribute("resultMap", adminService.selectAllCompany(page, size));
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return "/admin/companyList";
 	}
 
 }

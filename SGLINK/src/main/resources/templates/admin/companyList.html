@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/layoutAd}">
+<head>
+<title>관리자 회원관리창</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link th:href="@{/css/admins/memberList.css}" rel="stylesheet">
+</head>
+<body>
+	<div layout:fragment="content" id="content">
+	<div id="Title">
+			<div id="TopTitle" style="padding: 0px 20px 15px;">기업관리</div>
+
+		</div>
+		<div id="wrapper">
+			<div class="container">
+					<div class="memberlist">
+						<table class="listtable">
+							<tr class="listhead">
+								<th width="10%">기업아이디</th>
+								<th width="10%">기업명</th>
+								<th width="10%">대표자명</th>
+								<th width="20%">업종</th>
+								<th width="13%">전화번호</th>
+								<th width="10%">기업상품</th>
+								<th width="10%">가입일</th>
+								<th width="10%">승인여부</th>
+							</tr>
+							<tbody class="listbody">
+								<tr th:each="list,index : ${resultMap.list}"
+									th:with="paging=${resultMap.paging}">
+									<td><span th:text="${list.comId}"></span></td>
+									<td><span th:text="${list.comUniname}"></span></td>
+									<td><span th:text="${list.comRepname}"></span></td>
+									<td><span th:text="${list.comSectors}"></span></td>
+									<td><span th:text="${list.comTel}"></span></td>
+									<td><span th:text="${list.comProduct}"></span></td>
+									<td>
+										<span
+										th:text="${#temporals.format(list.registerTime, 'yyyy-MM-dd')}"></span>
+									</td>
+									<!-- <td><span th:if="${list.userId == 'admin'}" th:text="삭제불가"></span>
+										<a th:href="@{./list/delete(userId=${list.userId})}"><span
+											th:if="${list.userId != 'admin'}" th:text="삭제하기"></span></a></td> -->
+									<td><span th:text="${list.comProcess}"></span></td>
+								<tr>
+							</tbody>
+						</table>
+						<div class="page">
+							<ul class="paging">
+								<li class="pagingnum"
+									th:each="index : ${#numbers.sequence(1, resultMap.totalPage)}"
+									th:with="paging=${resultMap.paging}"><a class="page-link"
+									th:href="@{./list(page=${index - 1},page=${paging.pageSize})}"><span
+										th:text="${index}"></span></a></li>
+							</ul>
+						</div>
+					</div>
+			</div>
+
+		</div>
+
+	</div>
+</body>
+</html>

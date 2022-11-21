@@ -15,7 +15,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Company {
+public class Company extends BaseTimeEntity{
 	@Id
 	private String comId;
 	@Column(unique = true)
