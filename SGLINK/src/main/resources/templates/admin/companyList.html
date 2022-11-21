@@ -41,9 +41,9 @@
 										<span
 										th:text="${#temporals.format(list.registerTime, 'yyyy-MM-dd')}"></span>
 									</td>
-									<!-- <td><span th:if="${list.userId == 'admin'}" th:text="삭제불가"></span>
+									<td><span th:if="${list.userId == 'admin'}" th:text="삭제불가"></span>
 										<a th:href="@{./list/delete(userId=${list.userId})}"><span
-											th:if="${list.userId != 'admin'}" th:text="삭제하기"></span></a></td> -->
+											th:if="${list.userId != 'admin'}" th:text="삭제하기"></span></a></td>
 									<td><span th:text="${list.comProcess}"></span></td>
 								<tr>
 							</tbody>
