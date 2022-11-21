@@ -1,0 +1,25 @@
+#Title {
+	position: relative;
+	/* 	top:20px; */ height : 60px;
+	font-size: 40px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	height: 60px;
+}
+
+.subtitle {
+	position: relative;
+	/* 	top:20px; */ font-size : 13px;
+	color: #999999;
+	font-size: 13px; color : #999999;
+	border-bottom: 2px #d3d3d3 solid;
+}
+
+.search {table { border-collapse:separate;
+	text-indent: initial;
+	border-spacing: 2px;
+}
+.photo {
+	width:145px;
+	height: 110px;
+}
