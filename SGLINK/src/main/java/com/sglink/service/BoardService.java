@@ -1,7 +1,6 @@
 package com.sglink.service;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -20,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
-public class NoticeBoardService {
+public class BoardService {
 	private final NoticeBoardRepository boardRepository;
 	
 	@Transactional
@@ -76,4 +75,9 @@ public class NoticeBoardService {
 	public void deleteAll(Long[] deleteId) {
 		boardRepository.deleteBoard(deleteId);
 	}
+	
+//	자유게시판=================================
+	
+	
+	
 }
