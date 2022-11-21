@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class EquipmentController {
 	@RequestMapping(value="/view", method = RequestMethod.GET)
 	public String main() {
-		return "/equipment/equipment";
+		return "/equipment/equipment/equipmentList";
 	}
 
 }
