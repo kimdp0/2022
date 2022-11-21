@@ -2,7 +2,6 @@
 	position: relative;
 	height: 500px;
 	width: 1300px;
-	background-color: brown;
 }
 
 .card {
@@ -64,14 +63,12 @@
 #cont {
 	position:relative;
 	width: 1300px;
-	background-color: fuchsia;
 }
 
 #search {
 	height:200px;
 	width:700px;
 	margin-left:300px;
-	background-color: gray;
 	
 }
 
@@ -91,7 +88,6 @@
 	width: 100px;
 	height: 70px;
 	border: 0px;
-	background-color: darkgrey;
 	border-radius:10px;
 	outline: none;
 	color: white;
@@ -116,9 +112,7 @@
 	width: 650px;
 	margin-top:30px;
 	height: 400px;
-
 	padding: 20px 0 0 0;
-	background-color: #F2F2F2;
 	word-wrap: break-word;
 	font-size: 16px;
 	box-sizing: border-box;
@@ -127,18 +121,43 @@
 
 
 
+
 .tabBox {
 	position: absolute;
 	width: 650px;
 	height: 500px;
-	background-color: aqua;
 }
 .tabBox2 {
 	position: absolute;
 	left:650px;
 	width: 650px;
 	height: 500px;
-	background-color: olive;
+}
+
+.tabBox::before{
+        content: "";
+        background: #ffffff;
+        background-size: cover;
+        opacity: 0.1;
+        position:absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+
+}
+
+.tabBox2::before{
+        content: "";
+        background: #ffffff;
+        background-size: cover;
+        opacity: 0.1;
+        position:absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+
 }
 
 

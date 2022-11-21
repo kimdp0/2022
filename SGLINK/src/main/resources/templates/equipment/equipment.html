@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout=http://www.ultraq.net.nz/thymeleaf/layout
-	layout:decorate="~{layouts/layout1}">
+	layout:decorate="~{layouts/layoutCom}">
 <head>
 <meta charset="UTF-8">
 <title>equipment</title>
-<link href="equipment.css" rel="stylesheet">
+<link th:href="@{/css/equipment/equipment.css}" rel="stylesheet">
 </head>
 <body>
-	<div layout:fragment="content">
+	<div layout:fragment="content" id="content">
 		<div class="h1 contents">
 			<div class="article">
 				<div class="search">

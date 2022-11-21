@@ -16,7 +16,7 @@
 		});
 </script>
 <th:block layout:fragment="css">
-<style>
+	<style>
 .fieldError {
 	margin-left: 300px;
 	color: #bd2130;
@@ -27,15 +27,43 @@
 </head>
 <body>
 	<div layout:fragment="content" id="content">
-
+		<p th:value="${comuserUniname}"></p>
 		<div id="Title">
 			<div id="TopTitle" style="padding: 0px 20px 15px;">회원가입</div>
 
 		</div>
 		<div>
-			<form action="/members/com/new" role="form" method="post"
+			<form id="frm" action="/members/com/new" role="form" method="post"
 				th:object="${memberFormDto}">
-				<div id="main">
+
+				<div class="main2">
+					<div class="id">
+						<label th:for="comId">기업코드</label>
+					</div>
+					<input type="text" th:field="*{comId}" class="text"
+						placeholder="가족기업신청시 입력한 기업코드를 입력하세요">
+					<button type="button" class="btn btn-danger"
+						onclick="fnCheckComId()">기업코드 검사하기</button>
+				</div>
+				<p th:if="${#fields.hasErrors('comId')}" th:errors="*{comId}"
+					class="fieldError">Incorrect data</p>
+
+
+
+				<div class="main2">
+					<div class="id">
+						<label th:for="comuserUniname">기관명</label>
+					</div>
+					<input type="text" th:field="*{comuserUniname}"
+						th:value="${comuserUniname}" class="text text2" readonly>
+					<p th:if="${#fields.hasErrors('comuserUniname')}"
+						th:errors="*{comuserUniname}" class="fieldError">Incorrect
+						data</p>
+
+				</div>
+
+
+				<div class="main2">
 					<div class="id">
 						<label th:for="comuserId">아이디</label>
 					</div>
@@ -79,17 +107,6 @@
 				</div>
 				<div class="pwt">* 8~15자 이내 영문, 숫자, 특수문자로 작성해야합니다.</div>
 
-				<div class="main2">
-					<div class="id">
-						<label th:for="comuserUniname">기관명</label>
-					</div>
-					<input type="text" th:field="*{comuserUniname}" class="text"
-						placeholder="기관명을 입력해주세요">
-					<p th:if="${#fields.hasErrors('comuserUniname')}"
-						th:errors="*{comuserUniname}" class="fieldError">Incorrect
-						data</p>
-
-				</div>
 
 				<div class="main2">
 					<div class="id">
@@ -105,10 +122,34 @@
 				<div>
 					<button type="submit" class="btn btn-primary">회원가입하기</button>
 				</div>
-				<input type="hidden" th:name="${_csrf.parameterName}"
+				<input type="hidden" th:name="${_csrf.parameterName}" id="csrf"
 					th:value="${_csrf.token}">
 			</form>
 		</div>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script type="text/javascript">
+function fnCheckComId() {
+			var comId = $("#comId").val();
+			$.ajax({
+				url:'/members/com/checkId',
+				method:"get",
+				data:{"comId":comId},
+				success: function(data){
+					if(data != "기업코드가 올바르지 않습니다"){
+						$("#comuserUniname").val(data);
+						$("#comId").attr("readonly","readonly")
+					}else{
+						alert(data);
+					}
+					
+				},
+				error : function() {
+					alert("error");
+				}
+			});
+		}
+		</script>
 
 	</div>
 

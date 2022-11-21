@@ -5,9 +5,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>cmnt</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href="sidebar_2.css" rel="stylesheet">
+<title>cmnt</title>
 </head>
 
 <body>
@@ -25,5 +23,23 @@
 				</div>
 			</div>
 		</div>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script>
+			$(function() {
+				$('.depth2').hide();
+				$('.depth1 li').hover(function() {
+
+					$(this).children('.lnb').addClass('act');
+				}, function() {
+					$(this).children('.lnb').removeClass('act');
+				});
+				$('.lnb').click(function() {
+					$('.depth2').hide();
+					$(this).next('.depth2').slideDown(500);
+				});
+			});
+		</script>
 	</div>
-</body></html>
+</body>
+</html>

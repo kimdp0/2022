@@ -1,8 +1,6 @@
 package com.sglink.controller;
 
 import java.security.Principal;
-import java.util.HashMap;
-import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sglink.dto.NoticeBoardRequestDto;
-import com.sglink.entity.NoticeBoard;
-import com.sglink.service.MemberService;
+import com.sglink.entity.Board;
+import com.sglink.member.service.MemberService;
 import com.sglink.service.NoticeBoardService;
 
 import lombok.RequiredArgsConstructor;
@@ -54,7 +52,7 @@ public class NoticeBoardController {
 		try {
 			if (boardRequestDto.getId() != null) {
 				//게시판에서 게시판테이블에있는 아이디 파라메서 가져와 그 아이디로 게시판정보 가져오기
-				NoticeBoard noticeBoard = boardService.viewfindById(id).get();
+				Board noticeBoard = boardService.viewfindById(id).get();
 				//게시판에서 회원테이블을 참조하기 때문에 회원테이블에 있는 값을 가져올 수 있음
 				String registerId = noticeBoard.getMember().getUserId();
 				//로그인시 로그인한 회원의 아이디를 가져옴
