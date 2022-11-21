@@ -1,6 +1,6 @@
 package com.sglink.company.dto;
 
-import com.sglink.constant.Process;
+import com.sglink.common.constant.Process;
 import com.sglink.entity.Company;
 
 import lombok.Getter;

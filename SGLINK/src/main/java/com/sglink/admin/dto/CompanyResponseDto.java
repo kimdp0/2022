@@ -2,7 +2,7 @@ package com.sglink.admin.dto;
 
 import java.time.LocalDateTime;
 
-import com.sglink.constant.Process;
+import com.sglink.common.constant.Process;
 import com.sglink.entity.Company;
 
 import lombok.Getter;

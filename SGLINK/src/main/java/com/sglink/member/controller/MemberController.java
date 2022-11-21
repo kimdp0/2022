@@ -35,7 +35,7 @@ public class MemberController {
 	@GetMapping(value = "/com/new")
 	public String memberComForm(Model model) {
 		model.addAttribute("memberFormDto", new COM_MemberFormDto());
-		return "member/com/memberForm";
+		return "member/members/comMemberForm";
 	}
 	
 
@@ -44,7 +44,7 @@ public class MemberController {
 			BindingResult bindingResult, Model model,
 			@RequestParam("comId")String comId) {
 		if (bindingResult.hasErrors()) {
-			return "member/com/memberForm";
+			return "member/members/comMemberForm";
 		}
 		try {
 			Company company = companyService.findByComId(comId);
@@ -52,7 +52,7 @@ public class MemberController {
 			memberService.saveMember(member);
 		} catch (IllegalStateException e) {
 			model.addAttribute("errorMessage", e.getMessage());
-			return "member/com/memberForm";
+			return "member/members/comMemberForm";
 		}
 		return "redirect:/";
 	}
@@ -60,7 +60,7 @@ public class MemberController {
 	@GetMapping(value = "/stu/new")
 	public String memberStuForm(Model model) {
 		model.addAttribute("memberFormDto", new STU_MemberFormDto());
-		return "member/stu/memberForm";
+		return "member/members/stuMemberForm";
 	}
 
 	
@@ -68,42 +68,33 @@ public class MemberController {
 	public String newStuMember(@Valid @ModelAttribute("memberFormDto")STU_MemberFormDto memberFormDto,
 			BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
-			return "member/stu/memberForm";
+			return "member/members/stuMemberForm";
 		}
 		try {
 			Member member = Member.createStuMember(memberFormDto, passwordEncoder);
 			memberService.saveMember(member);
 		} catch (IllegalStateException e) {
 			model.addAttribute("errorMessage", e.getMessage());
-			return "member/stu/memberForm";
+			return "member/members/stuMemberForm";
 		}
 		return "redirect:/";
 	}
 
 	@GetMapping(value = "/login")
 	public String loginMember() {
-		return "member/memberLoginForm";
+		return "member/members/memberLoginForm";
 	}
 
 	@GetMapping(value = "/login/error")
 	public String loginError(Model model) {
 		model.addAttribute("loginErrorMsg", "아이디 또는 비밀번호를 확인해주세요");
-		return "member/memberLoginForm";
+		return "member/members/memberLoginForm";
 	}
 	
 	
 	@GetMapping(value = "/memberRole")
 	public String memberRole(Model model) {
-		return "member/memberRole";
-	}
-	
-	@ResponseBody
-	@GetMapping(value="/userid")
-	public String getUserId(Principal pirncipal) {
-		String userId = memberService.getUserId(pirncipal);
-		Member member = memberService.getMember(userId);
-		return member.getUserName();
-		
+		return "member/members/memberRole";
 	}
 	
 	@ResponseBody

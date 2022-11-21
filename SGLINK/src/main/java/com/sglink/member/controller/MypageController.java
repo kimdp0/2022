@@ -32,7 +32,7 @@ public class MypageController {
 		model.addAttribute("memberUpdateDto", new MemberUpdateDto());
 		String userId = principal.getName();
 		model.addAttribute("userId",userId);
-		return "/mypage/memberUpdateForm";
+		return "/member/mypage/memberUpdateForm";
 	}
 	
 	@PostMapping(value="/update")
@@ -41,7 +41,7 @@ public class MypageController {
 		if (bindingResult.hasErrors()) {
 			String userId = principal.getName();
 			model.addAttribute("userId",userId);
-			return "/mypage/memberUpdateForm";			
+			return "/member/mypage/memberUpdateForm";			
 		}
 		try {
 			Member member = Member.modifyMember(memberFormDto, passwordEncoder);
@@ -61,7 +61,7 @@ public class MypageController {
 		Member member = memberService.getMember(userId);
 		System.out.println(member);
 		model.addAttribute("info", member);
-		return "/mypage/mypage";
+		return "/member/mypage/mypage";
 	}
 	
 }

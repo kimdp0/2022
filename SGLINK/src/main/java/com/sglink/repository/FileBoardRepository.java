@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.sglink.dto.FileBoardRequestDto;
+import com.sglink.board.dto.FileBoardRequestDto;
 import com.sglink.entity.FileBoard;
 
 @Repository

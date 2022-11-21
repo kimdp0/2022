@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.sglink.constant.Role;
+import com.sglink.common.constant.Role;
 import com.sglink.member.dto.COM_MemberFormDto;
 import com.sglink.member.dto.MemberUpdateDto;
 import com.sglink.member.dto.STU_MemberFormDto;

@@ -7,7 +7,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.Id;
 
 import com.sglink.company.dto.CompanyRequestDto;
-import com.sglink.constant.Process;
+import com.sglink.common.constant.Process;
 
 import lombok.Getter;
 import lombok.Setter;

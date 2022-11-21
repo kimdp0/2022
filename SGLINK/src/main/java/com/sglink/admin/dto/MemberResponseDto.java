@@ -2,9 +2,8 @@ package com.sglink.admin.dto;
 
 import java.time.LocalDateTime;
 
-import com.sglink.constant.Role;
+import com.sglink.common.constant.Role;
 import com.sglink.entity.Member;
-import com.sglink.entity.Board;
 
 import lombok.Getter;
 

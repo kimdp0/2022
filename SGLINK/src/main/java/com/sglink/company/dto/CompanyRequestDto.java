@@ -3,7 +3,7 @@ package com.sglink.company.dto;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
-import com.sglink.constant.Process;
+import com.sglink.common.constant.Process;
 
 import lombok.Getter;
 import lombok.Setter;

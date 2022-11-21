@@ -3,7 +3,7 @@ package com.sglink.company.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sglink.constant.Process;
+import com.sglink.common.constant.Process;
 import com.sglink.entity.Company;
 import com.sglink.repository.CompanyRepository;
 

@@ -1,14 +1,9 @@
 package com.sglink;
 
-import java.util.List;
-
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.sglink.dto.NoticeBoardRequestDto;
-import com.sglink.dto.NoticeBoardResponseDto;
-import com.sglink.service.BoardService;
+
 
 @SpringBootTest
 class SglinkApplicationTests {
