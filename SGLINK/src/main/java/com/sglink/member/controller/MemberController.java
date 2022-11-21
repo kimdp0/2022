@@ -1,4 +1,4 @@
-package com.sglink.controller;
+package com.sglink.member.controller;
 
 import java.security.Principal;
 
@@ -12,13 +12,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.sglink.dto.COM_MemberFormDto;
-import com.sglink.dto.MemberUpdateDto;
-import com.sglink.dto.STU_MemberFormDto;
+import com.sglink.company.service.CompanyService;
+import com.sglink.entity.Company;
 import com.sglink.entity.Member;
-import com.sglink.service.MemberService;
+import com.sglink.member.dto.COM_MemberFormDto;
+import com.sglink.member.dto.STU_MemberFormDto;
+import com.sglink.member.service.MemberService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -27,6 +29,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class MemberController {
 	private final MemberService memberService;
+	private final CompanyService companyService;
 	private final PasswordEncoder passwordEncoder;
 
 	@GetMapping(value = "/com/new")
@@ -37,12 +40,15 @@ public class MemberController {
 	
 
 	@PostMapping(value = "/com/new")
-	public String mewComMember(@Valid @ModelAttribute("memberFormDto")COM_MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
+	public String mewComMember(@Valid @ModelAttribute("memberFormDto")COM_MemberFormDto memberFormDto, 
+			BindingResult bindingResult, Model model,
+			@RequestParam("comId")String comId) {
 		if (bindingResult.hasErrors()) {
 			return "member/com/memberForm";
 		}
 		try {
-			Member member = Member.createComMember(memberFormDto, passwordEncoder);
+			Company company = companyService.findByComId(comId);
+			Member member = Member.createComMember(company,memberFormDto, passwordEncoder);
 			memberService.saveMember(member);
 		} catch (IllegalStateException e) {
 			model.addAttribute("errorMessage", e.getMessage());
@@ -59,7 +65,8 @@ public class MemberController {
 
 	
 	@PostMapping(value = "/stu/new")
-	public String newStuMember(@Valid @ModelAttribute("memberFormDto")STU_MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
+	public String newStuMember(@Valid @ModelAttribute("memberFormDto")STU_MemberFormDto memberFormDto,
+			BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			return "member/stu/memberForm";
 		}
@@ -97,6 +104,19 @@ public class MemberController {
 		Member member = memberService.getMember(userId);
 		return member.getUserName();
 		
+	}
+	
+	@ResponseBody
+	@GetMapping(value = "/com/checkId")
+	public String checkComId(@RequestParam("comId") String comId) {			
+		try {
+			String comUniname = companyService.findByComId(comId).getComUniname();
+			return comUniname;
+			
+		}catch (IllegalStateException e){
+			return e.getMessage();
+			
+		}
 	}
 	
 	

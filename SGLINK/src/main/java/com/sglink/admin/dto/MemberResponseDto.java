@@ -1,4 +1,4 @@
-package com.sglink.dto;
+package com.sglink.admin.dto;
 
 import java.time.LocalDateTime;
 

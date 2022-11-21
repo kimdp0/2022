@@ -27,7 +27,7 @@ public class NoticeBoardRequestDto {
 				.boardName(boardName)
 				.build();
 	}
-	
+
 //	@Override
 //	public String toString() {
 //		return "Notice_BoardRequestDto [id=" + id + ", title=" + title + ", content=" + content + ", member=" + member
