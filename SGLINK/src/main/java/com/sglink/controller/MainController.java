@@ -24,7 +24,7 @@ public class MainController {
 	
 	@GetMapping("/cmnt")
 	public String comForm(){
-		return "/cmnt/cmntEvent";
+		return "/cmnt/eventSchedule";
 	}
 
 }

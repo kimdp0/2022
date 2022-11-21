@@ -1,0 +1,22 @@
+#Title {
+	position: relative;
+	/* 	top:20px; */
+	height: 60px;
+	font-size: 40px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	height: 60px;
+}
+
+.subtitle{
+	border-bottom: 2px #d3d3d3 solid;
+}
+/* span{
+	font-size:18px;
+	font-weight: bold;
+	color: #b20000;
+} */
+strong{
+	color: #333;
+	font-size: 14px;
+}
