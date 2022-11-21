@@ -2,11 +2,13 @@ package com.sglink.dto;
 
 import java.time.LocalDateTime;
 
-import com.sglink.entity.Member;
 import com.sglink.entity.Board;
+import com.sglink.entity.Member;
 
 import lombok.Getter;
+import lombok.ToString;
 
+@ToString
 @Getter
 public class NoticeBoardResponseDto {
 	private Long id;
@@ -15,6 +17,7 @@ public class NoticeBoardResponseDto {
 	private int readCnt;
 	private Member member;
 	private LocalDateTime registerTime;
+	private String boardName;
 	
 	public NoticeBoardResponseDto(Board entity) {
 		this.id =entity.getId();
@@ -23,11 +26,8 @@ public class NoticeBoardResponseDto {
 		this.readCnt= entity.getReadCnt();
 		this.member= entity.getMember();
 		this.registerTime = entity.getRegisterTime();
+		this.boardName= entity.getBoardName();
 	}
-	@Override
-	public String toString() {
-		return "Notice_BoardResponseDto [id=" + id + ", title=" + title + ", content=" + content + ", readCnt=" + readCnt
-						+ ", registerId=" + member + ", registerTime=" + registerTime + "]";
-	}
+	
 
 }

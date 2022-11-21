@@ -32,6 +32,7 @@ public class NoticeBoardController {
 			)throws Exception{
 		try {
 			model.addAttribute("resultMap", boardService.findAll(page, size));
+			System.out.println(boardService.findAll(page, size));
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());
 		}
@@ -91,7 +92,6 @@ public class NoticeBoardController {
 
 		try {
 			int result = boardService.updateBoard(boardRequestDto);
-			System.out.println(boardRequestDto.getMember().getUserId());
 			if (result<1) {
 				throw new Exception("#Exception boardViewAction!");
 			}
