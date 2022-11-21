@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.sglink.dto.NoticeBoardRequestDto;
 import com.sglink.dto.NoticeBoardResponseDto;
-import com.sglink.service.NoticeBoardService;
+import com.sglink.service.BoardService;
 
 @SpringBootTest
 class SglinkApplicationTests {
