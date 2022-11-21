@@ -91,7 +91,6 @@ public class NoticeBoardController {
 
 		try {
 			int result = boardService.updateBoard(boardRequestDto);
-			System.out.println(boardRequestDto.getMember().getUserId());
 			if (result<1) {
 				throw new Exception("#Exception boardViewAction!");
 			}
