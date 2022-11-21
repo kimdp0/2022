@@ -40,7 +40,7 @@ public class MemberController {
 	
 
 	@PostMapping(value = "/com/new")
-	public String mewComMember(@Valid @ModelAttribute("memberFormDto")COM_MemberFormDto memberFormDto, 
+	public String newComMember(@Valid @ModelAttribute("memberFormDto")COM_MemberFormDto memberFormDto, 
 			BindingResult bindingResult, Model model,
 			@RequestParam("comId")String comId) {
 		if (bindingResult.hasErrors()) {

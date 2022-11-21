@@ -136,11 +136,14 @@ function fnCheckComId() {
 				method:"get",
 				data:{"comId":comId},
 				success: function(data){
-					if(data != "기업코드가 올바르지 않습니다"){
+					if(data == "기업코드가 올바르지 않습니다"){
+						alert(data);
+						
+					}else if(data == "기업코드가 승인되지 않았습니다"){
+						alert(data);
+					}else{
 						$("#comuserUniname").val(data);
 						$("#comId").attr("readonly","readonly")
-					}else{
-						alert(data);
 					}
 					
 				},

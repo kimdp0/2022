@@ -63,5 +63,16 @@ public class AdminService {
 		return resultMap;	
 	}
 	
+	public void approveCompany(String comId,String comProcess) {
+		if(comProcess.equals("UNAPPROVE")) {
+			String process = "APPROVE";
+			companyRepository.updateCompanyProcess(comId,process);
+		}else if(comProcess.equals("APPROVE")){
+			String process = "UNAPPROVE";
+			companyRepository.updateCompanyProcess(comId,process);
+		}
+		
+	}
+	
 
 }

@@ -43,10 +43,6 @@ public class MemberService implements UserDetailsService {
 	
 	private void duplicateMember(Member member ,String userId) {
 		String userPw = memberRepository.duplicatePw(userId, member.getUserPw());
-		System.out.println("------------------------------------------------------------------------------------------");
-		System.out.println(member.getUserPw());
-		System.out.println(userPw);
-		System.out.println("------------------------------------------------------------------------------------------");
 		String userName = memberRepository.duplicateName(userId, member.getUserName());
 		String userUniname = memberRepository.duplicateUniname(userId, member.getUserUniname());
 		if (userPw != null) {

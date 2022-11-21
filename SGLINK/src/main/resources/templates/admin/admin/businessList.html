@@ -6,7 +6,7 @@
 <title>관리자 회원관리창</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link th:href="@{/css/admins/memberList.css}" rel="stylesheet">
+<link th:href="@{/css/admin/admin/memberList.css}" rel="stylesheet">
 </head>
 <body>
 	<div layout:fragment="content" id="content">
@@ -16,6 +16,7 @@
 		</div>
 		<div id="wrapper">
 			<div class="container">
+				<form action="/admin/member/list" method="get">
 					<div class="memberlist">
 						<table class="listtable">
 							<tr class="listhead">
@@ -58,6 +59,7 @@
 							</ul>
 						</div>
 					</div>
+				</form>
 			</div>
 
 		</div>

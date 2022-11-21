@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sglink.admin.service.AdminService;
+import com.sglink.repository.MemberRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -26,12 +27,12 @@ public class AdminController {
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());
 		}
-		return "/admin/memberList";
+		return "/admin/admin/memberList";
 	}
 	
 	
 	@GetMapping("/member/list/delete")
-	public String DeleteMember(Model model,@RequestParam("userId")String userId) throws Exception{
+	public String deleteMember(Model model,@RequestParam("userId")String userId) throws Exception{
 		try {
 			adminService.deleteMember(userId);
 		}catch(Exception e) {
@@ -47,7 +48,13 @@ public class AdminController {
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());
 		}
-		return "/admin/companyList";
+		return "/admin/admin/companyList";
+	}
+	
+	@GetMapping("/company/list/approve")
+	public String approveCompany(@RequestParam("comId")String comId,@RequestParam("comProcess")String comProcess) {
+		adminService.approveCompany(comId,comProcess);
+		return "redirect:/admin/company/list";
 	}
 
 }
