@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.sglink.dto.NoticeBoardRequestDto;
 import com.sglink.entity.Board;
 import com.sglink.member.service.MemberService;
-import com.sglink.service.NoticeBoardService;
+import com.sglink.service.BoardService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,7 +21,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Controller
 public class NoticeBoardController {
-	private final NoticeBoardService boardService;
+	private final BoardService boardService;
 	private final MemberService memberService;
 	
 	
@@ -32,6 +32,7 @@ public class NoticeBoardController {
 			)throws Exception{
 		try {
 			model.addAttribute("resultMap", boardService.findAll(page, size));
+			System.out.println(boardService.findAll(page, size));
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());
 		}
@@ -124,6 +125,110 @@ public class NoticeBoardController {
 		}
 		return "redirect:/boards/notice/list";
 	}
+	
+	
+//	자유게시판======================================
+	@GetMapping("/free/list")
+	public String getFreeBoardListPage(Model model, @RequestParam(required= false, defaultValue= "0") Integer page, 
+			@RequestParam(required = false, defaultValue= "10") Integer size
+			)throws Exception{
+		try {
+			model.addAttribute("resultMap", boardService.findAll(page, size));
+			System.out.println(boardService.findAll(page, size));
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return "/board/free/list";
+	}
+	
+	
+	@GetMapping("/free/write")
+	public String getFreeBoardWritePage(Model model, NoticeBoardRequestDto boardRequestDto,Principal principal) {
+		
+		String userId = memberService.getUserId(principal);
+		
+		model.addAttribute("userId", userId);
+		return "/board/free/write";
+	}
+	
+	@GetMapping("/free/view")
+	public String getFreeBoardViewPage(@RequestParam("id")Long id ,Model model, NoticeBoardRequestDto boardRequestDto,Principal principal) throws Exception{
+		try {
+			if (boardRequestDto.getId() != null) {
+				//게시판에서 게시판테이블에있는 아이디 파라메서 가져와 그 아이디로 게시판정보 가져오기
+				Board noticeBoard = boardService.viewfindById(id).get();
+				//게시판에서 회원테이블을 참조하기 때문에 회원테이블에 있는 값을 가져올 수 있음
+				String registerId = noticeBoard.getMember().getUserId();
+				//로그인시 로그인한 회원의 아이디를 가져옴
+				String loginUserId = principal.getName();
+				model.addAttribute("loginUserId", loginUserId);
+				model.addAttribute("registerId", registerId);
+				model.addAttribute("info", boardService.findById(boardRequestDto.getId()));
+			}
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		
+		return "/board/free/view";
+		
+	}
+	
+	@PostMapping("/free/write/action")
+	public String freeBoardWriteAction(Model model, NoticeBoardRequestDto boardRequestDto) throws Exception{
+		try {
+			
+			
+			Long result = boardService.save(boardRequestDto);
+			
+			if (result<0) {
+				throw new Exception("#Exception boardWriteAction!");
+			}
+		}catch(Exception e) {
+				throw new Exception(e.getMessage());
+			}
+			return "redirect:/boards/free/list";
+		
+		}
+	
+	@PostMapping("/free/view/action")
+	public String getFreeBoardViewAction(Model model, @ModelAttribute NoticeBoardRequestDto boardRequestDto) throws Exception{
+
+		try {
+			int result = boardService.updateBoard(boardRequestDto);
+			if (result<1) {
+				throw new Exception("#Exception boardViewAction!");
+			}
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		
+		return "redirect:/boards/free/list";
+	}
+	
+	@GetMapping("/free/view/delete")
+	public String FreeBoardViewDeleteAction(Model model, @RequestParam("id")Long id) throws Exception{
+
+		try {
+			System.out.println(id);
+			boardService.deleteById(id);
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		
+		return "redirect:/boards/notice/list";
+	}
+	
+	@GetMapping("/free/delete")
+	public String FreeBoardDeleteAction(Model model, @RequestParam() Long[] deleteId) throws Exception{
+		
+		try {
+			boardService.deleteAll(deleteId);
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return "redirect:/boards/free/list";
+	}
+	
 	
 
 }

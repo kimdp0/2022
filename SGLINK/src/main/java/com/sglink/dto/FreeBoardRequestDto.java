@@ -12,7 +12,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @NoArgsConstructor
-public class NoticeBoardRequestDto {
+public class FreeBoardRequestDto {
 	private Long id;
 	private String title;
 	private String content;

@@ -22,9 +22,9 @@ public class MainController {
 		return "/layouts/content";
 	}
 	
-	@GetMapping("/com")
+	@GetMapping("/cmnt")
 	public String comForm(){
-		return "/com/comNotice";
+		return "/cmnt/cmntEvent";
 	}
 
 }

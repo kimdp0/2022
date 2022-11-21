@@ -19,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
-public class NoticeBoardService {
+public class BoardService {
 	private final NoticeBoardRepository boardRepository;
 	
 	@Transactional
@@ -48,6 +48,8 @@ public class NoticeBoardService {
 		
 		
 	}
+
+
 	
 	public NoticeBoardResponseDto findById(Long id) {
 		boardRepository.updateBoardReadCntInc(id);
@@ -73,4 +75,9 @@ public class NoticeBoardService {
 	public void deleteAll(Long[] deleteId) {
 		boardRepository.deleteBoard(deleteId);
 	}
+	
+//	자유게시판=================================
+	
+	
+	
 }

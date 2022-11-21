@@ -38,7 +38,7 @@
 						</thead>
 						<tbody >
 						
-							<tr th:if="${list.BoardName == 'NoticeBoard'}" th:each="list,index : ${resultMap.list}"
+							<tr th:if="${list.BoardName == 'FreeBoard'}" th:each="list,index : ${resultMap.list}"
 								th:with="paging=${resultMap.paging}">
 
 								<!-- <td class="num1 border side" sec:authorize="hasAnyAuthority('ROLE_ADMIN')"><input type="checkbox" name="deleteId"
@@ -96,7 +96,7 @@
 						<a onclick="fnDelete()"> 삭제하기</a> 
 					</div>
 					<div class="bt_wrap">
-						<a onclick="javascript:location.href='/boards/notice/write'">글쓰기</a>
+						<a onclick="javascript:location.href='/boards/free/write'">글쓰기</a>
 					</div>
 
 				</div>
@@ -135,7 +135,7 @@
 			if (delInpChkLen > 0) {
 				if (confirm("삭제하시겠습니까?")) {
 					let frm = $("#frm");
-					frm.attr("action", "/boards/notice/delete");
+					frm.attr("action", "/boards/free/delete");
 					frm.attr("method", "get");
 					frm.submit();
 				}

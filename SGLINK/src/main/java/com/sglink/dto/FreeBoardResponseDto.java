@@ -10,7 +10,7 @@ import lombok.ToString;
 
 @ToString
 @Getter
-public class NoticeBoardResponseDto {
+public class FreeBoardResponseDto {
 	private Long id;
 	private String title;
 	private String content;
@@ -19,7 +19,7 @@ public class NoticeBoardResponseDto {
 	private LocalDateTime registerTime;
 	private String boardName;
 	
-	public NoticeBoardResponseDto(Board entity) {
+	public FreeBoardResponseDto(Board entity) {
 		this.id =entity.getId();
 		this.title= entity.getTitle();
 		this.content = entity.getContent();
