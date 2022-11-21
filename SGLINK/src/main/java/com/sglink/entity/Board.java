@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.sglink.dto.NoticeBoardRequestDto;
+import com.sglink.file.entity.FileEntity;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -39,28 +39,24 @@ public class Board extends BaseTimeEntity{
 	@JoinColumn(name = "registerId")
 	private Member member;
 	
+	@OneToOne
+	@JoinColumn(name= "imageId")
+	private FileEntity fileEntity;
+	
 	
 	
 	@Builder
-	public Board(Long id, String title, String content, int readCnt, Member member, String boardName) {
+	public Board(Long id, String title, String content, int readCnt, Member member, String boardName, FileEntity fileEntity) {
 		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.readCnt = readCnt;
 		this.member = member;
 		this.boardName= boardName;
+		this.fileEntity = fileEntity;
 	}
 	
-//	public static Board createNoticeBoard(NoticeBoardRequestDto noticeboardRequestDto) {
-//		Board board= new Board();
-//		board.setId(noticeboardRequestDto.getId());
-//		board.setTitle(noticeboardRequestDto.getTitle());
-//		board.setContent(noticeboardRequestDto.getContent());
-//		board.setMember(noticeboardRequestDto.getMember());
-//		
-//		
-//		return board;
-//	}
+
 	
 
 }
