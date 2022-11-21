@@ -1,27 +1,35 @@
 package com.sglink.dto;
 
-import com.sglink.entity.FileBoard;
+import java.time.LocalDateTime;
 
+import com.sglink.entity.FileBoard;
+import com.sglink.entity.Member;
+
+import lombok.Getter;
+import lombok.ToString;
+
+
+@ToString
+@Getter
 public class FileBoardResponseDto {
 	private Long id;
 	private String title;
 	private String content;
-	private String writer;
+	private Member member;
+	private LocalDateTime registerTime;
+	private int readCnt;
 	
 	public FileBoardResponseDto(FileBoard entity) {
 		this.id = entity.getId();
 		this.title = entity.getTitle();
 		this.content = entity.getContent();
-		this.writer = entity.getWriter();
-		
+		this.member = entity.getMember();
+		this.registerTime = entity.getRegisterTime();
+		this.readCnt = entity.getReadCnt();
 	}
 	 
 	
-	@Override
-	public String toString() {
-		return "File_BoardResponsetDto [id=" + id + ", title=" + title + ", content=" + content + ", writer=" + writer
-				+ "]";
-	}
+	
 	
 	
 

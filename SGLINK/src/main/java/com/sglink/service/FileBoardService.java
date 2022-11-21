@@ -50,8 +50,8 @@ public class FileBoardService {
 		return fileboardRepository.findById(id);
 	}
 	
-	public int updateBoard(FileBoardRequestDto fileboardRequestDto) {
-		return fileboardRepository.updatefileBoard(fileboardRequestDto);
+	public int updateBoard(FileBoardRequestDto boardRequestDto) {
+		return fileboardRepository.updateBoard(boardRequestDto);
 	}
 	
 	public int updateBoardReadCntInc(Long id) {

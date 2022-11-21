@@ -16,23 +16,24 @@ import com.sglink.entity.FileBoard;
 @Repository
 public interface FileBoardRepository extends JpaRepository<FileBoard, Long> {
 	
-	static final String UPDATE_FILEBOARD = "UPDATE file_board"
-			+ "SET TITLE = :#{#fileboardRequestDto.title},"
-			+ "CONTENT = :#{#fileBoardRequestDto.content},"
-			+ "WRITER = :#{#fileBoardRequestDto.writer},"
-			+ "WHERE ID = :#{fileBoardRequestDto.id}";
+	static final String UPDATE_FILEBOARD = "UPDATE file_board "
+			+ "SET TITLE = :#{#fileBoardRequestDto.title}, "
+			+ "CONTENT = :#{#fileBoardRequestDto.content}, "
+			+ "REGISTER_ID = :#{#fileBoardRequestDto.member}, "
+			+ "UPDATE_TIME = SYSDATE() "
+			+ "WHERE ID = :#{#fileBoardRequestDto.id}";
 	
-	static final String UPDATE_FILEBOARD_READ_CNT_INC = "UPDATE file_board"
+	static final String UPDATE_FILEBOARD_READ_CNT_INC = "UPDATE file_board "
 			+ "SET READ_CNT = READ_CNT + 1 "
 			+ "WHERE ID = :id";
 	
-	static final String DELETE_FILEBOARD = "DELETE FROM file_board"
+	static final String DELETE_FILEBOARD = "DELETE FROM file_board "
 			+ "WHERE ID IN (:deleteList)";
 	
 	@Transactional
 	@Modifying
 	@Query (value = UPDATE_FILEBOARD, nativeQuery = true)
-	public int updatefileBoard(@Param("fileboardRequestDto")FileBoardRequestDto fileboardRequestDto);
+	public int updateBoard(@Param("fileBoardRequestDto") FileBoardRequestDto boardRequestDto);
 	
 	@Transactional
 	@Modifying

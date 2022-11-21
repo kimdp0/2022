@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>event</title>
-<link href="/css/cmnt/cmntEvent.css" rel="stylesheet">
+<link th:href="@{/css/cmnt/cmntEvent.css}" rel="stylesheet">
 </head>
 <body>
 	<div layout:fragment="content" id="content">
@@ -26,6 +26,7 @@
 						<input type="hidden" name="currentPage"> <input
 							type="hidden" name="bbsconfig" value="2"> <input
 							type="hidden" name="searchItemGubun" value="A">
+
 						<table>
 							<tbody>
 								<tr class="first-row">
@@ -62,22 +63,97 @@
 				</div>
 				<div class="new_event">
 					<ul>
-						<li><a href=""> <span class="photo"><img
-									src="/img/cmnt/event1.jpg" alt></span>
-								<dl>
-									<dt>
-										<strong>2015년 제 4차 서강가족기업포럼 개최</strong><span>2016.05.19</span>
-									</dt>
-									<dd>
-										- 일시 : 2015년 10월 7일(수) 09:00~20:00 <br>- 장소 : DMC첨단산업센터
-										7층 강의실 및 회의실
-									</dd>
-								</dl></a></li>
+						<!-- List 시작 -->
+						<li><span class="photo"><img
+								src="/img/cmnt/event1.jpg" alt=""></span>
+							<dl>
+								<dt>
+									<a href="#"> <strong>2015년 제 4차 서강가족기업포럼 개최</strong><span>2016.05.19</span>
+									</a>
+								</dt>
+								<dd>
+									<a href="#"> - 일시 : 2015년 10월 7일(수) 09:00~20:00 <br>-
+										장소 : DMC첨단산업센터 7층 강의실 및 회의실
+									</a>
+								</dd>
+							</dl></li>
+						<li><span class="photo"><img
+								src="/img/cmnt/event2.jpg" alt=""></span>
+							<dl>
+								<dt>
+									<a href="#"> <strong>2015년 제 3차 서강가족기업 포럼 개최</strong><span>2015.09.18</span>
+									</a>
+								</dt>
+								<dd>
+									<a href="#"> - 일시 : 2015년 9월 16일(수) 10:00~12:00 <br>-
+										 장소 : 서울상공회의소 회의실 3
+									</a>
+								</dd>
+							</dl></li>
+						<li><span class="photo"><img
+								src="/img/cmnt/event3.jpg" alt=""></span>
+							<dl>
+								<dt>
+									<a href="#"> <strong>2015년 제 4차 서강가족기업포럼 개최</strong><span>2016.05.19</span>
+									</a>
+								</dt>
+								<dd>
+									<a href="#"> - 일시 : 2015년 10월 7일(수) 09:00~20:00 <br>-
+										장소 : DMC첨단산업센터 7층 강의실 및 회의실
+									</a>
+								</dd>
+							</dl></li>
+						<li><span class="photo"><img
+								src="/img/cmnt/event4.jpg" alt=""></span>
+							<dl>
+								<dt>
+									<a href="#"> <strong>2015년 제 4차 서강가족기업포럼 개최</strong><span>2016.05.19</span>
+									</a>
+								</dt>
+								<dd>
+									<a href="#"> - 일시 : 2015년 10월 7일(수) 09:00~20:00 <br>-
+										장소 : DMC첨단산업센터 7층 강의실 및 회의실
+									</a>
+								</dd>
+							</dl></li>
+						<li><span class="photo"><img
+								src="/img/cmnt/event5.jpg" alt=""></span>
+							<dl>
+								<dt>
+									<a href="#"> <strong>2015년 제 4차 서강가족기업포럼 개최</strong><span>2016.05.19</span>
+									</a>
+								</dt>
+								<dd>
+									<a href="#"> - 일시 : 2015년 10월 7일(수) 09:00~20:00 <br>-
+										장소 : DMC첨단산업센터 7층 강의실 및 회의실
+									</a>
+								</dd>
+							</dl></li>
+						<li><span class="photo"><img
+								src="/img/cmnt/event6.jpg" alt=""></span>
+							<dl>
+								<dt>
+									<a href="#"> <strong>2015년 제 4차 서강가족기업포럼 개최</strong><span>2016.05.19</span>
+									</a>
+								</dt>
+								<dd>
+									<a href="#"> - 일시 : 2015년 10월 7일(수) 09:00~20:00 <br>-
+										장소 : DMC첨단산업센터 7층 강의실 및 회의실
+									</a>
+								</dd>
+							</dl></li>
 					</ul>
-
+				</div>
+				<br>
+				<div class="page_wrap">
+					<div class="page_nation">
+						<a class="arrow pprev" href="#"></a> <a class="arrow prev"
+							href="#"></a> <a href="#" class="active">1</a> <a href="#">2</a>
+						<a class="arrow next" href="#"></a> <a class="arrow nnext"
+							href="#"></a>
+					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 </body>

@@ -7,15 +7,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+import lombok.AccessLevel;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
 
 
-@Data
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor(access= AccessLevel.PROTECTED)
+@Table(name= "file_board")
 public class FileBoard extends BaseTimeEntity{
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -23,8 +30,7 @@ public class FileBoard extends BaseTimeEntity{
 	@Column(nullable = false)
 	private String title;
 	private String content;
-	@Column(nullable = false)
-	private String writer;
+	private int readCnt;
 	
 	
 	@OneToOne
@@ -33,12 +39,13 @@ public class FileBoard extends BaseTimeEntity{
 	
 	
 	@Builder
-	 public FileBoard(Long id, String title, String content, String writer) {
+	 public FileBoard(Long id, String title, String content, Member member, int readCnt) {
 	    
 	 this.id = id;
 	 this.title = title; 
 	 this.content = content; 
-	 this.writer = writer; }
-	 
+	 this.member = member; 
+	 this.readCnt = readCnt;
+	}
 
 }
