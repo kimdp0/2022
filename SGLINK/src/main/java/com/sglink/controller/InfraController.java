@@ -27,4 +27,9 @@ public class InfraController {
 	public String precaution() {
 		return "/board/comsup/infra/precaution";
 	}
+	@RequestMapping(value = "/infra/equipmentregist", method = RequestMethod.GET)
+	public String equipmentregist() {
+		return "/equipment/equipment/equipmentRegist";
+	}
+	
 }
