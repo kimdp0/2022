@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout=http://www.ultraq.net.nz/thymeleaf/layout
+	layout:decorate="~{layouts/layoutCmnt}">
+<head>
+<meta charset="UTF-8">
+<title>event</title>
+<link href="/css/cmnt/cmntEvent.css" rel="stylesheet">
+</head>
+<body>
+	<div layout:fragment="content" id="content">
+		<div id="cmntevent">
+			<div id="Title">
+				<div id="TopTitle" style="padding: 15px 15px 15px 0px;">행사소식</div>
+			</div>
+			<div class="subtitle">
+				<p>서강대학교 LINC 입니다.</p>
+			</div>
+			<div class="first-row">
+				<p>
+					<i class="fa-check"> 총 <em>6</em> 건의 게시물이 있습니다.
+					</i>
+					<!-- //검색 -->
+				<div class="search">
+					<form name="searchForm" method="post" action="boardlist.do">
+						<input type="hidden" name="currentPage"> <input
+							type="hidden" name="bbsconfig" value="2"> <input
+							type="hidden" name="searchItemGubun" value="A">
+						<table>
+							<tbody>
+								<tr class="first-row">
+									<td class="first-column"><span class="cd select"> <select
+											name="searchLpp" onchange="javascript:viewCountChange()">
+												<option value="9">9개씩 보기</option>
+												<option value="12">12개씩 보기</option>
+												<option value="15" selected="">15개씩 보기</option>
+												<option value="18">18개씩 보기</option>
+												<option value="21">21개씩 보기</option>
+												<option value="24">24개씩 보기</option>
+												<option value="27">27개씩 보기</option>
+												<option value="30">30개씩 보기</option>
+										</select>
+									</span></td>
+									<td><span class="cd select"> <select
+											name="searchField">
+												<option value="ALL" selected="">전체</option>
+												<option value="TITLE">제목</option>
+												<option value="CONTENT">내용</option>
+												<option value="USERNAME">작성자</option>
+										</select>
+									</span></td>
+									<td><input type="search" name="searchValue" value=""
+										maxlength="20" class="cd keyword" placeholder="검색어를 입력하세요"></td>
+									<td><button type="submit" class="cd submit">
+											<span class="icon"></span>검색
+										</button></td>
+								</tr>
+							</tbody>
+						</table>
+
+					</form>
+				</div>
+				<div class="new_event">
+					<ul>
+						<li><a href=""> <span class="photo"><img
+									src="/img/cmnt/event1.jpg" alt></span>
+								<dl>
+									<dt>
+										<strong>2015년 제 4차 서강가족기업포럼 개최</strong><span>2016.05.19</span>
+									</dt>
+									<dd>
+										- 일시 : 2015년 10월 7일(수) 09:00~20:00 <br>- 장소 : DMC첨단산업센터
+										7층 강의실 및 회의실
+									</dd>
+								</dl></a></li>
+					</ul>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
