@@ -1,6 +1,9 @@
 package com.sglink.board.dto;
 
 import com.sglink.entity.Member;
+
+
+
 import com.sglink.entity.Board;
 
 import lombok.Getter;
@@ -13,8 +16,11 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 public class NoticeBoardRequestDto {
+	
 	private Long id;
+	
 	private String title;
+	
 	private String content;
 	private Member member;
 	private String boardName;

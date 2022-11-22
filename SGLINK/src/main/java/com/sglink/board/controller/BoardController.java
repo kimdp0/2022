@@ -2,6 +2,7 @@ package com.sglink.board.controller;
 
 import java.security.Principal;
 
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -49,8 +50,31 @@ public class BoardController {
 		return "/board/board/noticeWrite";
 	}
 	
-	@GetMapping("/notice/view")
+	@GetMapping("/notice/edit")
 	public String getnoticeBoardViewPage(@RequestParam("id")Long id ,Model model, NoticeBoardRequestDto boardRequestDto,Principal principal) throws Exception{
+		try {
+			if (boardRequestDto.getId() != null) {
+				//게시판에서 게시판테이블에있는 아이디 파라메서 가져와 그 아이디로 게시판정보 가져오기
+				Board noticeBoard = boardService.viewfindById(id).get();
+				//게시판에서 회원테이블을 참조하기 때문에 회원테이블에 있는 값을 가져올 수 있음
+				String registerId = noticeBoard.getMember().getUserId();
+				//로그인시 로그인한 회원의 아이디를 가져옴
+				String loginUserId = principal.getName();
+				model.addAttribute("loginUserId", loginUserId);
+				model.addAttribute("registerId", registerId);
+				model.addAttribute("info", boardService.findById(boardRequestDto.getId()));
+			}
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		
+		return "/board/board/noticeEdit";
+		
+	}
+	
+	
+	@GetMapping("/notice/view")
+	public String testgetnoticeBoardViewPage(@RequestParam("id")Long id ,Model model, NoticeBoardRequestDto boardRequestDto,Principal principal) throws Exception{
 		try {
 			if (boardRequestDto.getId() != null) {
 				//게시판에서 게시판테이블에있는 아이디 파라메서 가져와 그 아이디로 게시판정보 가져오기
@@ -71,8 +95,10 @@ public class BoardController {
 		
 	}
 	
+	
 	@PostMapping("/notice/write/action")
 	public String noticeBoardWriteAction(Model model, NoticeBoardRequestDto boardRequestDto) throws Exception{
+	
 		try {
 			
 			
@@ -88,11 +114,12 @@ public class BoardController {
 		
 		}
 	
-	@PostMapping("/notice/view/action")
+	@PostMapping("/notice/edit/action")
 	public String getBoardViewAction(Model model, @ModelAttribute NoticeBoardRequestDto boardRequestDto) throws Exception{
 
 		try {
 			int result = boardService.updateBoard(boardRequestDto);
+
 			if (result<1) {
 				throw new Exception("#Exception boardViewAction!");
 			}
@@ -174,6 +201,29 @@ public class BoardController {
 		
 	}
 	
+	@GetMapping("/free/edit")
+	public String getFreeBoardEditPage(@RequestParam("id")Long id ,Model model, NoticeBoardRequestDto boardRequestDto,Principal principal) throws Exception{
+		try {
+			if (boardRequestDto.getId() != null) {
+				//게시판에서 게시판테이블에있는 아이디 파라메서 가져와 그 아이디로 게시판정보 가져오기
+				Board noticeBoard = boardService.viewfindById(id).get();
+				//게시판에서 회원테이블을 참조하기 때문에 회원테이블에 있는 값을 가져올 수 있음
+				String registerId = noticeBoard.getMember().getUserId();
+				//로그인시 로그인한 회원의 아이디를 가져옴
+				String loginUserId = principal.getName();
+				model.addAttribute("loginUserId", loginUserId);
+				model.addAttribute("registerId", registerId);
+				model.addAttribute("info", boardService.findById(boardRequestDto.getId()));
+			}
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		
+		return "/board/board/freeEdit";
+		
+	}
+	
+	
 	@PostMapping("/free/write/action")
 	public String freeBoardWriteAction(Model model, NoticeBoardRequestDto boardRequestDto) throws Exception{
 		try {
@@ -191,7 +241,7 @@ public class BoardController {
 		
 		}
 	
-	@PostMapping("/free/view/action")
+	@PostMapping("/free/edit/action")
 	public String getFreeBoardViewAction(Model model, @ModelAttribute NoticeBoardRequestDto boardRequestDto) throws Exception{
 
 		try {
