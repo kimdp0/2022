@@ -1,11 +1,14 @@
-#Title {
+.top1 {
 	position: relative;
+	height: 120px;
+}
+
+#Title {
 	/* 	top:20px; */
 	height: 60px;
 	font-size: 40px;
 	font-weight: bold;
 	letter-spacing: 2px;
-	height: 60px;
 }
 
 .subtitle {
@@ -19,25 +22,28 @@
 }
 
 .pk {
-	/* padding-bottom:0px; */
-	padding-top: 20px; 
+	padding-top: 20px;
 	padding-bottom: 10px;
+	position: absolute;
 }
 
 .cd select {
-	width:165px;
+	width: 165px;
 	height: 25px;
-	
 }
 
 .cd sumit {
 	height: 500px;
 }
 
+#myImg {
+	width: 720px;
+	height: 1000px;
+}
+
 .main {
-  background-image: url(/img/cmnt/newspage.jpg);
-  background-size: 720px 1000px;
-  width: 720px;
-  height: 1000px;
-  border: 1px solid;
+	position: relative;
+	width: 720px; height : 1000px;
+	border: 1px solid;
+	height: 1000px;
 }
