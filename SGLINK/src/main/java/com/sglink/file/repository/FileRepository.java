@@ -12,12 +12,18 @@ import com.sglink.file.entity.FileEntity;
 public interface FileRepository  extends JpaRepository<FileEntity, Long>{
 	
 	String delete = "delete from file_entity where file_board_id =:id";
-	
+	String deleteAll = "delete from file_entity where file_board_id in (:deleteList)";
 
 	@Transactional
 	@Modifying
 	@Query(value=delete,nativeQuery = true)
 	void deleteFileByBoardId(@Param("id")Long id);
+	
+	
+	@Transactional
+	@Modifying
+	@Query(value=deleteAll,nativeQuery = true)
+	void deleteAllFileByBoardId(@Param("deleteList")Long[] deleteId);
 	
 	
 }

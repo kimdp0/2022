@@ -123,6 +123,7 @@ public class BoardService {
 	}
 	
 	public void filedeleteAll(Long[] deleteId) {
+		fileRepository.deleteAllFileByBoardId(deleteId);
 		fileboardRepository.deleteFileBoard(deleteId);
 	}
 //	자유게시판기능구현=================================

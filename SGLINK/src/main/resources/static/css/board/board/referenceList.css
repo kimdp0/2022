@@ -137,11 +137,11 @@ a:hover{
 }
 
 .board_list .title {
-    width: 50%;
+    width: 40%;
 }
 
 .board_list .file {
-    width: 10%;
+    width: 20%;
 }
 .board_list>tbody .title {
     text-align:left;
@@ -202,5 +202,9 @@ a:hover{
 }
 
 
-
+.img1{
+	position:absolute;	
+	width:12px;
+	height: 10px;
+}
 
