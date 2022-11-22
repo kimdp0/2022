@@ -100,4 +100,5 @@ public class PageViewController {
 	public String eventSchedule() {
 		return "/pageView/cmnt/eventSchedule";
 	}
+	
 }
