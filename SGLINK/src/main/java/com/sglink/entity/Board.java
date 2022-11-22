@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 import com.sglink.file.entity.FileEntity;
 
@@ -30,6 +31,8 @@ public class Board extends BaseTimeEntity{
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
+	
+	@NotBlank(message = "제목을 입력하세요")
 	private String title;
 	@Column(nullable = true, length = 1000)
 	private String content;
