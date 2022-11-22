@@ -88,6 +88,20 @@ public class PageViewController {
 		return "/pageView/introduce/direction";
 	}
 	
+	//오픈 이노베이션-------------------------------------------------------------------------
+	@RequestMapping(value = "/comsup/openino/introduce", method = RequestMethod.GET)
+	public String OpenIntroduce() {
+		return "/pageView/comsup/openino/introduce";
+	}
+	@RequestMapping(value = "/comsup/openino/model", method = RequestMethod.GET)
+	public String OpenModel() {
+		return "/pageView/comsup/openino/model";
+	}
+	@RequestMapping(value = "/comsup/openino/board", method = RequestMethod.GET)
+	public String OpenBoard() {
+		return "/pageView/comsup/openino/board";
+	}
+	
 	
 	//커뮤니티------------------------------------------------------------------------------
 	
