@@ -42,6 +42,8 @@ public class FileUploadController {
 	@PostMapping("/multi")
 	public String createFile(@Valid @RequestParam("files") List<MultipartFile> files, Principal principal,Model model)
 			throws Exception {
+		
+		System.out.println(files);
 		fileUploadService.addFile(files, principal);
 		URI uriLocation = new URI("/multi" + principal.getName());
 		return "redirect:/upload/view";
