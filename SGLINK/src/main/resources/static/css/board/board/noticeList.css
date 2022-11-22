@@ -87,7 +87,7 @@ a:hover{
 } 
 .board_list .num1 {
     display: inline-block;
-    padding: 14px 0;
+    padding: 15px 0;
     text-align: center;
     font-size: 1.4rem;
 }
@@ -127,13 +127,16 @@ a:hover{
 
 
 .board_list .num {
+	height:20px;
     width: 10%;
 }
 
 .board_list .title {
+	height:20px;
     width: 60%;
 }
 .board_list>tbody .title {
+	
     text-align:left;
 }
 
@@ -145,14 +148,17 @@ a:hover{
 	
 
 .board_list .writer {
+	height:20px;
     width: 10%;
 }
 
 .board_list .date {
+	height:20px;
     width: 10%;
 }
 
 .board_list .count {
+	height:20px;
     width: 10%;
 }
 
