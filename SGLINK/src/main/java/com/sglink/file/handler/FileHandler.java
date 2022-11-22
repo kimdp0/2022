@@ -1,22 +1,22 @@
 package com.sglink.file.handler;
 
 import java.io.File;
-import java.security.Principal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.sglink.entity.FileBoard;
 import com.sglink.file.entity.FileEntity;
 
 @Component
 public class FileHandler {
-	public List<FileEntity> parseFileInfo(List<MultipartFile> multipartFiles,Principal principal) throws Exception {
+	public List<FileEntity> parseFileInfo(List<MultipartFile> multipartFiles,Long id,FileBoard fileBoard) throws Exception {
 
 		// 반환을 할 파일 리스트
 		List<FileEntity> fileList = new ArrayList<>();
@@ -34,8 +34,8 @@ public class FileHandler {
 		String absolutePath = new File("").getAbsolutePath() + "\\";
 
 		// 경로를 지정하고 그곳에다가 저장할 심산이다
-		String path = "src/main/resources/static/img/company/" + principal.getName() +"/" + current_date ;
-		String staticPath = "/img/company/" + principal.getName() +"/" + current_date ;
+		String path = "src/main/resources/static/img/company/" + id +"/" + current_date ;
+		String staticPath = "/img/company/" + id +"/" + current_date ;
 		File file = new File(path);
 		// 저장할 위치의 디렉토리가 존지하지 않을 경우
 		if (!file.exists()) {
@@ -50,16 +50,23 @@ public class FileHandler {
 				// jpeg, png, gif 파일들만 받아서 처리할 예정
 				String contentType = multipartFile.getContentType();
 				String originalFileExtension;
+				String icon;
 				// 확장자 명이 없으면 이 파일은 잘 못 된 것이다
 				if (ObjectUtils.isEmpty(contentType)) {
 					break;
 				} else {
 					if (contentType.contains("image/jpeg")) {
 						originalFileExtension = ".jpg";
+						icon ="jpg";
 					} else if (contentType.contains("image/png")) {
 						originalFileExtension = ".png";
+						icon ="png";
 					} else if (contentType.contains("image/gif")) {
 						originalFileExtension = ".gif";
+						icon ="gif";
+					} else if (contentType.contains("text/plain")) {
+						originalFileExtension = ".txt";
+						icon ="txt";
 					}
 					// 다른 파일 명이면 아무 일 하지 않는다
 					else {
@@ -69,9 +76,12 @@ public class FileHandler {
 				// 각 이름은 겹치면 안되므로 나노 초까지 동원하여 지정
 				String new_file_name = Long.toString(System.nanoTime()) + originalFileExtension;
 				// 생성 후 리스트에 추가
-				FileEntity fileEntity = FileEntity.builder()
+				FileEntity fileEntity = FileEntity.builder().fileBoard(fileBoard)
 						.original_file_name(multipartFile.getOriginalFilename())
-						.stored_file_path(staticPath + "/" + new_file_name).file_size(multipartFile.getSize()).build();
+						.stored_file_path(staticPath + "/" + new_file_name)
+						.file_size(multipartFile.getSize())
+						.icon(icon)
+						.build();
 				fileList.add(fileEntity);
 
 				// 저장된 파일로 변경하여 이를 보여주기 위함

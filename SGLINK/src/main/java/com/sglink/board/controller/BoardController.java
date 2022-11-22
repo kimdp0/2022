@@ -1,6 +1,8 @@
 package com.sglink.board.controller;
 
 import java.security.Principal;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,12 +11,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.sglink.board.dto.FileBoardRequestDto;
 import com.sglink.board.dto.NoticeBoardRequestDto;
 import com.sglink.board.service.BoardService;
 import com.sglink.entity.Board;
 import com.sglink.entity.FileBoard;
+import com.sglink.file.entity.FileEntity;
+import com.sglink.file.service.FileUploadService;
 import com.sglink.member.service.MemberService;
 
 import lombok.RequiredArgsConstructor;
@@ -25,6 +30,7 @@ import lombok.RequiredArgsConstructor;
 public class BoardController {
 	private final BoardService boardService;
 	private final MemberService memberService;
+	private final FileUploadService fileUploadService;
 	
 	//공지사항게시판
 //	@RequestParam(required = false, defaultValue= "10")  defaultValue= "10"<-숫자 변경시 페이지당 게시글숫자달라짐
@@ -231,7 +237,7 @@ public class BoardController {
 	}
 	
 
-	//자료실 게시판
+	//자료실 게시판------------------------------------------------------------------------------------
 	@GetMapping("/reference/list")
 	public String getfileBoardListPage(Model model, @RequestParam(required = false, defaultValue = "0") Integer page,
 			@RequestParam(required = false, defaultValue = "10") Integer size) throws Exception {
@@ -246,10 +252,10 @@ public class BoardController {
 	}
 
 	@GetMapping("/reference/write")
-	public String getfileBoardWritePage(Model model, FileBoardRequestDto boardRequestDto, Principal principal) {
-
+	public String getfileBoardWritePage(Model model, FileBoardRequestDto boardRequestDto, Principal principal)
+			throws Exception{
 		String userId = memberService.getUserId(principal);
-
+		
 		model.addAttribute("userId", userId);
 		return "/board/board/referenceWrite";
 	}
@@ -278,10 +284,13 @@ public class BoardController {
 	}
 
 	@PostMapping("/reference/write/action")
-	public String fileboardWriteAction(Model model, FileBoardRequestDto fileboardRequestDto) throws Exception {
+	public String fileboardWriteAction(@RequestParam("files") List<MultipartFile> files,Principal principal, Model model, FileBoardRequestDto fileboardRequestDto
+			) throws Exception {
 		try {
-
+			
 			Long result = boardService.save(fileboardRequestDto);
+			FileBoard fileboard = boardService.findByFileId(result);
+			fileUploadService.addFile(files ,result,fileboard); 
 
 			if (result < 0) {
 				throw new Exception("#Exception boardWriteAction!");
@@ -295,7 +304,6 @@ public class BoardController {
 
 	@PostMapping("/reference/view/action")
 	public String getfileBoardViewAction(Model model,@ModelAttribute FileBoardRequestDto boardRequestDto) throws Exception {
-		System.out.println(boardRequestDto);
 
 		try {
 			int result = boardService.updatefileBoard(boardRequestDto);
@@ -315,6 +323,7 @@ public class BoardController {
 
 		try {
 			boardService.filedeleteById(id);
+			
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
@@ -322,16 +331,16 @@ public class BoardController {
 		return "redirect:/boards/reference/list";
 	}
 
-//@GetMapping("/notice/delete")
-//public String BoardDeleteAction(Model model, @RequestParam() Long[] deleteId) throws Exception{
-//	
-//	try {
-//		fileboardService.deleteAll(deleteId);
-//	}catch(Exception e) {
-//		throw new Exception(e.getMessage());
-//	}
-//	return "redirect:/boards/notice/list";
-//}
+@GetMapping("/reference/delete")
+public String BoardDeleteAction(Model model, @RequestParam() Long[] deleteId) throws Exception{
+	
+	try {
+		boardService.filedeleteAll(deleteId);
+	}catch(Exception e) {
+		throw new Exception(e.getMessage());
+	}
+	return "redirect:/boards/reference/list";
+}
 	
 	
 
