@@ -16,6 +16,8 @@ import com.sglink.entity.FileBoard;
 @Repository
 public interface FileBoardRepository extends JpaRepository<FileBoard, Long> {
 	
+	FileBoard findOneById(Long id);
+	
 	static final String UPDATE_FILEBOARD = "UPDATE file_board "
 			+ "SET TITLE = :#{#fileBoardRequestDto.title}, "
 			+ "CONTENT = :#{#fileBoardRequestDto.content}, "
