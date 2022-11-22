@@ -16,6 +16,7 @@ import com.sglink.board.dto.NoticeBoardRequestDto;
 import com.sglink.board.dto.NoticeBoardResponseDto;
 import com.sglink.entity.Board;
 import com.sglink.entity.FileBoard;
+import com.sglink.file.repository.FileRepository;
 import com.sglink.repository.FileBoardRepository;
 import com.sglink.repository.NoticeBoardRepository;
 
@@ -26,6 +27,7 @@ import lombok.RequiredArgsConstructor;
 public class BoardService {
 	private final NoticeBoardRepository noticeboardRepository;
 	private final FileBoardRepository fileboardRepository;
+	private final FileRepository fileRepository;
 //	공지게시판 기능구현--------------------------------------------
 	
 	
@@ -45,6 +47,7 @@ public class BoardService {
 		resultMap.put("totalPage", list.getTotalPages());	
 		return resultMap;	
 	}
+	
 
 	public NoticeBoardResponseDto findById(Long id) {
 		noticeboardRepository.updateBoardReadCntInc(id);
@@ -76,6 +79,11 @@ public class BoardService {
 	@Transactional
 	public Long save(FileBoardRequestDto fileboardSaveDto) {
 		return fileboardRepository.save(fileboardSaveDto.toEntity()).getId();
+	}
+	
+	public FileBoard findByFileId(Long id) {
+		
+		return fileboardRepository.findOneById(id);
 	}
 	
 	@Transactional(readOnly = true)
@@ -110,10 +118,12 @@ public class BoardService {
 	}
 	
 	public void filedeleteById(Long id) {
+		fileRepository.deleteFileByBoardId(id);
 		fileboardRepository.deleteById(id);
 	}
 	
 	public void filedeleteAll(Long[] deleteId) {
+		fileRepository.deleteAllFileByBoardId(deleteId);
 		fileboardRepository.deleteFileBoard(deleteId);
 	}
 //	자유게시판기능구현=================================

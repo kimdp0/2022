@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -42,21 +43,18 @@ public class Board extends BaseTimeEntity{
 	@JoinColumn(name = "registerId")
 	private Member member;
 	
-	@OneToOne
-	@JoinColumn(name= "imageId")
-	private FileEntity fileEntity;
+
 	
 	
 	
 	@Builder
-	public Board(Long id, String title, String content, int readCnt, Member member, String boardName, FileEntity fileEntity) {
+	public Board(Long id, String title, String content, int readCnt, Member member, String boardName) {
 		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.readCnt = readCnt;
 		this.member = member;
 		this.boardName= boardName;
-		this.fileEntity = fileEntity;
 	}
 	
 

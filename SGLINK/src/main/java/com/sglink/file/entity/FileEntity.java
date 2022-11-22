@@ -2,8 +2,11 @@ package com.sglink.file.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+
+import com.sglink.entity.FileBoard;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -28,4 +31,9 @@ public class FileEntity {
     private String stored_file_path;
 
     private long file_size;
+    
+    private String icon;
+    @ManyToOne
+    @JoinColumn
+    private FileBoard fileBoard;
 }

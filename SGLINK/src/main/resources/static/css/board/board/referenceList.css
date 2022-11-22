@@ -115,6 +115,12 @@ a:hover{
     text-align: center;
     font-size: 1.4rem;
 } 
+.board_list .file {
+    display: inline-block;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 1.4rem;
+} 
 
 
 
@@ -131,7 +137,11 @@ a:hover{
 }
 
 .board_list .title {
-    width: 60%;
+    width: 40%;
+}
+
+.board_list .file {
+    width: 20%;
 }
 .board_list>tbody .title {
     text-align:left;
@@ -192,5 +202,9 @@ a:hover{
 }
 
 
-
+.img1{
+	position:absolute;	
+	width:12px;
+	height: 10px;
+}
 
