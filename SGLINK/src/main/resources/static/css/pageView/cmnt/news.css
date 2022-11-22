@@ -1,0 +1,43 @@
+#Title {
+	position: relative;
+	/* 	top:20px; */
+	height: 60px;
+	font-size: 40px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	height: 60px;
+}
+
+.subtitle {
+	border-bottom: 2px #d3d3d3 solid;
+}
+
+.search table {
+	border-collapse: separate;
+	text-indent: initial;
+	border-spacing: 2px;
+}
+
+.pk {
+	/* padding-bottom:0px; */
+	padding-top: 20px; 
+	padding-bottom: 10px;
+}
+
+.cd select {
+	width:165px;
+	height: 25px;
+	
+}
+
+.cd sumit {
+	height: 500px;
+}
+
+.main {
+  background-image: url(/img/cmnt/newspage.jpg);
+  background-size: 720px 1000px;
+  width: 720px;
+  height: 1000px;
+  border: 1px solid;
+}

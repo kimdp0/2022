@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout=http://www.ultraq.net.nz/thymeleaf/layout
+	layout:decorate="~{layouts/layoutCmnt}">
+<head>
+<meta charset="UTF-8">
+<title>news</title>
+<link th:href="@{/css/pageView/cmnt/news.css}" rel="stylesheet">
+</head>
+<body>
+	<div layout:fragment="content" id="content">
+		<div id="news">
+			<div id="Title">
+				<div id="TopTitle" style="padding: 15px 15px 15px 0px;">뉴스레터</div>
+			</div>
+			<div class="subtitle">
+				<p>서강대학교 LINC 뉴스레터입니다.</p>
+			</div>
+			<div class="pk">
+			<span class="cd select"> <select name="pkid">
+					<option value="169" selected="">LINC Newsletter 13호</option>
+					<option value="164">LINC Newsletter 12호</option>
+					<option value="156">LINC Newsletter 11호</option>
+					<option value="155">LINC Newsletter 10호</option>
+					<option value="127">LINC Newsletter 9호</option>
+					<option value="80">LINC Newsletter 8호</option>
+					<option value="79">LINC Newsletter 7호</option>
+					<option value="78">LINC Newsletter 6호</option>
+					<option value="77">LINC Newsletter 5호</option>
+					<option value="76">LINC Newsletter 4호</option>
+					<option value="75">LINC Newsletter 3호</option>
+					<option value="74">LINC Newsletter 2호</option>
+					<option value="73">LINC Newsletter 1호</option>
+			</select>
+			</span>
+			<td>
+			<button type="submit" class="cd submit"><span class="icon"></span>조회</button></td>
+			</div>
+			<div class="main">
+	
+			</div>
+		</div>
+	</div>
+</body>
+</html>
