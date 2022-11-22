@@ -115,4 +115,8 @@ public class PageViewController {
 		return "/pageView/cmnt/eventSchedule";
 	}
 	
+	@GetMapping(value="/community/news")
+	public String news() {
+		return "/pageView/cmnt/news";
+	}
 }
