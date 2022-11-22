@@ -102,6 +102,20 @@ public class PageViewController {
 		return "/pageView/comsup/openino/board";
 	}
 	
+	//학생지원 관련 페이지-----------------------------------------------------------------
+	@RequestMapping(value = "/stusup/cooperation/introduce", method = RequestMethod.GET)
+	public String StuIntroduce() {
+		return "/pageView/stusup/cooperation/introduce";
+	}
+	@RequestMapping(value = "/stusup/cooperation/open", method = RequestMethod.GET)
+	public String StuOpen() {
+		return "/pageView/stusup/cooperation/open";
+	}
+	@RequestMapping(value = "/stusup/cooperation/independent", method = RequestMethod.GET)
+	public String StuIndependent() {
+		return "/pageView/stusup/cooperation/independent";
+	}
+	
 	
 	//커뮤니티------------------------------------------------------------------------------
 	
@@ -115,6 +129,7 @@ public class PageViewController {
 		return "/pageView/cmnt/eventSchedule";
 	}
 	
+
 	@GetMapping(value="/community/news")
 	public String news() {
 		return "/pageView/cmnt/news";
