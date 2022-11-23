@@ -1,10 +1,11 @@
 package com.sglink.entity;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.NotEmpty;
 
 import lombok.AllArgsConstructor;
@@ -38,6 +39,8 @@ public class FileEntity {
     @JoinColumn
     private FileBoard fileBoard;
     
-    @OneToOne(mappedBy="file")
-    private Equipment equipment;
+    
+    @ManyToOne
+    @JoinColumn
+    private Equipment img;
 }

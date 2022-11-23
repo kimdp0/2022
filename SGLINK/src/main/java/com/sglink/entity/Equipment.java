@@ -28,32 +28,26 @@ public class Equipment {
 	@Column(nullable = false)
 	private String equiName;
 
-	private String equUniname;
+	private String equiUniname;
 
 	private String equiContent;
 
-	@OneToOne
-	@JoinColumn(name = "img")
-	private FileEntity file;
+	@OneToMany(mappedBy="img")
+	private List<FileEntity> img;
 
 	@OneToMany(mappedBy = "equipment")
 	private List<Member> member;
 
-	@ManyToOne
-	@JoinColumn
-	private Company company;
 
 	@Builder
-	public Equipment(String equiId, String equiName, String equUniname, String equiContent, FileEntity file, List<Member> member,
-			Company company) {
+	public Equipment(String equiId, String equiName, String equiUniname, String equiContent, List<FileEntity> img, List<Member> member) {
 
 		this.equiId = equiId;
 		this.equiName = equiName;
-		this.equUniname = equUniname;
+		this.equiUniname = equiUniname;
 		this.equiContent = equiContent;
-		this.file = file;
+		this.img = img;
 		this.member = member;
-		this.company = company;
 	}
 
 }

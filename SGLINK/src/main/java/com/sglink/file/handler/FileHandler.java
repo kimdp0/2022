@@ -111,8 +111,8 @@ public class FileHandler {
 		String absolutePath = new File("").getAbsolutePath() + "\\";
 
 		// 경로를 지정하고 그곳에다가 저장할 심산이다
-		String path = "src/main/resources/static/img/" + equiId +"/" + current_date ;
-		String staticPath = "/img/" + equiId +"/" + current_date ;
+		String path = "src/main/resources/static/img/equipment/" + equiId +"/" + current_date ;
+		String staticPath = "/img/equipment/" + equiId +"/" + current_date ;
 		File file = new File(path);
 		// 저장할 위치의 디렉토리가 존지하지 않을 경우
 		if (!file.exists()) {
@@ -150,7 +150,7 @@ public class FileHandler {
 				// 각 이름은 겹치면 안되므로 나노 초까지 동원하여 지정
 				String new_file_name = Long.toString(System.nanoTime()) + originalFileExtension;
 				// 생성 후 리스트에 추가
-				FileEntity fileEntity = FileEntity.builder().equipment(equipment)
+				FileEntity fileEntity = FileEntity.builder().img(equipment)
 						.original_file_name(multipartFile.getOriginalFilename())
 						.stored_file_path(staticPath + "/" + new_file_name)
 						.file_size(multipartFile.getSize())

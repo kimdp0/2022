@@ -1,6 +1,7 @@
 package com.sglink.equipment.dto;
 
-import com.sglink.entity.Company;
+import java.util.List;
+
 import com.sglink.entity.Equipment;
 import com.sglink.entity.FileEntity;
 
@@ -19,23 +20,21 @@ public class EquipmentRequestDto {
 
 	private String equiName;
 
-	private String equUniname;
+	private String equiUniname;
 
 	private String equiContent;
 	
-	private Company company;
 	
-	private FileEntity file;
+	private List<FileEntity> img;
 
 	
 	public Equipment toEntity() {
 		return Equipment.builder()
 				.equiId(equiId)
 				.equiName(equiName)
-				.equUniname(equUniname)
+				.equiUniname(equiUniname)
 				.equiContent(equiContent)
-				.company(company)
-				.file(file) 
+				.img(img) 
 				.build();
 	}
 	
