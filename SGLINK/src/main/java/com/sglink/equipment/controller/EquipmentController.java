@@ -42,7 +42,7 @@ public class EquipmentController {
 		@PostMapping(value="/new")
 		public String createEquipment(EquipmentRequestDto equipmentRequestDto,Model model
 				,@RequestParam("files") List<MultipartFile> files) {
-			
+		
 			return "redirect:/equipment/view";
 		}
 

@@ -12,6 +12,5 @@ public class EquipmentService {
 	private final EquipmentRepository equipmentRepository;
 	
 	
-	public 
 
 }
