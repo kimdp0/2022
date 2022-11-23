@@ -1,14 +1,19 @@
 package com.sglink.equipment.controller;
 
 import java.security.Principal;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.sglink.entity.Company;
+import com.sglink.equipment.dto.EquipmentRequestDto;
 import com.sglink.member.service.MemberService;
 
 import lombok.RequiredArgsConstructor;
@@ -32,6 +37,13 @@ public class EquipmentController {
 			String comUniname = company.getComUniname();
 			model.addAttribute("comUniname", comUniname);
 			return "/equipment/equipment/equipmentRegist";
+		}
+		
+		@PostMapping(value="/new")
+		public String createEquipment(EquipmentRequestDto equipmentRequestDto,Model model
+				,@RequestParam("files") List<MultipartFile> files) {
+			
+			return "redirect:/equipment/view";
 		}
 
 }
