@@ -9,8 +9,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.sglink.company.dto.CompanyRequestDto;
 import com.sglink.common.constant.Process;
+import com.sglink.company.dto.CompanyRequestDto;
 
 import lombok.Getter;
 import lombok.Setter;
