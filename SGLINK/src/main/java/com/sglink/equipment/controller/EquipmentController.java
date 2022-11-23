@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.sglink.entity.Company;
+import com.sglink.entity.Equipment;
 import com.sglink.equipment.dto.EquipmentRequestDto;
+import com.sglink.equipment.service.EquipmentService;
 import com.sglink.member.service.MemberService;
 
 import lombok.RequiredArgsConstructor;
@@ -24,6 +26,7 @@ import lombok.RequiredArgsConstructor;
 public class EquipmentController {
 	
 	private final MemberService memberService;
+	private final EquipmentService equipmentService;
 	//장비 관련 페이지
 		@RequestMapping(value="/view", method = RequestMethod.GET)
 		public String main() {
@@ -42,6 +45,9 @@ public class EquipmentController {
 		@PostMapping(value="/new")
 		public String createEquipment(EquipmentRequestDto equipmentRequestDto,Model model
 				,@RequestParam("files") List<MultipartFile> files) {
+			String equiId = equipmentService.save(equipmentRequestDto);
+			Equipment equipment = equipmentService.findByEquiId(equiId);
+			
 			
 			return "redirect:/equipment/view";
 		}
