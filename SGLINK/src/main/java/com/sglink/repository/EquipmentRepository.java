@@ -5,6 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.sglink.entity.Equipment;
 
 public interface EquipmentRepository extends JpaRepository<Equipment, String>{
-	
-	Equipment findOneById(String equiId);
+	Equipment findOneByEquiId(String equiId);
 }

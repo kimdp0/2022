@@ -15,7 +15,7 @@ public class EquipmentService {
 	private final EquipmentRepository equipmentRepository;
 	
 	public Equipment findByEquiId(String equiId) {
-		return equipmentRepository.findOneById(equiId);
+		return equipmentRepository.findOneByEquiId(equiId);
 	}
 	
 	@Transactional

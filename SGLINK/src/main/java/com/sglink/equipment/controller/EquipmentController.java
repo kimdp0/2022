@@ -16,6 +16,7 @@ import com.sglink.entity.Company;
 import com.sglink.entity.Equipment;
 import com.sglink.equipment.dto.EquipmentRequestDto;
 import com.sglink.equipment.service.EquipmentService;
+import com.sglink.file.service.FileUploadService;
 import com.sglink.member.service.MemberService;
 
 import lombok.RequiredArgsConstructor;
@@ -27,6 +28,7 @@ public class EquipmentController {
 	
 	private final MemberService memberService;
 	private final EquipmentService equipmentService;
+	private final FileUploadService fileUploadService;
 	//장비 관련 페이지
 		@RequestMapping(value="/view", method = RequestMethod.GET)
 		public String main() {
@@ -44,10 +46,10 @@ public class EquipmentController {
 		
 		@PostMapping(value="/new")
 		public String createEquipment(EquipmentRequestDto equipmentRequestDto,Model model
-				,@RequestParam("files") List<MultipartFile> files) {
+				,@RequestParam("files") List<MultipartFile> files) throws Exception {
 			String equiId = equipmentService.save(equipmentRequestDto);
 			Equipment equipment = equipmentService.findByEquiId(equiId);
-			
+			fileUploadService.addFile(files, equiId, equipment);
 			
 			return "redirect:/equipment/view";
 		}
