@@ -138,6 +138,20 @@ public class PageViewController {
 		return "/pageView/stusup/founded/mentoring";
 	}
 	
+	//현장실습 관련 페이지------------------------------------------------------------------
+	@RequestMapping(value = "/stusup/training/introduce", method = RequestMethod.GET)
+	public String TrainingIntroduce() {
+		return "/pageView/stusup/training/introduce";
+	}
+	@RequestMapping(value = "/stusup/training/guide", method = RequestMethod.GET)
+	public String TrainingGuide() {
+		return "/pageView/stusup/training/guide";
+	}
+	@RequestMapping(value = "/stusup/training/program", method = RequestMethod.GET)
+	public String TrainingProgram() {
+		return "/pageView/stusup/training/program";
+	}
+	
 	//커뮤니티------------------------------------------------------------------------------
 	
 	@GetMapping(value="/community/cmntEvent")
