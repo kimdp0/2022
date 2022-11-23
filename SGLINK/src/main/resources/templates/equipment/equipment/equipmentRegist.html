@@ -35,16 +35,16 @@
 						<p>장비상세 내용</p>
 					</div>
 					<div class="ct">
-						<input type="text" placeholder="내용을 입력해주세요">
+						<input type="text" placeholder="내용을 입력해주세요" th:field ="*{equiId}" >
 					</div>
 					<div class="ct">
-						<input type = "text" placeholder="내용을 입력해주세요">
+						<input type = "text" placeholder="내용을 입력해주세요" th:field ="*{equiName}">
 					</div>
 					<div class="ct">
-						<input type = "text" placeholder="내용을 입력해주세요" th:value="${comUniname}">
+						<input type = "text" placeholder="내용을 입력해주세요" name= "equiUniname"th:value="${comUniname}">
 					</div>
 					<div class="ct2">
-						<textarea placeholder="내용을 입력해주세요"></textarea>
+						<textarea placeholder="내용을 입력해주세요" name ="equiContent"></textarea>
 					</div>
 					<div class="ob2">
 						<p class="txt1">장비사진</p>
