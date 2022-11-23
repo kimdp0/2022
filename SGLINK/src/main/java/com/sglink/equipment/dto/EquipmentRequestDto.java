@@ -1,6 +1,5 @@
 package com.sglink.equipment.dto;
 
-import com.sglink.entity.Company;
 import com.sglink.entity.Equipment;
 import com.sglink.entity.FileEntity;
 
@@ -25,7 +24,6 @@ public class EquipmentRequestDto {
 	
 	private FileEntity file;
 
-	private Company company;
 	
 	public Equipment toEntity() {
 		return Equipment.builder()
@@ -34,7 +32,6 @@ public class EquipmentRequestDto {
 				.equUniname(equUniname)
 				.equiContent(equiContent)
 				.file(file) 
-				.company(company)
 				.build();
 	}
 	
