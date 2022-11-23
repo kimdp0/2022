@@ -31,7 +31,7 @@ public class Company extends BaseTimeEntity{
 	@Enumerated(EnumType.STRING)
 	private Process process;
 	
-	@OneToMany(mappedBy="company")
+	@OneToMany(mappedBy = "company")
 	private List<Equipment> equipment;
 	
 	
