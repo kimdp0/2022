@@ -3,8 +3,8 @@ package com.sglink.board.dto;
 import java.util.List;
 
 import com.sglink.entity.FileBoard;
+import com.sglink.entity.FileEntity;
 import com.sglink.entity.Member;
-import com.sglink.file.entity.FileEntity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

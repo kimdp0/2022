@@ -13,8 +13,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
-import com.sglink.file.entity.FileEntity;
-
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;

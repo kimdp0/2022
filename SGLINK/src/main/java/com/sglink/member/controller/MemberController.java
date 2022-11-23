@@ -111,5 +111,14 @@ public class MemberController {
 	}
 	
 	
+	@ResponseBody
+	@GetMapping("/findMember")
+	public Member findMember(@RequestParam("id") String id) {
+		return memberService.findbyId(id);
+	}
+		
+	
+	
+	
 
 }
