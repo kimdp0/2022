@@ -18,7 +18,7 @@ a {
 
 .board_wrap {
     width: 1000px;
-    margin: 100px auto;
+/*     margin: 100px auto; */
 }
 
 .board_title {
@@ -58,6 +58,25 @@ a {
     background: #000;
     color: #fff;
 }
+button {
+	background: none;
+}
+
+.bt_wrap .on  {
+    background: #000;
+    color: #fff;
+}
+
+
+.bt_wrap button {
+    display: inline-block;
+    min-width: 80px;
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    font-size: 1.4rem;
+} 
 
 .board_list {
     width: 100%;
@@ -167,6 +186,8 @@ a {
     border-bottom: 1px solid #999;
     font-size: 0;
 }
+
+
 
 .board_view .info dl {
     position: relative;

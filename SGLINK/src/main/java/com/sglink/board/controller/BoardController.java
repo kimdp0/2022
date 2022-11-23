@@ -330,6 +330,29 @@ public class BoardController {
 		return "/board/board/referenceView";
 
 	}
+	
+	@GetMapping("/reference/edit")
+	public String getfileBoardEditPage(@RequestParam("id") Long id, Model model,
+			FileBoardRequestDto fileboardRequestDto, Principal principal) throws Exception {
+		try {
+			if (fileboardRequestDto.getId() != null) {
+				// 게시판에서 게시판테이블에있는 아이디 파라메서 가져와 그 아이디로 게시판정보 가져오기
+				FileBoard fileBoard = boardService.fileviewfindById(id).get();
+				// 게시판에서 회원테이블을 참조하기 때문에 회원테이블에 있는 값을 가져올 수 있음
+				String registerId = fileBoard.getMember().getUserId();
+				// 로그인시 로그인한 회원의 아이디를 가져옴
+				String loginUserId = principal.getName();
+				model.addAttribute("loginUserId", loginUserId);
+				model.addAttribute("registerId", registerId);
+				model.addAttribute("info", boardService.filefindById(fileboardRequestDto.getId()));
+			}
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+
+		return "/board/board/referenceEdit";
+
+	}
 
 	@PostMapping("/reference/write/action")
 	public String fileboardWriteAction(@RequestParam("files") List<MultipartFile> files, Principal principal,
@@ -350,7 +373,7 @@ public class BoardController {
 
 	}
 
-	@PostMapping("/reference/view/action")
+	@PostMapping("/reference/edit/action")
 	public String getfileBoardViewAction(Model model, @ModelAttribute FileBoardRequestDto boardRequestDto)
 			throws Exception {
 
