@@ -9,8 +9,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.sglink.company.dto.CompanyRequestDto;
 import com.sglink.common.constant.Process;
+import com.sglink.company.dto.CompanyRequestDto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -30,6 +30,9 @@ public class Company extends BaseTimeEntity{
 	private String comProduct;
 	@Enumerated(EnumType.STRING)
 	private Process process;
+	
+	@OneToMany(mappedBy="company")
+	private List<Equipment> equipment;
 	
 	
 	public static Company createCompay(CompanyRequestDto companyRequestDto) {
