@@ -109,6 +109,41 @@ public class PageViewController {
 		return "/pageView/stusup/cooperation/independent";
 	}
 	
+	//창업지원 관련 페이지-----------------------------------------------------------------
+	@RequestMapping(value = "/stusup/founded/introduce", method = RequestMethod.GET)
+	public String FoundedIntroduce() {
+		return "/pageView/stusup/founded/introduce";
+	}
+	@RequestMapping(value = "/stusup/founded/camp", method = RequestMethod.GET)
+	public String FoundedCamp() {
+		return "/pageView/stusup/founded/camp";
+	}
+	@RequestMapping(value = "/stusup/founded/contest", method = RequestMethod.GET)
+	public String FoundedContest() {
+		return "/pageView/stusup/founded/contest";
+	}
+	@RequestMapping(value = "/stusup/founded/conteststatus", method = RequestMethod.GET)
+	public String FoundedContestStatus() {
+		return "/pageView/stusup/founded/conteststatus";
+	}
+	@RequestMapping(value = "/stusup/founded/mentoring", method = RequestMethod.GET)
+	public String FoundedMentoring() {
+		return "/pageView/stusup/founded/mentoring";
+	}
+	
+	//현장실습 관련 페이지------------------------------------------------------------------
+	@RequestMapping(value = "/stusup/training/introduce", method = RequestMethod.GET)
+	public String TrainingIntroduce() {
+		return "/pageView/stusup/training/introduce";
+	}
+	@RequestMapping(value = "/stusup/training/guide", method = RequestMethod.GET)
+	public String TrainingGuide() {
+		return "/pageView/stusup/training/guide";
+	}
+	@RequestMapping(value = "/stusup/training/program", method = RequestMethod.GET)
+	public String TrainingProgram() {
+		return "/pageView/stusup/training/program";
+	}
 	
 	//커뮤니티------------------------------------------------------------------------------
 	
