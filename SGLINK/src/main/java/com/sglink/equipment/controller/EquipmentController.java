@@ -43,6 +43,7 @@ public class EquipmentController {
 			Company company =  memberService.findbyId(userId).getCompany();
 			String comUniname = company.getComUniname();
 			model.addAttribute("equipmentRequestDto", new EquipmentRequestDto());
+			model.addAttribute("company", company);
 			model.addAttribute("comUniname", comUniname);
 		
 			return "/equipment/equipment/equipmentRegist";

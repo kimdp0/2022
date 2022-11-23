@@ -14,8 +14,10 @@ import com.sglink.company.dto.CompanyRequestDto;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
+@ToString
 @Getter
 @Setter
 public class Company extends BaseTimeEntity{
