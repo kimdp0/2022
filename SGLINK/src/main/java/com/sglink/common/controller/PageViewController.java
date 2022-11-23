@@ -32,7 +32,7 @@ public class PageViewController {
 	
 	
 	
-	//인프라--------------------------------------------------------------------------------
+	//기업지원인프라--------------------------------------------------------------------------------
 	@RequestMapping(value = "/comsup/infra/introduce", method = RequestMethod.GET)
 	public String InfraIntroduce() {
 		return "/pageView/comsup/infra/introduce";
@@ -144,6 +144,27 @@ public class PageViewController {
 	public String TrainingProgram() {
 		return "/pageView/stusup/training/program";
 	}
+	//학생지원인프라--------------------------------------------------------------------------------
+		@RequestMapping(value = "/stusup/infra/introduce", method = RequestMethod.GET)
+		public String stuInfraIntroduce() {
+			return "/pageView/stusup/infra/introduce";
+		}
+		@RequestMapping(value = "/stusup/infra/application", method = RequestMethod.GET)
+		public String stuInfraApplication() {
+			return "/pageView/stusup/infra/application";
+		}
+		@RequestMapping(value = "/stusup/infra/howto", method = RequestMethod.GET)
+		public String stuInfrahowto() {
+			return "/pageView/stusup/infra/howto";
+		}
+		@RequestMapping(value = "/stusup/infra/onlineapplication", method = RequestMethod.GET)
+		public String stuInfraonlineapplication() {
+			return "/pageView/stusup/infra/onlineapplication";
+		}
+		@RequestMapping(value = "/stusup/infra/precaution", method = RequestMethod.GET)
+		public String stuInfraprecaution() {
+			return "/pageView/stusup/infra/precaution";
+		}
 	
 	//커뮤니티------------------------------------------------------------------------------
 	
