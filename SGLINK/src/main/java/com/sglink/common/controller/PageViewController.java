@@ -9,16 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class PageViewController {
 	
-	//장비 관련 페이지
-	@RequestMapping(value="/equipment/view", method = RequestMethod.GET)
-	public String main() {
-		return "/pageView/equipment/equipment/equipmentList";
-	}
 	
-	@GetMapping(value="/equipment/new")
-	public String newEquipment() {
-		return "/pageView/equipment/equipment/equipmentRegist";
-	}
+	
+	
 	//가족기업 관련 페이지 ------------------------------------------------------------------------
 	@RequestMapping(value = "/comsup/family/introduce", method = RequestMethod.GET)
 	public String familyIntroduce() {

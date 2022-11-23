@@ -133,14 +133,17 @@ a:hover{
 
 
 .board_list .num {
+	height: 20px;
     width: 10%;
 }
 
 .board_list .title {
+	height: 20px;
     width: 40%;
 }
 
 .board_list .file {
+	height: 20px;
     width: 20%;
 }
 .board_list>tbody .title {
@@ -155,14 +158,17 @@ a:hover{
 	
 
 .board_list .writer {
+	height: 20px;
     width: 10%;
 }
 
 .board_list .date {
+	height: 20px;
     width: 10%;
 }
 
 .board_list .count {
+	height: 20px;
     width: 10%;
 }
 
@@ -203,8 +209,8 @@ a:hover{
 
 
 .img1{
-	position:absolute;	
-	width:12px;
-	height: 10px;
+
+	width:16px;
+	height: 18px;
 }
 
