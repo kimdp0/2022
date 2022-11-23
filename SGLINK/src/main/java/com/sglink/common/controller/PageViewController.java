@@ -9,16 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class PageViewController {
 	
-	//장비 관련 페이지
-	@RequestMapping(value="/equipment/view", method = RequestMethod.GET)
-	public String main() {
-		return "/pageView/equipment/equipment/equipmentList";
-	}
 	
-	@GetMapping(value="/equipment/new")
-	public String newEquipment() {
-		return "/pageView/equipment/equipment/equipmentRegist";
-	}
+	
+	
 	//가족기업 관련 페이지 ------------------------------------------------------------------------
 	@RequestMapping(value = "/comsup/family/introduce", method = RequestMethod.GET)
 	public String familyIntroduce() {
@@ -136,6 +129,20 @@ public class PageViewController {
 	@RequestMapping(value = "/stusup/founded/mentoring", method = RequestMethod.GET)
 	public String FoundedMentoring() {
 		return "/pageView/stusup/founded/mentoring";
+	}
+	
+	//현장실습 관련 페이지------------------------------------------------------------------
+	@RequestMapping(value = "/stusup/training/introduce", method = RequestMethod.GET)
+	public String TrainingIntroduce() {
+		return "/pageView/stusup/training/introduce";
+	}
+	@RequestMapping(value = "/stusup/training/guide", method = RequestMethod.GET)
+	public String TrainingGuide() {
+		return "/pageView/stusup/training/guide";
+	}
+	@RequestMapping(value = "/stusup/training/program", method = RequestMethod.GET)
+	public String TrainingProgram() {
+		return "/pageView/stusup/training/program";
 	}
 	
 	//커뮤니티------------------------------------------------------------------------------

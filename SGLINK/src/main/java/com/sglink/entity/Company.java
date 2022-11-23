@@ -1,10 +1,13 @@
 package com.sglink.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import com.sglink.company.dto.CompanyRequestDto;
 import com.sglink.common.constant.Process;
@@ -27,6 +30,7 @@ public class Company extends BaseTimeEntity{
 	private String comProduct;
 	@Enumerated(EnumType.STRING)
 	private Process process;
+	
 	
 	public static Company createCompay(CompanyRequestDto companyRequestDto) {
 		Company company = new Company();

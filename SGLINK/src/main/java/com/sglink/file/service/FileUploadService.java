@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.sglink.entity.FileBoard;
-import com.sglink.file.entity.FileEntity;
+import com.sglink.entity.FileEntity;
 import com.sglink.file.handler.FileHandler;
-import com.sglink.file.repository.FileRepository;
+import com.sglink.repository.FileRepository;
 
 import lombok.RequiredArgsConstructor;
 

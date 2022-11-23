@@ -16,8 +16,8 @@ import com.sglink.board.dto.NoticeBoardRequestDto;
 import com.sglink.board.dto.NoticeBoardResponseDto;
 import com.sglink.entity.Board;
 import com.sglink.entity.FileBoard;
-import com.sglink.file.repository.FileRepository;
 import com.sglink.repository.FileBoardRepository;
+import com.sglink.repository.FileRepository;
 import com.sglink.repository.NoticeBoardRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -28,6 +28,13 @@ public class BoardService {
 	private final NoticeBoardRepository noticeboardRepository;
 	private final FileBoardRepository fileboardRepository;
 	private final FileRepository fileRepository;
+	
+	
+	
+	public FileBoard boardfindById(Long id) {
+		return fileboardRepository.findOneById(id);
+		
+	}
 //	공지게시판 기능구현--------------------------------------------
 	
 	
