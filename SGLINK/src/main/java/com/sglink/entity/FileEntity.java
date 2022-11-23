@@ -4,6 +4,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotEmpty;
 
 import lombok.AllArgsConstructor;
@@ -36,4 +37,7 @@ public class FileEntity {
     @ManyToOne
     @JoinColumn
     private FileBoard fileBoard;
+    
+    @OneToOne(mappedBy="file")
+    private Equipment equipment;
 }
