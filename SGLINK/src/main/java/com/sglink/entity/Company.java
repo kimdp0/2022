@@ -30,6 +30,7 @@ public class Company extends BaseTimeEntity{
 	private String comTel;
 	private String comSectors;
 	private String comProduct;
+	
 	@Enumerated(EnumType.STRING)
 	private Process process;
 	
