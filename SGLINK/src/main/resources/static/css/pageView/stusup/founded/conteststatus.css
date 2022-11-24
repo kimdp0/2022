@@ -18,7 +18,6 @@
 }
 
 .body {
-	margin-top: 35px;
 	border-top: 1px solid #CCCCCC;
 }
 
@@ -62,7 +61,7 @@
 .content {
 	position: absolute;
 	width: 777px;
-	top: 170px;
+	top: 80px;
 	left: 275px;
 }
 

@@ -79,12 +79,11 @@ h2.bl.sq {
 
 .content {
 	width: 620px;
-	height: 950px;
+	height: 850px;
 	border: 2px solid #bebebe;
 	border-radius: 5px;
 	position: absolute;
 	left:30px;
-	top:100px;
 }
 
 .ob {
@@ -100,23 +99,17 @@ h2.bl.sq {
 	font-weight: bold;
 	float: left;
 	position: absolute;
-	top: 850px;
+	top: 650px;
 }
 .ob2 > p{
 	height:30px;
 	margin:5px;
 }
 
-.ct {
-	height: 50px;
-	margin-top: 35px;
-	margin-bottom: -15px;
-}
-
 .ct2 {
 	position: absolute;
 	left:60px;
-	top: 480px;
+	top: 250px;
 }
 
 .ct2 textarea {
@@ -130,6 +123,12 @@ h2.bl.sq {
 	border-radius: 5px;
 }
 
+.ct{
+	position:relative;
+	left:40px;
+	margin-top:5px;
+	margin-bottom:5px;
+}
 .ct textarea {
 	padding-left: 5px;
 	line-height: 30px;
@@ -146,11 +145,11 @@ textarea::placeholder {
 .nt {
 	position: absolute;
 	left: 60px;
-	top: 930px;
+	top: 620px;
 }
 
 .appl {
-	top:980px;
+	top:750px;
 	left: 290px;
 	position: absolute;
 	width: 100px;

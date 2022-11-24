@@ -12,26 +12,9 @@
 <body>
 	<div layout:fragment="content" id="content">
 		<div id="introduce">
-			<div class="head">
-				<div class="title">
-					<p>인프라</p>
-				</div>
-				<div class="subtitle">
-					<p>장비등록 페이지 입니다.</p>
-				</div>
-
-			</div>
-
 			<form action="/equipment/new" method="post"
 				enctype="multipart/form-data" th:object ="${equipmentRequestDto}">
-				<div class="body" style="margin-top: 35px;">
-					<div class="sub">
-						<!-- <p class="tab2" onclick="location.href='/comsup/family/introduce'">제도소개</p> -->
-						<p class="tab"
-							onclick="location.href='/comsup/family/application'">등록장비신청</p>
-						<!-- <p class="tab2" onclick="location.href='/comsup/family/status'">가족기업현황</p>
-					<p class="tab2" onclick="location.href='/comsup/family/forum'">가족기업포럼</p> -->
-					</div>
+				<div class="body">
 					<div class="content">
 						<div class="ob">
 							<p>장비코드</p>

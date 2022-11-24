@@ -82,7 +82,7 @@ h2.bl.sq {
 	border: 2px solid #bebebe;
 	border-radius: 5px;
 	position: absolute;
-	margin: 80px;
+
 }
 
 .ob {
@@ -93,23 +93,26 @@ h2.bl.sq {
 }
 
 .ob2 {
-	margin-left: 30px;
+	position:absolute;
 	font-size: 30px;
 	font-weight: bold;
-	float: left;
-	position:relative;
+	left:30px;
+	top:670px;
 }
 
 .ct {
-	height: 50px;
-	margin-top: 35px;
-	margin-bottom: -15px;
-	
+	position:relative;
+	left:40px;
+	margin-top:4px;
+	margin-bottom:16px;
 }
 
 .ct2 {
-	position: relative;
+	position: absolute;
 	left:30px;
+	top: 300px;
+	
+	
 }
 
 .ct2 textarea {
@@ -123,12 +126,13 @@ h2.bl.sq {
 	border-radius: 5px;
 }
 
-.ct textarea {
+.ct input {
 	padding-left: 5px;
 	line-height: 30px;
 	height: 30px;
 	width: 300px;
 	resize: none;
+	border: 1px solid #666666;
 	border-radius: 5px;
 }
 
