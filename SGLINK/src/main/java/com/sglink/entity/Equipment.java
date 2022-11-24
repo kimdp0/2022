@@ -66,16 +66,12 @@ public class Equipment extends BaseTimeEntity{
 		this.img = img;
 		this.member = member;
 	}
-<<<<<<< HEAD
-	
 
-=======
 	 @PrePersist
 	    public void prePersist() {
 	        this.reservation = this.reservation == null ? Reservation.IMPOSSIBLE : this.reservation;
 	        this.process = this.process == null ? Process.UNAPPROVE : this.process;
 	    }
 	 
->>>>>>> branch 'sub' of https://github.com/SilverCastle123/project.git
 
 }
