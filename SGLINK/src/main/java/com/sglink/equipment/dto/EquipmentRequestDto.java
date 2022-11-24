@@ -26,6 +26,8 @@ public class EquipmentRequestDto {
 	
 	private String equiRegister;
 	
+	private String equiTel;
+	
 	private List<FileEntity> img;
 
 	
@@ -36,6 +38,7 @@ public class EquipmentRequestDto {
 				.equiUniname(equiUniname)
 				.equiContent(equiContent)
 				.equiRegister(equiRegister)
+				.equiTel(equiTel)
 				.img(img) 
 				.build();
 	}

@@ -20,61 +20,15 @@
 				<div class="h2 article">
 					<h2 class="bl sq">나노팹센터</h2>
 					<div class="app_list">
-						<ul>
-							<li><a href="#"> <span class="photo"> <img
-										th:src="${imgSrc2}" alt>
-								</span> <br> <span class="title">unSmart printer</span> <br>
-									<span class="info"> 유지혜 <br> 02-3274-4810
-								</span> <span class="state none"> 예약가능 </span>
+						<ul th:each="list : ${resultMap.list}" >
+							<li><a href="#"> <span class="photo"> <img th:src="${imgSrc2}" alt> </span> <br>
+									<span class="title" th:text="${list.equiName}"></span> <br>
+									<span class="info" th:text="${list.equiRegister}"></span> <br>
+									<span th:text="${list.equiTel}"></span> 
+									<br>
+								<span class="state none"> 예약가능 </span>
 							</a></li>
-							<li><a href="#"> <span class="photo"> <img
-										src="/img/equipment/equip_printer.jpg" alt>
-								</span> <br> <span class="title">Smart printer</span> <br> <span
-									class="info"> 유지혜 <br> 02-3274-4810
-								</span> <span class="state none"> 예약가능 </span>
-							</a></li>
-							<li><a href="#"> <span class="photo"> <img
-										src="/img/equipment/equip_printer.jpg" alt>
-								</span> <br> <span class="title">Smart printer</span> <br> <span
-									class="info"> 유지혜 <br> 02-3274-4810
-								</span> <span class="state none"> 예약가능 </span>
-							</a></li>
-							<li><a href="#"> <span class="photo"> <img
-										src="/img/equipment/equip_printer.jpg" alt>
-								</span> <br> <span class="title">Smart printer</span> <br> <span
-									class="info"> 유지혜 <br> 02-3274-4810
-								</span> <span class="state none"> 예약가능 </span>
-							</a></li>
-							<li><a href="#"> <span class="photo"> <img
-										src="/img/equipment/equip_printer.jpg" alt>
-								</span> <br> <span class="title">Smart printer</span> <br> <span
-									class="info"> 유지혜 <br> 02-3274-4810
-								</span> <span class="state none"> 예약가능 </span>
-							</a></li>
-							<li><a href="#"> <span class="photo"> <img
-										src="/img/equipment/equip_printer.jpg" alt>
-								</span> <br> <span class="title">Smart printer</span> <br> <span
-									class="info"> 유지혜 <br> 02-3274-4810
-								</span> <span class="state none"> 예약가능 </span>
-							</a></li>
-							<li><a href="#"> <span class="photo"> <img
-										src="/img/equipment/equip_printer.jpg" alt>
-								</span> <br> <span class="title">Smart printer</span> <br> <span
-									class="info"> 유지혜 <br> 02-3274-4810
-								</span> <span class="state none"> 예약가능 </span>
-							</a></li>
-							<li><a href="#"> <span class="photo"> <img
-										src="/img/equipment/equip_printer.jpg" alt>
-								</span> <br> <span class="title">Smart printer</span> <br> <span
-									class="info"> 유지혜 <br> 02-3274-4810
-								</span> <span class="state none"> 예약가능 </span>
-							</a></li>
-							<li><a href="#"> <span class="photo"> <img
-										src="/img/equipment/equip_printer.jpg" alt>
-								</span> <br> <span class="title">Smart printer</span> <br> <span
-									class="info"> 유지혜 <br> 02-3274-4810
-								</span> <span class="state none"> 예약가능 </span>
-							</a></li>
+							
 						</ul>
 						<br>
 						<div >
