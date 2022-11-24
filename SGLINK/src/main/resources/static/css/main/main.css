@@ -4,7 +4,6 @@
 	width: 1300px;
 }
 
-
 .card_image img {
 	width: 110px;
 	height: 110px;
@@ -23,10 +22,11 @@
 	
 }
 
-.card_title title-white p{
-	margin-top: -80%;
-	font-size: 23px;
-	
+.cards-list p{
+	margin-top: -1%;
+	font-size: 23px;	
+	color: white;
+	text-weight:bold;
 }
 
 
@@ -52,12 +52,7 @@ div[class*="cad"]{
 
 div[class*="cad"]:hover{
 	transform: scale(0.9, 0.9);
-	box-shadow: 5px 5px 30px 15px #848484;
-}
-
-.title-white {
-	color: white;
-	
+	box-shadow: 5px 5px 30px 10px #848484;
 }
 
 .title-black {
@@ -96,8 +91,8 @@ div[class*="cad"]:hover{
 .search-input {
   position: absolute;
   top: 23px;
-  left: 38px;
-  font-size: 23px;
+  left: 55px;
+  font-size: 22px;
   background: none;
   color: #5a6674;
   width: 195px;
@@ -114,8 +109,8 @@ div[class*="cad"]:hover{
 .search-button {
   position: absolute;
   top: 10px;
-  left: 15px;
-  height: 20px;
+  left: 10px;
+  height: 5px;
   width: 20px;
   padding: 0;
   margin: 0;
@@ -124,12 +119,70 @@ div[class*="cad"]:hover{
   outline: none!important;
   cursor: pointer;
   
-  & svg {
-    width: 20px;
-    height: 20px;
-    fill: #5a6674;
-  }
+
 }
+
+.finder img{
+	width: 27px;
+	margin-top: 17px;
+	margin-left: 18px;
+	
+}
+
+
+
+
+
+.tabs {
+  position:absolute;
+  top:780%;
+  left:18%;
+  transform:translate(-50%,-50%);
+  width:650px;
+  height:450px;
+  background:#f5f5f5;
+  padding:20px 30px;
+  overflow:hidden;
+  border-radius:50px;
+  box-shadow:5px 10px 6px #ccc;
+}
+.tabs .tab-header {
+  height:60px;
+  display:flex;
+  align-items:center;
+}
+.tabs .tab-header > div {
+  width:calc(100% / 4);
+  text-align:center;
+  color:#1C1C1C;
+  font-weight:600;
+  cursor:pointer;
+  font-size:14px;
+  text-transform:uppercase;
+  outline:none;
+}
+.tabs .tab-header > div > i {
+  display:block;
+  margin-bottom:5px;
+}
+.tabs .tab-header > div.active {
+  color:#585858;
+}
+.tabs .tab-indicator {
+  position:relative;
+  width:calc(100% / 4);
+  height:5px;
+  background:#B40404;
+  left:0px;
+  border-radius:5px;
+  transition:all 500ms ease-in-out;
+}
+.tabs .tab-body {
+  position:relative;
+  height:calc(100% - 60px);
+  padding:50px 10px;
+}
+
 
 
 
@@ -154,122 +207,77 @@ div[class*="cad"]:hover{
 
 
 
-.ep {
-	width: 650px;
-	margin-top:30px;
-	height: 400px;
-	padding: 20px 0 0 0;
-	word-wrap: break-word;
-	font-size: 16px;
-	box-sizing: border-box;
-	
+
+
+
+
+
+.tabs1 {
+  position:absolute;
+  top:780%;
+  left:82%;
+  transform:translate(-50%,-50%);
+  width:650px;
+  height:450px;
+  background:#f5f5f5;
+  padding:20px 30px;
+  overflow:hidden;
+  border-radius:50px;
+  box-shadow:5px 10px 6px #ccc;
+}
+.tabs1 .tab-header1 {
+  height:60px;
+  display:flex;
+  align-items:center;
+}
+.tabs1 .tab-header1 > div {
+  width:calc(100% / 4);
+  text-align:center;
+  color:#1C1C1C;
+  font-weight:600;
+  cursor:pointer;
+  font-size:14px;
+  text-transform:uppercase;
+  outline:none;
+}
+.tabs1 .tab-header1 > div > i {
+  display:block;
+  margin-bottom:5px;
+}
+.tabs1 .tab-header1 > div.active1 {
+  color:#585858;
+}
+.tabs1 .tab-indicator1 {
+  position:relative;
+  width:calc(100% / 4);
+  height:5px;
+  background:#B40404;
+  left:0px;
+  border-radius:5px;
+  transition:all 500ms ease-in-out;
+}
+.tabs1 .tab-body1 {
+  position:relative;
+  height:calc(100% - 60px);
+  padding:50px 10px;
+}
+
+.tab-body1 img{
+	width: 400px;
+	margin-left: 100px;
 }
 
 
 
-.tabBox {
-	position: absolute;
-	width: 650px;
-	height: 500px;
-}
-.tabBox2 {
-	position: absolute;
-	left:650px;
-	width: 650px;
-	height: 500px;
-}
-
-.tabBox::before{
-        content: "";
-        background: #ffffff;
-        background-size: cover;
-        opacity: 0.1;
-        position:absolute;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
-
-}
-
-.tabBox2::before{
-        content: "";
-        background: #ffffff;
-        background-size: cover;
-        opacity: 0.1;
-        position:absolute;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
-
-}
 
 
-.tabBox h3 {
-	float:left;
-	margin: 0;
-	padding: 0;
-	top: 0;
-	font-size: 14px;
-}
 
-.tabBox h3 a {
-	display: block;
-	padding: 5px;
-	width: 130px;
-	height: 20px;
-	line-height: 20px;
-	text-align: center;
-	background: #800000;
-	border: 1px solid white;
-	border-bottom: none;
-	border-radius: 7px 7px 0 0;
-}
 
-.tabBox .box {
-	display: none;
-	margin: 0;
-	padding: 15px;
-	height: 200px;
-	border: 1px solid black;
-	border-radius: 0 5px 5px 5px;
-}
-.tabBox .btnMore {
-	display: none;
-	right: 5px;
-	top: 10px;
-}
 
-.tabBox .ctn1 h3 {
-	left: 0;
-}
 
-.tabBox .ctn1 h3 a {
-	color: white;
-}
 
-.tabBox .ctn2 h3 a {
-	color: white;
-}
 
-.tabBox .ctn2 h3 {
-	left: 140px;
-	
-}
 
-.tabBox2 a {
-	display: block;
-	padding: 5px;
-	width: 130px;
-	height: 20px;
-	line-height: 20px;
-	text-align: center;
-	background: #800000;
-	border: 1px solid white;
-	border-bottom: none;
-	border-radius: 7px 7px 0 0;
-}
 
 .d_clear img{
 	width: 650px;
