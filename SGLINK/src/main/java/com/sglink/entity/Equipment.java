@@ -1,5 +1,6 @@
 package com.sglink.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -64,5 +65,7 @@ public class Equipment extends BaseTimeEntity{
 		this.img = img;
 		this.member = member;
 	}
+	
+
 
 }

@@ -35,17 +35,8 @@ public class EquipmentController {
 	// 장비 관련 페이지
 	@RequestMapping(value = "/view", method = RequestMethod.GET)
 	public String viewEquipment( Model model, @RequestParam(required = false, defaultValue = "0") Integer page,
-<<<<<<< HEAD
-			@RequestParam(required = false, defaultValue = "10") Integer size){
-=======
 			@RequestParam(required = false, defaultValue = "9") Integer size){
->>>>>>> branch 'sub' of https://github.com/SilverCastle123/project.git
 		model.addAttribute("resultMap", equipmentService.findAll(page, size));
-<<<<<<< HEAD
-
-=======
-		
->>>>>>> branch 'sub' of https://github.com/SilverCastle123/project.git
 		return "/equipment/equipment/equipmentList";
 	}
 
