@@ -24,11 +24,14 @@ public class EquipmentResponseDto {
 	
 	private String equiRegister;
 	
+	private String equiTel;
+	
 	private List<FileEntity> img;
 	
 	public EquipmentResponseDto(Equipment entity) {
 		this.equiName=entity.getEquiName();
 		this.equiRegister=entity.getEquiRegister();
+		this.equiTel=entity.getEquiTel();
 		this.equiUniname=entity.getEquiUniname();
 		this.equiContent=entity.getEquiContent();
 		this.img=entity.getImg();

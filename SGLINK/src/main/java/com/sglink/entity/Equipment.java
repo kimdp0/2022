@@ -4,11 +4,13 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+
+import com.sglink.common.constant.Process;
+import com.sglink.common.constant.Reservation;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -33,6 +35,14 @@ public class Equipment extends BaseTimeEntity{
 	private String equiContent;
 	
 	private String equiRegister;
+	
+	private String equiTel;
+	
+	@Enumerated(EnumType.STRING)
+	private Process process;
+	
+	@Enumerated(EnumType.STRING)
+	private Reservation reservation;
 
 	@OneToMany(mappedBy="img")
 	private List<FileEntity> img;
@@ -43,11 +53,12 @@ public class Equipment extends BaseTimeEntity{
 
 	@Builder
 	public Equipment(String equiId, String equiName, String equiUniname, String equiContent, 
-			String equiRegister,List<FileEntity> img, List<Member> member) {
+			String equiRegister, String equiTel, List<FileEntity> img, List<Member> member) {
 
 		this.equiId = equiId;
 		this.equiName = equiName;
 		this.equiRegister = equiRegister;
+		this.equiTel = equiTel;
 		this.equiUniname = equiUniname;
 		this.equiContent = equiContent;
 		this.img = img;
