@@ -28,7 +28,9 @@ public class EquipmentResponseDto {
 	
 	public EquipmentResponseDto(Equipment entity) {
 		this.equiName=entity.getEquiName();
+		this.equiRegister=entity.getEquiRegister();
 		this.equiUniname=entity.getEquiUniname();
 		this.equiContent=entity.getEquiContent();
+		this.img=entity.getImg();
 	}
 }
