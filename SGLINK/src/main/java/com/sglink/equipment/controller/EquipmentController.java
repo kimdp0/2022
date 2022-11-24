@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.sglink.entity.Company;
 import com.sglink.entity.Equipment;
+import com.sglink.entity.FileEntity;
 import com.sglink.equipment.dto.EquipmentRequestDto;
 import com.sglink.equipment.service.EquipmentService;
 import com.sglink.file.service.FileUploadService;
@@ -32,7 +33,13 @@ public class EquipmentController {
 	private final FileUploadService fileUploadService;
 	//장비 관련 페이지
 		@RequestMapping(value="/view", method = RequestMethod.GET)
-		public String main() {
+		public String viewEquipment(@RequestParam("id")String id, Model model) {
+			Equipment equipment= equipmentService.findByEquiId(id);
+			List<FileEntity> imgs = equipment.getImg();
+			for(int i=0; i<imgs.size(); i++) {
+				FileEntity img = imgs.get(i);
+				model.addAttribute("imgSrc", img.getStored_file_path());
+			}
 			return "/equipment/equipment/equipmentList";
 		}
 		
