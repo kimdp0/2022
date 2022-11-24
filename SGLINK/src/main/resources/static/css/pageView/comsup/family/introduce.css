@@ -15,6 +15,7 @@
 	margin: 2px;
 	font-size: 13px;
 	color: #999999;
+	
 }
 
 .body {
@@ -33,6 +34,7 @@
 	border-bottom: none;
 	text-decoration: none;
 	font-weight: bold;
+	
 }
 
 .tab2 {
@@ -68,6 +70,8 @@ h2.bl.sq {
 	background:
 		url(http://linc.sogang.ac.kr/front/images/local/bullet_h2.gif)
 		no-repeat;
+		margin: 5px;
+ 	padding: 5px; 
 }
 
 .bl.md {
@@ -78,6 +82,8 @@ h2.bl.sq {
 		url(http://linc.sogang.ac.kr/front/images/common/omni_2x2_000_50.png)
 		no-repeat;
 	background-position: 0.1em 0.7em;
+	margin: 5px;
+ 	padding: 5px; 
 }
 
 .content {
