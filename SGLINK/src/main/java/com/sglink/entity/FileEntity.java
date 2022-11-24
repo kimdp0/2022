@@ -11,11 +11,13 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Builder
 @Getter
 @Setter
+@ToString(exclude = "img")
 @AllArgsConstructor
 @NoArgsConstructor
 public class FileEntity {
@@ -36,4 +38,9 @@ public class FileEntity {
     @ManyToOne
     @JoinColumn
     private FileBoard fileBoard;
+    
+    
+    @ManyToOne
+    @JoinColumn
+    private Equipment img;
 }

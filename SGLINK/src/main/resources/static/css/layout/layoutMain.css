@@ -1,5 +1,7 @@
 *{
 	font-family: 'LINESeedKR-Bd';
+		margin: 0;
+	padding: 0;
 }
 @font-face {
     font-family: 'LINESeedKR-Bd';
@@ -17,17 +19,19 @@ body {
 #wrap {
 	position: relative;
 	margin: 0 auto;
-	width: 1920px;
+ 	width: 1920px; 
 	height: 100%;
 	top:0px;
+
 }
 
 
 #header {
-	position: sticky;
+	position: relative;
 	z-index: 2;
 	top: 0px;
-	height: 120px;
+	height: 100px;
+
 }
 
 #header::before{
