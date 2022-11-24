@@ -1,6 +1,4 @@
 package com.sglink.entity;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,11 +11,13 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Builder
 @Getter
 @Setter
+@ToString(exclude = "img")
 @AllArgsConstructor
 @NoArgsConstructor
 public class FileEntity {

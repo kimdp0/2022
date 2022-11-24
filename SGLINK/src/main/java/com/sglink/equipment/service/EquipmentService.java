@@ -38,7 +38,7 @@ public class EquipmentService {
 //		게시글 순서를 내림차순으로 변경Sort.by(Sort.Direncion.DESC,"registerTime")
 		Page<Equipment> list= equipmentRepository.findAll(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC,"registerTime")));
 		resultMap.put("list", list.stream().map(EquipmentResponseDto::new).collect(Collectors.toList()));
-		resultMap.put("imgSrc", list.getContent().get(0).getImg().get(0).getStored_file_path());
+		System.out.println(list.stream().map(EquipmentResponseDto::new).collect(Collectors.toList()));
 		resultMap.put("paging", list.getPageable());
 		resultMap.put("totalCnt", list.getTotalElements());
 		resultMap.put("totalPage", list.getTotalPages());	
