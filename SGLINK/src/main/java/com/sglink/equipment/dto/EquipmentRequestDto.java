@@ -24,6 +24,7 @@ public class EquipmentRequestDto {
 
 	private String equiContent;
 	
+	private String equiRegister;
 	
 	private List<FileEntity> img;
 
@@ -34,6 +35,7 @@ public class EquipmentRequestDto {
 				.equiName(equiName)
 				.equiUniname(equiUniname)
 				.equiContent(equiContent)
+				.equiRegister(equiRegister)
 				.img(img) 
 				.build();
 	}

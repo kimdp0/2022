@@ -33,13 +33,12 @@ public class EquipmentController {
 	private final FileUploadService fileUploadService;
 	//장비 관련 페이지
 		@RequestMapping(value="/view", method = RequestMethod.GET)
-		public String viewEquipment(@RequestParam("id")String id, Model model) {
-			Equipment equipment= equipmentService.findByEquiId(id);
-			List<FileEntity> imgs = equipment.getImg();
-			for(int i=0; i<imgs.size(); i++) {
-				FileEntity img = imgs.get(i);
-				model.addAttribute("imgSrc", img.getStored_file_path());
-			}
+		public String viewEquipment(/* @RequestParam("id")String id, */ Model model) {
+			/*
+			 * Equipment equipment= equipmentService.findByEquiId(id); List<FileEntity> imgs
+			 * = equipment.getImg(); for(int i=0; i<imgs.size(); i++) { FileEntity img =
+			 * imgs.get(i); model.addAttribute("imgSrc"+i, img.getStored_file_path()); }
+			 */
 			return "/equipment/equipment/equipmentList";
 		}
 		
@@ -47,10 +46,11 @@ public class EquipmentController {
 		public String newEquipment(Model model,Principal principal) {
 			
 			String userId = principal.getName();
+			String userName = memberService.findbyId(userId).getUserName();
 			Company company =  memberService.findbyId(userId).getCompany();
 			String comUniname = company.getComUniname();
 			model.addAttribute("equipmentRequestDto", new EquipmentRequestDto());
-			model.addAttribute("company", company);
+			model.addAttribute("userName", userName);
 			model.addAttribute("comUniname", comUniname);
 		
 			return "/equipment/equipment/equipmentRegist";

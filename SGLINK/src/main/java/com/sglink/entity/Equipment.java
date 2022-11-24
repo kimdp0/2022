@@ -31,6 +31,8 @@ public class Equipment {
 	private String equiUniname;
 
 	private String equiContent;
+	
+	private String equiRegister;
 
 	@OneToMany(mappedBy="img")
 	private List<FileEntity> img;
@@ -40,10 +42,12 @@ public class Equipment {
 
 
 	@Builder
-	public Equipment(String equiId, String equiName, String equiUniname, String equiContent, List<FileEntity> img, List<Member> member) {
+	public Equipment(String equiId, String equiName, String equiUniname, String equiContent, 
+			String equiRegister,List<FileEntity> img, List<Member> member) {
 
 		this.equiId = equiId;
 		this.equiName = equiName;
+		this.equiRegister = equiRegister;
 		this.equiUniname = equiUniname;
 		this.equiContent = equiContent;
 		this.img = img;
