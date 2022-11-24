@@ -21,7 +21,7 @@
 					<h2 class="bl sq">나노팹센터</h2>
 					<div class="app_list">
 						<ul th:each="list : ${resultMap.list}" >
-							<li><a href="#"> <span class="photo"> <img th:src="${resultMap.imgSrc}" alt> </span> <br>
+							<li><a href="#"> <span class="photo" th:each="resultMap: ${list}"><img th:src="${resultMap.imgSrc}" alt> </span><br>
 									<span class="title" th:text="${list.equiName}"></span> <br>
 									<span class="info" th:text="${list.equiRegister}"></span> <br>
 									<span th:text="${list.equiTel}"></span> 
