@@ -48,9 +48,12 @@ public class EquipmentController {
 		String userName = memberService.findbyId(userId).getUserName();
 		Company company = memberService.findbyId(userId).getCompany();
 		String comUniname = company.getComUniname();
+		String comTel = company.getComTel();
 		model.addAttribute("equipmentRequestDto", new EquipmentRequestDto());
 		model.addAttribute("userName", userName);
 		model.addAttribute("comUniname", comUniname);
+		model.addAttribute("comTel", comTel);
+		
 
 		return "/equipment/equipment/equipmentRegist";
 	}
