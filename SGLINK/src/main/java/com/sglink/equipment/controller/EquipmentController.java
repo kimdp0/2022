@@ -33,7 +33,9 @@ public class EquipmentController {
 	private final FileUploadService fileUploadService;
 	//장비 관련 페이지
 		@RequestMapping(value="/view", method = RequestMethod.GET)
-		public String viewEquipment(@RequestParam("id")String id, Model model) {
+		public String viewEquipment(@RequestParam("id")String id, Model model, @RequestParam(required = false, defaultValue = "0") Integer page,
+			@RequestParam(required = false, defaultValue = "10") Integer size) {
+			model.addAttribute("resultMap", equipmentService.findAll(page, size));
 			Equipment equipment= equipmentService.findByEquiId(id);
 			List<FileEntity> imgs = equipment.getImg();
 			for(int i=0; i<imgs.size(); i++) {

@@ -14,30 +14,21 @@ import lombok.ToString;
 @Getter
 @Setter
 @NoArgsConstructor
-public class EquipmentRequestDto {
-
-	private String equiId;
+public class EquipmentResponseDto {
 
 	private String equiName;
 
 	private String equiUniname;
-
+	
 	private String equiContent;
 	
-	private String equiregister;
+	private String equiRegister;
 	
 	private List<FileEntity> img;
-
 	
-	public Equipment toEntity() {
-		return Equipment.builder()
-				.equiId(equiId)
-				.equiName(equiName)
-				.equiUniname(equiUniname)
-				.equiContent(equiContent)
-				
-				.img(img) 
-				.build();
+	public EquipmentResponseDto(Equipment entity) {
+		this.equiName=entity.getEquiName();
+		this.equiUniname=entity.getEquiUniname();
+		this.equiContent=entity.getEquiContent();
 	}
-	
 }

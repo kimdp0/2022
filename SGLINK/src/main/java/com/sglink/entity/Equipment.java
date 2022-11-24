@@ -20,7 +20,7 @@ import lombok.Setter;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Setter
-public class Equipment {
+public class Equipment extends BaseTimeEntity{
 
 	@Id
 	private String equiId;
