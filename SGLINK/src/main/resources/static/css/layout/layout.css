@@ -87,15 +87,18 @@ body {
 	height:99.5px;
 	width:1070px;
 	left:-60px;
+	margin-bottom:40px;
 	border-bottom: 3px solid #666666;
 	
 }
 #Title .subTitle1 {
+	margin-left:70px;
 	font-size: 40px;
 	
 }
 
 #Title .subTitle2 {
+	margin-left:70px;
 	color:#999;
 	font-size: 20px;
 	

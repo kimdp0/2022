@@ -27,7 +27,10 @@
 </head>
 <body>
 	<div layout:fragment="content" id="content">
-
+		<div id="Title">
+			<p class="subTitle1">가족기업</p>
+			<p class="subTitle2">가족기업 신청 화면입니다</p>
+		</div>
 		<div id="introduce">
 			<div class="body">
 				<div class="sub">
@@ -89,7 +92,9 @@
 
 							<select class="text" name="comSectors">
 								<option value="">업종을 선택하세요</option>
-								<option th:each="companySector : ${companySectors}" th:value="${companySector.displayName}" th:text="${companySector.displayName}"></option>
+								<option th:each="companySector : ${companySectors}"
+									th:value="${companySector.displayName}"
+									th:text="${companySector.displayName}"></option>
 
 							</select>
 							<p th:if="${#fields.hasErrors('comSectors')}"

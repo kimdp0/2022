@@ -10,6 +10,10 @@
 </head>
 <body>
 	<div layout:fragment="content" id="content">
+		<div id="Title">
+			<p class="subTitle1">인프라</p>
+			<p class="subTitle2">보유장비 화면입니다</p>
+		</div>
 		<div class="h1 contents">
 			<div class="article">
 				<div class="search">
@@ -19,7 +23,6 @@
 				</div>
 				<br>
 				<div class="h2 article">
-					<h2 class="bl sq">나노팹센터</h2>
 					<div class="app_list">
 						<ul th:each="list : ${resultMap.list}">
 							<li th:each="imgSrc: ${list.img}"><a href="#"> <span
@@ -37,19 +40,19 @@
 					</div>
 				</div>
 
-					
+
 			</div>
 		</div>
 		<div class="board_page">
-						<ul class="">
-							<li class="page-item"
-								th:each="index : ${#numbers.sequence(1, resultMap.totalPage)}"
-								th:with="paging=${resultMap.paging}"><a class="page-link"
-								th:href="@{./list(page=${index - 1},page=${paging.pageSize})}"><span
-									th:text="${index}"></span></a></li>
-						</ul>
-					</div>
-			
+			<ul class="">
+				<li class="page-item"
+					th:each="index : ${#numbers.sequence(1, resultMap.totalPage)}"
+					th:with="paging=${resultMap.paging}"><a class="page-link"
+					th:href="@{./list(page=${index - 1},page=${paging.pageSize})}"><span
+						th:text="${index}"></span></a></li>
+			</ul>
+		</div>
+
 	</div>
 </body>
 </html>

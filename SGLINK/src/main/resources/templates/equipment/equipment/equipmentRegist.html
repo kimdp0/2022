@@ -11,9 +11,13 @@
 </head>
 <body>
 	<div layout:fragment="content" id="content">
+		<div id="Title">
+			<p class="subTitle1">인프라</p>
+			<p class="subTitle2">보유장비 등록화면입니다</p>
+		</div>
 		<div id="introduce">
 			<form action="/equipment/new" method="post"
-				enctype="multipart/form-data" th:object ="${equipmentRequestDto}">
+				enctype="multipart/form-data" th:object="${equipmentRequestDto}">
 				<div class="body">
 					<div class="content">
 						<div class="ob">
@@ -25,22 +29,23 @@
 							<p>장비상세 내용</p>
 						</div>
 						<div class="ct">
-							<input type="text" placeholder="장비코드를 입력해주세요" th:field="*{equiId}">
+							<input type="text" placeholder="장비코드를 입력해주세요"
+								th:field="*{equiId}">
 						</div>
 						<div class="ct">
 							<input type="text" placeholder="장비명을 입력해주세요"
 								th:field="*{equiName}">
 						</div>
 						<div class="ct">
-							<input type="text" class="readonly"  name="equiUniname"
+							<input type="text" class="readonly" name="equiUniname"
 								th:value="${userInfo.userUniname}" readonly="readonly">
 						</div>
 						<div class="ct">
-							<input type="text" class="readonly"  name="equiRegister"
+							<input type="text" class="readonly" name="equiRegister"
 								th:value="${userInfo.userName}" readonly="readonly">
 						</div>
 						<div class="ct">
-							<input type="text" class="readonly"  name="equiTel"
+							<input type="text" class="readonly" name="equiTel"
 								th:value="${userInfo.userTel}" readonly="readonly">
 						</div>
 						<div class="ct2">
@@ -49,7 +54,7 @@
 						<div class="ob2">
 							<p class="txt1">장비사진</p>
 							<p class="txt2">* 장비 등록 시 사진 필수로 제출해주셔야합니다.</p>
-							<input type="file" name="files"/>
+							<input type="file" name="files" />
 						</div>
 						<div class="nt">
 

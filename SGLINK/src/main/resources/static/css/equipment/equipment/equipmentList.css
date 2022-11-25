@@ -15,7 +15,6 @@ ul, li {
  .h1 {
      position: static;
      padding-top: 13px;
-     border-top: 1px solid #cccccc;
 /*      margin-left: 250px;  */
      max-width: 800px;
      min-width: 800px;
