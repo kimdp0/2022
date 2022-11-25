@@ -159,3 +159,7 @@ textarea::placeholder {
 	height: 50px;
 	font-size: 20px;
 }
+
+.readonly{
+	background-color: #f2f2f2;
+}

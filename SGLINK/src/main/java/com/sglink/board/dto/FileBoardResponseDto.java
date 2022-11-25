@@ -1,8 +1,10 @@
 package com.sglink.board.dto;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import com.sglink.entity.FileBoard;
+import com.sglink.entity.FileEntity;
 import com.sglink.entity.Member;
 
 import lombok.Getter;
@@ -17,6 +19,7 @@ public class FileBoardResponseDto {
 	private String content;
 	private Member member;
 	private LocalDateTime registerTime;
+	private List<FileEntity> file;
 	private int readCnt;
 	
 	public FileBoardResponseDto(FileBoard entity) {
@@ -24,6 +27,7 @@ public class FileBoardResponseDto {
 		this.title = entity.getTitle();
 		this.content = entity.getContent();
 		this.member = entity.getMember();
+		this.file = entity.getFile();
 		this.registerTime = entity.getRegisterTime();
 		this.readCnt = entity.getReadCnt();
 	}

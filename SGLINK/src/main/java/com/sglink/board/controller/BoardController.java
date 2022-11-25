@@ -291,6 +291,7 @@ public class BoardController {
 			@RequestParam(required = false, defaultValue = "10") Integer size) throws Exception {
 		try {
 			model.addAttribute("resultMap", boardService.findAllFile(page, size));
+			System.out.println( boardService.findAllFile(page, size));
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}

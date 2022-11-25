@@ -36,17 +36,17 @@ public class Member  extends BaseTimeEntity{
 	private String userPw;
 	private String userTel;
 	private String userUniname;
+	
 	@OneToOne
 	@JoinColumn(name = "comId")
 	private Company company;
 	@Enumerated(EnumType.STRING)
 	private Role role;
 	
-	@ManyToOne
-	@JoinColumn
+	@OneToOne
+	@JoinColumn(name = "equiName")
 	private Equipment equipment;
 	
-
 	public static Member createComMember(Company company,COM_MemberFormDto memberFormDto, PasswordEncoder passwordEncoder) {
 		Member member = new Member();
 		member.setCompany(company);
@@ -87,7 +87,6 @@ public class Member  extends BaseTimeEntity{
 		member.setUserName(memberFormDto.getUserName());
 		String password = passwordEncoder.encode(memberFormDto.getUserPw());
 		member.setUserPw(password);
-		member.setUserUniname(memberFormDto.getUserUniname());
 		member.getUpdateTime();
 		return member;
 	}

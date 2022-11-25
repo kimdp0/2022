@@ -31,6 +31,8 @@ public class MypageController {
 	public String mypageForm(Model model, Principal principal) {
 		model.addAttribute("memberUpdateDto", new MemberUpdateDto());
 		String userId = principal.getName();
+		Member member = memberService.findbyId(userId);
+		model.addAttribute("member",member);
 		model.addAttribute("userId",userId);
 		return "/member/mypage/memberUpdateForm";
 	}
@@ -40,7 +42,8 @@ public class MypageController {
 			, BindingResult bindingResult,Model model,Principal principal) {	
 		if (bindingResult.hasErrors()) {
 			String userId = principal.getName();
-			model.addAttribute("userId",userId);
+			Member member = memberService.findbyId(userId);
+			model.addAttribute("member",member);
 			return "/member/mypage/memberUpdateForm";			
 		}
 		try {

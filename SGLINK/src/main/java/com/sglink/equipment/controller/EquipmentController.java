@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.sglink.entity.Company;
 import com.sglink.entity.Equipment;
-import com.sglink.entity.FileEntity;
+import com.sglink.entity.Member;
 import com.sglink.equipment.dto.EquipmentRequestDto;
 import com.sglink.equipment.service.EquipmentService;
 import com.sglink.file.service.FileUploadService;
@@ -33,7 +33,7 @@ public class EquipmentController {
 	private final FileUploadService fileUploadService;
 
 	// 장비 관련 페이지
-	@RequestMapping(value = "/view", method = RequestMethod.GET)
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String viewEquipment( Model model, @RequestParam(required = false, defaultValue = "0") Integer page,
 			@RequestParam(required = false, defaultValue = "9") Integer size){
 		model.addAttribute("resultMap", equipmentService.findAll(page, size));
@@ -42,18 +42,20 @@ public class EquipmentController {
 
 	@GetMapping(value = "/new")
 	public String newEquipment(Model model, Principal principal) {
-
+		if(principal.getName().equals("admin")) {
+			String userId = principal.getName();
+			String userName = memberService.findbyId(userId).getUserName();
+			model.addAttribute("equipmentRequestDto", new EquipmentRequestDto());
+			model.addAttribute("userName", userName);
+			return "/equipment/equipment/equipmentRegist";
+		}
 		String userId = principal.getName();
-		String userName = memberService.findbyId(userId).getUserName();
+		Member userInfo = memberService.findbyId(userId);
 		Company company = memberService.findbyId(userId).getCompany();
 		String comUniname = company.getComUniname();
-		String comTel = company.getComTel();
 		model.addAttribute("equipmentRequestDto", new EquipmentRequestDto());
-		model.addAttribute("userName", userName);
+		model.addAttribute("userInfo", userInfo);
 		model.addAttribute("comUniname", comUniname);
-		model.addAttribute("comTel", comTel);
-		
-
 		return "/equipment/equipment/equipmentRegist";
 	}
 
@@ -63,7 +65,13 @@ public class EquipmentController {
 		String equiId = equipmentService.save(equipmentRequestDto);
 		Equipment equipment = equipmentService.findByEquiId(equiId);
 		fileUploadService.addFile(files, equiId, equipment);
-		return "redirect:/equipment/view";
+		return "redirect:/equipment/list";
+	}
+	
+	
+	@GetMapping(value = "/viewex")
+	public String viewEquipmentex(){
+		return "/equipment/equipment/equipmentListex";
 	}
 
 }

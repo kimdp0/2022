@@ -44,13 +44,10 @@ public class MemberService implements UserDetailsService {
 	private void duplicateMember(Member member ,String userId) {
 		String userPw = memberRepository.duplicatePw(userId, member.getUserPw());
 		String userName = memberRepository.duplicateName(userId, member.getUserName());
-		String userUniname = memberRepository.duplicateUniname(userId, member.getUserUniname());
 		if (userPw != null) {
-			throw new IllegalStateException("비밀번호가 이전과 동일합니다."); // 이미 가입된 회원의 경우 예외를 발생시킨다.
+			throw new IllegalStateException("비밀번호가 이전과 동일합니다."); 
 		}else if(userName != null) {
 			throw new IllegalStateException("이름이 이전과 동일합니다.");
-		}else if(userUniname != null) {
-			throw new IllegalStateException("기관명이 이전과 동일합니다.");
 		}
 		
 	}

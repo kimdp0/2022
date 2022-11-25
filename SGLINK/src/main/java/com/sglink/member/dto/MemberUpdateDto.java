@@ -21,9 +21,6 @@ public class MemberUpdateDto {
 	@NotEmpty(message = "비밀번호를 바꿔주세요.")
 	@Length(min = 8, max = 16, message = "비밀번호는 8자 이상, 16자 이하로 변경가능합니다")
 	private String userPw;
-	
-	@NotBlank(message = "기관명을 바꿔주세요.")
-	private String userUniname;
 
 	
 //	public MemberUpdateDto(Member member) {

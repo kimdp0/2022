@@ -16,13 +16,11 @@ public interface MemberRepository extends JpaRepository<Member, String> {
 	static final String updateMember = "UPDATE user set "
 			+ "user_name = :#{#member.userName}, "
 			+ "user_pw = :#{#member.userPw}, "
-			+ "user_uniname = :#{#member.userUniname}, "
 			+ "update_time = SYSDATE() "
 			+ "WHERE user_id = :#{#userId}";
 	
 	static final String duplicatePw = "select user_pw from user where user_id = :#{#userId} and user_pw = :#{#userPw}";
 	static final String duplicateName = "select user_Name from user where user_id = :#{#userId} and user_name = :#{#userName}";
-	static final String duplicateUniName = "select user_uniname from user where user_id = :#{#userId} and user_uniname = :#{#userUniname}";
 	
 	
 	@Transactional
@@ -38,7 +36,4 @@ public interface MemberRepository extends JpaRepository<Member, String> {
 	@Query(value = duplicateName, nativeQuery = true)
 	public String duplicateName(@Param("userId") String userId, @Param("userName") String userName);
 	
-	@Transactional
-	@Query(value = duplicateUniName, nativeQuery = true)
-	public String duplicateUniname(@Param("userId") String userId, @Param("userUniname") String userUniname);
 }

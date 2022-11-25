@@ -5,7 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>equipment</title>
-<link th:href="@{/css/equipment/equipment/equipmentList.css}" rel="stylesheet">
+<link th:href="@{/css/equipment/equipment/equipmentList.css}"
+	rel="stylesheet">
 </head>
 <body>
 	<div layout:fragment="content" id="content">
@@ -20,41 +21,35 @@
 				<div class="h2 article">
 					<h2 class="bl sq">나노팹센터</h2>
 					<div class="app_list">
-						<ul th:each="list : ${resultMap.list}" >
-				<li th:each="imgSrc: ${list.img}"><a href="#"> <span class="photo"> <img th:src="${imgSrc.stored_file_path}" alt> </span> <br>
-									<span class="title" th:text="${list.equiName}"></span> <br>
-									<span class="info" th:text="${list.equiRegister}"></span> <br>
-									<span th:text="${list.equiTel}"></span> 
-									<br>
-								<span class="state none"> 예약가능 </span>
+						<ul th:each="list : ${resultMap.list}">
+							<li th:each="imgSrc: ${list.img}"><a href="#"> <span
+									class="photo"> <img th:src="${imgSrc.stored_file_path}"
+										alt>
+								</span> <br> <span class="title" th:text="${list.equiName}"></span>
+									<br> <span class="info" th:text="${list.equiRegister}"></span>
+									<br> <span th:text="${list.equiTel}"></span> <br> <span
+									class="state none"> 예약가능 </span>
 							</a></li>
-							
+
 						</ul>
 						<br>
-						<div >
-						<div class="board_page">
-							<ul class="" >
-								<li class="page-item"
-									th:each="index : ${#numbers.sequence(1, resultMap.totalPage)}"
-									th:with="paging=${resultMap.paging}"><a class="page-link"
-									th:href="@{./list(page=${index - 1},page=${paging.pageSize})}"><span
-										th:text="${index}"></span></a></li>
-							</ul>
-						</div>
-					</div>
-						<!-- <div class="page_wrap">
-							<div class="page_nation">
-								<a class="arrow pprev" href="#"></a> <a class="arrow prev"
-									href="#"></a> <a href="#" class="active">1</a> <a href="#">2</a>
-								<a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a
-									class="arrow next" href="#"></a> <a class="arrow nnext"
-									href="#"></a>
-							</div>
-						</div> -->
+
 					</div>
 				</div>
+
+					
 			</div>
 		</div>
+		<div class="board_page">
+						<ul class="">
+							<li class="page-item"
+								th:each="index : ${#numbers.sequence(1, resultMap.totalPage)}"
+								th:with="paging=${resultMap.paging}"><a class="page-link"
+								th:href="@{./list(page=${index - 1},page=${paging.pageSize})}"><span
+									th:text="${index}"></span></a></li>
+						</ul>
+					</div>
+			
 	</div>
 </body>
 </html>
