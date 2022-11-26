@@ -61,7 +61,7 @@
 .content {
 	position: absolute;
 	width: 777px;
-	top: 80px;
+	top: 110px;
 	left: 275px;
 }
 
@@ -119,7 +119,7 @@ input::placeholder {
 
 table {
 	position: absolute;
-	margin-top: 115px;
+	margin-top: 60px;
 	text-align: center;
 	line-height: 30px;
 	font-size: 13px;
