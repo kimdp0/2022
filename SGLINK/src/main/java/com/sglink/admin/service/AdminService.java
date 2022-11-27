@@ -10,10 +10,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sglink.admin.dto.CompanyResponseDto;
+import com.sglink.admin.dto.EquipmentResponseDto;
 import com.sglink.admin.dto.MemberResponseDto;
 import com.sglink.entity.Company;
+import com.sglink.entity.Equipment;
 import com.sglink.entity.Member;
 import com.sglink.repository.CompanyRepository;
+import com.sglink.repository.EquipmentRepository;
 import com.sglink.repository.MemberRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -23,6 +26,7 @@ public class AdminService {
 	
 	private final MemberRepository memberRepository;
 	private final CompanyRepository companyRepository;
+	private final EquipmentRepository equipmentRepository;
 	
 	
 	@Transactional(readOnly = true)
@@ -70,6 +74,33 @@ public class AdminService {
 		}else if(comProcess.equals("APPROVE")){
 			String process = "UNAPPROVE";
 			companyRepository.updateCompanyProcess(comId,process);
+		}
+		
+	}
+	
+	
+	@Transactional(readOnly = true)
+	public HashMap <String, Object> selectAllEquipment(Integer page, Integer size){
+		
+		HashMap<String, Object> resultMap= new HashMap<String, Object>();
+//		게시글 순서를 내림차순으로 변경Sort.by(Sort.Direncion.DESC,"registerTime")
+		Page<Equipment> list= equipmentRepository.findAll(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC,"registerTime")));
+		
+		resultMap.put("list", list.stream().map(EquipmentResponseDto::new).collect(Collectors.toList()));
+		resultMap.put("paging", list.getPageable());
+		resultMap.put("totalCnt", list.getTotalElements());
+		resultMap.put("totalPage", list.getTotalPages());
+		
+		return resultMap;	
+	}
+	
+	public void approveEquipment(String equiId,String equiProcess) {
+		if(equiProcess.equals("UNAPPROVE")) {
+			String process = "APPROVE";
+			equipmentRepository.updateEquipmentProcess(equiId, process);
+		}else if(equiProcess.equals("APPROVE")){
+			String process = "UNAPPROVE";
+			equipmentRepository.updateEquipmentProcess(equiId,process);
 		}
 		
 	}

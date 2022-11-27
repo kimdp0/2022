@@ -19,30 +19,30 @@
 				<div class="memberlist">
 					<table class="board_list">
 						<tr class="top">
-							<th class="com1 borderside">기업아이디</th>
-							<th class="com2 borderside">기업명</th>
-							<th class="com3 borderside">대표자명</th>
-							<th class="com4 borderside">업종</th>
+							<th class="com1 borderside">장비아이디</th>
+							<th class="com2 borderside">장비명</th>
+							<th class="com3 borderside">기업명</th>
+							<th class="com4 borderside">등록자명</th>
 							<th class="com5 borderside">전화번호</th>
-							<th class="com6 borderside">기업상품</th>
-							<th class="com7 borderside">가입일</th>
+							<th class="com6 borderside">예약가능여부</th>
+							<th class="com7 borderside">등록일</th>
 							<th class="com8 borderside">승인여부</th>
 							<th class="com9 borderside">처리</th>
 						</tr>
 						<tbody class="">
 							<tr th:each="list,index : ${resultMap.list}"
 								th:with="paging=${resultMap.paging}">
-								<td class="com1 borderside"><span th:text="${list.comId}"></span></td>
-								<td class="com2 borderside"><span th:text="${list.comUniname}"></span></td>
-								<td class="com3 borderside"><span th:text="${list.comRepname}"></span></td>
-								<td class="com4 borderside"><span th:text="${list.comSectors}"></span></td>
-								<td class="com5 borderside"><span th:text="${list.comTel}"></span></td>
-								<td class="com6 borderside"><span th:text="${list.comProduct}"></span></td>
+								<td class="com1 borderside"><span th:text="${list.equiId}"></span></td>
+								<td class="com2 borderside"><span th:text="${list.equiName}"></span></td>
+								<td class="com3 borderside"><span th:text="${list.equiUniname}"></span></td>
+								<td class="com4 borderside"><span th:text="${list.equiRegister}"></span></td>
+								<td class="com5 borderside"><span th:text="${list.equiTel}"></span></td>
+						 		<td class="com6 borderside"><span th:text="${list.reservation}"></span></td> 
 								<td class="com7 borderside"><span
 									th:text="${#temporals.format(list.registerTime, 'yyyy-MM-dd')}"></span>
 								</td>
-								<td class="com8 borderside"><span th:text="${list.comProcess}"></span></td>
-								<td class="com9 borderside"><a th:href="@{./list/approve(comId=${list.comId},comProcess=${list.comProcess})}">처리하기</a></td>
+								<td class="com8 borderside"><span th:text="${list.equiProcess}"></span></td>
+								<td class="com9 borderside"><a th:href="@{./list/approve(equiId=${list.equiId},equiProcess=${list.equiProcess})}">처리하기</a></td>
 							<tr>
 						</tbody>
 					</table>

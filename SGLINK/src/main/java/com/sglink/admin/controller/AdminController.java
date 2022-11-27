@@ -56,5 +56,23 @@ public class AdminController {
 		adminService.approveCompany(comId,comProcess);
 		return "redirect:/admin/company/list";
 	}
+	
+	
+	
+	@GetMapping("/equipment/list")
+	public String equipmentListPage(Model model, @RequestParam(required= false, defaultValue= "0") Integer page, @RequestParam(required = false, defaultValue= "10") Integer size)throws Exception{
+		try {
+			model.addAttribute("resultMap", adminService.selectAllEquipment(page, size));
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return "/admin/admin/equipmentList";
+	}
+	
+	@GetMapping("/equipment/list/approve")
+	public String approveEquipment(@RequestParam("equiId")String equiId,@RequestParam("equiProcess")String equiProcess) {
+		adminService.approveEquipment(equiId,equiProcess);
+		return "redirect:/admin/equipment/list";
+	}
 
 }
