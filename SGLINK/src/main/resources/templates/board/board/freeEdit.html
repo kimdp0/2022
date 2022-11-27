@@ -84,8 +84,8 @@
             </div>
             <div class="bt_wrap">
                 <button type="submit" class="on">수정</button>        
-                <button onclick="fnViewDelete()" class="on">삭제</button>
-                <button onclick="javascript:location.href='/boards/free/list'">취소</button>
+                <a onclick="fnViewDelete()" class="on">삭제</a>
+                <a onclick="javascript:location.href='/boards/free/list'">취소</a>
                 <input type="hidden" th:name="${_csrf.parameterName}"
 					th:value="${_csrf.token}">
             </div>
