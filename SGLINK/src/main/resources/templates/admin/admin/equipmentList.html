@@ -33,16 +33,24 @@
 							<tr th:each="list,index : ${resultMap.list}"
 								th:with="paging=${resultMap.paging}">
 								<td class="com1 borderside"><span th:text="${list.equiId}"></span></td>
-								<td class="com2 borderside"><span th:text="${list.equiName}"></span></td>
-								<td class="com3 borderside"><span th:text="${list.equiUniname}"></span></td>
-								<td class="com4 borderside"><span th:text="${list.equiRegister}"></span></td>
+								<td class="com2 borderside"><span
+									th:text="${list.equiName}"></span></td>
+								<td class="com3 borderside"><span
+									th:text="${list.equiUniname}"></span></td>
+								<td class="com4 borderside"><span
+									th:text="${list.equiRegister}"></span></td>
 								<td class="com5 borderside"><span th:text="${list.equiTel}"></span></td>
-						 		<td class="com6 borderside"><span th:text="${list.reservation}"></span></td> 
+								<td class="com6 borderside"><span
+									th:text="${list.reservation}"></span></td>
 								<td class="com7 borderside"><span
 									th:text="${#temporals.format(list.registerTime, 'yyyy-MM-dd')}"></span>
 								</td>
-								<td class="com8 borderside"><span th:text="${list.equiProcess}"></span></td>
-								<td class="com9 borderside"><a th:href="@{./list/approve(equiId=${list.equiId},equiProcess=${list.equiProcess})}">처리하기</a></td>
+								<td class="com8 borderside"><span class="unapprove"
+									th:if="${list.equiProcess.toString()=='UNAPPROVE'}">비승인</span><span class="approve"
+									th:if="${list.equiProcess.toString()=='APPROVE'}">승인</span></td>
+								<td class="com9 borderside"><a
+									th:href="@{./list/approve(equiId=${list.equiId},equiProcess=${list.equiProcess})}">처리하기</a>
+									</td>
 							<tr>
 						</tbody>
 					</table>

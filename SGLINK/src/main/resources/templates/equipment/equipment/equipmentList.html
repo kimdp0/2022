@@ -24,8 +24,8 @@
 				<br>
 				<div class="h2 article">
 					<div class="app_list">
-						<ul th:each="list : ${resultMap.list}">
-							<li th:each="imgSrc: ${list.img}"><a href="#"> <span
+						<ul th:if="${list.process.toString()=='APPROVE'}" th:each="list : ${resultMap.list}" >
+							<li th:each="imgSrc: ${list.img}" ><a href="#"> <span
 									class="photo"> <img th:src="${imgSrc.stored_file_path}"
 										alt>
 								</span> <br> <span class="title" th:text="${list.equiName}"></span>
@@ -43,8 +43,8 @@
 
 			</div>
 		</div>
-		<div class="board_page">
-			<ul class="">
+		<div class="equi_page">
+			<ul class="equi_page">
 				<li class="page-item"
 					th:each="index : ${#numbers.sequence(1, resultMap.totalPage)}"
 					th:with="paging=${resultMap.paging}"><a class="page-link"

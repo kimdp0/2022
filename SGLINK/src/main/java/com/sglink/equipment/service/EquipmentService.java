@@ -1,6 +1,7 @@
 package com.sglink.equipment.service;
 
 import java.util.HashMap;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.data.domain.Page;
@@ -9,6 +10,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.sglink.board.dto.NoticeBoardResponseDto;
+import com.sglink.entity.Board;
 import com.sglink.entity.Equipment;
 import com.sglink.equipment.dto.EquipmentRequestDto;
 import com.sglink.equipment.dto.EquipmentResponseDto;
@@ -43,6 +46,12 @@ public class EquipmentService {
 		resultMap.put("totalCnt", list.getTotalElements());
 		resultMap.put("totalPage", list.getTotalPages());	
 		return resultMap;	
+	}
+	public Optional<Equipment> viewfindById(String id) {
+		return equipmentRepository.findById(id);
+	}
+	public EquipmentResponseDto findById(String id) {
+		return new EquipmentResponseDto(equipmentRepository.findById(id).get());
 	}
 	
 }
