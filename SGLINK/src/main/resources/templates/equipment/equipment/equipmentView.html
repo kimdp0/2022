@@ -16,7 +16,7 @@
 			<p class="subTitle2">보유장비 상세화면입니다</p>
 		</div>
 		<div class="bd">
-			<img class="photo" th:src="${imgSrc.stored_file_path}" alt>
+			<img class="photo"  th:each="imgSrc: ${info.img}" th:src="${imgSrc.stored_file_path}" alt>
 			<div class="product">
 				<h3>
 					<span th:text="${info.equiId}"></span>
