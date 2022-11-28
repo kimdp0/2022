@@ -3,8 +3,8 @@ package com.sglink.board.controller;
 import java.security.Principal;
 import java.util.List;
 
+
 import org.springframework.data.repository.query.Param;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +20,6 @@ import com.sglink.board.dto.NoticeBoardRequestDto;
 import com.sglink.board.service.BoardService;
 import com.sglink.entity.Board;
 import com.sglink.entity.FileBoard;
-import com.sglink.entity.FileEntity;
 import com.sglink.file.service.FileUploadService;
 import com.sglink.member.service.MemberService;
 
@@ -33,19 +32,61 @@ public class BoardController {
 	private final BoardService boardService;
 	private final MemberService memberService;
 	private final FileUploadService fileUploadService;
+//통합검색
+	
+	@GetMapping("/total/list")
+	public String gettotalBoardListPage(Model model, @RequestParam(required = false, defaultValue = "0") Integer page,
+			@RequestParam(required = false, defaultValue = "100") Integer size, @RequestParam(value="searchKeyword", required = false) String searchKeyword) throws Exception {
+		
+		if(searchKeyword ==null) {
+			try {
+				model.addAttribute("resultMap", boardService.findAll(page, size));
+			} catch (Exception e) {
+				throw new Exception(e.getMessage());
+			}
+		}else {
+			model.addAttribute("resultMap", boardService.findByTitleContaining(page, size, searchKeyword ));
+		}
+		
+		return "/board/board/totalList";
+	}
+	
+	@GetMapping("/total/delete")
+	public String totalBoardDeleteAction(Model model, @RequestParam() Long[] deleteId) throws Exception {
 
-	// 공지사항게시판
-//	@RequestParam(required = false, defaultValue= "10")  defaultValue= "10"<-숫자 변경시 페이지당 게시글숫자달라짐
-	@GetMapping("/notice/list")
-	public String getnoticeBoardListPage(Model model, @RequestParam(required = false, defaultValue = "0") Integer page,
-			@RequestParam(required = false, defaultValue = "10") Integer size) throws Exception {
 		try {
-			model.addAttribute("resultMap", boardService.findAll(page, size));
+			boardService.deleteAll(deleteId);
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
-		return "/board/board/noticelist";
+		return "redirect:/boards/total/list";
 	}
+	
+	
+	
+	
+//	 공지사항게시판
+//	@RequestParam(required = false, defaultValue= "10")  defaultValue= "10"<-숫자 변경시 페이지당 게시글숫자달라짐
+	@GetMapping("/notice/list")
+	public String getnoticeBoardListPage(Model model, @RequestParam(required = false, defaultValue = "0") Integer page,
+			@RequestParam(required = false, defaultValue = "10") Integer size, @RequestParam(value="searchKeyword", required = false) String searchKeyword) throws Exception {
+		
+		if(searchKeyword ==null) {
+			try {
+				model.addAttribute("resultMap", boardService.findAll(page, size));
+			} catch (Exception e) {
+				throw new Exception(e.getMessage());
+			}
+		}else {
+			model.addAttribute("resultMap", boardService.findByTitleContaining(page, size, searchKeyword ));
+		}
+		
+		return "/board/board/noticeList";
+	}
+	
+	
+	
+
 
 	@GetMapping("/notice/write")
 	public String getnoticeBoardWritePage(Model model, NoticeBoardRequestDto boardRequestDto, Principal principal) {
