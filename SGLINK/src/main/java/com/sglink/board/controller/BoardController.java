@@ -49,7 +49,9 @@ public class BoardController {
 				throw new Exception(e.getMessage());
 			}
 		}else {
-			model.addAttribute("resultMap", boardService.findByTitleContaining(page, size, searchKeyword ));
+//			model.addAttribute("resultMap", boardService.findByTitleContaining(page, size, searchKeyword ));
+			model.addAttribute("resultMap", boardService.findByTotalTitleContaining(page, size, searchKeyword));
+			System.out.println(boardService.findByTotalTitleContaining(page, size, searchKeyword));
 		}
 		
 		return "/board/board/totalList";
