@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -53,11 +54,26 @@ public class BoardService {
 		HashMap<String, Object> resultMap= new HashMap<String, Object>();	
 //		게시글 순서를 내림차순으로 변경Sort.by(Sort.Direncion.DESC,"registerTime")
 		Page<Board> list= noticeboardRepository.findAll(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC,"registerTime")));
+		
 		resultMap.put("list", list.stream().map(NoticeBoardResponseDto::new).collect(Collectors.toList()));
 		resultMap.put("paging", list.getPageable());
 		resultMap.put("totalCnt", list.getTotalElements());
 		resultMap.put("totalPage", list.getTotalPages());	
 		return resultMap;	
+	}
+	
+	@Transactional
+	public HashMap<String, Object> findByTitleContaining(Integer page, Integer size, String searchKeyword){
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		Pageable pageable = PageRequest.of(page, size, Sort.by("id").descending());
+		Page<Board> list= noticeboardRepository.findByTitleContaining(pageable, searchKeyword);
+		
+		resultMap.put("list", list.stream().map(NoticeBoardResponseDto::new).collect(Collectors.toList()));
+		resultMap.put("paging", list.getPageable());
+		resultMap.put("totalCnt", list.getTotalElements());
+		resultMap.put("totalPage", list.getTotalPages());
+		
+		return resultMap;
 	}
 	
 
@@ -85,6 +101,8 @@ public class BoardService {
 	public void deleteAll(Long[] deleteId) {
 		noticeboardRepository.deleteBoard(deleteId);
 	}
+	
+	
 	
 	
 //  자료실게시판기능구현---------------------------------

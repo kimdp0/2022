@@ -66,15 +66,15 @@
 			<div id="search">
 
 
-				<form class="search-form">
-					<input type="search" value="" placeholder="Search"
+				<form class="search-form" action="/boards/total/list" method="get" >
+					<input type="text" name="searchKeyword" placeholder="Search"
 						class="search-input">
 					<div class="finder">
 						<img src="/img/main/finder.png">
 					</div>
-					<button type="submit" class="search-button">
+					<!-- <button type="submit" class="search-button">
 						<svg class="submit-button"></svg>
-					</button>
+					</button> -->
 				</form>
 			</div>
 
@@ -148,18 +148,7 @@
 			</div>
 			
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+
 			
 			
 			
@@ -169,13 +158,23 @@
 						<i class="fa fa-code"></i> 이미지
 					</div>
 
-					<div>
-						<i class="fa fa-pencil-square-o"></i> 이미지2
-					</div>
 				</div>
 				<div class="tab-indicator1"></div>
 				<div class="tab-body1">
-					<img src="/img/main/amazing.png">
+						<div th:fragment="slide1" id="slide1">
+		<div class="slide slide_wrap1">
+			<div class="slide_item item4">1</div>
+			<div class="slide_item item5">2</div>
+			<div class="slide_item item6">3</div>
+			<div class="slide_prev_button slide_button">
+			</div>
+			<div class="slide_next_button slide_button">
+
+			</div>
+			<ul class="slide_pagination"></ul>
+		</div>
+		<script src="/js/slide.js"></script>
+	</div>
 					</div>
 				</div>
 				<script src="/js/tabmenu2.js"></script>
