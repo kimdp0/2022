@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#hd").load("페이지header.html");
+        });
+        $(document).ready(function() {
+            $("#ft").load("footer.html");
+        });
+
+    </script>
+    <style>
+        #hd {
+            max-width: 1700px;
+            min-width: 1700px;
+        }
+        
+        #ft {
+            max-width: 1700px;
+            min-width: 1700px;
+        }
+        .bd{
+            max-width: 1700px;
+            min-width: 1700px;
+        }
+
+        .wrapping {
+            width: 400px;
+            margin-left: 10.5%;
+            border: 1px solid #000;
+            font-size: 14px;
+            list-style: none;
+        }
+
+        .photo {
+            width: 300px;
+            height: 250px;
+            margin-top: 175px;
+            margin-left: 30%;
+        }
+
+        .product {
+            margin-top: -270px;
+            margin-right: 29%;
+            float: right;
+        }
+
+        .btn {
+            margin-left: 90px;
+            margin-top: 30px;
+
+        }
+
+        .explain {
+            margin-left: 30%;
+            margin-top: 190px;
+            font-size: 16px;
+        }
+
+        h3 {
+            margin-left: 39px;
+            margin-bottom: 22px;
+            font-size: 33px;
+        }
+
+        .b1 {
+            width: 90px;
+            height: 40px;
+            font-size: 13px;
+            margin-left: -50px;
+            border-radius: 9px;
+            background-color: dimgrey;
+            color: white;
+            outline: 0;
+            border: 0;
+            font-weight: bold;
+
+
+
+        }
+
+        .b2 {
+            width: 90px;
+            height: 40px;
+            font-size: 13px;
+            margin-left: 16px;
+            border-radius: 9px;
+            background-color: dimgrey;
+            color: white;
+            outline: 0;
+            border: 0;
+            font-weight: bold;
+
+
+        }
+
+        .one {
+            width: 900px;
+
+
+        }
+
+    </style>
+</head>
+
+<body>
+        <div class="bd">
+        <div id="hd"></div>
+        <img class="photo" src="25.jpg">
+        <div class="product">
+            <h3>ESI-MS</h3>
+            <ul class="wrapping">
+                <br>
+                <li><strong>Ion Trap Mass Spectrometer</strong></li>
+                <br>
+                <li>담당자 : 박은비</li>
+                <li>담당자 전화번호 : 010-1234-5678</li>
+                <li>가격 : 0000원</li>
+                <br>
+
+            </ul>
+            <div class="btn">
+                <button class="b1">예약하기</button>
+                <button class="b2">수정하기</button>
+            </div>
+        </div>
+        <div class="explain">
+            <h2>상세정보</h2>
+            <br>
+            <hr class="one">
+
+            <br>
+            <p>
+                <br>
+                *500-MS (varian)<br>
+                <br>
+                1. Analyzer<br>
+                • Mass range : 50 to 3000u<br>
+                • Resolution : 0.5uFWHM over the entire range<br>
+                • Mass axis stability : ± 0.1u over 24 hours at constant (+/-3°C or +/-6°F)<br>
+                • Scan rates : 5000 and 15000 Da/sec<br>
+                • Max ion time 500,000 μsec<br>
+                • Enhanced Charge Capacity (ECC™)<br>
+                • He damping gas : 0.1 mL/min to 7.0 mL/min, typical 0.8 mL/min<br>
+                • Linear dynamic range : up to 105, compound-dependent based upon analytical methods<br>
+                <br>
+                2. Electrospray Ionization Source (ESI)<br>
+                • LC flow range : 1 to 1000 μL/min<br>
+                • Needle voltage : 6 kV max<br>
+                • Nebulizing gas : 1.5 L/min typical<br>
+                <br>
+                3. Built in Syringe Pump and diverter valve<br>
+                • Accommodates syringe volumes from 100 μL to 10 mL<br>
+                • Flow range : 0.05 mL/min to 1 mL/min (Depending on syringe size)<br>
+                <br>
+                4. Performance Specifications<br>
+                • +ESI MS/MS (full scan) : 250fg reserpine S/N 100:1, based on RMS noise<br>
+                <br>
+                5. Detection System<br>
+                • Detector : off-axis design, ±15 kV HED and electron multiplier<br>
+            </p>
+        </div>
+        </div>
+        <div id="ft"></div>
+</body>
+</html>
