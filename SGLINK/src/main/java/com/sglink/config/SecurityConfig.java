@@ -30,8 +30,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .defaultSuccessUrl("/") // 로그인 성공 시 이동할 url
             .usernameParameter("userId") // 로그인 시 사용할 파라미터 이름으로 email을 지정
             .failureUrl("/members/login/error") // 로그인 실패 시 이동할 url을 설정
-            .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/members/logout")) // 로그아웃 url을 설정
+           ;
+      http.logout()
+            .logoutRequestMatcher(new AntPathRequestMatcher("/members/logout")) // 로그아웃 url을 설정\
             .logoutSuccessUrl("/") // 로그아웃 성공 시 이동할 url을 설정
+            .clearAuthentication(true)
+            .invalidateHttpSession(true)
       ;
       http.authorizeRequests()
       .mvcMatchers("/", "/members/**","/equipment/**","/introduce/**","/layout" ,"/upload/**").permitAll() // 모든 사용자 인증없이 해당경로에 접근하도록 설정
