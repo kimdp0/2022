@@ -2,6 +2,8 @@ package com.sglink.repository;
 
 import javax.transaction.Transactional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -10,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.sglink.board.dto.FileBoardRequestDto;
 import com.sglink.board.dto.OpeninoBoardRequestDto;
-import com.sglink.entity.Board;
+
 import com.sglink.entity.OpeninoBoard;
 
 @Repository
@@ -31,6 +33,8 @@ public interface OpeninoBoardRepository extends JpaRepository<OpeninoBoard, Long
 	
 	static final String OPENINO_BOARD = "SELECT boardName FROM board "
 			+ "WHERE BOARD_NAME = OpeninoBoard";
+	
+	public Page<OpeninoBoard> findByTitleContaining(Pageable pageable, String searchKeyword);
 	
 	@Transactional
 	@Modifying
