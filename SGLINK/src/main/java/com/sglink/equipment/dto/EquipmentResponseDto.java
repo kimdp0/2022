@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.sglink.entity.Equipment;
 import com.sglink.entity.FileEntity;
-
+import com.sglink.common.constant.Process;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -28,6 +28,8 @@ public class EquipmentResponseDto {
 	
 	private List<FileEntity> img;
 	
+	private Process process;
+	
 	public EquipmentResponseDto(Equipment entity) {
 		this.equiName=entity.getEquiName();
 		this.equiRegister=entity.getEquiRegister();
@@ -35,5 +37,6 @@ public class EquipmentResponseDto {
 		this.equiUniname=entity.getEquiUniname();
 		this.equiContent=entity.getEquiContent();
 		this.img=entity.getImg();
+		this.process =entity.getProcess();
 	}
 }

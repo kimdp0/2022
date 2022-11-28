@@ -41,7 +41,8 @@
 								<td class="com7 borderside"><span
 									th:text="${#temporals.format(list.registerTime, 'yyyy-MM-dd')}"></span>
 								</td>
-								<td class="com8 borderside"><span th:text="${list.comProcess}"></span></td>
+								<td class="com8 borderside"><span class="approve" th:if="${list.comProcess.toString()=='APPROVE'}">승인</span>
+								<span class="unapprove" th:if="${list.comProcess.toString()=='UNAPPROVE'}">비승인</span></td>
 								<td class="com9 borderside"><a th:href="@{./list/approve(comId=${list.comId},comProcess=${list.comProcess})}">처리하기</a></td>
 							<tr>
 						</tbody>

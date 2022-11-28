@@ -339,3 +339,13 @@ a:hover{
     color: #fff;
 }
 
+.approve{
+	color:blue;
+	font-weight: bold;
+}
+
+.unapprove{
+	color:red;
+	font-weight: bold;
+}
+

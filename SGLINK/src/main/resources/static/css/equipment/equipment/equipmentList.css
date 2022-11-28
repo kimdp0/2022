@@ -1,4 +1,7 @@
-
+a{
+	text-decoration:none; 
+}
+a:link { color:#111; }
 .search {
      float: right;
 
@@ -22,6 +25,7 @@ ul, li {
  }
 
  .app_list {
+  position:relative;
  	width: 900px;
  	height: 600px;
  }
@@ -38,10 +42,8 @@ ul, li {
  }
 
  .app_list ul li .photo img {
-     min-width: 220px;
-     min-height: 164px;
-     max-width: 220px;
-     max-height: 164px;
+     width:250px;
+     height: 200px;
  }
 
 /*  .app_list ul li .state {
@@ -50,59 +52,15 @@ ul, li {
      width: 130px;
  } */
 
- .page_wrap {
-     text-align: center;
-     font-size: 0;
- }
-
- .page_nation {
-     display: inline-block;
- }
-
- .page_nation .none {
-     display: none;
- }
-
- .page_nation a {
-     display: block;
-     margin: 0 3px;
-     float: left;
-     border: 1px solid #e6e6e6;
-     width: 28px;
-     height: 28px;
-     line-height: 28px;
-     text-align: center;
-     background-color: #fff;
-     font-size: 13px;
-     color: #999;
-     text-decoration: none;
- }
-
-.board_page .page-item {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    box-sizing: border-box;
-    vertical-align: middle;
-    border: 1px solid #ddd;
-
-    font-size: 20px;
-/*     line-height: 100%; */
+.equi_page{
+	position:relative;
+	width:300px;
+	height:50px;
+	left:200px;
+}
+.page-item{
+	margin-left:15px;
+	float: left;
 }
 
-.board_page .a {
-    padding-top: 10px;
-    font-size: 1.2rem;
-    letter-spacing: -1px;
-}
 
-.board_page a.num {
-    padding-top: 9px;
-    font-size: 1.4rem;
-}
-
-.board_page a.num.on {
-    border-color: #000;
-    background: #000;
-    color: #fff;
-}
