@@ -4,7 +4,6 @@ import java.security.Principal;
 import java.util.List;
 
 import org.springframework.data.repository.query.Param;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,10 +16,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.sglink.board.dto.FileBoardRequestDto;
 import com.sglink.board.dto.NoticeBoardRequestDto;
+import com.sglink.board.dto.OpeninoBoardRequestDto;
 import com.sglink.board.service.BoardService;
 import com.sglink.entity.Board;
 import com.sglink.entity.FileBoard;
-import com.sglink.entity.FileEntity;
+import com.sglink.entity.OpeninoBoard;
 import com.sglink.file.service.FileUploadService;
 import com.sglink.member.service.MemberService;
 
@@ -291,7 +291,7 @@ public class BoardController {
 			@RequestParam(required = false, defaultValue = "10") Integer size) throws Exception {
 		try {
 			model.addAttribute("resultMap", boardService.findAllFile(page, size));
-			System.out.println( boardService.findAllFile(page, size));
+			System.out.println(boardService.findAllFile(page, size));
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
@@ -331,7 +331,7 @@ public class BoardController {
 		return "/board/board/referenceView";
 
 	}
-	
+
 	@GetMapping("/reference/edit")
 	public String getfileBoardEditPage(@RequestParam("id") Long id, Model model,
 			FileBoardRequestDto fileboardRequestDto, Principal principal) throws Exception {
@@ -414,12 +414,139 @@ public class BoardController {
 		}
 		return "redirect:/boards/reference/list";
 	}
-	
+
 	@ResponseBody
 	@GetMapping("/reference/findAll")
-	public String boardFindAll(@Param("id")Long id){
+	public String boardFindAll(@Param("id") Long id) {
 		return boardService.boardfindById(id).getFile().get(0).getIcon();
-		
+
+	}
+
+//openino
+	@GetMapping("/openino/list")
+	public String getopeninoBoardListPage(Model model, @RequestParam(required = false, defaultValue = "0") Integer page,
+			@RequestParam(required = false, defaultValue = "10") Integer size) throws Exception {
+		try {
+			model.addAttribute("resultMap", boardService.openinoFindAll(page, size));
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+
+		return "/board/board/openinoList";
+
+	}
+
+	@GetMapping("/openino/write")
+	public String getopeninoBoardWritePage(Model model, OpeninoBoardRequestDto boardRequestDto, Principal principal)
+			throws Exception {
+		String userId = memberService.getUserId(principal);
+
+		model.addAttribute("userId", userId);
+		return "/board/board/openinoWrite";
+	}
+
+	@GetMapping("/openino/view")
+	public String getopeninoBoardViewPage(@RequestParam("id") Long id, Model model,
+			OpeninoBoardRequestDto openinoboardRequestDto, Principal principal) throws Exception {
+		try {
+			if (openinoboardRequestDto.getId() != null) {
+				// 게시판에서 게시판테이블에있는 아이디 파라메서 가져와 그 아이디로 게시판정보 가져오기
+				OpeninoBoard openinoBoard = boardService.openinoviewfindById(id).get();
+				// 게시판에서 회원테이블을 참조하기 때문에 회원테이블에 있는 값을 가져올 수 있음
+				String registerId = openinoBoard.getMember().getUserId();
+				// 로그인시 로그인한 회원의 아이디를 가져옴
+				String loginUserId = principal.getName();
+				model.addAttribute("loginUserId", loginUserId);
+				model.addAttribute("registerId", registerId);
+				model.addAttribute("info", boardService.openinofindById(openinoboardRequestDto.getId()));
+				System.out.println(boardService.openinofindById(openinoboardRequestDto.getId()));
+			}
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+
+		return "/board/board/openinoView";
+
+	}
+
+	@GetMapping("/openino/edit")
+	public String getopeninoBoardEditPage(@RequestParam("id") Long id, Model model,
+			OpeninoBoardRequestDto openinoboardRequestDto, Principal principal) throws Exception {
+		try {
+			if (openinoboardRequestDto.getId() != null) {
+				// 게시판에서 게시판테이블에있는 아이디 파라메서 가져와 그 아이디로 게시판정보 가져오기
+				OpeninoBoard openinoBoard = boardService.openinoviewfindById(id).get();
+				// 게시판에서 회원테이블을 참조하기 때문에 회원테이블에 있는 값을 가져올 수 있음
+				String registerId = openinoBoard.getMember().getUserId();
+				// 로그인시 로그인한 회원의 아이디를 가져옴
+				String loginUserId = principal.getName();
+				model.addAttribute("loginUserId", loginUserId);
+				model.addAttribute("registerId", registerId);
+				model.addAttribute("info", boardService.openinofindById(openinoboardRequestDto.getId()));
+			}
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+
+		return "/board/board/openinoEdit";
+
+	}
+
+	@PostMapping("/openino/write/action")
+	public String openinoboardWriteAction(Model model, OpeninoBoardRequestDto openinoboardRequestDto) throws Exception {
+		try {
+
+			Long result = boardService.save(openinoboardRequestDto);
+
+			if (result < 0) {
+				throw new Exception("#Exception boardWriteAction!");
+			}
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return "redirect:/boards/openino/list";
+
+	}
+
+	@PostMapping("/openino/edit/action")
+	public String getopeinoBoardViewAction(Model model, @ModelAttribute OpeninoBoardRequestDto openinoboardRequestDto)
+			throws Exception {
+
+		try {
+			int result = boardService.updateBoard(openinoboardRequestDto);
+
+			if (result < 1) {
+				throw new Exception("#Exception boardViewAction!");
+			}
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+
+		return "redirect:/boards/openino/list";
+	}
+
+	@GetMapping("/openino/view/delete")
+	public String openinoBoardViewDeleteAction(Model model, @RequestParam("id") Long id) throws Exception {
+
+		try {
+			System.out.println(id);
+			boardService.openinoDeleteById(id);
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+
+		return "redirect:/boards/openino/list";
+	}
+
+	@GetMapping("/openino/delete")
+	public String openinoBoardDeleteAction(Model model, @RequestParam() Long[] deleteId) throws Exception {
+
+		try {
+			boardService.openinoDeleteAll(deleteId);
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return "redirect:/boards/openino/list";
 	}
 
 }
