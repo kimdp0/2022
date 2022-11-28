@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AccessLevel;
@@ -20,7 +22,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name="openino")
-public class Openino extends BaseTimeEntity {
+public class OpeninoBoard extends BaseTimeEntity {
 	
 	@Id
 	@GeneratedValue(strategy =GenerationType.SEQUENCE)
@@ -30,14 +32,19 @@ public class Openino extends BaseTimeEntity {
 	private String content;
 	private int readCnts;
 	
+	@OneToOne
+	@JoinColumn(name = "registerId")
+	private Member member;
+	
+	
 	
 	@Builder
-	public Openino(Long id, String title, String content, int viewConunt) {
+	public OpeninoBoard(Long id, String title, String content, int viewConunt, int readCnts, Member member) {
 		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.readCnts= readCnts;
-	
+		this.member = member;
 	}
 	
 }
