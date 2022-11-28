@@ -73,5 +73,28 @@ public class EquipmentController {
 	public String viewEquipmentex(){
 		return "/equipment/equipment/equipmentListex";
 	}
+	
+	@GetMapping("/view")
+	public String viewEquipment(@RequestParam("equiId") String id, Model model,
+			EquipmentRequestDto equipmentRequestDto, Principal principal) throws Exception {
+		try {
+			System.out.println("실행중임");
+			if (equipmentRequestDto.getEquiId() != null) {
+				Equipment equipment = equipmentService.viewfindById(id).get();
+				String registerId = equipment.getEquiRegister();
+				String loginUserId = principal.getName();
+				model.addAttribute("loginUserId", loginUserId);
+				model.addAttribute("registerId", registerId);
+				model.addAttribute("info", equipmentService.findById(id));
+				System.out.println(equipmentService.findById(id));
+			}
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+
+		return "/equipment/equipment/equipmentView";
+
+	}
+	
 
 }

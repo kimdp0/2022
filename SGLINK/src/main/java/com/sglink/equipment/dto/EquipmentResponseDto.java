@@ -15,6 +15,8 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 public class EquipmentResponseDto {
+	
+	private String equiId;
 
 	private String equiName;
 
@@ -31,6 +33,7 @@ public class EquipmentResponseDto {
 	private Process process;
 	
 	public EquipmentResponseDto(Equipment entity) {
+		this.equiId=entity.getEquiId();
 		this.equiName=entity.getEquiName();
 		this.equiRegister=entity.getEquiRegister();
 		this.equiTel=entity.getEquiTel();
