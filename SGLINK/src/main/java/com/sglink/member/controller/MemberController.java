@@ -37,18 +37,16 @@ public class MemberController {
 		model.addAttribute("memberFormDto", new COM_MemberFormDto());
 		return "member/members/comMemberForm";
 	}
-	
 
 	@PostMapping(value = "/com/new")
-	public String newComMember(@Valid @ModelAttribute("memberFormDto")COM_MemberFormDto memberFormDto, 
-			BindingResult bindingResult, Model model,
-			@RequestParam("comId")String comId) {
+	public String newComMember(@Valid @ModelAttribute("memberFormDto") COM_MemberFormDto memberFormDto,
+			BindingResult bindingResult, Model model, @RequestParam("comId") String comId) {
 		if (bindingResult.hasErrors()) {
 			return "member/members/comMemberForm";
 		}
 		try {
 			Company company = companyService.findByComId(comId);
-			Member member = Member.createComMember(company,memberFormDto, passwordEncoder);
+			Member member = Member.createComMember(company, memberFormDto, passwordEncoder);
 			memberService.saveMember(member);
 		} catch (IllegalStateException e) {
 			model.addAttribute("errorMessage", e.getMessage());
@@ -56,16 +54,15 @@ public class MemberController {
 		}
 		return "redirect:/";
 	}
-	
+
 	@GetMapping(value = "/stu/new")
 	public String memberStuForm(Model model) {
 		model.addAttribute("memberFormDto", new STU_MemberFormDto());
 		return "member/members/stuMemberForm";
 	}
 
-	
 	@PostMapping(value = "/stu/new")
-	public String newStuMember(@Valid @ModelAttribute("memberFormDto")STU_MemberFormDto memberFormDto,
+	public String newStuMember(@Valid @ModelAttribute("memberFormDto") STU_MemberFormDto memberFormDto,
 			BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			return "member/members/stuMemberForm";
@@ -90,35 +87,29 @@ public class MemberController {
 		model.addAttribute("loginErrorMsg", "아이디 또는 비밀번호를 확인해주세요");
 		return "member/members/memberLoginForm";
 	}
-	
-	
+
 	@GetMapping(value = "/memberRole")
 	public String memberRole(Model model) {
 		return "member/members/memberRole";
 	}
-	
+
 	@ResponseBody
 	@GetMapping(value = "/com/checkId")
-	public String checkComId(@RequestParam("comId") String comId) {			
+	public String checkComId(@RequestParam("comId") String comId) {
 		try {
 			String comUniname = companyService.findByComId(comId).getComUniname();
 			return comUniname;
-			
-		}catch (IllegalStateException e){
+
+		} catch (IllegalStateException e) {
 			return e.getMessage();
-			
+
 		}
 	}
-	
-	
+
 	@ResponseBody
 	@GetMapping("/findMember")
 	public Member findMember(@RequestParam("id") String id) {
 		return memberService.findbyId(id);
 	}
-		
-	
-	
-	
 
 }

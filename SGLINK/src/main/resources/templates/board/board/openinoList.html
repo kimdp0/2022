@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
-	layout:decorate="~{layouts/layoutCmnt}">
+	layout:decorate="~{layouts/layoutCom}">
 <head>
 <title>공지게시판</title>
 <meta charset="UTF-8">
@@ -16,10 +16,8 @@
 <body>
 	<div layout:fragment="content" id="content">
 		<div id="Title">
-			<p class="subTitle1">공지사항</p>
-			<p class="subTitle2">공지사항을 알려드립니다</p>
-
-    </form>
+			<p class="subTitle1">오픈이노베이션</p>
+			<p class="subTitle2">오픈게시판을 알려드립니다</p>
 		</div>
 		<div class="board_wrap">
 
@@ -44,7 +42,7 @@
 						</thead>
 						<tbody>
 
-							<tr th:if="${list.BoardName == 'NoticeBoard'}"
+							<tr
 								th:each="list,index : ${resultMap.list}"
 								th:with="paging=${resultMap.paging}">
 
@@ -67,7 +65,7 @@
 
 
 								<td class="count borderside"><span
-									th:text="${list.readCnt}"></span></td>
+									th:text="${list.readCnts}"></span></td>
 
 
 								<td class="date borderside">
@@ -104,13 +102,10 @@
 						<a onclick="fnDelete()"> 삭제하기</a>
 					</div>
 					<div class="bt_wrap">
-						<a onclick="javascript:location.href='/boards/notice/write'">글쓰기</a>
+						<a onclick="javascript:location.href='/boards/openino/write'">글쓰기</a>
 					</div>
 
 				</div>
-				<!-- 검색기능 -->
-				     <input type="text" name="searchKeyword" class="text1">
-       			 <button type="submit" class="submit1">검색</button>
 			</form>
 		</div>
 
@@ -146,7 +141,7 @@
 				if (delInpChkLen > 0) {
 					if (confirm("삭제하시겠습니까?")) {
 						let frm = $("#frm");
-						frm.attr("action", "/boards/notice/delete");
+						frm.attr("action", "/boards/openino/delete");
 						frm.attr("method", "get");
 						frm.submit();
 					}
