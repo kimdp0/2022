@@ -99,7 +99,7 @@ h2.bl.sq {
 	font-weight: bold;
 	float: left;
 	position: absolute;
-	top: 650px;
+	top: 750px;
 }
 .ob2 > p{
 	height:30px;
@@ -109,7 +109,7 @@ h2.bl.sq {
 .ct2 {
 	position: absolute;
 	left:60px;
-	top: 250px;
+	top: 400px;
 }
 
 .ct2 textarea {
@@ -145,11 +145,11 @@ textarea::placeholder {
 .nt {
 	position: absolute;
 	left: 60px;
-	top: 620px;
+	top: 850px;
 }
 
 .appl {
-	top:750px;
+	top:900px;
 	left: 290px;
 	position: absolute;
 	width: 100px;
