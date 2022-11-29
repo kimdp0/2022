@@ -41,6 +41,32 @@ public class BoardService {
 		return fileboardRepository.findOneById(id);
 		
 	}
+	
+	
+	@Transactional
+	public HashMap<String, Object> findByTotalTitleContaining(Integer page, Integer size, String searchKeyword){
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		Pageable pageable = PageRequest.of(page, size, Sort.by("id").descending());
+		Page<Board> list= noticeboardRepository.findByTitleContaining(pageable, searchKeyword);
+		Page<OpeninoBoard> list1= openinoboardRepository.findByTitleContaining(pageable, searchKeyword);
+		
+		
+		resultMap.put("list1", list1.stream().map(OpeninoBoardResponseDto::new).collect(Collectors.toList()));
+		resultMap.put("paging1", list1.getPageable());
+		resultMap.put("totalCnt1", list1.getTotalElements());
+		resultMap.put("totalPage1", list1.getTotalPages());
+		
+		
+		
+		resultMap.put("list", list.stream().map(NoticeBoardResponseDto::new).collect(Collectors.toList()));
+		resultMap.put("paging", list.getPageable());
+		resultMap.put("totalCnt", list.getTotalElements());
+		resultMap.put("totalPage", list.getTotalPages());
+		
+		return resultMap;
+	}
+	
+	
 //	공지게시판 기능구현--------------------------------------------
 	
 	

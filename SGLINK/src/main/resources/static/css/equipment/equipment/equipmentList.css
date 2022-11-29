@@ -34,7 +34,7 @@ ul, li {
      overflow: hidden;
      position: relative;
      float: left;
-     width: 250px;
+     width: 240px;
      height: 280px;
      margin: 0 35px 35px 0;
      padding: 9px;
@@ -42,7 +42,7 @@ ul, li {
  }
 
  .app_list ul li .photo img {
-     width:250px;
+     width:240px;
      height: 200px;
  }
 

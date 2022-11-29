@@ -5,8 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>장비등록페이지</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link th:href="@{/css/equipment/equipment/equipmentRegist.css}"
 	rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 </head>
 <body>
@@ -17,7 +19,7 @@
 		</div>
 		<div id="introduce">
 			<form action="/equipment/new" method="post"
-				enctype="multipart/form-data" th:object="${equipmentRequestDto}">
+				enctype="multipart/form-data" th:object="${equipmentRequestDto}" id="frm">
 				<div class="body">
 					<div class="content">
 						<div class="ob">
@@ -58,7 +60,7 @@
 						</div>
 						<div class="nt">
 
-							<button class="appl">신청하기</button>
+							<a class="appl" onclick="application()">신청하기</a>
 						</div>
 					</div>
 
@@ -71,6 +73,21 @@
 			</form>
 
 		</div>
+		<script th:inline="javascript">
+			function application() {
+				let imgchk = $("input[name='files']").val();
+				if (imgchk) {
+					if (confirm("신청하시겠습니까?")) {
+						let frm = $("#frm");
+						frm.attr("action", "/equipment/new");
+						frm.attr("method", "post");
+						frm.submit();
+					}
+				} else{
+					alert("이미지가 선택되지 않았습니다!")
+				}
+			}
+		</script>
 	</div>
 </body>
 </html>
