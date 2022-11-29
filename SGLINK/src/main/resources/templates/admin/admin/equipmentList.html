@@ -46,11 +46,13 @@
 									th:text="${#temporals.format(list.registerTime, 'yyyy-MM-dd')}"></span>
 								</td>
 								<td class="com8 borderside"><span class="unapprove"
-									th:if="${list.equiProcess.toString()=='UNAPPROVE'}">비승인</span><span class="approve"
+									th:if="${list.equiProcess.toString()=='UNAPPROVE'}">비승인</span><span
+									class="approve"
 									th:if="${list.equiProcess.toString()=='APPROVE'}">승인</span></td>
 								<td class="com9 borderside"><a
-									th:href="@{./list/approve(equiId=${list.equiId},equiProcess=${list.equiProcess})}">처리하기</a>
-									</td>
+									th:href="@{./list/approve(equiId=${list.equiId},equiProcess=${list.equiProcess},
+									pageSize=${paging.pageSize}, page=${resultMap.paging})}">처리하기</a>
+								</td>
 							<tr>
 						</tbody>
 					</table>
@@ -59,12 +61,16 @@
 							<li class="page-item"
 								th:each="index : ${#numbers.sequence(1, resultMap.totalPage)}"
 								th:with="paging=${resultMap.paging}"><a class="page-link"
-								th:href="@{./list(page=${index - 1},page=${paging.pageSize})}"><span
+								th:href="@{./list(page=${index-1}, page=${paging.pageSize})}"><span
 									th:text="${index}"></span></a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
+			<script>
+				var para = document.location.href.split("?");
+				console.log(para[1]);
+			</script>
 
 		</div>
 
