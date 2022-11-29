@@ -78,7 +78,6 @@ public class EquipmentController {
 	public String viewEquipment(@RequestParam("equiId") String id, Model model,
 			EquipmentRequestDto equipmentRequestDto, Principal principal) throws Exception {
 		try {
-			System.out.println("실행중임");
 			if (equipmentRequestDto.getEquiId() != null) {
 				Equipment equipment = equipmentService.viewfindById(id).get();
 				String registerId = equipment.getEquiRegister();
@@ -86,7 +85,6 @@ public class EquipmentController {
 				model.addAttribute("loginUserId", loginUserId);
 				model.addAttribute("registerId", registerId);
 				model.addAttribute("info", equipmentService.findById(id));
-				System.out.println(equipmentService.findById(id));
 			}
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
