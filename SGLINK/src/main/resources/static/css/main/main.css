@@ -157,7 +157,7 @@ div[class*="cad"]:hover{
   color:#1C1C1C;
   font-weight:600;
   cursor:pointer;
-  font-size:14px;
+  font-size:20px;
   text-transform:uppercase;
   outline:none;
 }
@@ -180,12 +180,23 @@ div[class*="cad"]:hover{
 .tabs .tab-body {
   position:relative;
   height:calc(100% - 60px);
-  padding:50px 10px;
+  padding:10px 5px;
 }
-
-
-
-
+ .tabs .tab-body > div {
+  position:absolute;
+  top:-200%;
+  opacity:0;
+  transform:scale(0.9);
+  transition:opacity 500ms ease-in-out 0ms,
+    transform 500ms ease-in-out 0ms;
+}
+ .tabs .tab-body > div.active {
+  top:80px;
+  left: 80px;
+  opacity:1; 
+  transform:scale(1.5);
+} 
+ 
 
 
 
@@ -202,9 +213,6 @@ div[class*="cad"]:hover{
 	font-size: 18px;
 	
 }
-
-
-
 
 
 
