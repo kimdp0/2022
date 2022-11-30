@@ -50,6 +50,8 @@ a {
     font-size: 1.4rem;
 }
 
+
+
 .bt_wrap a:first-child {
     margin-left: 0;
 }
@@ -70,8 +72,9 @@ button {
 
 .bt_wrap button {
     display: inline-block;
-    min-width: 80px;
+    min-width: 100px;
     margin-left: 10px;
+    height: 46px;
     padding: 10px;
     border: 1px solid #000;
     border-radius: 2px;

@@ -27,17 +27,12 @@
 </head>
 <body>
 	<div layout:fragment="content" id="content">
-
+		<div id="Title">
+			<p class="subTitle1">가족기업</p>
+			<p class="subTitle2">가족기업 신청 화면입니다</p>
+		</div>
 		<div id="introduce">
-			<div class="head">
-				<div class="title">
-					<p>가족기업</p>
-				</div>
-				<div class="subtitle">
-					<p>서강가족기업 제도를 소개합니다.</p>
-				</div>
-			</div>
-			<div class="body" style="margin-top: 35px;">
+			<div class="body">
 				<div class="sub">
 					<p class="tab2" onclick="location.href='/comsup/family/introduce'">제도소개</p>
 					<p class="tab" onclick="location.href='/company/family/new'">가족기업신청</p>
@@ -46,7 +41,7 @@
 				</div>
 				<div class="content">
 					<form action="/company/family/new" role="form" method="post"
-						th:object="${companyRequestDto}">
+						th:object="${companyRequestDto}" id="frm">
 						<div class="main">
 							<div class="id">
 								<label th:for="comId">기업코드</label>
@@ -97,7 +92,9 @@
 
 							<select class="text" name="comSectors">
 								<option value="">업종을 선택하세요</option>
-								<option th:each="companySector : ${companySectors}" th:value="${companySector.displayName}" th:text="${companySector.displayName}"></option>
+								<option th:each="companySector : ${companySectors}"
+									th:value="${companySector.displayName}"
+									th:text="${companySector.displayName}"></option>
 
 							</select>
 							<p th:if="${#fields.hasErrors('comSectors')}"
@@ -117,7 +114,9 @@
 						</div>
 
 						<div>
-							<button type="submit" class="btn btn-primary">신청하기</button>
+							<button type="submit" class="btn btn-primary"
+								style="width: 120px; height: 50px; text-align: center;"
+								onclick="application()">신청하기</button>
 						</div>
 						<input type="hidden" th:name="${_csrf.parameterName}"
 							th:value="${_csrf.token}">
@@ -126,6 +125,16 @@
 			</div>
 
 		</div>
+		<script th:inline="javascript">
+			function application() {
+					if (confirm("신청하시겠습니까?")) {
+						let frm = $("#frm");
+						frm.attr("action", "/company/family/new");
+						frm.attr("method", "post");
+						frm.submit();
+					}
+			}
+		</script>
 
 	</div>
 

@@ -21,12 +21,6 @@
 	color: #999999;
 }
 
-.body {
-	border-top: 1px #d3d3d3 solid;
-	margin-top: 15px;
-	padding-top: 15px;
-}
-
 .content {
 	width: 800px;
 }
@@ -47,7 +41,7 @@
 	margin: 17px;
 	position: relative;
 	width: 800px;
-	height: 190px;
+	height: 220px;
 	border: 1px solid #CCCCCC;
 	background: #F9F9F9;
 }
