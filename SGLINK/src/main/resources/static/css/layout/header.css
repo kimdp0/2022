@@ -22,7 +22,7 @@ background:white;
 .header {
 	height: 30px;
 /* 	background: red; */
-	background:#2c2e3e;
+	background:#232131;
 	
 }
 
@@ -34,7 +34,16 @@ background:white;
 	font-weight: 400;
 	float: left; */
 	
-	height:30px; float:left; margin-right:1px; text-align:center; font-size:14px; line-height:30px; color:#9b9fbb; letter-spacing:-1px;  cursor:pointer; transition:0.3s;
+	height:30px; 
+	float:left; 
+	margin-right:1px; 
+	text-align:center; 
+	font-size:13px; 
+	line-height:32px; 
+	color:#D8D8D8; 
+	letter-spacing:-1px;  
+	cursor:pointer; 
+	transition:0.3s;
 }
 
 
@@ -69,6 +78,7 @@ background:white;
 	letter-spacing: -0.5px;
 	text-decoration: none;
 	font-weight: 550;
+    
 /* 	background: blue; */
 
 	
@@ -87,8 +97,8 @@ background:white;
 }
 
 #sns {
-	margin-right: 27px;
-	letter-spacing: 7px;
+	margin-right: 45px;
+	letter-spacing: 4px;
 	float: right;
 }
 
@@ -110,14 +120,14 @@ background:white;
 
 #home img {
 	position: absolute;
-	height: 50px;
-	margin-left: 8px;
-	margin-top:10px;
+	height: 43px;
+	margin-left: 10px;
+	margin-top:13px;
 }
 
 #pMenu {
 	height:50px;
-	margin-left: 450px;
+	margin-left: 460px;
 }
 
 #pMenu>ul {
@@ -128,9 +138,9 @@ background:white;
 #pMenu li {
 	display: block;
 	float: left;
-	font-size: 30px;
+	font-size: 28px;
 	font-weight: 550;
-	letter-spacing: -1px;
+	letter-spacing: 2px;
 	text-decoration: none;
 }
 
