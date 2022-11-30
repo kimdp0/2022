@@ -27,11 +27,9 @@
 </head>
 <body>
 	<div layout:fragment="content" id="content">
-		<p th:value="${comuserUniname}"></p>
 		<div id="Title">
-			<div id="TopTitle" style="padding: 0px 20px 15px;">회원가입</div>
-
-		</div>
+			<p class="subTitle1">회원가입</p>
+			<p class="subTitle2">기업 회원가입 화면입니다</p></div>
 		<div>
 			<form id="frm" action="/members/com/new" role="form" method="post"
 				th:object="${memberFormDto}">

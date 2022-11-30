@@ -3,14 +3,6 @@
 	height: 120px;
 }
 
-#Title {
-	/* 	top:20px; */
-	height: 60px;
-	font-size: 40px;
-	font-weight: bold;
-	letter-spacing: 2px;
-}
-
 .subtitle {
 	border-bottom: 2px #d3d3d3 solid;
 }

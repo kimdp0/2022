@@ -9,15 +9,11 @@
 </head>
 <body>
 	<div layout:fragment="content" id="content">
+		<div id="Title">
+			<p class="subTitle1">오픈이노베이션</p>
+			<p class="subTitle2">오픈게시판입니다</p>
+		</div>
 		<div id="greeting">
-			<div id="head">
-				<div class="title">
-					<a>선정과제</a>
-				</div>
-				<div class="subtitle">
-					<a>오픈이노베이션센터의 산학공동개발 선정과제 정보입니다.</a>
-				</div>
-			</div>
 			<div class="body">
 				<div class="content">
 					<div class="search">
@@ -44,6 +40,9 @@
 						</select> <input type="text" class="select3" placeholder="과제명,참여기업명">
 						<button class="lookup">
 							<img src="/img/icon.png">조회
+						</button>
+						<button class="lookup"><a href="/boards/openino/write">
+							<img src="/img/icon.png">글쓰기</a>
 						</button>
 					</div>
 					<table>
