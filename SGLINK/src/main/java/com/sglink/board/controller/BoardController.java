@@ -69,6 +69,8 @@ public class BoardController {
 	}
 	
 	
+
+	
 	
 	
 //	 공지사항게시판
@@ -213,7 +215,7 @@ public class BoardController {
 			@RequestParam(required = false, defaultValue = "10") Integer size) throws Exception {
 		try {
 			model.addAttribute("resultMap", boardService.findAll(page, size));
-			System.out.println(boardService.findAll(page, size));
+	
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
