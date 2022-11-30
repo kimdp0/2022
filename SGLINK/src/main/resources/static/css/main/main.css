@@ -141,6 +141,10 @@ div[class*="cad"]:hover {
 	margin-left: 18px;
 }
 
+
+
+
+
 .tabs {
 	position: absolute;
 	top: 780%;
@@ -193,8 +197,10 @@ div[class*="cad"]:hover {
 
 .tabs .tab-body {
 	position: relative;
-	height: calc(100% - 60px);
+ 	height: /* calc(100% - 60px);  */360px;
 	padding: 10px 5px;
+	background: #ffffff;
+	border-radius: 100px;
 }
 
 .tabs .tab-body>div {
@@ -215,22 +221,24 @@ div[class*="cad"]:hover {
 
 .tb a {
 	text-decoration: none;
+	font-size: 14px;
+}
+
+.noto {
+	color: #000000;
 }
 
 .active p {
 	width: 420px;
 	height: 35px;
-	padding-left: 20px;
+	padding-left: 35px;
 }
 
-.noto {
-	
-}
 
 .date {
 	float: right;
 	width: 60px;
-	font-weight: 5px;
+	font-size: 13px;
 }
 
 .input {
@@ -243,6 +251,16 @@ div[class*="cad"]:hover {
 	font-weight: bold;
 	font-size: 18px;
 }
+
+
+
+
+
+
+
+
+
+
 
 .tabs1 {
 	position: absolute;
