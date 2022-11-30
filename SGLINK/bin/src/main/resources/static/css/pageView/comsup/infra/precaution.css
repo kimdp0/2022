@@ -21,13 +21,6 @@
 	color: #999999;
 }
 
-.body {
-	border-top: 1px #d3d3d3 solid;
-	margin-top: 15px;
-	padding-top: 15px;
-	display: flex;
-}
-
 .kc {
 	position: relative;
 	width: 250px;
@@ -36,12 +29,11 @@
 .body p {
 	width: 520px;
 	margin-left: 30px;
-	margin-top: 100px;
 }
 
 .ej {
 	position: absolute;
-	top: 270px;
+	top: 400px;
 }
 
 table {

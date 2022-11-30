@@ -20,6 +20,13 @@
 	border-bottom: 2px #d3d3d3 solid;
 }
 
+ .check {
+	
+	display:block;
+	margin-bottom: -20px;
+
+} 
+
 .search table {
 	border-collapse: separate;
 	text-indent: initial;
@@ -87,7 +94,6 @@ dd {
 	font-size: 12px;
 	display: block;
  	position: relative;
-	left: -40px;
 	top: 10px;
 	text-decoration:none;
 }
