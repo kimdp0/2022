@@ -157,7 +157,6 @@ div[class*="cad"]:hover {
 	overflow: hidden;
 	border-radius: 50px;
 	box-shadow: 5px 10px 6px #ccc;
-	/*주석  */
 }
 
 .tabs .tab-header {
@@ -284,7 +283,7 @@ div[class*="cad"]:hover {
 	align-items: center;
 }
 
- .tabs1 .tab-header1>div {
+.tabs1 .tab-header1>div {
 	width: calc(100%/ 4);
 	text-align: center;
 	color: #ffffff;
@@ -293,7 +292,7 @@ div[class*="cad"]:hover {
 	font-size: 14px;
 	text-transform: uppercase;
 	outline: none;
-} 
+}  
 
 .tabs1 .tab-header1>div>i {
 	display: block;
@@ -304,7 +303,7 @@ div[class*="cad"]:hover {
 	color: #ffffff;
 }
 
-/* .tabs1 .tab-indicator1 {
+ .tabs1 .tab-indicator1 {
 	position: relative;
 	width: calc(100%/ 4);
 	height: 5px;
@@ -312,7 +311,7 @@ div[class*="cad"]:hover {
 	left: 0px;
 	border-radius: 5px;
 	transition: all 500ms ease-in-out;
-} */
+} 
 
 .tabs1 .tab-body1 {
 	position: relative;
