@@ -157,6 +157,7 @@ div[class*="cad"]:hover {
 	overflow: hidden;
 	border-radius: 50px;
 	box-shadow: 5px 10px 6px #ccc;
+	/*주석  */
 }
 
 .tabs .tab-header {
