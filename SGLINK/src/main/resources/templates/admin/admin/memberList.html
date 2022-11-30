@@ -6,6 +6,7 @@
 <title>관리자 회원관리창</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link th:href="@{/css/admin/admin/memberList.css}" rel="stylesheet">
 </head>
 <body>
@@ -52,7 +53,7 @@
 								<td class="num8 borderside"><span
 									th:if="${list.userId == 'admin'}" th:text="삭제불가"></span> <a
 									th:href="@{./list/delete(userId=${list.userId})}"><span
-										th:if="${list.userId != 'admin'}" th:text="삭제하기"></span></a></td>
+										th:if="${list.userId != 'admin'}" th:text="삭제하기" id="delete"></span></a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -72,6 +73,14 @@
 				</div>
 			</form>
 		</div>
+		<script th:inline="javascript">
+			$("#delete").click(function() {
+				if (confirm("삭제하시겠습니까?") == true) {
+				} else {
+					return false;
+				}
+			});
+		</script>
 
 
 	</div>
