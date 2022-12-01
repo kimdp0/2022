@@ -7,7 +7,15 @@
 <title>장비상세페이지</title>
 <link th:href="@{/css/equipment/equipment/equipmentView.css}"
 	rel="stylesheet">
-
+<script th:inline="javascript">
+			function reservation() {
+				window.open(
+				          "/equipment/popup",
+				          "Popup",
+				          "width=400, height=400, top=50%, left=50%"
+				        );
+			}
+			</script>
 </head>
 <body>
 	<div layout:fragment="content" id="content">
@@ -16,7 +24,8 @@
 			<p class="subTitle2">보유장비 상세화면입니다</p>
 		</div>
 		<div class="bd">
-			<img class="photo"  th:each="imgSrc: ${info.img}" th:src="${imgSrc.stored_file_path}" alt>
+			<img class="photo" th:each="imgSrc: ${info.img}"
+				th:src="${imgSrc.stored_file_path}" alt>
 			<div class="product">
 				<h3>
 					<span th:text="${info.equiId}"></span>
@@ -29,7 +38,7 @@
 				</ul>
 			</div>
 			<div class="btn">
-				<button class="b1">예약하기</button>
+				<button class="b1" onclick="reservation();">예약하기</button>
 				<button class="b2">수정하기</button>
 			</div>
 			<div class="explain">
@@ -42,7 +51,7 @@
 					<span th:text="${info.equiContent}"></span>
 				</p>
 			</div>
-
+			
 		</div>
 	</div>
 </body>

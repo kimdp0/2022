@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>장비팝업페이지</title>
+<script src="https://code.jquery.com/jquery-3.6.1.slim.js"
+	integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk="
+	crossorigin="anonymous"></script>
+<link th:href="@{/css/equipment/equipment/equipmentPopup.css}"
+	rel="stylesheet">
+
+</head>
+<body>
+	<div id="popup">
+		<div class="detail">
+			<img src="/image/twitterimg.png">
+			<p>장비ID</p>
+			<p>장비명</p>
+		</div>
+		<div class="sec_cal">
+			<div class="cal_nav">
+				<a href="javascript:;" class="nav-btn go-prev">prev</a>
+				<div class="year-month"></div>
+				<a href="javascript:;" class="nav-btn go-next">next</a>
+			</div>
+			<div class="cal_wrap">
+				<div class="days">
+					<div class="day">MON</div>
+					<div class="day">TUE</div>
+					<div class="day">WED</div>
+					<div class="day">THU</div>
+					<div class="day">FRI</div>
+					<div class="day">SAT</div>
+					<div class="day">SUN</div>
+				</div>
+				<div class="dates"></div>
+			</div>
+		</div>
+		<script src="/js/popup.js"></script>
+	</div>
+</body>
+</html>
