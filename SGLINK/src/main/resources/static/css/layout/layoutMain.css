@@ -47,11 +47,11 @@ body {
 
 }
 
-#slide {
+/* #slide {
 	position: relative;
 	z-index: 1;
 	height: 300px;
-}
+} */
 
 #container{
 	position: relative;
