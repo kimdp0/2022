@@ -321,9 +321,9 @@ ul{
     width:650px;
     height: /* 350px; */   380px; 
     position: relative;
-    background-color: antiquewhite;
+    background-color: #232131;
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 18px;
 }
 
 .slider{
@@ -340,7 +340,7 @@ ul{
 	width:650px;
 	height:  /* 350px; */  380px; 
 	object-fit: cover;
- 	border-radius: 20px; 
+ 	border-radius: 18px; 
 }
 
  .container ul{
