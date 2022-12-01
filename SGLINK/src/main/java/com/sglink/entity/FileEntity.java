@@ -43,4 +43,8 @@ public class FileEntity {
     @ManyToOne
     @JoinColumn
     private Equipment img;
+    
+    @ManyToOne
+    @JoinColumn
+    private Business busiImg;
 }

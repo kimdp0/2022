@@ -1,12 +1,15 @@
 package com.sglink.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -40,12 +43,22 @@ public class Member  extends BaseTimeEntity{
 	@OneToOne
 	@JoinColumn(name = "comId")
 	private Company company;
+	
 	@Enumerated(EnumType.STRING)
 	private Role role;
 	
 	@OneToOne
 	@JoinColumn(name = "equiName")
 	private Equipment equipment;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name="registerId")
+	private List<Board> board;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name="registerId")
+	private List<FileBoard> fileBoard;
+	
 	
 	public static Member createComMember(Company company,COM_MemberFormDto memberFormDto, PasswordEncoder passwordEncoder) {
 		Member member = new Member();

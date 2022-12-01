@@ -76,5 +76,25 @@ public class AdminController {
 		System.out.println(paging+"================" +pageNum+"==========="+ pageSize);
 		return "redirect:/admin/equipment/list" + "?page=" + paging + "&page=" + pageSize;
 	}
+	
+	@GetMapping("/business/list")
+	public String businessListPage(Model model, @RequestParam(required= false, defaultValue= "0") Integer page, @RequestParam(required = false, defaultValue= "10") Integer size)throws Exception{
+		try {
+			model.addAttribute("resultMap", adminService.selectAllBusiness(page, size));
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return "/admin/admin/businessList";
+	}
+	
+	@GetMapping("/business/list/approve")
+	public String approveBusiness(@RequestParam("busiId")String busiId,@RequestParam("busiProcess")String busiProcess, @RequestParam("page")String pageNum, @RequestParam("pageSize")int pageSize) {
+		adminService.approveBusiness(busiId,busiProcess);
+		String paging = pageNum.substring(21, 23);
+		System.out.println(paging+"================" +pageNum+"==========="+ pageSize);
+		return "redirect:/admin/business/list";
+	}
+	
+	
 
 }

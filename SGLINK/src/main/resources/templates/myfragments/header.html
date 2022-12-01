@@ -15,18 +15,16 @@
 		<div class="header">
 			<a href="/" class="topmenu">서강대학교 공식 홈페이지</a>
 			<div id="sns">
-				<a href=""><img src="/img/one_facebook.png"></a> <a href="">
-				<img src="/img/one_youtube.png"></a>
+				<a href="https://ko-kr.facebook.com/facebook/"><img src="/img/footer/one_facebook.png"></a> 
+				<a href="https://www.youtube.com/"><img src="/img/footer/one_youtube.png"></a>
 			</div>
 			<div id="login">
 				<a class="topmenu" href="/members/memberRole" sec:authorize="isAnonymous()">회원가입</a> 
 				<a class="topmenu" href="/admin/member/list"  sec:authorize="hasAnyAuthority('ROLE_ADMIN')">관리자</a>
-				<a class="topmenu"> </a>
 				<a class="topmenu" href="" sec:authorize="hasAnyAuthority('ROLE_STU')">학생회원</a>
-				<a class="topmenu" href="" sec:authorize="hasAnyAuthority('ROLE_COM')">기업회원</a> 
+				<a class="topmenu" href="/comuser/equipment/list" sec:authorize="hasAnyAuthority('ROLE_COM')">기업회원</a> 
 				<a class="topmenu" href="/members/login" sec:authorize="isAnonymous()">로그인</a>
 				<a class="topmenu" href="/members/logout" sec:authorize="isAuthenticated()">로그아웃</a> 
-				<a class="topmenu" href="/members/mypage"></a> 
 				<a class="topmenu" href="/mypage/view" sec:authorize="isAuthenticated()">마이페이지</a>
 
 			</div>
