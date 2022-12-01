@@ -42,7 +42,9 @@ public class EquipmentController {
 
 	@GetMapping(value = "/new")
 	public String newEquipment(Model model, Principal principal) {
+		
 		if(principal.getName().equals("admin")) {
+			System.out.println("dd");
 			String userId = principal.getName();
 			String userName = memberService.findbyId(userId).getUserName();
 			model.addAttribute("equipmentRequestDto", new EquipmentRequestDto());

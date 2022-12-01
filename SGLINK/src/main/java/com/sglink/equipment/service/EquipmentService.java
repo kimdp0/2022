@@ -23,6 +23,7 @@ import lombok.RequiredArgsConstructor;
 @Transactional
 @RequiredArgsConstructor
 public class EquipmentService {
+	
 	private final EquipmentRepository equipmentRepository;
 	
 	public Equipment findByEquiId(String equiId) {
