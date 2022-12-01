@@ -8,10 +8,15 @@
 	crossorigin="anonymous"></script>
 <link th:href="@{/css/equipment/equipment/equipmentPopup.css}"
 	rel="stylesheet">
-	<!-- CSS only -->
+<!-- CSS only -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
 <link rel="stylesheet" href="resources/css/plugin/datepicker/bootstrap-datepicker.css">
+ 
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ko.min.js" integrity="sha512-L4qpL1ZotXZLLe8Oo0ZyHrj/SweV7CieswUODAAPN/tnqN3PA1P+4qPu5vIryNor6HQ5o22NujIcAZIfyVXwbQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+
+<script src="/js/popup.js"></script>
 </head>
 <body>
 	<div id="popup">
@@ -21,31 +26,11 @@
 			<p>장비명</p>
 		</div>
 		<div class="sec_cal">
-		<main>
-			<h1>
-				<span class="fontawesome-plane"></span> Moon Flights
-			</h1>
-			<h2>Select your flight dates below</h2>
-			<div id="flight-datepicker" class="input-daterange input-group">
-				<div class="form-item">
-					<label>Depart on</label> <span class="fontawesome-calendar"></span>
-					<input type="text" class="input-sm form-control" id="start-date"
-						name="start" placeholder="Select depart date"
-						data-date-format="DD, MM d"> <span
-						class="date-text date-depart"></span>
-				</div>
-				<div class="form-item">
-					<label>Return on</label> <span class="fontawesome-calendar"></span>
-					<input type="text" class="input-sm form-control" id="end-date"
-						name="end" placeholder="Select return date"
-						data-date-format="DD, MM d"> <span
-						class="date-text date-return"></span>
-				</div>
-			</div>
-			</main>
+
+			<input type="text" class="input-sm form-control" id="datepicker">
 		</div>
-		<script src="/js/popup.js"></script>
 	</div>
+
 </body>
 </html>
 
