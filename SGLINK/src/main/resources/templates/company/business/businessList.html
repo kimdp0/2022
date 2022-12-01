@@ -4,7 +4,7 @@
 	layout:decorate="~{layouts/layoutStu}">
 <head>
 <meta charset="UTF-8">
-<title>business</title>
+<title>equipment</title>
 <link th:href="@{/css/equipment/equipment/equipmentList.css}"
 	rel="stylesheet">
 </head>
@@ -23,10 +23,8 @@
 				<br>
 				<div class="h2 article">
 					<div class="app_list">
-						<ul 
-							th:each="list : ${resultMap.list}">
-							<li th:each="imgSrc: ${list.img}"><a
-								th:href="@{./view(busiId=${list.busiId})}"> <span
+						<ul  th:each="list : ${resultMap.list}" >
+							<li th:each="imgSrc: ${list.img}" ><a th:href="@{./view(busiId=${list.busiId})}"> <span
 									class="photo"> <img th:src="${imgSrc.stored_file_path}"
 										alt>
 								</span> <br> <span class="title" th:text="${list.busiName}"></span>
