@@ -33,10 +33,6 @@ public class BusinessResponseDto {
 	
 	private List<FileEntity> img;
 	
-	private Reservation reservation;
-	
-	private Process busiProcess;
-	
 	private LocalDateTime registerTime;
 	
 	public BusinessResponseDto(Business entity) {
@@ -47,8 +43,6 @@ public class BusinessResponseDto {
 		this.busiUniname=entity.getBusiUniname();
 		this.busiContent=entity.getBusiContent();
 		this.img=entity.getBusiImg();
-		this.busiProcess =entity.getProcess();
-		this.reservation = entity.getReservation();
 		this.registerTime = entity.getRegisterTime();
 	}
 }
