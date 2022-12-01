@@ -40,7 +40,7 @@
 		<div class="board_wrap">
 			<h1>글 내용</h1>
 			<form action="/boards/reference/write/action" method="post"
-				enctype="multipart/form-data">
+				enctype="multipart/form-data" id="frm">
 				<div class="board_write_wrap">
 
 					<div class="board_write">
@@ -92,6 +92,21 @@
 				</div>
 			</form>
 		</div>
+		<script th:inline="javascript">
+			function fnSubmit() {
+				if (confirm("등록하시겠습니까?")) {
+					let frm = $("#frm");
+					frm.attr("action", "/boards/reference/write/action");
+					frm.attr("method", "post");
+					frm.submit();
+				} else {
+					let frm = $("#frm");
+					frm.attr("action", "/boards/reference/list");
+					frm.attr("method", "get");
+					frm.submit();
+				}
+			}
+		</script>
 		<!--부트스트랩 js, jquery 추가-->
 		<script src="/js/lib/jquery.min.js"></script>
 		<script src="/js/lib/bootstrap.min.js"></script>

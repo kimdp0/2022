@@ -34,6 +34,7 @@ h2.bl.sq {
 		no-repeat;
 	padding-left: 18px;
 	background-position: 0.2em 0.5em;
+	margin-bottom:10px;
 }
 
 .fe {
@@ -58,7 +59,7 @@ h2.bl.sq {
 
 table {
 	position: absolute;
-	top: 300px;
+	top: 450px;
 	text-align: center;
 	line-height: 30px;
 	font-size: 13px;

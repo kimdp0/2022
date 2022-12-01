@@ -51,7 +51,7 @@ public class BoardController {
 		}else {
 //			model.addAttribute("resultMap", boardService.findByTitleContaining(page, size, searchKeyword ));
 			model.addAttribute("resultMap", boardService.findByTotalTitleContaining(page, size, searchKeyword));
-			System.out.println(boardService.findByTotalTitleContaining(page, size, searchKeyword));
+			
 		}
 		
 		return "/board/board/totalList";
@@ -68,6 +68,8 @@ public class BoardController {
 		return "redirect:/boards/total/list";
 	}
 	
+	
+
 	
 	
 	
@@ -213,7 +215,7 @@ public class BoardController {
 			@RequestParam(required = false, defaultValue = "10") Integer size) throws Exception {
 		try {
 			model.addAttribute("resultMap", boardService.findAll(page, size));
-			System.out.println(boardService.findAll(page, size));
+	
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}

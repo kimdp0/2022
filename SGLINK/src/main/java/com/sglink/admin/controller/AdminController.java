@@ -70,9 +70,11 @@ public class AdminController {
 	}
 	
 	@GetMapping("/equipment/list/approve")
-	public String approveEquipment(@RequestParam("equiId")String equiId,@RequestParam("equiProcess")String equiProcess) {
+	public String approveEquipment(@RequestParam("equiId")String equiId,@RequestParam("equiProcess")String equiProcess, @RequestParam("page")String pageNum, @RequestParam("pageSize")int pageSize) {
 		adminService.approveEquipment(equiId,equiProcess);
-		return "redirect:/admin/equipment/list";
+		String paging = pageNum.substring(21, 23);
+		System.out.println(paging+"================" +pageNum+"==========="+ pageSize);
+		return "redirect:/admin/equipment/list" + "?page=" + paging + "&page=" + pageSize;
 	}
 
 }

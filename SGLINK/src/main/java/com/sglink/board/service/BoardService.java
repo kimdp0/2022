@@ -67,6 +67,27 @@ public class BoardService {
 	}
 	
 	
+//	메인페이지 보드출력
+	@Transactional(readOnly = true)
+	public HashMap <String, Object> findAllBoard(Integer page, Integer size){
+		HashMap<String, Object> resultMap= new HashMap<String, Object>();	
+//		게시글 순서를 내림차순으로 변경Sort.by(Sort.Direncion.DESC,"registerTime")
+		Page<Board> list= noticeboardRepository.findAll(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC,"registerTime")));
+		Page<OpeninoBoard> list1= openinoboardRepository.findAll(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC,"registerTime")));
+		
+		resultMap.put("list1", list1.stream().map(OpeninoBoardResponseDto::new).collect(Collectors.toList()));
+		resultMap.put("paging1", list1.getPageable());
+		resultMap.put("totalCnt1", list1.getTotalElements());
+		resultMap.put("totalPage1", list1.getTotalPages());
+		
+		resultMap.put("list", list.stream().map(NoticeBoardResponseDto::new).collect(Collectors.toList()));
+		resultMap.put("paging", list.getPageable());
+		resultMap.put("totalCnt", list.getTotalElements());
+		resultMap.put("totalPage", list.getTotalPages());	
+		return resultMap;	
+	}
+	
+	
 //	공지게시판 기능구현--------------------------------------------
 	
 	
