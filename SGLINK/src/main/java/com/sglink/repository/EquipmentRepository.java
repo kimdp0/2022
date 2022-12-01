@@ -1,5 +1,7 @@
 package com.sglink.repository;
 
+import java.util.Optional;
+
 import javax.transaction.Transactional;
 
 import org.springframework.data.domain.Page;
@@ -24,4 +26,6 @@ public interface EquipmentRepository extends JpaRepository<Equipment, String> {
 	void updateEquipmentProcess(@Param("equiId") String equiId, @Param("equipment") String equipment);
 	
 	Page<Equipment> findByProcess(Pageable pageable,Process process);
+	
+	Optional<Equipment> findByEquiIdAndProcess(String id, Process process);
 }

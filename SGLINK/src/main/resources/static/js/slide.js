@@ -21,7 +21,6 @@ for (let i = 0; i < maxSlide; i++) {
     if (i === 0) pagination.innerHTML += `<li class="active">•</li>`;
     else pagination.innerHTML += `<li>•</li>`;
 }
-
 const paginationItems = document.querySelectorAll(".slide_pagination > li");
 
 // 무한 슬라이드를 위해 start, end 슬라이드 복사하기
@@ -119,7 +118,6 @@ function prevMove() {
         paginationItems[currSlide - 1].classList.add("active");
     }
 }
-
 // 버튼 엘리먼트에 클릭 이벤트 추가하기
 nextBtn.addEventListener("click", () => {
     // 이후 버튼 누를 경우 현재 슬라이드를 변경

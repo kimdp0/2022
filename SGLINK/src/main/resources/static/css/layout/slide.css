@@ -1,4 +1,4 @@
-.slide {
+ .slide {
 	display: flex;
 	flex-wrap: nowrap;
 	overflow: hidden;
@@ -126,4 +126,4 @@
 	height: 300px;
 	flex-shrink: 0;
 	transition: left 0.15s;
-}
+} 

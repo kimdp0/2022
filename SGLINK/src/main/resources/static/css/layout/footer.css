@@ -68,31 +68,22 @@ body{
 
 /* Footer Center */
 
+.footer-distrubuted .footer-center div{
+	margin-bottom: 30px;
+}
+
 .footer-distributed .footer-center img{
 	width: 30px;
 	height: 30px;
 }
 
-
-
-
-.footer-distributed .footer-center i.fa-envelope{
-	font-size: 17px;
-	line-height: 38px;
-}
-
 .footer-distributed .footer-center p{
+	width:380px;
+	height:50px;
 	display: inline-block;
 	color: #000000;
 	vertical-align: middle;
-	margin:0;
-}
-
-.footer-distributed .footer-center p span{
-	display:block;
-	font-weight: normal;
-	font-size:14px;
-	line-height:2;
+	margin-left:3px;
 }
 
 .footer-distributed .footer-center p a{
@@ -109,28 +100,29 @@ body{
 }
 
 .footer-distributed .footer-company-about{
-	line-height: 25px;
+	width:675px;
+	line-height: 27px;
 	color:  #000000;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: normal;
-	margin: 0;
+	margin-top: 8px; 
+	margin-left: 90px;
 }
 
-.footer-distributed .footer-company-about span{
-	display: block;
-	color:  #000000;
-	font-size: 20px;
-	font-weight: bold;
-	margin-bottom: 13px;
-}
+
 
 .footer-distributed .footer-icons img{
-	width: 41px;
-	height: 41px;
-	float: left;
-	margin-left: 15px;
-	margin-top: 30px;
+	width: 45px;
+	height: 45px;
+	float: right;
+	margin-top: 40px;
+	margin-left: 20px;
+}
 
+.footer-distributed .footer-icons{
+	position: absolute;
+	margin-left: 498px;
+	cursor: pointer;
 }
 
 

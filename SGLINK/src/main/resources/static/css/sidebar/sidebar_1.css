@@ -79,7 +79,7 @@ li {
 }
 
 #leftMenu {
-    height: 500px;
+    height: 700px; 
     margin: 0;
     position: absolute;
     /* background: #f1f1f1; */
@@ -96,7 +96,7 @@ li {
     color: #111;
     display: block;
     transition: 0.3s;
-    margin-bottom: 10.6px;
+   /*  margin-bottom: 10.6px; */
     text-transform: uppercase;
     font-weight: 600;
 /*     font-size: 25px; */
