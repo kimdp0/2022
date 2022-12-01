@@ -51,7 +51,7 @@
 									class="unapprove"
 									th:if="${list.comProcess.toString()=='UNAPPROVE'}">비승인</span></td>
 								<td class="com9 borderside"><a
-									th:href="@{./list/approve(comId=${list.comId},comProcess=${list.comProcess})}" id="insert">처리하기</a></td>
+									th:href="@{./list/approve(comId=${list.comId},comProcess=${list.comProcess})}" class="insert">처리하기</a></td>
 							<tr>
 						</tbody>
 					</table>
@@ -69,7 +69,7 @@
 
 		</div>
 		<script th:inline="javascript">
-			$("#insert").click(function() {
+			$(".insert").click(function() {
 				if (confirm("승인 혹은 비승인하시겠습니까?") == true) {
 				} else {
 					return false;

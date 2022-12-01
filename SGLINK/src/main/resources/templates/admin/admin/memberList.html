@@ -53,7 +53,7 @@
 								<td class="num8 borderside"><span
 									th:if="${list.userId == 'admin'}" th:text="삭제불가"></span> <a
 									th:href="@{./list/delete(userId=${list.userId})}"><span
-										th:if="${list.userId != 'admin'}" th:text="삭제하기" th:id="delete"></span></a></td>
+										th:if="${list.userId != 'admin'}" th:text="삭제하기" class="delete"></span></a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -74,7 +74,7 @@
 			</form>
 		</div>
 		<script th:inline="javascript">
-			$("#delete").click(function() {
+			$(".delete").click(function() {
 				if (confirm("삭제하시겠습니까?") == true) {
 				} else {
 					return false;
