@@ -20,7 +20,9 @@ import com.sglink.entity.Member;
 import com.sglink.repository.BusinessRepository;
 import com.sglink.repository.CompanyRepository;
 import com.sglink.repository.EquipmentRepository;
+import com.sglink.repository.FileBoardRepository;
 import com.sglink.repository.MemberRepository;
+import com.sglink.repository.NoticeBoardRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -30,6 +32,8 @@ public class AdminService {
 
 	private final MemberRepository memberRepository;
 	private final CompanyRepository companyRepository;
+	private final NoticeBoardRepository noticeBoardRepository;
+	private final FileBoardRepository fileBoardRepository;
 	private final EquipmentRepository equipmentRepository;
 	private final BusinessRepository businessRepository;
 
@@ -51,6 +55,10 @@ public class AdminService {
 	}
 
 	public void deleteMember(String userId) {
+		/*
+		 * Member member = memberRepository.findByUserId(userId);
+		 * noticeBoardRepository.deleteByMember(member);
+		 */
 		memberRepository.deleteById(userId);
 	}
 
