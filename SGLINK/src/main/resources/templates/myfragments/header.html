@@ -21,12 +21,10 @@
 			<div id="login">
 				<a class="topmenu" href="/members/memberRole" sec:authorize="isAnonymous()">회원가입</a> 
 				<a class="topmenu" href="/admin/member/list"  sec:authorize="hasAnyAuthority('ROLE_ADMIN')">관리자</a>
-				<a class="topmenu"> </a>
 				<a class="topmenu" href="" sec:authorize="hasAnyAuthority('ROLE_STU')">학생회원</a>
-				<a class="topmenu" href="" sec:authorize="hasAnyAuthority('ROLE_COM')">기업회원</a> 
+				<a class="topmenu" href="/comuser/equipment/list" sec:authorize="hasAnyAuthority('ROLE_COM')">기업회원</a> 
 				<a class="topmenu" href="/members/login" sec:authorize="isAnonymous()">로그인</a>
 				<a class="topmenu" href="/members/logout" sec:authorize="isAuthenticated()">로그아웃</a> 
-				<a class="topmenu" href="/members/mypage"></a> 
 				<a class="topmenu" href="/mypage/view" sec:authorize="isAuthenticated()">마이페이지</a>
 
 			</div>

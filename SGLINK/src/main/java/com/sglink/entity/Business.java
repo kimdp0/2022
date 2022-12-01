@@ -47,7 +47,7 @@ public class Business extends BaseTimeEntity {
 	@Enumerated(EnumType.STRING)
 	private Reservation reservation;
 
-	@OneToMany(mappedBy = "img")
+	@OneToMany(mappedBy = "busiImg")
 	private List<FileEntity> busiImg;
 
 	@Builder

@@ -12,9 +12,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.sglink.board.dto.NoticeBoardRequestDto;
 import com.sglink.entity.Board;
+import com.sglink.entity.Member;
 
 @Repository
 public interface NoticeBoardRepository extends JpaRepository<Board, Long>{
+	@Transactional
+	int deleteByMember(Member member);
 
 	
 	static final String UPDATE_BOARD = "UPDATE board "

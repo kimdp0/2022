@@ -96,5 +96,10 @@ public class EquipmentController {
 
 	}
 	
+	@GetMapping(value="/popup")
+	public String equipmentPopup() {
+		
+		return "/equipment/equipment/equipmentPopup";
+	}
 
 }

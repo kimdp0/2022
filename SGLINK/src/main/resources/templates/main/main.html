@@ -12,14 +12,18 @@
 <body>
 	<div layout:fragment="content" id="content">
 		<div class="cards-list">
-			<div class="cad1" style="background: #DF0101;">
+			<a href="/bigdata/bigdataList">
+			<div class="cad1" style="background: #DF0101;" >
+			
 				<div class="card_image">
 					<img src="/img/main/link04.png">
 				</div>
 				<div class="card_title title-white">
-					<p>사업단소개</p>
+					<p>빅데이터</p>
 				</div>
+				
 			</div>
+			</a>
 
 			<div class="cad2" style="background: #FF8000;">
 				<div class="card_image">
@@ -101,7 +105,7 @@
 									
 								th:each="list,index : ${resultMap.list}"
 								>
-							<a th:href="@{./boards/notice/view(id=${list.id})}"><span th:text="${list.title}"
+							<a th:href="@{./boards/notice/view(id=${list.id})}"><span th:text="${'[공지사항] '+list.title}"
 								class="noto"></span></a> 
 								<span class="date" th:text="${#temporals.format(list.registerTime, 'MM-dd')}"></span>
 						</p></form>
@@ -117,7 +121,7 @@
 									
 								th:each="list1,index1 : ${resultMap.list1}"
 								>
-							<a th:href="@{./boards/openino/view(id=${list1.id})}"><span th:text="${list1.title}"
+							<a th:href="@{./boards/openino/view(id=${list1.id})}"><span th:text="${'[오픈게시판] '+list1.title}"
 								class="noto"></span></a> 
 								<span class="date" th:text="${#temporals.format(list1.registerTime, 'MM-dd')}"></span>
 						</p></form>
@@ -160,7 +164,7 @@
 									
 								th:each="list,index : ${resultMap.list}"
 								>
-							<a th:href="@{./boards/notice/view(id=${list.id})}"><span th:text="${list.title}"
+							<a th:href="@{./boards/notice/view(id=${list.id})}"><span th:text="${'[자유게시판] '+list.title}"
 								class="noto"></span></a> 
 								<span class="date" th:text="${#temporals.format(list.registerTime, 'MM-dd')}"></span>
 						</p></form>

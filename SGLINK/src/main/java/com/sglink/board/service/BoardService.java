@@ -22,6 +22,7 @@ import com.sglink.entity.FileBoard;
 import com.sglink.entity.OpeninoBoard;
 import com.sglink.repository.FileBoardRepository;
 import com.sglink.repository.FileRepository;
+import com.sglink.repository.MemberRepository;
 import com.sglink.repository.NoticeBoardRepository;
 import com.sglink.repository.OpeninoBoardRepository;
 
@@ -34,7 +35,7 @@ public class BoardService {
 	private final FileBoardRepository fileboardRepository;
 	private final FileRepository fileRepository;
 	private final OpeninoBoardRepository openinoboardRepository;
-	
+	private final MemberRepository memberRepository;
 	
 	
 	public FileBoard boardfindById(Long id) {
@@ -95,7 +96,7 @@ public class BoardService {
 	public Long save(NoticeBoardRequestDto boardSaveDto) {
 		return noticeboardRepository.save(boardSaveDto.toEntity()).getId();
 	}
-
+	
 	@Transactional(readOnly = true)
 	public HashMap <String, Object> findAll(Integer page, Integer size){
 		HashMap<String, Object> resultMap= new HashMap<String, Object>();	
