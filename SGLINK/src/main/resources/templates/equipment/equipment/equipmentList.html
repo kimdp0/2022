@@ -17,7 +17,6 @@
 		<div class="h1 contents">
 			<div class="article">
 				<div class="search">
-					<form name="searchForm" method="post" action="boardlist.do"></form>
 					<input type="text" placeholder="검색어 입력">
 					<button>검색</button>
 				</div>
@@ -25,12 +24,12 @@
 				<div class="h2 article">
 					<div class="app_list">
 						<ul th:if="${list.process.toString()=='APPROVE'}" th:each="list : ${resultMap.list}" >
-							<li th:each="imgSrc: ${list.img}" ><a th:href="@{./view(busiId=${list.busiId})}"> <span
+							<li th:each="imgSrc: ${list.img}" ><a th:href="@{./view(equiId=${list.equiId})}"> <span
 									class="photo"> <img th:src="${imgSrc.stored_file_path}"
 										alt>
-								</span> <br> <span class="title" th:text="${list.busiName}"></span>
-									<br> <span class="info" th:text="${list.busiRegister}"></span>
-									<br> <span th:text="${list.busiTel}"></span> <br> <span
+								</span> <br> <span class="title" th:text="${list.equiName}"></span>
+									<br> <span class="info" th:text="${list.equiRegister}"></span>
+									<br> <span th:text="${list.equiTel}"></span> <br> <span
 									class="state none"> 예약가능 </span>
 							</a></li>
 
