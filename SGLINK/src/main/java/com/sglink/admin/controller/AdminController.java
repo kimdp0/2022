@@ -87,12 +87,12 @@ public class AdminController {
 		return "/admin/admin/businessList";
 	}
 	
-	@GetMapping("/busiess/list/approve")
+	@GetMapping("/business/list/approve")
 	public String approveBusiness(@RequestParam("busiId")String busiId,@RequestParam("busiProcess")String busiProcess, @RequestParam("page")String pageNum, @RequestParam("pageSize")int pageSize) {
 		adminService.approveBusiness(busiId,busiProcess);
 		String paging = pageNum.substring(21, 23);
 		System.out.println(paging+"================" +pageNum+"==========="+ pageSize);
-		return "redirect:/admin/business/list" + "?page=" + paging + "&page=" + pageSize;
+		return "redirect:/admin/business/list";
 	}
 	
 	

@@ -31,7 +31,7 @@
 							<th class="com9 borderside">처리</th>
 						</tr>
 						<tbody class="">
-							<tr th:each="list,index : ${resultMap.list}"
+							 <tr th:each="list,index : ${resultMap.list}"
 								th:with="paging=${resultMap.paging}">
 								<td class="com1 borderside"><span th:text="${list.busiId}"></span></td>
 								<td class="com2 borderside"><span
@@ -41,11 +41,11 @@
 								<td class="com4 borderside"><span
 									th:text="${list.busiRegister}"></span></td>
 								<td class="com5 borderside"><span th:text="${list.busiTel}"></span></td>
-								<td class="com6 borderside"><span
-									th:text="${list.reservation}"></span></td>
-								<td class="com7 borderside"><span
+								 <td class="com6 borderside"><span
+									th:text="${list.reservation}"></span></td> 
+								 <td class="com7 borderside"><span
 									th:text="${#temporals.format(list.registerTime, 'yyyy-MM-dd')}"></span>
-								</td>
+								</td> 
 								<td class="com8 borderside"><span class="unapprove"
 									th:if="${list.busiProcess.toString()=='UNAPPROVE'}">비승인</span><span
 									class="approve"
@@ -54,8 +54,8 @@
 									th:href="@{./list/approve(busiId=${list.busiId},busiProcess=${list.busiProcess},
 									pageSize=${paging.pageSize}, page=${resultMap.paging})}"
 									id="insert">처리하기</a></td>
-							<tr>
-						</tbody>
+							<tr> 
+						</tbody> 
 					</table>
 					<div class="board_page">
 						<ul class="">
@@ -64,7 +64,7 @@
 								th:with="paging=${resultMap.paging}"><a class="page-link"
 								th:href="@{./list(page=${index-1}, page=${paging.pageSize})}"><span
 									th:text="${index}"></span></a></li>
-						</ul>
+						</ul> 
 					</div>
 				</div>
 			</div>
