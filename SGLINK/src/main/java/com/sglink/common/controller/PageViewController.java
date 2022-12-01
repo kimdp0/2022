@@ -183,4 +183,16 @@ public class PageViewController {
 	public String news() {
 		return "/pageView/cmnt/news";
 	}
+	
+	//빅데이터------------------------------------------------------------------------------
+	
+		@GetMapping(value="/bigdata/bigdataList")
+		public String bigdataEvent() {
+			return "/pageView/bigdata/bigdataList";
+		}
+		
+		@GetMapping(value="/bigdata/bigdataIssue")
+		public String bigdataIssueEvent() {
+			return "/pageView/bigdata/bigdataIssue";
+		}
 }
