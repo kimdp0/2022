@@ -55,14 +55,14 @@ body {
 
 #container{
 	position: relative;
-	height: 1400px;
+	height: 1000px;
 	
 }
 #content{
 	position: absolute;
 	z-index: 1;
 	left:310px;
-	width: 1300px;
+	width: 1000px;
 	height: 100%;
 }
 
