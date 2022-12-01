@@ -53,7 +53,7 @@
 								<td class="num8 borderside"><span
 									th:if="${list.userId == 'admin'}" th:text="삭제불가"></span> <a
 									th:href="@{./list/delete(userId=${list.userId})}"><span
-										th:if="${list.userId != 'admin'}" th:text="삭제하기" id="delete"></span></a></td>
+										th:if="${list.userId != 'admin'}" th:text="삭제하기" th:id="delete"></span></a></td>
 							</tr>
 						</tbody>
 					</table>
