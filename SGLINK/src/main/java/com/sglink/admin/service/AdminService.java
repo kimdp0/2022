@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.sglink.admin.dto.CompanyResponseDto;
 import com.sglink.admin.dto.EquipmentResponseDto;
 import com.sglink.admin.dto.MemberResponseDto;
-import com.sglink.business.dto.BusinessResponseDto;
+import com.sglink.admin.dto.BusinessResponseDto;
 import com.sglink.entity.Business;
 import com.sglink.entity.Company;
 import com.sglink.entity.Equipment;
