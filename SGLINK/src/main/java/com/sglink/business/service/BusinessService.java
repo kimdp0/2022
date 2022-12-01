@@ -14,8 +14,6 @@ import com.sglink.business.dto.BusinessRequestDto;
 import com.sglink.business.dto.BusinessResponseDto;
 import com.sglink.common.constant.Process;
 import com.sglink.entity.Business;
-import com.sglink.entity.Equipment;
-import com.sglink.equipment.dto.EquipmentResponseDto;
 import com.sglink.repository.BusinessRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -52,6 +50,6 @@ public class BusinessService {
 		return businessRepository.findById(id);
 	}
 	public BusinessResponseDto findById(String id) {
-		return new BusinessResponseDto(businessRepository.findById(id).get());
+		return new BusinessResponseDto(businessRepository.findByBusiIdAndProcess(id,Process.APPROVE).get());
 	}
 }
