@@ -23,7 +23,7 @@
 				<br>
 				<div class="h2 article">
 					<div class="app_list">
-						<ul th:if="${list.process.toString()=='APPROVE'}" th:each="list : ${resultMap.list}" >
+						<ul  th:each="list : ${resultMap.list}" >
 							<li th:each="imgSrc: ${list.img}" ><a th:href="@{./view(equiId=${list.equiId})}"> <span
 									class="photo"> <img th:src="${imgSrc.stored_file_path}"
 										alt>

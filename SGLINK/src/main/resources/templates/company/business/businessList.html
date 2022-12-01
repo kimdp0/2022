@@ -17,14 +17,13 @@
 		<div class="h1 contents">
 			<div class="article">
 				<div class="search">
-					<form name="searchForm" method="post" action="boardlist.do"></form>
 					<input type="text" placeholder="검색어 입력">
 					<button>검색</button>
 				</div>
 				<br>
 				<div class="h2 article">
 					<div class="app_list">
-						<ul th:if="${list.process.toString()=='APPROVE'}"
+						<ul 
 							th:each="list : ${resultMap.list}">
 							<li th:each="imgSrc: ${list.img}"><a
 								th:href="@{./view(busiId=${list.busiId})}"> <span
