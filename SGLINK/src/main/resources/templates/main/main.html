@@ -80,16 +80,16 @@
 			<div class="tabs">
 				<div class="tab-header">
 					<div class="active">
-						<i class="fa fa-code"></i> 공지사항
+						<i class="<!-- fa fa- -->code"></i> 공지사항
 					</div>
 					<div>
-						<i class="fa fa-pencil-square-o"></i> 오픈게시판
+						<i class="<!-- fa fa- -->pencil-square-o"></i> 오픈게시판
 					</div>
 					<div>
-						<i class="fa fa-bar-chart"></i> 가족사업
+						<i class="<!-- fa fa -->-bar-chart"></i> 가족사업
 					</div>
 					<div>
-						<i class="fa fa-envelope-o"></i> 커뮤니티
+						<i class="<!-- fa fa -->-envelope-o"></i> 커뮤니티
 					</div>
 				</div>
 				<div class="tab-indicator"></div>
@@ -169,24 +169,22 @@
 					<script src="/js/tabmenu.js"></script>
 				</div>
 			</div>
-			<div class="tabs1">s
+			<div class="tabs1">
 				<div class="tab-header1">
 					<div class="active1">
-						<i class="code"></i> 행사소식
+						<i class="<!-- fa fa- -->code"></i> 행사소식
 					</div> 
 
 				</div>
-				<div class="tab-indicator1"></div>
-				<div class="tab-body1">
+				<div class="wrapper"></div>
+				<div class="container">
 					<div th:fragment="slide1" id="slide1">
-						<div class="slide slide_wrap1">
-						
-							<div class="slide_item item1"><img src="/img/tabs1/test1.jpg"></div>
-							<div class="slide_item item2"><img src="/img/tabs1/test2.jpg"></div>
-							<div class="slide_item item3"><img src="/img/tabs1/test3.jpg"></div> 
-							<ul class="slide_pagination"></ul>
-						</div>
-						<script src="/js/slide.js"></script>
+						<ul class="slider">
+							<div class="item"><img src="/img/tabs1/test1.jpg"></div>
+							<div class="item"><img src="/img/tabs1/test2.jpg"></div>
+							<div class="item"><img src="/img/tabs1/test3.jpg"></div> 
+						</ul>
+						<script src="/js/slide1.js"></script>
 					</div>
 				</div>
 			</div>
