@@ -289,9 +289,10 @@ div[class*="cad"]:hover {
 	color: #ffffff;
 	font-weight: 600;
 	cursor: pointer;
-	font-size: 14px;
+	font-size: 20px;
 	text-transform: uppercase;
 	outline: none;
+	padding-bottom: 10px;
 }  
 
 .tabs1 .tab-header1>div>i {
@@ -304,87 +305,48 @@ div[class*="cad"]:hover {
 }
 
 
-
-.tabs1 .tab-body1 {
-	/* position: relative;
-	height: calc(100% - 60px);
-	padding: 50px 10px; */
-	position: relative;
-	height: /* calc(100% - 60px); */ 390px;
-	width: 680px;
-	/* padding: 5px -10px -30px 1px; */
-	background: #ffffff;
-	border-radius: 35px;
-	left: -16px;'
+ul{
+    list-style:none;
+    margin: 0;
+    padding: 0;
 }
 
+.wrapper{
+    background-color: lightgray;
+    justify-content: center; 
+    align-items: center;
+} 
 
-
-.slide1 {
-	display: flex;
-	flex-wrap: nowrap;
-	overflow: hidden;
-	position: relative;
-	width: 100%;
-	user-select: none;
+.container{
+    width:650px;
+    height: /* 350px; */   380px; 
+    position: relative;
+    background-color: antiquewhite;
+    overflow: hidden;
+    border-radius: 20px;
 }
 
-.slide_item {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: relative;
-	left: 0px;
-	width: 100%;
-	height: 300px;
-	flex-shrink: 0;
-	transition: left 0.15s;
+.slider{
+    display: flex;
+    position:absolute;
 }
 
-.slide_item.item1 img{
-
-	border-radius: 100px;
-	
+.item {
+	width:650px;
+    height:350px; 
 }
 
-.slide_item.item2 img{
- */
-	border-radius: 100px;
-	
+.item img {
+	width:650px;
+	height:  /* 350px; */  380px; 
+	object-fit: cover;
+ 	border-radius: 20px; 
 }
 
-.slide_item.item3 img{
-
-	border-radius: 100px;
+ .container ul{
+    -webkit-transition: all 0.25s cubic-bezier(1, .01, .32, 1);
+    -o-transition: all 0.25s cubic-bezier(1, .01, .32, 1);
+    transition: all 0.25s cubic-bezier(1, .01, .32, 1);
 }
-
-
-
-.slide_pagination {
-	display: flex;
-	column-gap: 8px;
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	transform: translateX(-80%);
-}
-
-
-/* .slide_pagination>li.active {
-	color: red;
-} */
-
-.slide_item_duplicate {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: relative;
-	left: 0px;
-	width: 100%;
-	height: 300px;
-	flex-shrink: 0;
-	transition: left 0.15s;
-}
-
-
+ 
 

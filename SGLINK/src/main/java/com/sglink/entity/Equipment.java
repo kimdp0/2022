@@ -24,7 +24,7 @@ import lombok.ToString;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Setter
-public class Equipment extends BaseTimeEntity{
+public class Equipment extends BaseTimeEntity {
 
 	@Id
 	private String equiId;
@@ -35,24 +35,23 @@ public class Equipment extends BaseTimeEntity{
 	private String equiUniname;
 
 	private String equiContent;
-	
+
 	private String equiRegister;
-	
+
 	private String equiTel;
-	
+
 	@Enumerated(EnumType.STRING)
 	private Process process;
-	
+
 	@Enumerated(EnumType.STRING)
 	private Reservation reservation;
 
-	@OneToMany(mappedBy="img")
+	@OneToMany(mappedBy = "img")
 	private List<FileEntity> img;
 
-
 	@Builder
-	public Equipment(String equiId, String equiName, String equiUniname, String equiContent, 
-			String equiRegister, String equiTel, List<FileEntity> img) {
+	public Equipment(String equiId, String equiName, String equiUniname, String equiContent, String equiRegister,
+			String equiTel, List<FileEntity> img) {
 
 		this.equiId = equiId;
 		this.equiName = equiName;
@@ -63,11 +62,10 @@ public class Equipment extends BaseTimeEntity{
 		this.img = img;
 	}
 
-	 @PrePersist
-	    public void prePersist() {
-	        this.reservation = this.reservation == null ? Reservation.IMPOSSIBLE : this.reservation;
-	        this.process = this.process == null ? Process.UNAPPROVE : this.process;
-	    }
-	 
+	@PrePersist
+	public void prePersist() {
+		this.reservation = this.reservation == null ? Reservation.IMPOSSIBLE : this.reservation;
+		this.process = this.process == null ? Process.UNAPPROVE : this.process;
+	}
 
 }

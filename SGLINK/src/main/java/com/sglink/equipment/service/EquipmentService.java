@@ -23,6 +23,7 @@ import lombok.RequiredArgsConstructor;
 @Transactional
 @RequiredArgsConstructor
 public class EquipmentService {
+	
 	private final EquipmentRepository equipmentRepository;
 	
 	public Equipment findByEquiId(String equiId) {
@@ -51,7 +52,7 @@ public class EquipmentService {
 		return equipmentRepository.findById(id);
 	}
 	public EquipmentResponseDto findById(String id) {
-		return new EquipmentResponseDto(equipmentRepository.findById(id).get());
+		return new EquipmentResponseDto(equipmentRepository.findByEquiIdAndProcess(id,Process.APPROVE).get());
 	}
 	
 }
