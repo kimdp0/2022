@@ -3,33 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <title>장비팝업페이지</title>
-<script src="https://code.jquery.com/jquery-3.6.1.slim.js"
-	integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk="
-	crossorigin="anonymous"></script>
 <link th:href="@{/css/equipment/equipment/equipmentPopup.css}"
 	rel="stylesheet">
-<!-- CSS only -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
-<link rel="stylesheet" href="resources/css/plugin/datepicker/bootstrap-datepicker.css">
- 
-<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ko.min.js" integrity="sha512-L4qpL1ZotXZLLe8Oo0ZyHrj/SweV7CieswUODAAPN/tnqN3PA1P+4qPu5vIryNor6HQ5o22NujIcAZIfyVXwbQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 
-<script src="/js/popup.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+	integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">
+	<script src="/js/popup.js">
+</script>
 </head>
 <body>
 	<div id="popup">
 		<div class="detail">
 			<img src="/image/twitterimg.png">
-			<p>장비ID</p>
-			<p>장비명</p>
+			<h2>장비ID</h2>
+			<h2>장비명</h2>
 		</div>
 		<div class="sec_cal">
-
-			<input type="text" class="input-sm form-control" id="datepicker">
+			<p class="p1">예약을 원하시는 날짜를 선택해주세요</p>
+			<p class="p2">* 오늘로부터 최대 7일간 예약신청이 가능합니다.</p>
+			<div class="input">
+				<input type="text" id="startDate" readonly> ~ <input
+					type="text" id="endDate" readonly>
+			</div>
 		</div>
 	</div>
+	<script src="/js/popup.js"></script>
 
 </body>
 </html>
