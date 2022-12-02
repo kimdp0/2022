@@ -14,12 +14,15 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.sglink.entity.Equipment;
 import com.sglink.entity.EquipmentReservation;
 import com.sglink.entity.Member;
 import com.sglink.equipment.dto.EquipmentReservationResponseDto;
+import com.sglink.equipment.dto.EquipmentResponseDto;
 import com.sglink.repository.EquipmentRepository;
 import com.sglink.repository.EquipmentReservationRepository;
 import com.sglink.repository.MemberRepository;
+import com.sglink.common.constant.Process;
 
 import lombok.RequiredArgsConstructor;
 
@@ -101,6 +104,21 @@ public class MemberService implements UserDetailsService {
 		return resultMap;
 	}
 	
+	@Transactional(readOnly = true)
+	public HashMap<String, Object> selectAllEquipment(String userId,Integer page, Integer size) {
+
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		Page<Equipment> list = equipmentRepository
+				.findByEquiRegisterIdAndProcess(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "registerTime")),userId,Process.APPROVE);
+
+		resultMap.put("list", list.stream().map(EquipmentResponseDto::new).collect(Collectors.toList()));
+		resultMap.put("paging", list.getPageable());
+		resultMap.put("totalCnt", list.getTotalElements());
+		resultMap.put("totalPage", list.getTotalPages());
+
+		return resultMap;
+	}
+	
 	public void approveEquipmentReservation(Long id, String equiProcess) {
 		if (equiProcess.equals("UNAPPROVE")) {
 			String process = "APPROVE";
@@ -108,6 +126,17 @@ public class MemberService implements UserDetailsService {
 		} else if (equiProcess.equals("APPROVE")) {
 			String process = "UNAPPROVE";
 			equipmentReservationRepository.updateEquipmentReservationProcess(id, process);
+		}
+
+	}
+	
+	public void possibleEquipment(String equiId, String reservation) {
+		if (reservation.equals("IMPOSSIBLE")) {
+			String process = "POSSIBLE";
+			equipmentRepository.updateEquipmentReservation(equiId, process);
+		} else if (reservation.equals("POSSIBLE")) {
+			String process = "IMPOSSIBLE";
+			equipmentRepository.updateEquipmentReservation(equiId, process);
 		}
 
 	}

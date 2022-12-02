@@ -37,7 +37,7 @@ public class CompanyUserController {
 	}
 	
 	@GetMapping("/equipment/list/approve")
-	public String approveCompany(@RequestParam("id")Long id,@RequestParam("equiProcess")String equiProcess) {
+	public String approveEquipment(@RequestParam("id")Long id,@RequestParam("equiProcess")String equiProcess) {
 		memberService.approveEquipmentReservation(id,equiProcess);
 		return "redirect:/comuser/equipment/list";
 	}
@@ -48,13 +48,18 @@ public class CompanyUserController {
 			@RequestParam(required = false, defaultValue= "10") Integer size, Principal principal)throws Exception{
 		try {
 			String userId = principal.getName();
-			model.addAttribute("resultMap", memberService.selectAllEquipmentReservation(userId,page, size));
+			model.addAttribute("resultMap", memberService.selectAllEquipment(userId,page, size));
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());
 		}
 		return "/member/comuser/comuserEquiManagement";
 	}
-
+	
+	@GetMapping("/equipment/management/possible")
+	public String possibleEquipment(@RequestParam("equiId")String equiId,@RequestParam("reservation")String reservation) {
+		memberService.possibleEquipment(equiId,reservation);
+		return "redirect:/comuser/equipment/management";
+	}
 
 
 

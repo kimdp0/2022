@@ -63,4 +63,17 @@ ul, li {
 	float: left;
 }
 
+.approve{
+	margin-left:60px;
+	color:green;
+	font-weight: bold;
+}
+
+.unapprove{
+	margin-left:60px;
+	color:red;
+	font-weight: bold;
+}
+
+
 

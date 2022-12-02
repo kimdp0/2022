@@ -10,7 +10,11 @@
 <script th:inline="javascript">
 	function reservation() {
 		var query = window.location.search;
- 		window.open("/equipment/popup"+query, "Popup", "width=350,height=340"); 
+		var popupX = (window.screen.width / 2) - (200 / 2);
+		var popupY= (window.screen.height /2) - (300 / 2);
+		
+ 		window.open("/equipment/popup"+query, 'reservationPopup'
+ 				, 'status=no, height=300px, width=300px, left='+ popupX + ', top='+ popupY); 
 	}
 </script>
 </head>
@@ -35,11 +39,9 @@
 				</ul>
 			</div>
 			<div class="btn">
-				<div class="b1">
-					<a onclick="reservation();">예약하기</a>
-				</div>
-				<div class="b2">
-					<a>수정하기</a>
+			<p th:if="${info.reservation.toString() == 'IMPOSSIBLE'}">현재 예약이 불가능합니다</p>
+				<div th:if="${info.reservation.toString() == 'POSSIBLE'}" class="b1">	
+					<a  onclick="reservation();">예약하기</a>
 				</div>
 			</div>
 			<div class="explain">

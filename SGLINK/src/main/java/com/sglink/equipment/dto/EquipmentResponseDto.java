@@ -1,10 +1,13 @@
 package com.sglink.equipment.dto;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import com.sglink.entity.Equipment;
 import com.sglink.entity.FileEntity;
 import com.sglink.common.constant.Process;
+import com.sglink.common.constant.Reservation;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -28,10 +31,13 @@ public class EquipmentResponseDto {
 	
 	private String equiTel;
 	
+	private Reservation reservation;
+	
 	private List<FileEntity> img;
 	
 	private Process process;
 	
+	private LocalDateTime registerTime;
 	public EquipmentResponseDto(Equipment entity) {
 		this.equiId=entity.getEquiId();
 		this.equiName=entity.getEquiName();
@@ -41,5 +47,7 @@ public class EquipmentResponseDto {
 		this.equiContent=entity.getEquiContent();
 		this.img=entity.getImg();
 		this.process =entity.getProcess();
+		this.reservation = entity.getReservation();
+		this.registerTime = entity.getRegisterTime();
 	}
 }

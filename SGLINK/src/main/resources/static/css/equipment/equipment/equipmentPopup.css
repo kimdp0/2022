@@ -8,14 +8,16 @@
 .title {
 	width: 330px;
 	margin: 5px;
-	padding-bottom: 5px; font-size : 20px;
+	padding-bottom: 5px;
+	font-size: 20px;
 	font-weight: bold;
 	text-align: center;
 	font-size: 22px;
 }
 
 #popup img {
-	border-radius: 15px; margin : 10px;
+	border-radius: 15px;
+	margin: 10px;
 	width: 90px;
 	height: 90px;
 	margin: 10px;
@@ -29,7 +31,8 @@
 }
 
 .detail p {
-	margin: 0px; position : relative;
+	margin: 0px;
+	position: relative;
 	top: -98px;
 	left: 130px;
 	font-weight: bold;
@@ -38,7 +41,7 @@
 
 .detail h2 {
 	cursor: default;
-	margin : 0px;
+	margin: 0px;
 	position: relative;
 	text-align: center;
 	margin: 0px;
@@ -48,11 +51,11 @@
 	left: 200px;
 	font-size: 20px;
 	line-height: 23px;
-	color:#848484;
+	color: #848484;
 	margin: 0px;
 	border: 1px solid #A4A4A4;
-	background:#f2f2f2;
-	border-radius:10px;
+	background: #f2f2f2;
+	border-radius: 10px;
 }
 
 .sec_cal {
@@ -75,21 +78,22 @@
 
 .input {
 	margin-top: 10px;
-	margin-left:25px;
+	margin-left: 25px;
 	text-align: center;
 }
 
 #startDate, #endDate {
 	width: 100px;
-	border-radius:5px;
-	text-align:center;
+	border-radius: 5px;
+	text-align: center;
 }
 
 .mybtn {
 	cursor: pointer;
 	margin-left: 120px;
 	margin-top: 10px;
-	margin-bottom: 10px; width : 90px;
+	margin-bottom: 10px;
+	width: 90px;
 	height: 40px;
 	font-size: 13px;
 	border-radius: 9px;
@@ -99,4 +103,25 @@
 	border: 0;
 	font-weight: bold;
 	width: 90px;
+}
+
+.b1 {
+	margin-left: 110px;
+	margin-top: 30px; width : 90px;
+	height: 40px;
+	font-size: 13px;
+	border-radius: 9px;
+	background-color: #f2f2f2;
+	color: white;
+	outline: 0;
+	border: 0;
+	font-weight: bold;
+	text-align: center;
+	line-height: 44px;
+	cursor: pointer;
+	width: 90px;
+}
+
+.b1 a {
+	color: #848484;
 }
