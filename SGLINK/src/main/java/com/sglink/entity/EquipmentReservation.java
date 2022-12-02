@@ -44,8 +44,6 @@ public class EquipmentReservation{
 	@JoinColumn(name = "userId")
 	private Member member;
 
-	@Enumerated(EnumType.STRING)
-	private Reservation reservation;
 	
 	@Enumerated(EnumType.STRING)
 	private Process process;
@@ -56,23 +54,20 @@ public class EquipmentReservation{
 	@Builder
 	public EquipmentReservation(String equiId, String equiName 
 			,Member member,String startDate
-			,String endDate,Reservation reservation
+			,String endDate
 			,Process process,
 			String equiRegisterId) {
 
 		this.equiId = equiId;
 		this.equiName = equiName;
 		this.member = member;
-		this.reservation = reservation;
 		this.process = process;
 		this.startDate = startDate;
 		this.endDate  = endDate;
 		this.equiRegisterId = equiRegisterId;
 	}
-
 	@PrePersist
 	public void prePersist() {
-		this.reservation = this.reservation == null ? Reservation.IMPOSSIBLE : this.reservation;
 		this.process = this.process == null ? Process.UNAPPROVE : this.process;
 	}
 

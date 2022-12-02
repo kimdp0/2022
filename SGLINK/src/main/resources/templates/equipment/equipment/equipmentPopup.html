@@ -36,7 +36,7 @@
 			<div class="sec_cal">
 				<p class="p1">예약을 원하시는 날짜를 선택해주세요</p>
 				<p class="p2">* 오늘로부터 최대 7일간 예약신청이 가능합니다.</p>
-				<form class="frm" method="post" action="/equipment/popup" role="form" th:object="${errDto}">
+				<form id="frm" class="frm" method="post" action="/equipment/popup" role="form" th:object="${errDto}">
 				<div class="input">
 					<input type= "hidden" th:field="${info.equiId}">
 					<input type= "hidden" th:field="${info.equiName}">
@@ -49,13 +49,29 @@
 					<input type="hidden" th:name="${_csrf.parameterName}" id="csrf"
 					th:value="${_csrf.token}">	
 				</div>
-				<input type="submit" value="예약하기" class="mybtn"> 
+					<a class="appl" onclick="application()">예약하기</a>
 				</form>
 			</div>
 		</div>
 		
 	
 	<script src="/js/popup.js"></script>
+	<script th:inline="javascript">
+			function application() {
+				let chkStartDate = $("input[name='startDate']").val();
+				let chkendDate = $("input[name='endDate']").val();
+				if (chkStartDate!="" && chkendDate!="") {
+					if (confirm("신청하시겠습니까?")) {
+						let frm = $("#frm");
+						frm.attr("action", "/equipment/popup");
+						frm.attr("method", "post");
+						frm.submit();
+					}
+				} else{
+					alert("날짜가 선택되지 않았습니다!")
+				}
+			}
+		</script>
 
 
 </body>

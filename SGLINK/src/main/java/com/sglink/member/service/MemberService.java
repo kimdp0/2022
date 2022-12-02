@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.sglink.entity.EquipmentReservation;
 import com.sglink.entity.Member;
 import com.sglink.equipment.dto.EquipmentReservationResponseDto;
+import com.sglink.repository.EquipmentRepository;
 import com.sglink.repository.EquipmentReservationRepository;
 import com.sglink.repository.MemberRepository;
 
@@ -27,6 +28,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class MemberService implements UserDetailsService {
 	private final MemberRepository memberRepository;
+	private final EquipmentRepository equipmentRepository;
 	private final EquipmentReservationRepository equipmentReservationRepository;
 	
 
@@ -99,8 +101,15 @@ public class MemberService implements UserDetailsService {
 		return resultMap;
 	}
 	
-	
+	public void approveEquipmentReservation(Long id, String equiProcess) {
+		if (equiProcess.equals("UNAPPROVE")) {
+			String process = "APPROVE";
+			equipmentReservationRepository.updateEquipmentReservationProcess(id, process);
+		} else if (equiProcess.equals("APPROVE")) {
+			String process = "UNAPPROVE";
+			equipmentReservationRepository.updateEquipmentReservationProcess(id, process);
+		}
 
-	
+	}
 	
 }

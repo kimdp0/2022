@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>장비예약 관리페이지</title>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<link th:href="@{/css/admin/admin/memberList.css}" rel="stylesheet">
+<link th:href="@{/css/member/comuser/comList.css}" rel="stylesheet">
 </head>
 <body>
 	<div layout:fragment="content" id="content">
@@ -24,9 +24,8 @@
 							<th class="com3 borderside">시작기간</th>
 							<th class="com4 borderside">종료기간</th>
 							<th class="com5 borderside">예약자</th>
-							<th class="com6 borderside">예약가능여부</th>
-							<th class="com7 borderside">승인여부</th>
-							<th class="com8 borderside">처리</th>
+							<th class="com6 borderside">승인여부</th>
+							<th class="com7 borderside">처리</th>
 						</tr>
 						<tbody class="">
 							<tr th:each="list,index : ${resultMap.list}"
@@ -39,13 +38,11 @@
 								<td class="com4 borderside"><span
 									th:text="${list.endDate}"></span></td>
 								<td class="com5 borderside"><span th:text="${list.member.userId}"></span></td>
-								<td class="com6 borderside"><span
-									th:text="${list.reservation}"></span></td>
-								<td class="com7 borderside"><span class="unapprove"
+								<td class="com6 borderside"><span class="unapprove"
 									th:if="${list.equiProcess.toString()=='UNAPPROVE'}">비승인</span><span
 									class="approve"
 									th:if="${list.equiProcess.toString()=='APPROVE'}">승인</span></td>
-								<td class="com8 borderside"><a
+								<td class="com7 borderside"><a
 									th:href="@{./list/approve(id=${list.id},equiProcess=${list.equiProcess},
 									pageSize=${paging.pageSize}, page=${resultMap.paging})}"
 									class="insert">처리하기</a></td>

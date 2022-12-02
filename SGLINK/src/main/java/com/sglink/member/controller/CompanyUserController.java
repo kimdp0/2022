@@ -35,6 +35,27 @@ public class CompanyUserController {
 		}
 		return "/member/comuser/comuserEquiList";
 	}
+	
+	@GetMapping("/equipment/list/approve")
+	public String approveCompany(@RequestParam("id")Long id,@RequestParam("equiProcess")String equiProcess) {
+		memberService.approveEquipmentReservation(id,equiProcess);
+		return "redirect:/comuser/equipment/list";
+	}
+	
+	
+	@GetMapping("/equipment/management")
+	public String equipmentManagement(Model model, @RequestParam(required= false, defaultValue= "0") Integer page,
+			@RequestParam(required = false, defaultValue= "10") Integer size, Principal principal)throws Exception{
+		try {
+			String userId = principal.getName();
+			model.addAttribute("resultMap", memberService.selectAllEquipmentReservation(userId,page, size));
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return "/member/comuser/comuserEquiManagement";
+	}
+
+
 
 
 }

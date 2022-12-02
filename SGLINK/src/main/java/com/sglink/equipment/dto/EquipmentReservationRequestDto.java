@@ -20,7 +20,6 @@ public class EquipmentReservationRequestDto {
 	private String equiName;
 	private String equiRegisterId;
 	private Member member;
-	private Reservation reservation;
 	private String startDate;
 	private String endDate;
 	
@@ -30,7 +29,6 @@ public class EquipmentReservationRequestDto {
 				.equiName(equiName)
 				.equiRegisterId(equiRegisterId)
 				.member(member)
-				.reservation(reservation)
 				.startDate(startDate)
 				.endDate(endDate)
 				.build();

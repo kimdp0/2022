@@ -21,7 +21,6 @@ public class EquipmentReservationResponseDto {
 	private String equiName;
 	private String equiRegisterId;
 	private Member member;
-	private Reservation reservation;
 	private String startDate;
 	private String endDate;
 	private Process equiProcess;
@@ -32,7 +31,6 @@ public class EquipmentReservationResponseDto {
 		this.equiName=entity.getEquiName();
 		this.equiRegisterId=entity.getEquiRegisterId();
 		this.member=entity.getMember();
-		this.reservation=entity.getReservation();
 		this.startDate=entity.getStartDate();
 		this.endDate=entity.getEndDate();
 		this.equiProcess =entity.getProcess();

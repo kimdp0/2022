@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<link th:href="@{/css/admin/admin/memberList.css}" rel="stylesheet">
+<link th:href="@{/css/admin/admin/equiList.css}" rel="stylesheet">
 </head>
 <body>
 	<div layout:fragment="content" id="content">
@@ -23,9 +23,9 @@
 							<th class="com1 borderside">장비아이디</th>
 							<th class="com2 borderside">장비명</th>
 							<th class="com3 borderside">기업명</th>
-							<th class="com4 borderside">등록자명</th>
-							<th class="com5 borderside">전화번호</th>
-							<th class="com6 borderside">예약가능여부</th>
+							<th class="com4 borderside">등록자이름</th>
+							<th class="com5 borderside">등록자아이디</th>
+							<th class="com6 borderside">전화번호</th>
 							<th class="com7 borderside">등록일</th>
 							<th class="com8 borderside">승인여부</th>
 							<th class="com9 borderside">처리</th>
@@ -39,10 +39,10 @@
 								<td class="com3 borderside"><span
 									th:text="${list.equiUniname}"></span></td>
 								<td class="com4 borderside"><span
-									th:text="${list.equiRegister}"></span></td>
-								<td class="com5 borderside"><span th:text="${list.equiTel}"></span></td>
+									th:text="${list.equiRegisterName}"></span></td>
+								<td class="com5 borderside"><span th:text="${list.equiId}"></span></td>
 								<td class="com6 borderside"><span
-									th:text="${list.reservation}"></span></td>
+									th:text="${list.equiTel}"></span></td>
 								<td class="com7 borderside"><span
 									th:text="${#temporals.format(list.registerTime, 'yyyy-MM-dd')}"></span>
 								</td>
