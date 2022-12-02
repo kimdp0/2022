@@ -1,14 +1,24 @@
 package com.sglink.common.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.sglink.common.dto.PageViewRequestDto;
+import com.sglink.common.service.PageViewService;
+import com.sglink.entity.Introduce;
+
+import lombok.RequiredArgsConstructor;
 
 
+@RequiredArgsConstructor
 @Controller
 public class PageViewController {
-	
+	private final PageViewService pageViewService;
 	
 	
 	
@@ -61,10 +71,76 @@ public class PageViewController {
 	
 	
 	//사업단소개--------------------------------------------------------------------------
-	@RequestMapping(value = "/introduce/greeting", method = RequestMethod.GET)
-	public String greeting() {
+//	@RequestMapping(value = "/introduce/greeting", method = RequestMethod.GET)
+//	public String greeting() {
+//		return "/pageView/introduce/greeting";
+//	}
+	
+	@GetMapping("/introduce/greeting")
+	public String greetingView(@RequestParam("id") Long id, Model model, PageViewRequestDto pageRequestDto)  throws Exception{
+		
+		try {
+			if (pageRequestDto.getId() != null) {
+				Introduce introduce= pageViewService.viewfindById(id).get();
+				model.addAttribute("info", pageViewService.findById(pageRequestDto.getId()));
+			}
+		}catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		model.addAttribute(pageRequestDto);
+	
 		return "/pageView/introduce/greeting";
 	}
+	
+	
+	@GetMapping("/introduce/greeting/edit")
+	public String greetingEdit(@RequestParam("id") Long id, Model model, PageViewRequestDto pageRequestDto)  throws Exception{
+		
+		try {
+			if (pageRequestDto.getId() != null) {
+				Introduce introduce= pageViewService.viewfindById(id).get();
+				model.addAttribute("info", pageViewService.findById(pageRequestDto.getId()));
+			}
+		}catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		model.addAttribute(pageRequestDto);
+	
+		return "/pageView/introduce/greetingEdit";
+	}
+	@PostMapping("/introduce/greeting/edit/action")
+	public String greetingEditActionPage(Model model, PageViewRequestDto pageRequestDto) throws Exception{
+		try {
+			Long result = pageViewService.save(pageRequestDto);
+			if (result < 0) {
+				throw new Exception("#Exception boardWriteAction!");
+			}
+		}catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return "redirect:/introduce/greeting?id=1";
+	}
+	
+	
+	@GetMapping("/introduce/greeting/write")
+	public String greeting(Model model, PageViewRequestDto pageRequestDto) {
+		
+		return "/pageView/introduce/greetingWrite";
+	}
+	
+	@PostMapping("/introduce/greeting/write/action")
+	public String greetingWriteActionPage(Model model, PageViewRequestDto pageRequestDto) throws Exception{
+		try {
+			Long result = pageViewService.save(pageRequestDto);
+			if (result < 0) {
+				throw new Exception("#Exception boardWriteAction!");
+			}
+		}catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return "redirect:/introduce/greeting";
+	}
+	
 	
 	@RequestMapping(value = "/introduce/vision", method = RequestMethod.GET)
 	public String vision() {
