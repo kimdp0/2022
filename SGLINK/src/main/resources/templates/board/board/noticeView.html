@@ -53,7 +53,7 @@
 				</div>
 				<div class="bt_wrap">
 					<a onclick="javascript:location.href='/boards/notice/list'"
-						class="on">목록</a> <a th:if="${loginUserId == registerId}"
+						class="on">목록</a> <a th:if="${loginUserId == registerId}" 
 						th:href="@{./edit(id=${info.id})}">수정</a>
 
 				</div>
