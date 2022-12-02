@@ -107,5 +107,10 @@ public class EquipmentController {
 		System.out.println(equipment);
 		return "/equipment/equipment/equipmentPopup";
 	}
+	
+	@PostMapping(value="/popup")
+	public String equipmentPopupSubmit(@ModelAttribute) {
+		return "/equipment/equipment/equipmentPopup";
+	}
 
 }
