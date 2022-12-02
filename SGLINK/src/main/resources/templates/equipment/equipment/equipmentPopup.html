@@ -23,13 +23,15 @@
 </script>
 </head>
 <body>
-	
 		<div id="popup">
+
 			<div class="detail">
 				<img th:each="imgSrc: ${info.img}"
-				th:src="${imgSrc.stored_file_path}">
-				<h2 th:text="${info.equiId}">장비ID</h2>
-				<h2 th:text="${info.equiName}">장비명</h2>
+					th:src="${imgSrc.stored_file_path}">
+					<p>장비ID</p>
+					<h2 th:text="${info.equiId}"></h2>
+					<p>장비명</p>
+					<h2 th:text="${info.equiName}"></h2>
 			</div>
 			<div class="sec_cal">
 				<p class="p1">예약을 원하시는 날짜를 선택해주세요</p>
@@ -42,6 +44,7 @@
 					<input type= "hidden" th:field="${info.equiRegisterId}">
 					<input type= "hidden" name="member" th:value="${member.userId}">
 					<input type="text" id="startDate" name="startDate" readonly> ~ <input
+
 						type="text" id="endDate" name="endDate" readonly>
 					<input type="hidden" th:name="${_csrf.parameterName}" id="csrf"
 					th:value="${_csrf.token}">	
@@ -53,6 +56,7 @@
 		
 	
 	<script src="/js/popup.js"></script>
+
 
 </body>
 </html>

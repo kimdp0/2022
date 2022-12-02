@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.sglink.business.dto.BusinessRequestDto;
 import com.sglink.business.service.BusinessService;
+import com.sglink.common.constant.Role;
 import com.sglink.entity.Business;
 import com.sglink.entity.Company;
 import com.sglink.entity.Equipment;
@@ -44,6 +45,13 @@ public class BusinessController {
 	@GetMapping(value = "/new")
 	public String newBusiness(Model model, Principal principal) {
 		String userId = principal.getName();
+		Role role = memberService.findbyId(userId).getRole();
+		if(!role.equals(Role.COM)) {
+			model.addAttribute("msg", "기업로그인이 필요합니다.");
+			
+			return "/company/comAlert";
+		}
+		
 		Member userInfo = memberService.findbyId(userId);
 		Company company = memberService.findbyId(userId).getCompany();
 		String comUniname = company.getComUniname();

@@ -9,7 +9,7 @@ $(document).ready(function () {
                  dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'], 
                  monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
                  monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-                 dateFormat: "yymmdd",
+                 dateFormat: "yy-mm-dd",
                  maxDate: 0,                       // 선택할수있는 최소날짜, ( 0 : 오늘 이후 날짜 선택 불가)
                  onClose: function( selectedDate ) {    
                       //시작일(startDate) datepicker가 닫힐때
@@ -27,7 +27,7 @@ $(document).ready(function () {
                  dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'], 
                  monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
                  monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-                 dateFormat: "yymmdd",
+                 dateFormat: "yy-mm-dd",
                  maxDate: 7,                       // 선택할수있는 최대날짜, ( 0 : 오늘 이후 날짜 선택 불가)
                  onClose: function( selectedDate ) {    
                      // 종료일(endDate) datepicker가 닫힐때

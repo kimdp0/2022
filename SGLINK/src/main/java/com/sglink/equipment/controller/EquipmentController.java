@@ -1,5 +1,7 @@
 package com.sglink.equipment.controller;
 
+
+
 import java.security.Principal;
 import java.util.List;
 
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.sglink.common.constant.Role;
 import com.sglink.entity.Company;
 import com.sglink.entity.Equipment;
 import com.sglink.entity.Member;
@@ -43,16 +46,14 @@ public class EquipmentController {
 
 	@GetMapping(value = "/new")
 	public String newEquipment(Model model, Principal principal) {
-		
-		if(principal.getName().equals("admin")) {
-			System.out.println("dd");
-			String userId = principal.getName();
-			String userName = memberService.findbyId(userId).getUserName();
-			model.addAttribute("equipmentRequestDto", new EquipmentRequestDto());
-			model.addAttribute("userName", userName);
-			return "/equipment/equipment/equipmentRegist";
-		}
 		String userId = principal.getName();
+		Role role = memberService.findbyId(userId).getRole();
+		if(!role.equals(Role.COM)) {
+			model.addAttribute("msg", "기업로그인이 필요합니다.");
+			
+			return "/company/comAlert";
+		}
+		
 		Member userInfo = memberService.findbyId(userId);
 		Company company = memberService.findbyId(userId).getCompany();
 		String comUniname = company.getComUniname();
@@ -113,5 +114,6 @@ public class EquipmentController {
 		equipmentService.save(errDto);
 		return "redirect:/equipment/list";
 	}
+
 
 }

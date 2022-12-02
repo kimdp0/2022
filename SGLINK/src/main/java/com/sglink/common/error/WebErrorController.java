@@ -21,7 +21,7 @@ public class WebErrorController implements ErrorController {
 			if (statusCode == HttpStatus.NOT_FOUND.value()) {
 				return "/error/404error";
 			} else if (statusCode == HttpStatus.UNAUTHORIZED.value()) {
-				return "/error/401error";
+				return "redirect:/members/login";
 			} else if (statusCode == HttpStatus.FORBIDDEN.value()) {
 				return "/error/403error";
 			} else {
