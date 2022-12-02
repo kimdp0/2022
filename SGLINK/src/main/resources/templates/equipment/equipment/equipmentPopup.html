@@ -23,19 +23,24 @@
 </script>
 </head>
 <body>
-	<form class="frm" method="get" action="">
+	<form class="frm" method="post" action="equipment/popup">
 		<div id="popup">
 			<div class="detail">
-				<img src="/image/twitterimg.png">
-				<h2>장비ID</h2>
-				<h2>장비명</h2>
+				<img th:each="imgSrc: ${info.img}"
+				th:src="${imgSrc.stored_file_path}">
+				<h2 th:text="${info.equiId}">장비ID</h2>
+				<h2 th:text="${info.equiName}">장비명</h2>
 			</div>
 			<div class="sec_cal">
 				<p class="p1">예약을 원하시는 날짜를 선택해주세요</p>
 				<p class="p2">* 오늘로부터 최대 7일간 예약신청이 가능합니다.</p>
 				<div class="input">
-					<input type="text" id="startDate" readonly> ~ <input
-						type="text" id="endDate" readonly>
+					<input type= "hidden" th:field="${info.equiId}">
+					<input type= "hidden" th:field="${info.equiName}">
+					<input type= "hidden" th:field="${info.reservation}">
+					<input type= "hidden" name="member" th:value="${member}">
+					<input type="text" id="startDate" name="startDate" readonly> ~ <input
+						type="text" id="endDate" name="endDate" readonly>
 				</div>
 			</div>
 		</div>
