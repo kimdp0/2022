@@ -97,8 +97,19 @@ public class EquipmentController {
 	}
 	
 	@GetMapping(value="/popup")
-	public String equipmentPopup() {
-		
+	public String equipmentPopup(@RequestParam("equiId")String equiId,Model model, Principal principal) {
+		Equipment  equipment =equipmentService.findByEquiId(equiId);
+		String userId = principal.getName();
+		Member member = memberService.findbyId(userId);
+		model.addAttribute("info", equipment);
+		model.addAttribute("member",member);
+		System.out.println(member);
+		System.out.println(equipment);
+		return "/equipment/equipment/equipmentPopup";
+	}
+	
+	@PostMapping(value="/popup")
+	public String equipmentPopupSubmit(@ModelAttribute) {
 		return "/equipment/equipment/equipmentPopup";
 	}
 

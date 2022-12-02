@@ -41,9 +41,15 @@ h3 {
 	outline: 0;
 	border: 0;
 	font-weight: bold;
+	text-align:center;
+	line-height:44px;
+	cursor:pointer;
 }
 
 .b2 {
+	position:relative;
+	top:-40px;
+	left: 140px;
 	width: 90px;
 	height: 40px;
 	font-size: 13px;
@@ -54,4 +60,7 @@ h3 {
 	outline: 0;
 	border: 0;
 	font-weight: bold;
+	text-align:center;
+	line-height:44px;
+	cursor:pointer;
 }
