@@ -1,52 +1,95 @@
 #popup {
-	width: 400px;
+	width: 335px;
+	overflow-x: hidden;
+	border-radius: 10px;
+	background: #b2b2b2;
+}
+
+.title {
+	width: 330px;
+	margin: 5px;
+	padding-bottom: 5px; font-size : 20px;
+	font-weight: bold;
+	text-align: center;
+	font-size: 22px;
 }
 
 #popup img {
-	width: 100px;
-	height: 100px;
+	border-radius: 15px; margin : 10px;
+	width: 90px;
+	height: 90px;
+	margin: 10px;
 }
 
 .detail {
-	width: 400px;
-	height: 100px;
+	position: relative;
+	width: 350px;
+	height: 110px;
+	border-bottom: 2px solid #f2f2f2;
+}
+
+.detail p {
+	margin: 0px; position : relative;
+	top: -98px;
+	left: 130px;
+	font-weight: bold;
+	position: relative;
 }
 
 .detail h2 {
+	cursor: default;
+	margin : 0px;
 	position: relative;
-	top: -100px;
-	left: 150px;
+	text-align: center;
+	margin: 0px;
+	width: 100px;
+	height: 30px;
+	top: -123px;
+	left: 200px;
 	font-size: 20px;
-	line-height: 15px;
+	line-height: 23px;
+	color:#848484;
+	margin: 0px;
+	border: 1px solid #A4A4A4;
+	background:#f2f2f2;
+	border-radius:10px;
 }
 
 .sec_cal {
-	width: 400px;
-	margin: 0 auto;
+	width: 300px;
+	padding: 10px;
 	position: relative;
 }
 
 .sec_cal .p1 {
-	margin-left:30px;
 	font-size: 13px;
 	line-height: 15px;
+	font-weight: bold;
 }
 
 .sec_cal .p2 {
-	margin-left:30px;
 	font-size: 11px;
 	line-height: 15px;
+	font-weight: bold;
 }
-.input {
-	margin-left:30px;
-	margin-top: 20px;
-	text-align: center;
 
+.input {
+	margin-top: 10px;
+	margin-left:25px;
+	text-align: center;
 }
-.mybtn{
-	margin-left:170px;
-	margin-top:100px;
-	width: 90px;
+
+#startDate, #endDate {
+	width: 100px;
+	border-radius:5px;
+	text-align:center;
+}
+
+.mybtn {
+	cursor: pointer;
+	margin-left: 120px;
+	margin-top: 10px;
+	margin-bottom: 10px; width : 90px;
 	height: 40px;
 	font-size: 13px;
 	border-radius: 9px;
@@ -55,4 +98,5 @@
 	outline: 0;
 	border: 0;
 	font-weight: bold;
+	width: 90px;
 }

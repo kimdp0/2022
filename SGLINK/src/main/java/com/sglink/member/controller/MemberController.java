@@ -1,7 +1,5 @@
 package com.sglink.member.controller;
 
-import java.security.Principal;
-
 import javax.validation.Valid;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -12,9 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.sglink.board.service.BoardService;
 import com.sglink.company.service.CompanyService;
 import com.sglink.entity.Company;
 import com.sglink.entity.Member;
@@ -31,6 +31,7 @@ public class MemberController {
 	private final MemberService memberService;
 	private final CompanyService companyService;
 	private final PasswordEncoder passwordEncoder;
+	private final BoardService boardService;
 
 	@GetMapping(value = "/com/new")
 	public String memberComForm(Model model) {
@@ -86,6 +87,20 @@ public class MemberController {
 	public String loginError(Model model) {
 		model.addAttribute("loginErrorMsg", "아이디 또는 비밀번호를 확인해주세요");
 		return "member/members/memberLoginForm";
+	}
+	
+	@RequestMapping(value="/login/suc", method = RequestMethod.GET)
+	public String main(Model model, @RequestParam(required = false, defaultValue = "0") Integer page,
+			@RequestParam(required = false, defaultValue = "10") Integer size) throws Exception {
+		try {
+			model.addAttribute("resultMap", boardService.findAllBoard(page, size));
+			model.addAttribute("msg", "로그인되었습니다");
+	
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		
+		return "member/members/loginSuccess";
 	}
 
 	@GetMapping(value = "/memberRole")
