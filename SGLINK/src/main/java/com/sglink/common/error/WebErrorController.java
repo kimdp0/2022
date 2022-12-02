@@ -29,7 +29,7 @@ public class WebErrorController implements ErrorController {
 			}
 		}
 
-		return "redirect:/";
+		return "redirect:/members/login/suc";
 	}
 
 }
