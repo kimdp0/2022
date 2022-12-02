@@ -87,6 +87,12 @@ public class MemberController {
 		model.addAttribute("loginErrorMsg", "아이디 또는 비밀번호를 확인해주세요");
 		return "member/members/memberLoginForm";
 	}
+	
+	@GetMapping(value = "/login/suc")
+		public String loginSuccess(){
+		System.out.println("123");
+		return "main/main";
+	}
 
 	@GetMapping(value = "/memberRole")
 	public String memberRole(Model model) {
