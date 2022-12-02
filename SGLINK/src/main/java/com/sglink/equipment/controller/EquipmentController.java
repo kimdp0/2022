@@ -17,6 +17,7 @@ import com.sglink.entity.Company;
 import com.sglink.entity.Equipment;
 import com.sglink.entity.Member;
 import com.sglink.equipment.dto.EquipmentRequestDto;
+import com.sglink.equipment.dto.EquipmentReservationRequestDto;
 import com.sglink.equipment.service.EquipmentService;
 import com.sglink.file.service.FileUploadService;
 import com.sglink.member.service.MemberService;
@@ -82,7 +83,7 @@ public class EquipmentController {
 		try {
 			if (equipmentRequestDto.getEquiId() != null) {
 				Equipment equipment = equipmentService.viewfindById(id).get();
-				String registerId = equipment.getEquiRegister();
+				String registerId = equipment.getEquiRegisterId();
 				String loginUserId = principal.getName();
 				model.addAttribute("loginUserId", loginUserId);
 				model.addAttribute("registerId", registerId);
@@ -103,14 +104,14 @@ public class EquipmentController {
 		Member member = memberService.findbyId(userId);
 		model.addAttribute("info", equipment);
 		model.addAttribute("member",member);
-		System.out.println(member);
-		System.out.println(equipment);
 		return "/equipment/equipment/equipmentPopup";
 	}
 	
 	@PostMapping(value="/popup")
-	public String equipmentPopupSubmit(@ModelAttribute) {
-		return "/equipment/equipment/equipmentPopup";
+	public String equipmentPopupSubmit(@ModelAttribute("errDto") EquipmentReservationRequestDto errDto) {
+		System.out.println(errDto);
+		equipmentService.save(errDto);
+		return "redirect:/equipment/list";
 	}
 
 }

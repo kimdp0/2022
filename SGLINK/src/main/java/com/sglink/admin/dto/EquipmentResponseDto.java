@@ -26,7 +26,7 @@ public class EquipmentResponseDto {
 		this.equiId = equipment.getEquiId();
 		this.equiUniname = equipment.getEquiUniname();
 		this.equiName = equipment.getEquiName();
-		this.equiRegister =equipment.getEquiRegister();
+		this.equiRegister =equipment.getEquiRegisterName();
 		this.equiTel = equipment.getEquiTel();
 		this.equiProcess =equipment.getProcess();
 		this.reservation=equipment.getReservation();
