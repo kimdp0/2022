@@ -1,4 +1,4 @@
-package com.sglink.equipment.dto;
+package com.sglink.member.dto;
 
 
 import java.sql.Date;

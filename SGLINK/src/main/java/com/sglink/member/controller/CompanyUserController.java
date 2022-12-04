@@ -29,7 +29,7 @@ public class CompanyUserController {
 			@RequestParam(required = false, defaultValue= "10") Integer size, Principal principal)throws Exception{
 		try {
 			String userId = principal.getName();
-			model.addAttribute("resultMap", memberService.selectAllEquipmentReservation(userId,page, size));
+			model.addAttribute("resultMap", memberService.selectEquipmentReservation(userId,page, size));
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());
 		}
@@ -37,7 +37,7 @@ public class CompanyUserController {
 	}
 	
 	@GetMapping("/equipment/list/approve")
-	public String approveEquipment(@RequestParam("id")Long id,@RequestParam("equiProcess")String equiProcess) {
+	public String approveEquipmentReservation(@RequestParam("id")Long id,@RequestParam("equiProcess")String equiProcess) {
 		memberService.approveEquipmentReservation(id,equiProcess);
 		return "redirect:/comuser/equipment/list";
 	}
@@ -48,7 +48,7 @@ public class CompanyUserController {
 			@RequestParam(required = false, defaultValue= "10") Integer size, Principal principal)throws Exception{
 		try {
 			String userId = principal.getName();
-			model.addAttribute("resultMap", memberService.selectAllEquipment(userId,page, size));
+			model.addAttribute("resultMap", memberService.selectEquipment(userId,page, size));
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());
 		}

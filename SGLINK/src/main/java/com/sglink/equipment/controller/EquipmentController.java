@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.sglink.common.constant.Role;
@@ -20,9 +21,9 @@ import com.sglink.entity.Company;
 import com.sglink.entity.Equipment;
 import com.sglink.entity.Member;
 import com.sglink.equipment.dto.EquipmentRequestDto;
-import com.sglink.equipment.dto.EquipmentReservationRequestDto;
 import com.sglink.equipment.service.EquipmentService;
 import com.sglink.file.service.FileUploadService;
+import com.sglink.member.dto.EquipmentReservationRequestDto;
 import com.sglink.member.service.MemberService;
 
 import lombok.RequiredArgsConstructor;
@@ -51,7 +52,7 @@ public class EquipmentController {
 		if(!role.equals(Role.COM)) {
 			model.addAttribute("msg", "기업로그인이 필요합니다.");
 			
-			return "/company/comAlert";
+			return "/equipment/equipment/comAlert";
 		}
 		
 		Member userInfo = memberService.findbyId(userId);
@@ -72,11 +73,6 @@ public class EquipmentController {
 		return "redirect:/equipment/list";
 	}
 	
-	
-	@GetMapping(value = "/viewex")
-	public String viewEquipmentex(){
-		return "/equipment/equipment/equipmentListex";
-	}
 	
 	@GetMapping("/view")
 	public String viewEquipment(@RequestParam("equiId") String id, Model model,
@@ -108,11 +104,12 @@ public class EquipmentController {
 		return "/equipment/equipment/equipmentPopup";
 	}
 	
+	@ResponseBody
 	@PostMapping(value="/popup")
 	public String equipmentPopupSubmit(@ModelAttribute("errDto") EquipmentReservationRequestDto errDto) {
 		System.out.println(errDto);
 		equipmentService.save(errDto);
-		return "redirect:/equipment/list";
+		return "성공";
 	}
 
 

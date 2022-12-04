@@ -1,10 +1,20 @@
-#popup {
-	width: 335px;
-	overflow-x: hidden;
-	border-radius: 10px;
-	background: #b2b2b2;
+body{
+		background: #b2b2b2;
 }
 
+#popup {
+	width: 345px;
+	overflow-x: hidden;
+	border-radius: 10px;
+
+}
+.swal2-title{
+	font-size: 23px !important;
+}
+
+#swal2-content{
+	font-size: 17px !important;
+}
 .title {
 	width: 330px;
 	margin: 5px;

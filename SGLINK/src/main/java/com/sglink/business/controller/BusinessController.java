@@ -39,7 +39,7 @@ public class BusinessController {
 	public String viewBusiness( Model model, @RequestParam(required = false, defaultValue = "0") Integer page,
 			@RequestParam(required = false, defaultValue = "9") Integer size){
 		model.addAttribute("resultMap", businessService.findAll(page, size));
-		return "/company/business/businessList";
+		return "/business/business/businessList";
 	}
 
 	@GetMapping(value = "/new")
@@ -49,7 +49,7 @@ public class BusinessController {
 		if(!role.equals(Role.COM)) {
 			model.addAttribute("msg", "기업로그인이 필요합니다.");
 			
-			return "/company/comAlert";
+			return "/business/business/comAlert";
 		}
 		
 		Member userInfo = memberService.findbyId(userId);
@@ -58,7 +58,7 @@ public class BusinessController {
 		model.addAttribute("businessRequestDto", new BusinessRequestDto());
 		model.addAttribute("userInfo", userInfo);
 		model.addAttribute("comUniname", comUniname);
-		return "/company/business/businessForm";
+		return "/business/business/businessForm";
 	}
 
 	@PostMapping(value = "/new")
@@ -86,7 +86,7 @@ public class BusinessController {
 			throw new Exception(e.getMessage());
 		}
 
-		return "/company/business/businessView";
+		return "/business/business/businessView";
 
 	}
 }

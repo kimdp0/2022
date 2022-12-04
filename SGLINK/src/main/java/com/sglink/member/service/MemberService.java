@@ -14,15 +14,15 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.sglink.common.constant.Process;
 import com.sglink.entity.Equipment;
 import com.sglink.entity.EquipmentReservation;
 import com.sglink.entity.Member;
-import com.sglink.equipment.dto.EquipmentReservationResponseDto;
 import com.sglink.equipment.dto.EquipmentResponseDto;
+import com.sglink.member.dto.EquipmentReservationResponseDto;
 import com.sglink.repository.EquipmentRepository;
 import com.sglink.repository.EquipmentReservationRepository;
 import com.sglink.repository.MemberRepository;
-import com.sglink.common.constant.Process;
 
 import lombok.RequiredArgsConstructor;
 
@@ -90,7 +90,7 @@ public class MemberService implements UserDetailsService {
 	
 	
 	@Transactional(readOnly = true)
-	public HashMap<String, Object> selectAllEquipmentReservation(String userId,Integer page, Integer size) {
+	public HashMap<String, Object> selectEquipmentReservation(String userId,Integer page, Integer size) {
 
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		Page<EquipmentReservation> list = equipmentReservationRepository
@@ -105,7 +105,7 @@ public class MemberService implements UserDetailsService {
 	}
 	
 	@Transactional(readOnly = true)
-	public HashMap<String, Object> selectAllEquipment(String userId,Integer page, Integer size) {
+	public HashMap<String, Object> selectEquipment(String userId,Integer page, Integer size) {
 
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		Page<Equipment> list = equipmentRepository

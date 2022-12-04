@@ -13,8 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.sglink.common.constant.Process;
 import com.sglink.entity.Equipment;
 import com.sglink.equipment.dto.EquipmentRequestDto;
-import com.sglink.equipment.dto.EquipmentReservationRequestDto;
 import com.sglink.equipment.dto.EquipmentResponseDto;
+import com.sglink.member.dto.EquipmentReservationRequestDto;
 import com.sglink.repository.EquipmentRepository;
 import com.sglink.repository.EquipmentReservationRepository;
 
