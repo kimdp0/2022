@@ -40,13 +40,14 @@
 			<form id="frm" class="frm" method="post" action="/business/popup"
 				role="form" th:object="${errDto}">
 				<div class="input">
-					<input type="hidden" th:field="${info.busiId}"> <input
-						type="hidden" th:field="${info.busiName}"> <input
-						type="hidden" th:field="${info.reservation}"> <input
-						type="hidden" th:field="${info.busiRegisterId}"> <input
-						type="hidden" name="member" th:value="${member.userId}"> <input
-						type="hidden" th:name="${_csrf.parameterName}" id="csrf"
-						th:value="${_csrf.token}">
+					<input type="hidden" th:field="${info.busiId}">
+					<input type="hidden" th:field="${info.busiName}">
+					<input type="hidden" th:field="${info.reservation}">
+					<input type="hidden" th:field="${info.busiRegisterId}">
+					<input type="hidden" name="member" th:value="${member.userId}">
+					<input type="hidden" th:field="${info.startDate}">
+					<input type="hidden" th:field="${info.endDate}">
+					<input type="hidden" th:name="${_csrf.parameterName}" id="csrf" th:value="${_csrf.token}">
 				</div>
 				<div class="b1">
 					<a onclick="application()">예약하기</a>

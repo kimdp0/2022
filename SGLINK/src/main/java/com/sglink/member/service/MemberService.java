@@ -98,11 +98,11 @@ public class MemberService implements UserDetailsService {
 	
 	
 	@Transactional(readOnly = true)
-	public HashMap<String, Object> selectEquipmentReservation(String userId,Integer page, Integer size) {
+	public HashMap<String, Object> selectEquipmentReservation(Member member,Integer page, Integer size) {
 
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		Page<EquipmentReservation> list = equipmentReservationRepository
-				.findByEquiRegisterId(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "startDate")),userId);
+				.findByMember(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "startDate")), member);
 
 		resultMap.put("list", list.stream().map(EquipmentReservationResponseDto::new).collect(Collectors.toList()));
 		resultMap.put("paging", list.getPageable());
@@ -152,11 +152,11 @@ public class MemberService implements UserDetailsService {
 
 	
 	@Transactional(readOnly = true)
-	public HashMap<String, Object> selectBusinessReservation(String userId,Integer page, Integer size) {
+	public HashMap<String, Object> selectBusinessReservation(Member member,Integer page, Integer size) {
 
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		Page<BusinessReservation> list = businessReservationRepository
-				.findByBusiRegisterId(PageRequest.of(page, size), userId);
+				.findByMember(PageRequest.of(page, size), member);
 
 		resultMap.put("list", list.stream().map(BusinessReservationResponseDto::new).collect(Collectors.toList()));
 		resultMap.put("paging", list.getPageable());
