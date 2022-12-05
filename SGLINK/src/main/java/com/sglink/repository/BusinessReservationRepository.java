@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.sglink.entity.BusinessReservation;
+import com.sglink.entity.Member;
 
 public interface BusinessReservationRepository extends JpaRepository<BusinessReservation, Long> {
 
@@ -20,5 +21,5 @@ public interface BusinessReservationRepository extends JpaRepository<BusinessRes
 	@Query(value = updateBusinessReservationProcess, nativeQuery = true)
 	void updateBusinessReservationProcess(@Param("id") Long id, @Param("process") String busiProcess);
 
-	Page<BusinessReservation> findByBusiRegisterId(Pageable pageable, String userId);
+	Page<BusinessReservation> findByMember(Pageable pageable, Member member);
 }
