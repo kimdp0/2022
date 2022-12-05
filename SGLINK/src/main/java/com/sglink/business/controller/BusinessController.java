@@ -67,7 +67,7 @@ public class BusinessController {
 		String busiId = businessService.save(businessRequestDto);
 		Business business = businessService.findByBusiId(busiId);
 		fileUploadService.addFile(files, busiId, business);
-		return "redirect:/business/new";
+		return "redirect:/business/list";
 	}
 	
 	@GetMapping("/view")

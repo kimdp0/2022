@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>장비팝업페이지</title>
+<title>사업팝업페이지</title>
 <link th:href="@{/css/equipment/equipment/equipmentPopup.css}"
 	rel="stylesheet">
 <link rel="stylesheet"
@@ -27,7 +27,7 @@
 	<div id="popup">
 
 		<div class="detail">
-			<img th:each="imgSrc: ${info.img}"
+			<img th:each="imgSrc: ${info.busiImg}"
 				th:src="${imgSrc.stored_file_path}">
 			<p>사업ID</p>
 			<h2 th:text="${info.busiId}"></h2>
@@ -56,9 +56,9 @@
 
 	
 		function application() {
-			let chkStartDate = $("input[name='startDate']").val();
-			let chkendDate = $("input[name='endDate']").val();
-			if (chkStartDate != "" && chkendDate != "") {
+/* 			let chkStartDate = $("input[name='startDate']").val();
+			let chkendDate = $("input[name='endDate']").val(); */
+			/* if (chkStartDate != "" && chkendDate != "") { */
 					Swal.fire({
 					      title: '신청하시겠습니까?',   
 					      text: "다시 되돌릴 수 없습니다.",
@@ -77,13 +77,13 @@
 					    		frm.submit();
 					      }
 					    })
-			} else {
+			/*  else {
 				Swal.fire({
 					icon : 'warning',
 					title : "경고!!",
 					text : "날짜가 선택되지 않았습니다!"
 				})
-			}
+			} */
 		}
 	</script>
 
