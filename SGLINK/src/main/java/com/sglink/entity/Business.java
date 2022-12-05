@@ -37,7 +37,9 @@ public class Business extends BaseTimeEntity {
 
 	private String busiContent;
 
-	private String busiRegister;
+	private String busiRegisterId;
+	
+	private String busiRegisterName;
 
 	private String busiTel;
 
@@ -49,18 +51,24 @@ public class Business extends BaseTimeEntity {
 
 	@OneToMany(mappedBy = "busiImg")
 	private List<FileEntity> busiImg;
+	
+	private String startDate;
+	private String endDate;
 
 	@Builder
-	public Business(String busiId, String busiName, String busiUniname, String busiContent, String busiRegister,
-			String busiTel, List<FileEntity> busiImg) {
+	public Business(String busiId, String busiName, String busiUniname, String busiContent, String busiRegisterId, String busiRegisterName,
+			String busiTel, List<FileEntity> busiImg, String startDate, String endDate) {
 
 		this.busiId = busiId;
 		this.busiName = busiName;
-		this.busiRegister = busiRegister;
+		this.busiRegisterId = busiRegisterId;
+		this.busiRegisterName = busiRegisterName;
 		this.busiTel = busiTel;
 		this.busiUniname = busiUniname;
 		this.busiContent = busiContent;
 		this.busiImg = busiImg;
+		this.startDate = startDate;
+		this.endDate = endDate;
 	}
 
 	@PrePersist

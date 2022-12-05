@@ -1,5 +1,7 @@
 package com.sglink.common.controller;
 
+import java.security.Principal;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sglink.common.dto.PageViewRequestDto;
 import com.sglink.common.service.PageViewService;
@@ -32,7 +35,13 @@ public class PageViewController {
 		return "/pageView/comsup/family/application";
 	}
 	@RequestMapping(value = "/comsup/family/status", method = RequestMethod.GET)
-	public String familyStatus() {
+	public String familyStatus(Model model, @RequestParam(required= false, defaultValue= "0") Integer page, @RequestParam(required = false, defaultValue= "10") Integer size)throws Exception{
+		
+		try {
+			model.addAttribute("resultMap", pageViewService.selectCompanyByProcess(page, size));
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
 		return "/pageView/comsup/family/status";
 	}
 	@RequestMapping(value = "/comsup/family/forum", method = RequestMethod.GET)
@@ -270,5 +279,16 @@ public class PageViewController {
 		@GetMapping(value="/bigdata/bigdataIssue")
 		public String bigdataIssueEvent() {
 			return "/pageView/bigdata/bigdataIssue";
+		}
+		
+	//헤더--------------------------------------------------------------------------------------
+		@GetMapping(value="/header/userIdView")
+		@ResponseBody
+		public String userIdView(Principal principal,Model model) {
+			if(principal.getName().equals(null)) {
+				return "";
+			}
+			String userId = principal.getName();
+			return userId;
 		}
 }

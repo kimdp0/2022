@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>header 공통 양식</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 
 </head>
@@ -19,6 +20,7 @@
 				<a href="https://www.youtube.com/"><img src="/img/main/one_youtube.png"></a>
 			</div>
 			<div id="login">
+				<a href="#" type="text" class = "topmenu" sec:authorize="isAuthenticated()" id="userId"></a>
 				<a class="topmenu" href="/members/memberRole" sec:authorize="isAnonymous()">회원가입</a> 
 				<a class="topmenu" href="/admin/member/list"  sec:authorize="hasAnyAuthority('ROLE_ADMIN')">관리자</a>
 				<a class="topmenu" href="" sec:authorize="hasAnyAuthority('ROLE_STU')">학생회원</a>
@@ -70,6 +72,24 @@
 				</ul>
 			</div>
 		</div>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		$( document ).ready(function() {
+			$.ajax({
+				url:'/header/userIdView',
+				method:"get",
+				success: function(data){
+					$("#userId").text(data+"님  환영합니다!!");
+					
+				},
+				error : function() {
+					alert("error");
+				}
+			});
+		});
+		
+		</script>
 	</div>
 
 </body>

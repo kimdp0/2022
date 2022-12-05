@@ -14,7 +14,9 @@ import com.sglink.business.dto.BusinessRequestDto;
 import com.sglink.business.dto.BusinessResponseDto;
 import com.sglink.common.constant.Process;
 import com.sglink.entity.Business;
+import com.sglink.member.dto.BusinessReservationRequestDto;
 import com.sglink.repository.BusinessRepository;
+import com.sglink.repository.BusinessReservationRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -24,6 +26,7 @@ import lombok.RequiredArgsConstructor;
 public class BusinessService {
 
 	private final BusinessRepository businessRepository;
+	private final BusinessReservationRepository businessReservationRepository;
 
 	public Business findByBusiId(String busiId) {
 		return businessRepository.findOneByBusiId(busiId);
@@ -32,6 +35,11 @@ public class BusinessService {
 	@Transactional
 	public String save(BusinessRequestDto businessRequestDto) {
 		return businessRepository.save(businessRequestDto.toEntity()).getBusiId();
+	}
+	
+	@Transactional
+	public void save(BusinessReservationRequestDto errDto) {
+		businessReservationRepository.save(errDto.toEntity());
 	}
 
 	@Transactional(readOnly = true)

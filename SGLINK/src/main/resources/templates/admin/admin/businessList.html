@@ -38,8 +38,8 @@
 									th:text="${list.busiName}"></span></td>
 								<td class="com3 borderside"><span
 									th:text="${list.busiUniname}"></span></td>
-								<td class="com4 borderside"><span
-									th:text="${list.busiRegister}"></span></td>
+								 <td class="com4 borderside"><span
+									th:text="${list.busiRegisterName}"></span></td>
 								<td class="com5 borderside"><span th:text="${list.busiTel}"></span></td>
 								 <td class="com6 borderside"><span
 									th:text="${list.reservation}"></span></td> 
@@ -53,7 +53,7 @@
 								<td class="com9 borderside"><a
 									th:href="@{./list/approve(busiId=${list.busiId},busiProcess=${list.busiProcess},
 									pageSize=${paging.pageSize}, page=${resultMap.paging})}"
-									class="insert">처리하기</a></td>
+									class="insert">처리하기</a></td> 
 							<tr> 
 						</tbody> 
 					</table>

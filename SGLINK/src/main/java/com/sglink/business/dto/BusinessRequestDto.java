@@ -24,11 +24,16 @@ public class BusinessRequestDto {
 
 	private String busiContent;
 	
-	private String busiRegister;
+	private String busiRegisterId;
+	
+	private String busiRegisterName;
 	
 	private String busiTel;
 	
 	private List<FileEntity> busiImg;
+	
+	private String startDate;
+	private String endDate;
 
 	
 	public Business toEntity() {
@@ -37,9 +42,12 @@ public class BusinessRequestDto {
 				.busiName(busiName)
 				.busiUniname(busiUniname)
 				.busiContent(busiContent)
-				.busiRegister(busiRegister)
+				.busiRegisterId(busiRegisterId)
+				.busiRegisterName(busiRegisterName)
 				.busiTel(busiTel)
-				.busiImg(busiImg) 
+				.busiImg(busiImg)
+				.startDate(startDate)
+				.endDate(endDate)
 				.build();
 	}
 	
