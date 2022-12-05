@@ -37,6 +37,9 @@ public class BusinessResponseDto {
 	
 	private Process process;
 	
+	private String startDate;
+	private String endDate;
+	
 	private LocalDateTime registerTime;
 	
 	public BusinessResponseDto(Business entity) {
@@ -50,5 +53,7 @@ public class BusinessResponseDto {
 		this.process =entity.getProcess();
 		this.reservation = entity.getReservation();
 		this.registerTime = entity.getRegisterTime();
+		this.startDate=entity.getStartDate();
+		this.endDate=entity.getEndDate();
 	}
 }
