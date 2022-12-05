@@ -47,9 +47,9 @@ public class Member  extends BaseTimeEntity{
 	@Enumerated(EnumType.STRING)
 	private Role role;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "equiId")
-	private EquipmentReservation equipmentReservation;
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "userId")
+	private List<EquipmentReservation> equipmentReservation;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="registerId")

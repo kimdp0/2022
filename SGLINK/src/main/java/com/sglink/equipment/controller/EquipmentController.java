@@ -1,5 +1,7 @@
 package com.sglink.equipment.controller;
 
+
+
 import java.security.Principal;
 import java.util.List;
 
@@ -11,14 +13,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.sglink.common.constant.Role;
 import com.sglink.entity.Company;
 import com.sglink.entity.Equipment;
 import com.sglink.entity.Member;
 import com.sglink.equipment.dto.EquipmentRequestDto;
 import com.sglink.equipment.service.EquipmentService;
 import com.sglink.file.service.FileUploadService;
+import com.sglink.member.dto.EquipmentReservationRequestDto;
 import com.sglink.member.service.MemberService;
 
 import lombok.RequiredArgsConstructor;
@@ -42,16 +47,14 @@ public class EquipmentController {
 
 	@GetMapping(value = "/new")
 	public String newEquipment(Model model, Principal principal) {
-		
-		if(principal.getName().equals("admin")) {
-			System.out.println("dd");
-			String userId = principal.getName();
-			String userName = memberService.findbyId(userId).getUserName();
-			model.addAttribute("equipmentRequestDto", new EquipmentRequestDto());
-			model.addAttribute("userName", userName);
-			return "/equipment/equipment/equipmentRegist";
-		}
 		String userId = principal.getName();
+		Role role = memberService.findbyId(userId).getRole();
+		if(!role.equals(Role.COM)) {
+			model.addAttribute("msg", "기업로그인이 필요합니다.");
+			
+			return "/equipment/equipment/comAlert";
+		}
+		
 		Member userInfo = memberService.findbyId(userId);
 		Company company = memberService.findbyId(userId).getCompany();
 		String comUniname = company.getComUniname();
@@ -71,18 +74,13 @@ public class EquipmentController {
 	}
 	
 	
-	@GetMapping(value = "/viewex")
-	public String viewEquipmentex(){
-		return "/equipment/equipment/equipmentListex";
-	}
-	
 	@GetMapping("/view")
 	public String viewEquipment(@RequestParam("equiId") String id, Model model,
 			EquipmentRequestDto equipmentRequestDto, Principal principal) throws Exception {
 		try {
 			if (equipmentRequestDto.getEquiId() != null) {
 				Equipment equipment = equipmentService.viewfindById(id).get();
-				String registerId = equipment.getEquiRegister();
+				String registerId = equipment.getEquiRegisterId();
 				String loginUserId = principal.getName();
 				model.addAttribute("loginUserId", loginUserId);
 				model.addAttribute("registerId", registerId);
@@ -103,14 +101,16 @@ public class EquipmentController {
 		Member member = memberService.findbyId(userId);
 		model.addAttribute("info", equipment);
 		model.addAttribute("member",member);
-		System.out.println(member);
-		System.out.println(equipment);
 		return "/equipment/equipment/equipmentPopup";
 	}
 	
+	@ResponseBody
 	@PostMapping(value="/popup")
-	public String equipmentPopupSubmit(@ModelAttribute) {
-		return "/equipment/equipment/equipmentPopup";
+	public String equipmentPopupSubmit(@ModelAttribute("errDto") EquipmentReservationRequestDto errDto) {
+		System.out.println(errDto);
+		equipmentService.save(errDto);
+		return "성공";
 	}
+
 
 }

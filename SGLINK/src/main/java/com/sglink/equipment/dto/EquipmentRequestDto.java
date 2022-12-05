@@ -24,7 +24,9 @@ public class EquipmentRequestDto {
 
 	private String equiContent;
 	
-	private String equiRegister;
+	private String equiRegisterId;
+	
+	private String equiRegisterName;
 	
 	private String equiTel;
 	
@@ -37,7 +39,8 @@ public class EquipmentRequestDto {
 				.equiName(equiName)
 				.equiUniname(equiUniname)
 				.equiContent(equiContent)
-				.equiRegister(equiRegister)
+				.equiRegisterId(equiRegisterId)
+				.equiRegisterName(equiRegisterName)
 				.equiTel(equiTel)
 				.img(img) 
 				.build();

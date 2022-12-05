@@ -1,7 +1,12 @@
 package com.sglink.member.service;
 
 import java.security.Principal;
+import java.util.HashMap;
+import java.util.stream.Collectors;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -9,7 +14,14 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.sglink.common.constant.Process;
+import com.sglink.entity.Equipment;
+import com.sglink.entity.EquipmentReservation;
 import com.sglink.entity.Member;
+import com.sglink.equipment.dto.EquipmentResponseDto;
+import com.sglink.member.dto.EquipmentReservationResponseDto;
+import com.sglink.repository.EquipmentRepository;
+import com.sglink.repository.EquipmentReservationRepository;
 import com.sglink.repository.MemberRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -19,6 +31,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class MemberService implements UserDetailsService {
 	private final MemberRepository memberRepository;
+	private final EquipmentRepository equipmentRepository;
+	private final EquipmentReservationRepository equipmentReservationRepository;
 	
 
 	public Member saveMember(Member member) {
@@ -74,5 +88,57 @@ public class MemberService implements UserDetailsService {
 		return memberRepository.findByUserId(id);
 	}
 	
+	
+	@Transactional(readOnly = true)
+	public HashMap<String, Object> selectEquipmentReservation(String userId,Integer page, Integer size) {
+
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		Page<EquipmentReservation> list = equipmentReservationRepository
+				.findByEquiRegisterId(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "startDate")),userId);
+
+		resultMap.put("list", list.stream().map(EquipmentReservationResponseDto::new).collect(Collectors.toList()));
+		resultMap.put("paging", list.getPageable());
+		resultMap.put("totalCnt", list.getTotalElements());
+		resultMap.put("totalPage", list.getTotalPages());
+
+		return resultMap;
+	}
+	
+	@Transactional(readOnly = true)
+	public HashMap<String, Object> selectEquipment(String userId,Integer page, Integer size) {
+
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		Page<Equipment> list = equipmentRepository
+				.findByEquiRegisterIdAndProcess(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "registerTime")),userId,Process.APPROVE);
+
+		resultMap.put("list", list.stream().map(EquipmentResponseDto::new).collect(Collectors.toList()));
+		resultMap.put("paging", list.getPageable());
+		resultMap.put("totalCnt", list.getTotalElements());
+		resultMap.put("totalPage", list.getTotalPages());
+
+		return resultMap;
+	}
+	
+	public void approveEquipmentReservation(Long id, String equiProcess) {
+		if (equiProcess.equals("UNAPPROVE")) {
+			String process = "APPROVE";
+			equipmentReservationRepository.updateEquipmentReservationProcess(id, process);
+		} else if (equiProcess.equals("APPROVE")) {
+			String process = "UNAPPROVE";
+			equipmentReservationRepository.updateEquipmentReservationProcess(id, process);
+		}
+
+	}
+	
+	public void possibleEquipment(String equiId, String reservation) {
+		if (reservation.equals("IMPOSSIBLE")) {
+			String process = "POSSIBLE";
+			equipmentRepository.updateEquipmentReservation(equiId, process);
+		} else if (reservation.equals("POSSIBLE")) {
+			String process = "IMPOSSIBLE";
+			equipmentRepository.updateEquipmentReservation(equiId, process);
+		}
+
+	}
 	
 }

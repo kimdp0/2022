@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.sglink.business.dto.BusinessRequestDto;
 import com.sglink.business.service.BusinessService;
+import com.sglink.common.constant.Role;
 import com.sglink.entity.Business;
 import com.sglink.entity.Company;
 import com.sglink.entity.Equipment;
@@ -38,19 +39,26 @@ public class BusinessController {
 	public String viewBusiness( Model model, @RequestParam(required = false, defaultValue = "0") Integer page,
 			@RequestParam(required = false, defaultValue = "9") Integer size){
 		model.addAttribute("resultMap", businessService.findAll(page, size));
-		return "/company/business/businessList";
+		return "/business/business/businessList";
 	}
 
 	@GetMapping(value = "/new")
 	public String newBusiness(Model model, Principal principal) {
 		String userId = principal.getName();
+		Role role = memberService.findbyId(userId).getRole();
+		if(!role.equals(Role.COM)) {
+			model.addAttribute("msg", "기업로그인이 필요합니다.");
+			
+			return "/business/business/comAlert";
+		}
+		
 		Member userInfo = memberService.findbyId(userId);
 		Company company = memberService.findbyId(userId).getCompany();
 		String comUniname = company.getComUniname();
 		model.addAttribute("businessRequestDto", new BusinessRequestDto());
 		model.addAttribute("userInfo", userInfo);
 		model.addAttribute("comUniname", comUniname);
-		return "/company/business/businessForm";
+		return "/business/business/businessForm";
 	}
 
 	@PostMapping(value = "/new")
@@ -78,7 +86,7 @@ public class BusinessController {
 			throw new Exception(e.getMessage());
 		}
 
-		return "/company/business/businessView";
+		return "/business/business/businessView";
 
 	}
 }

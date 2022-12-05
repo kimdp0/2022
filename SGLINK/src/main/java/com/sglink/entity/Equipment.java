@@ -22,6 +22,7 @@ import lombok.ToString;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
 @Getter
 @Setter
 public class Equipment extends BaseTimeEntity {
@@ -33,10 +34,12 @@ public class Equipment extends BaseTimeEntity {
 	private String equiName;
 
 	private String equiUniname;
-
+	@Column(length = 1000)
 	private String equiContent;
 
-	private String equiRegister;
+	private String equiRegisterId;
+	
+	private String equiRegisterName;
 
 	private String equiTel;
 
@@ -50,12 +53,13 @@ public class Equipment extends BaseTimeEntity {
 	private List<FileEntity> img;
 
 	@Builder
-	public Equipment(String equiId, String equiName, String equiUniname, String equiContent, String equiRegister,
+	public Equipment(String equiId, String equiName, String equiUniname, String equiContent, String equiRegisterId,String equiRegisterName,
 			String equiTel, List<FileEntity> img) {
 
 		this.equiId = equiId;
 		this.equiName = equiName;
-		this.equiRegister = equiRegister;
+		this.equiRegisterId = equiRegisterId;
+		this.equiRegisterName = equiRegisterName;
 		this.equiTel = equiTel;
 		this.equiUniname = equiUniname;
 		this.equiContent = equiContent;

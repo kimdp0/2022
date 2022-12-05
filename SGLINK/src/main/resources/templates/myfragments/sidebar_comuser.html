@@ -5,9 +5,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ad</title>
+<title>comuser</title>
 
-<link href="sidebar_2.css" rel="stylesheet">
 
 </head>
 
@@ -19,11 +18,37 @@
 			</div>
 			<div id="subMenu">
 				<div class="depth1">
-					<li class="item"><a href="/comuser/equipment/list" id="left" class="lnb">장비예약관리</a></li>
-					<li class="item"><a href="/comuser/business/list" id="left" class="lnb">사업신청관리</a></li>
+					<li class="item"><a href="#" id="left" class="lnb">장비 관리</a>
+						<ul class="depth2">
+							<li><a href="/comuser/equipment/list">- 장비 예약관리</a></li>
+							<li><a href="/comuser/equipment/management">- 장비 목록관리</a></li>
+						</ul></li>
+					<li class="item"><a href="#" id="left1" class="lnb">사업 관리</a>
+						<ul class="depth2">
+							<li><a href="/comuser/business/list">- 사업 신청관리</a></li>
+							<li><a href="#">- 사업 목록관리</a></li>
+						</ul></li>
 				</div>
 			</div>
+
 		</div>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script>
+			$(function() {
+				$('.depth2').hide();
+				$('.depth1 li').hover(function() {
+
+					$(this).children('.lnb').addClass('act');
+				}, function() {
+					$(this).children('.lnb').removeClass('act');
+				});
+				$('.lnb').click(function() {
+					$('.depth2').hide();
+					$(this).next('.depth2').slideDown(500);
+				});
+			});
+		</script>
 	</div>
 </body>
 </html>
