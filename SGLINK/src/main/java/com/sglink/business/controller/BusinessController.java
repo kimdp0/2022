@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.sglink.business.dto.BusinessRequestDto;
@@ -18,10 +19,9 @@ import com.sglink.business.service.BusinessService;
 import com.sglink.common.constant.Role;
 import com.sglink.entity.Business;
 import com.sglink.entity.Company;
-import com.sglink.entity.Equipment;
 import com.sglink.entity.Member;
-import com.sglink.equipment.dto.EquipmentRequestDto;
 import com.sglink.file.service.FileUploadService;
+import com.sglink.member.dto.BusinessReservationRequestDto;
 import com.sglink.member.service.MemberService;
 
 import lombok.RequiredArgsConstructor;
@@ -88,5 +88,23 @@ public class BusinessController {
 
 		return "/business/business/businessView";
 
+	}
+	
+	@GetMapping(value="/popup")
+	public String businessPopup(@RequestParam("busiId")String busiId,Model model, Principal principal) {
+		Business  business =businessService.findByBusiId(busiId);
+		String userId = principal.getName();
+		Member member = memberService.findbyId(userId);
+		model.addAttribute("info", business);
+		model.addAttribute("member",member);
+		return "/business/business/businessPopup";
+	}
+	
+	@ResponseBody
+	@PostMapping(value="/popup")
+	public String businessPopupSubmit(@ModelAttribute("errDto") BusinessReservationRequestDto errDto) {
+		System.out.println(errDto);
+		businessService.save(errDto);
+		return "성공";
 	}
 }

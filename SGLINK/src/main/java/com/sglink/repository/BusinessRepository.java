@@ -18,6 +18,8 @@ public interface BusinessRepository extends JpaRepository<Business, String> {
 
 	Business findOneByBusiId(String busiId);
 	
+	static String updateBusinessProcess = "update business set process = :busiProcess where busi_id=:busiId";
+	
 	static String updateBusinessReservation = "update business set reservation = :reservation where busi_id=:busiId";
 
 	@Transactional
@@ -25,12 +27,11 @@ public interface BusinessRepository extends JpaRepository<Business, String> {
 	@Query(value = updateBusinessReservation, nativeQuery = true)
 	void updateBusinessReservation(@Param("busiId") String busiId, @Param("reservation") String reservation);
 	
-	static String updateBusinessProcess = "update business set process = :business where busi_id=:busiId";
 
 	@Transactional
 	@Modifying
 	@Query(value = updateBusinessProcess, nativeQuery = true)
-	void updateBusinessProcess(@Param("busiId") String busiId, @Param("business") String business);
+	void updateBusinessProcess(@Param("busiId") String busiId, @Param("busiProcess") String business);
 
 	Page<Business> findByProcess(Pageable pageable,Process process);
 	

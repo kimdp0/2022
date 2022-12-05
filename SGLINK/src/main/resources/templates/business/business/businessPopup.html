@@ -30,12 +30,12 @@
 			<img th:each="imgSrc: ${info.img}"
 				th:src="${imgSrc.stored_file_path}">
 			<p>사업ID</p>
-			<h2 th:text="${info.equiId}"></h2>
+			<h2 th:text="${info.busiId}"></h2>
 			<p>사업명</p>
-			<h2 th:text="${info.equiName}"></h2>
+			<h2 th:text="${info.busiName}"></h2>
 		</div>
 		<div class="sec_cal">
-			<form id="frm" class="frm" method="post" action="/equipment/popup"
+			<form id="frm" class="frm" method="post" action="/business/popup"
 				role="form" th:object="${errDto}">
 				<div class="input">
 					<input type="hidden" th:field="${info.busiId}"> <input
@@ -51,8 +51,7 @@
 				</div>
 			</form>
 		</div>
-	</div>
-
+	</div>	
 	<script th:inline="javascript">
 
 	
@@ -73,7 +72,7 @@
 					    }).then((result) => {
 					      if (result.isConfirmed) {
 					    	  let frm = $("#frm");
-					    		frm.attr("action", "/equipment/popup");
+					    		frm.attr("action", "/business/popup");
 					    		frm.attr("method", "post");
 					    		frm.submit();
 					      }
