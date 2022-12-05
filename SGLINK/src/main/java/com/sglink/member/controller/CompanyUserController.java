@@ -19,11 +19,44 @@ public class CompanyUserController {
 	private final MemberService memberService;
 	
 	
-	@GetMapping(value="/business/list")
-	public String busiListPage() {
+	@GetMapping("/business/list")
+	public String businessListPage(Model model, @RequestParam(required= false, defaultValue= "0") Integer page,
+			@RequestParam(required = false, defaultValue= "10") Integer size, Principal principal)throws Exception{
+		try {
+			String userId = principal.getName();
+			model.addAttribute("resultMap", memberService.selectBusinessReservation(userId,page, size));
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
 		return "/member/comuser/comuserBusiList";
 	}
 	
+	@GetMapping("/business/list/approve")
+	public String approveBusinessReservation(@RequestParam("id")Long id,@RequestParam("busiProcess")String busiProcess) {
+		memberService.approveBusinessReservation(id,busiProcess);
+		return "redirect:/comuser/business/list";
+	}
+	
+	@GetMapping("/business/management")
+	public String businessManagement(Model model, @RequestParam(required= false, defaultValue= "0") Integer page,
+			@RequestParam(required = false, defaultValue= "10") Integer size, Principal principal)throws Exception{
+		try {
+			String userId = principal.getName();
+			model.addAttribute("resultMap", memberService.selectBusiness(userId,page, size));
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return "/member/comuser/comuserBusiManagement";
+	}
+	
+	@GetMapping("/business/management/possible")
+	public String possibleBusiness(@RequestParam("busiId")String busiId,@RequestParam("reservation")String reservation) {
+		memberService.possibleBusiness(busiId,reservation);
+		return "redirect:/comuser/business/management";
+	}
+
+
+
 	@GetMapping("/equipment/list")
 	public String equipmentListPage(Model model, @RequestParam(required= false, defaultValue= "0") Integer page,
 			@RequestParam(required = false, defaultValue= "10") Integer size, Principal principal)throws Exception{
@@ -61,6 +94,7 @@ public class CompanyUserController {
 		return "redirect:/comuser/equipment/management";
 	}
 
+	
 
 
 }

@@ -38,6 +38,7 @@ public class EquipmentResponseDto {
 	private Process process;
 	
 	private LocalDateTime registerTime;
+	
 	public EquipmentResponseDto(Equipment entity) {
 		this.equiId=entity.getEquiId();
 		this.equiName=entity.getEquiName();

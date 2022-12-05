@@ -14,12 +14,18 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.sglink.business.dto.BusinessResponseDto;
 import com.sglink.common.constant.Process;
+import com.sglink.entity.Business;
+import com.sglink.entity.BusinessReservation;
 import com.sglink.entity.Equipment;
 import com.sglink.entity.EquipmentReservation;
 import com.sglink.entity.Member;
 import com.sglink.equipment.dto.EquipmentResponseDto;
+import com.sglink.member.dto.BusinessReservationResponseDto;
 import com.sglink.member.dto.EquipmentReservationResponseDto;
+import com.sglink.repository.BusinessRepository;
+import com.sglink.repository.BusinessReservationRepository;
 import com.sglink.repository.EquipmentRepository;
 import com.sglink.repository.EquipmentReservationRepository;
 import com.sglink.repository.MemberRepository;
@@ -32,7 +38,9 @@ import lombok.RequiredArgsConstructor;
 public class MemberService implements UserDetailsService {
 	private final MemberRepository memberRepository;
 	private final EquipmentRepository equipmentRepository;
+	private final BusinessRepository businessRepository;
 	private final EquipmentReservationRepository equipmentReservationRepository;
+	private final BusinessReservationRepository businessReservationRepository;
 	
 
 	public Member saveMember(Member member) {
@@ -137,6 +145,60 @@ public class MemberService implements UserDetailsService {
 		} else if (reservation.equals("POSSIBLE")) {
 			String process = "IMPOSSIBLE";
 			equipmentRepository.updateEquipmentReservation(equiId, process);
+		}
+
+	}
+	
+
+	
+	@Transactional(readOnly = true)
+	public HashMap<String, Object> selectBusinessReservation(String userId,Integer page, Integer size) {
+
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		Page<BusinessReservation> list = businessReservationRepository
+				.findByBusiRegisterId(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "startDate")),userId);
+
+		resultMap.put("list", list.stream().map(BusinessReservationResponseDto::new).collect(Collectors.toList()));
+		resultMap.put("paging", list.getPageable());
+		resultMap.put("totalCnt", list.getTotalElements());
+		resultMap.put("totalPage", list.getTotalPages());
+
+		return resultMap;
+	}
+	
+	@Transactional(readOnly = true)
+	public HashMap<String, Object> selectBusiness(String userId,Integer page, Integer size) {
+
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		Page<Business> list = businessRepository
+				.findByBusiRegisterIdAndProcess(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "registerTime")),userId,Process.APPROVE);
+
+		resultMap.put("list", list.stream().map(BusinessResponseDto::new).collect(Collectors.toList()));
+		resultMap.put("paging", list.getPageable());
+		resultMap.put("totalCnt", list.getTotalElements());
+		resultMap.put("totalPage", list.getTotalPages());
+
+		return resultMap;
+	}
+	
+	public void approveBusinessReservation(Long id, String busiProcess) {
+		if (busiProcess.equals("UNAPPROVE")) {
+			String process = "APPROVE";
+			businessReservationRepository.updateBusinessReservationProcess(id, process);
+		} else if (busiProcess.equals("APPROVE")) {
+			String process = "UNAPPROVE";
+			businessReservationRepository.updateBusinessReservationProcess(id, process);
+		}
+
+	}
+	
+	public void possibleBusiness(String busiId, String reservation) {
+		if (reservation.equals("IMPOSSIBLE")) {
+			String process = "POSSIBLE";
+			businessRepository.updateBusinessReservation(busiId, process);
+		} else if (reservation.equals("POSSIBLE")) {
+			String process = "IMPOSSIBLE";
+			businessRepository.updateBusinessReservation(busiId, process);
 		}
 
 	}
