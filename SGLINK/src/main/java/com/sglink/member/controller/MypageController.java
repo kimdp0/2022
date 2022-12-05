@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sglink.entity.Member;
 import com.sglink.member.dto.MemberUpdateDto;
@@ -65,6 +66,18 @@ public class MypageController {
 		System.out.println(member);
 		model.addAttribute("info", member);
 		return "/member/mypage/mypage";
+	}
+	
+	@GetMapping(value="/equipment/list")
+	public String equipmentReservationListPage(Model model, @RequestParam(required= false, defaultValue= "0") Integer page,
+			@RequestParam(required = false, defaultValue= "10") Integer size, Principal principal) throws Exception{
+		try {
+			String userId = principal.getName();
+			model.addAttribute("resultMap", memberService.selectEquipmentReservation(userId,page, size));
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return "/member/mypage/mypageEquiList";
 	}
 	
 }
