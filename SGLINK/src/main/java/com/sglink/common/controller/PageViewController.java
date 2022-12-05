@@ -291,4 +291,9 @@ public class PageViewController {
 			String userId = principal.getName();
 			return userId;
 		}
+		
+		@GetMapping("/ex")
+		public String ex(){
+			return "/business/business/ex";
+		}
 }
