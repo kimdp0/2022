@@ -80,4 +80,16 @@ public class MypageController {
 		return "/member/mypage/mypageEquiList";
 	}
 	
+	@GetMapping(value="/business/list")
+	public String businessReservationListPage(Model model, @RequestParam(required= false, defaultValue= "0") Integer page,
+			@RequestParam(required = false, defaultValue= "10") Integer size, Principal principal) throws Exception{
+		try {
+			String userId = principal.getName();
+			model.addAttribute("resultMap", memberService.selectBusinessReservation(userId,page, size));
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return "/member/mypage/mypageBusiList";
+	}
+	
 }

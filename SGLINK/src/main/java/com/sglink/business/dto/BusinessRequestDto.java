@@ -31,6 +31,9 @@ public class BusinessRequestDto {
 	private String busiTel;
 	
 	private List<FileEntity> busiImg;
+	
+	private String startDate;
+	private String endDate;
 
 	
 	public Business toEntity() {
@@ -42,7 +45,9 @@ public class BusinessRequestDto {
 				.busiRegisterId(busiRegisterId)
 				.busiRegisterName(busiRegisterName)
 				.busiTel(busiTel)
-				.busiImg(busiImg) 
+				.busiImg(busiImg)
+				.startDate(startDate)
+				.endDate(endDate)
 				.build();
 	}
 	
