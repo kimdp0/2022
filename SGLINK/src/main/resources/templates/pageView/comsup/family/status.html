@@ -74,18 +74,22 @@
 								<th width="7%">번호</th>
 								<th width="15%">기업/기관명</th>
 								<th width="15%">전화번호</th>
-								<th width="18%">업종</th>
-								<th width="35%">주요상품</th>
+								<th width="35%">업종</th>
+								<th width="18%">주요상품</th>
 								<th width="10%">홈페이지</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>1</td>
-								<td>중앙</td>
-								<td>010-1234-5678</td>
-								<td>교육/개발</td>
-								<td>개발자</td>
+							<tr th:each="list,index : ${resultMap.list}"
+								th:with="paging=${resultMap.paging}">
+								<td class="com1 borderside"><span th:text="${index.count}"></span></td>
+								<td class="com2 borderside"><span
+									th:text="${list.comUniname}"></span></td>
+								<td class="com5 borderside"><span th:text="${list.comTel}"></span></td>
+								<td class="com4 borderside"><span
+									th:text="${list.comSectors}"></span></td>
+								<td class="com3 borderside"><span
+									th:text="${list.comProduct}"></span></td>
 								<td>-</td>
 							</tr>
 						</tbody>
