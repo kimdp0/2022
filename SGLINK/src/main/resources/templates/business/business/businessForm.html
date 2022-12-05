@@ -41,8 +41,10 @@
 								th:value="${userInfo.userUniname}" readonly="readonly">
 						</div>
 						<div class="ct">
-							<input type="text" class="readonly" name="busiRegister"
-								th:value="${userInfo.userName}" readonly="readonly">
+							<input type="text" class="readonly" name="busiRegisterId"
+								th:value="${userInfo.userId}" readonly="readonly">
+								<input type="hidden" class="readonly" name="busiRegisterName"
+								th:value="${userInfo.userName}">
 						</div>
 						<div class="ct">
 							<input type="text" class="readonly" name="busiTel"

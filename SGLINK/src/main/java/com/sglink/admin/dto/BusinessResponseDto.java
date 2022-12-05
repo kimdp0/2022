@@ -16,7 +16,8 @@ public class BusinessResponseDto {
 	private String busiId;
 	private String busiUniname;
 	private String busiName;
-	private String busiRegister;
+	private String busiRegisterId;
+	private String busiRegisterName;
 	private String busiTel;
 	private Process busiProcess;
 	private Reservation reservation;
@@ -26,7 +27,8 @@ public class BusinessResponseDto {
 		this.busiId = business.getBusiId();
 		this.busiUniname = business.getBusiUniname();
 		this.busiName = business.getBusiName();
-		this.busiRegister =business.getBusiRegister();
+		this.busiRegisterId =business.getBusiRegisterId();
+		this.busiRegisterName =business.getBusiRegisterName();
 		this.busiTel = business.getBusiTel();
 		this.busiProcess =business.getProcess();
 		this.reservation=business.getReservation();

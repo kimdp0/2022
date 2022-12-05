@@ -24,7 +24,9 @@ public class BusinessRequestDto {
 
 	private String busiContent;
 	
-	private String busiRegister;
+	private String busiRegisterId;
+	
+	private String busiRegisterName;
 	
 	private String busiTel;
 	
@@ -37,7 +39,8 @@ public class BusinessRequestDto {
 				.busiName(busiName)
 				.busiUniname(busiUniname)
 				.busiContent(busiContent)
-				.busiRegister(busiRegister)
+				.busiRegisterId(busiRegisterId)
+				.busiRegisterName(busiRegisterName)
 				.busiTel(busiTel)
 				.busiImg(busiImg) 
 				.build();

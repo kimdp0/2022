@@ -31,18 +31,24 @@ public class BusinessResponseDto {
 	
 	private String busiTel;
 	
+	private Reservation reservation;
+	
 	private List<FileEntity> img;
+	
+	private Process process;
 	
 	private LocalDateTime registerTime;
 	
 	public BusinessResponseDto(Business entity) {
 		this.busiId=entity.getBusiId();
 		this.busiName=entity.getBusiName();
-		this.busiRegister=entity.getBusiRegister();
+		this.busiRegister=entity.getBusiRegisterName();
 		this.busiTel=entity.getBusiTel();
 		this.busiUniname=entity.getBusiUniname();
 		this.busiContent=entity.getBusiContent();
 		this.img=entity.getBusiImg();
+		this.process =entity.getProcess();
+		this.reservation = entity.getReservation();
 		this.registerTime = entity.getRegisterTime();
 	}
 }

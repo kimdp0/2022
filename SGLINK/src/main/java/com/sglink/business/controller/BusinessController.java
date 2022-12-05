@@ -76,7 +76,7 @@ public class BusinessController {
 		try {
 			if (businessRequestDto.getBusiId() != null) {
 				Business business = businessService.viewfindById(id).get();
-				String registerId = business.getBusiRegister();
+				String registerId = business.getBusiRegisterId();
 				String loginUserId = principal.getName();
 				model.addAttribute("loginUserId", loginUserId);
 				model.addAttribute("registerId", registerId);
