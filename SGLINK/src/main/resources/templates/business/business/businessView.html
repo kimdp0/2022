@@ -29,8 +29,10 @@
 				</ul>
 			</div>
 			<div class="btn">
-				<button class="b1">예약하기</button>
-				<button class="b2">수정하기</button>
+			<p th:if="${info.reservation.toString() == 'IMPOSSIBLE'}">현재 예약이 불가능합니다</p>
+				<div th:if="${info.reservation.toString() == 'POSSIBLE'}" class="b1">	
+					<a  onclick="reservation();">예약하기</a>
+				</div>
 			</div>
 			<div class="explain">
 				<h2>상세정보</h2>

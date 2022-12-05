@@ -23,15 +23,18 @@
 				<br>
 				<div class="h2 article">
 					<div class="app_list">
-						<ul  th:each="list : ${resultMap.list}" >
-							<li th:each="imgSrc: ${list.img}" ><a th:href="@{./view(busiId=${list.busiId})}"> <span
+						<ul th:each="list : ${resultMap.list}">
+							<li th:each="imgSrc: ${list.img}"><a
+								th:href="@{./view(busiId=${list.busiId})}"> <span
 									class="photo"> <img th:src="${imgSrc.stored_file_path}"
 										alt>
 								</span> <br> <span class="title" th:text="${list.busiName}"></span>
 									<br> <span class="info" th:text="${list.busiRegister}"></span>
-									<br> <span th:text="${list.busiTel}"></span> <br> <span
-									class="state none"> 예약가능 </span>
-							</a></li>
+									<br> <span th:text="${list.busiTel}"></span></a> <span class="unapprove"
+									th:if="${list.reservation.toString()=='IMPOSSIBLE'}">예약불가</span><span
+									class="approve"
+									th:if="${list.reservation.toString()=='POSSIBLE'}">예약가능</span></td><br> 
+							</li>
 
 						</ul>
 						<br>
