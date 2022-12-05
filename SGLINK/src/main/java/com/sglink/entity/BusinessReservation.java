@@ -53,8 +53,8 @@ public class BusinessReservation{
 
 	@Builder
 	public BusinessReservation(String busiId, String busiName ,Member member,
-			/*String startDate,*/
-			String endDate,
+			/*String startDate,
+			String endDate,*/
 			Process process,
 			String busiRegisterId) {
 

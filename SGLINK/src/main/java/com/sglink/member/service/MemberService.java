@@ -156,7 +156,7 @@ public class MemberService implements UserDetailsService {
 
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		Page<BusinessReservation> list = businessReservationRepository
-				.findByBusiRegisterId(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "startDate")),userId);
+				.findByBusiRegisterId(PageRequest.of(page, size), userId);
 
 		resultMap.put("list", list.stream().map(BusinessReservationResponseDto::new).collect(Collectors.toList()));
 		resultMap.put("paging", list.getPageable());
