@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.sglink.common.constant.Process;
 import com.sglink.entity.Equipment;
+import com.sglink.entity.Member;
 import com.sglink.equipment.dto.EquipmentRequestDto;
 import com.sglink.equipment.dto.EquipmentResponseDto;
 import com.sglink.member.dto.EquipmentReservationRequestDto;
@@ -34,7 +35,8 @@ public class EquipmentService {
 	
 
 	@Transactional
-	public String save(EquipmentRequestDto equipmentRequestDto) {
+	public String save(EquipmentRequestDto equipmentRequestDto ,String equiIdck) {
+		validateDuplicateEquipment(equiIdck);
 		return equipmentRepository.save(equipmentRequestDto.toEntity()).getEquiId();
 	}
 	
@@ -59,6 +61,13 @@ public class EquipmentService {
 	}
 	public EquipmentResponseDto findById(String id) {
 		return new EquipmentResponseDto(equipmentRepository.findByEquiIdAndProcess(id,Process.APPROVE).get());
+	}
+	
+	private void validateDuplicateEquipment(String equiIdck) {
+		Equipment findEquipment = equipmentRepository.findOneByEquiId(equiIdck);
+		if (findEquipment != null) {
+			throw new IllegalStateException("이미 장비가 존재합니다."); // 이미 장비가 있는경우 예외를 발생시킨다.
+		}
 	}
 	
 }

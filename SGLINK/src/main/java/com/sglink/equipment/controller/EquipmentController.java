@@ -66,10 +66,18 @@ public class EquipmentController {
 
 	@PostMapping(value = "/new")
 	public String createEquipment(@ModelAttribute("equipmentRequestDto") EquipmentRequestDto equipmentRequestDto,
-			Model model, @RequestParam("files") List<MultipartFile> files) throws Exception {
-		String equiId = equipmentService.save(equipmentRequestDto);
-		Equipment equipment = equipmentService.findByEquiId(equiId);
-		fileUploadService.addFile(files, equiId, equipment);
+			Model model, 
+			@RequestParam("files") List<MultipartFile> files) throws Exception {
+		try {
+			String equiIdck = equipmentRequestDto.getEquiId();
+			String equiId = equipmentService.save(equipmentRequestDto,equiIdck);
+			Equipment equipment = equipmentService.findByEquiId(equiId);
+			fileUploadService.addFile(files, equiId, equipment);
+		} catch (IllegalStateException e) {
+			model.addAttribute("errorMessage", e.getMessage());
+			return "/equipment/new";
+		}
+		
 		return "redirect:/equipment/list";
 	}
 	
