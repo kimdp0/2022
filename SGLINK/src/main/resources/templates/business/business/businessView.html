@@ -32,11 +32,11 @@
 					<span th:text="${info.busiId}"></span>
 				</h3>
 				<ul class="wrapping">
-					<li><strong><span th:text="${info.busiName}"></span></strong></li>
-					<li><span th:text="${info.busiRegister}"></span></li>
-					<li><span th:text="${info.busiTel}"></span></li>
-					<li><span th:text="${info.startDate}"></span></li>
-					<li><span th:text="${info.endDate}"></span></li>
+					<li><strong>사업명 : <span th:text="${info.busiName}"></span></strong></li>
+					<li>등록자명 : <span th:text="${info.busiRegister}"></span></li>
+					<li>담당자전화번호 : <span th:text="${info.busiTel}"></span></li>
+					<li>사업진행기간 : <span th:text="${info.startDate}"></span> ~
+					<span th:text="${info.endDate}"></span></li>
 					<br>
 				</ul>
 			</div>
