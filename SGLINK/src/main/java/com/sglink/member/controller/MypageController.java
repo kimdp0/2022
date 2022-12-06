@@ -74,7 +74,7 @@ public class MypageController {
 		try {
 			String userId = principal.getName();
 			Member member = memberService.findbyId(userId);
-			model.addAttribute("resultMap", memberService.selectEquipmentReservation(member,page, size));
+			model.addAttribute("resultMap", memberService.MyselectEquipmentReservation(member,page, size));
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());
 		}
@@ -87,7 +87,7 @@ public class MypageController {
 		try {
 			String userId = principal.getName();
 			Member member = memberService.findbyId(userId) ;
-			model.addAttribute("resultMap", memberService.selectBusinessReservation(member ,page, size));
+			model.addAttribute("resultMap", memberService.MyselectBusinessReservation(member ,page, size));
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());
 		}

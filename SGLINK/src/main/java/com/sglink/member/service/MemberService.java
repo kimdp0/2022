@@ -96,9 +96,24 @@ public class MemberService implements UserDetailsService {
 		return memberRepository.findByUserId(id);
 	}
 	
+	@Transactional(readOnly = true)
+	public HashMap<String, Object> selectEquipmentReservation(String UserId,Integer page, Integer size) {
+
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		Page<EquipmentReservation> list = equipmentReservationRepository
+				.findByEquiRegisterId(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "startDate")), UserId);
+
+		resultMap.put("list", list.stream().map(EquipmentReservationResponseDto::new).collect(Collectors.toList()));
+		resultMap.put("paging", list.getPageable());
+		resultMap.put("totalCnt", list.getTotalElements());
+		resultMap.put("totalPage", list.getTotalPages());
+
+		return resultMap;
+	}
+	
 	
 	@Transactional(readOnly = true)
-	public HashMap<String, Object> selectEquipmentReservation(Member member,Integer page, Integer size) {
+	public HashMap<String, Object> MyselectEquipmentReservation(Member member,Integer page, Integer size) {
 
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		Page<EquipmentReservation> list = equipmentReservationRepository
@@ -149,10 +164,24 @@ public class MemberService implements UserDetailsService {
 
 	}
 	
+	@Transactional(readOnly = true)
+	public HashMap<String, Object> selectBusinessReservation(String UserId ,Integer page, Integer size) {
+
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		Page<BusinessReservation> list = businessReservationRepository
+				.findByBusiRegisterId(PageRequest.of(page, size), UserId);
+
+		resultMap.put("list", list.stream().map(BusinessReservationResponseDto::new).collect(Collectors.toList()));
+		resultMap.put("paging", list.getPageable());
+		resultMap.put("totalCnt", list.getTotalElements());
+		resultMap.put("totalPage", list.getTotalPages());
+
+		return resultMap;
+	}
 
 	
 	@Transactional(readOnly = true)
-	public HashMap<String, Object> selectBusinessReservation(Member member,Integer page, Integer size) {
+	public HashMap<String, Object> MyselectBusinessReservation(Member member,Integer page, Integer size) {
 
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		Page<BusinessReservation> list = businessReservationRepository

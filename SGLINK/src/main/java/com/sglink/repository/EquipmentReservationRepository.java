@@ -22,4 +22,5 @@ public interface EquipmentReservationRepository extends JpaRepository<EquipmentR
 	void updateEquipmentReservationProcess(@Param("id") Long id, @Param("process") String equiProcess);
 
 	Page<EquipmentReservation> findByMember(Pageable pageable, Member member);
+	Page<EquipmentReservation> findByEquiRegisterId(Pageable pageable, String UserId);
 }

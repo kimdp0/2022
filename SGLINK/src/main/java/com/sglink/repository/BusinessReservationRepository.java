@@ -22,4 +22,5 @@ public interface BusinessReservationRepository extends JpaRepository<BusinessRes
 	void updateBusinessReservationProcess(@Param("id") Long id, @Param("process") String busiProcess);
 
 	Page<BusinessReservation> findByMember(Pageable pageable, Member member);
+	Page<BusinessReservation> findByBusiRegisterId(Pageable pageable, String UserId);
 }
