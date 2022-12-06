@@ -70,14 +70,14 @@ h2.bl.sq {
  	padding: 5px; 
 }
 
-.bl.md {
-	padding-left: 15px;
+.bm2{
+	margin-left: 35px;
 	margin-bottom: 15px;
 	height: 15px;
 	background:
 		url(http://linc.sogang.ac.kr/front/images/common/omni_2x2_000_50.png)
 		no-repeat;
-	background-position: 0.1em 0.7em;
+	background-position: -0.1em 0.9em;
 	margin: 5px;
  	padding: 5px; 
 }
