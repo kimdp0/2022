@@ -7,39 +7,43 @@
 
 .swal2-title {
 	font-size: 15px !important;
-	text-align:center !important;
+	text-align: center !important;
 }
 
 #swal2-content {
 	font-size: 12px !important;
-	margin-bottom:-20px !important;
+	margin-bottom: -20px !important;
 }
-.swal2-popup{
-	width:250px !important;
-	height:200px !important;
+
+.swal2-popup {
+	width: 250px !important;
+	height: 200px !important;
 }
-.swal2-icon{
+
+.swal2-icon {
 	width: 60px !important;
-	height: 60px !important;	
-	top:-10px !important;
+	height: 60px !important;
+	top: -10px !important;
 	margin-bottom: 10px !important;
 }
-.swal2-cancel{
-	width:55px !important;
+
+.swal2-cancel {
+	width: 55px !important;
 	height: 30px !important;
 	font-size: 12px !important;
 	line-height: 5px !important;
-	text-align:center !important;
+	text-align: center !important;
 }
-.swal2-confirm{
-	width:55px !important;
+
+.swal2-confirm {
+	width: 55px !important;
 	height: 30px !important;
 	font-size: 12px !important;
 	line-height: 5px !important;
 }
 
-.swal2-html-container{
-	width:160px !important;
+.swal2-html-container {
+	width: 160px !important;
 }
 
 .title {
@@ -83,7 +87,7 @@
 	margin: 0px;
 	width: 100px;
 	height: 30px;
-	top: -120px;
+	top: -121px;
 	left: 180px;
 	font-size: 20px;
 	line-height: 23px;
@@ -91,7 +95,7 @@
 }
 
 .sec_cal {
-	margin-top:10px;
+	margin-top: 10px;
 	width: 300px;
 	padding: 10px;
 	position: relative;
@@ -110,7 +114,7 @@
 }
 
 .input {
-	margin-left:-20px;
+	margin-left: -20px;
 	margin-top: 10px;
 	text-align: center;
 }
@@ -156,5 +160,14 @@
 }
 
 .b1 a {
-	color:black;
+	color: black;
+}
+.date{
+	margin-bottom:-35px;
+}
+.date li{
+	margin-left:-20px;
+	font-size:14px;
+	font-weight:bold;
+	list-style:none;
 }

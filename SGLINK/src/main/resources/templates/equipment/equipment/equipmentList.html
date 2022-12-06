@@ -29,9 +29,9 @@
 								th:href="@{./view(equiId=${list.equiId})}"> <span
 									class="photo"> <img th:src="${imgSrc.stored_file_path}"
 										alt>
-								</span> <br> <span class="title" th:text="${list.equiName}"></span>
-									<br> <span class="info" th:text="${list.equiRegister}"></span>
-									<br> <span th:text="${list.equiTel}"></span></a> <span class="unapprove"
+								</span> <br> 장비명 : <span class="title" th:text="${list.equiName}"></span>
+									<br> 담당자명 : <span class="info" th:text="${list.equiRegister}"></span>
+									<br> 등록자전화번호 : <span th:text="${list.equiTel}"></span></a> <span class="unapprove"
 									th:if="${list.reservation.toString()=='IMPOSSIBLE'}">예약불가</span><span
 									class="approve"
 									th:if="${list.reservation.toString()=='POSSIBLE'}">예약가능</span></td><br> 
