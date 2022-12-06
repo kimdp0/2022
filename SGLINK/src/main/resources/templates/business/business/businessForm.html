@@ -25,9 +25,6 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-
-
 </head>
 <body>
 	<div layout:fragment="content" id="content">
@@ -79,6 +76,8 @@
 						<p>첨부파일</p>
 						<p class="txt2">* 사업 공고 관련 이미지 필수로 제출해주셔야합니다.</p>
 						<input type="file" name="files" />
+						<input type="text" id="startDate" name="startDate" readonly>
+			~ <input type="text" id="endDate" name="endDate" readonly>
 
 					</div>
 					<div class="nt">
@@ -91,8 +90,7 @@
 
 
 			</form>
-			<input type="text" id="startDate" name="startDate" readonly>
-			~ <input type="text" id="endDate" name="endDate" readonly>
+			
 		</div>
 		
 		<script th:inline="javascript">

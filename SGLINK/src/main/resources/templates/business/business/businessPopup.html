@@ -33,12 +33,16 @@
 			<h2 th:text="${info.busiId}"></h2>
 			<p>사업명</p>
 			<h2 th:text="${info.busiName}"></h2>
+			<p th:text="${info.startDate}"></p>
+			<p th:text="${info.endDate}"></p>
 		</div>
 		<div class="sec_cal">
 			<form id="frm" class="frm" method="post" action="/business/popup"
 				role="form" th:object="${errDto}">
 				<div class="input">
-					<input type="hidden" th:field="${info.busiId}"> <input
+					<input type="hidden" th:field="${info.startDate}"> <input
+						type="hidden" th:field="${info.endDate}"> <input
+						type="hidden" th:field="${info.busiId}"><input
 						type="hidden" th:field="${info.busiName}"> <input
 						type="hidden" th:field="${info.reservation}"> <input
 						type="hidden" th:field="${info.busiRegisterId}"> <input
@@ -51,7 +55,7 @@
 				</div>
 			</form>
 		</div>
-	</div>	
+	</div>
 	<script th:inline="javascript">
 
 	

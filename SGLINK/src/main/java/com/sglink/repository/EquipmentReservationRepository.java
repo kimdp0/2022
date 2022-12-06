@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.sglink.entity.EquipmentReservation;
+import com.sglink.entity.Member;
 
 public interface EquipmentReservationRepository extends JpaRepository<EquipmentReservation, Long> {
 
@@ -20,5 +21,6 @@ public interface EquipmentReservationRepository extends JpaRepository<EquipmentR
 	@Query(value = updateEquipmentReservationProcess, nativeQuery = true)
 	void updateEquipmentReservationProcess(@Param("id") Long id, @Param("process") String equiProcess);
 
-	Page<EquipmentReservation> findByEquiRegisterId(Pageable pageable, String userId);
+	Page<EquipmentReservation> findByMember(Pageable pageable, Member member);
+	Page<EquipmentReservation> findByEquiRegisterId(Pageable pageable, String UserId);
 }

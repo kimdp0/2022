@@ -73,7 +73,8 @@ public class MypageController {
 			@RequestParam(required = false, defaultValue= "10") Integer size, Principal principal) throws Exception{
 		try {
 			String userId = principal.getName();
-			model.addAttribute("resultMap", memberService.selectEquipmentReservation(userId,page, size));
+			Member member = memberService.findbyId(userId);
+			model.addAttribute("resultMap", memberService.MyselectEquipmentReservation(member,page, size));
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());
 		}
@@ -85,7 +86,8 @@ public class MypageController {
 			@RequestParam(required = false, defaultValue= "10") Integer size, Principal principal) throws Exception{
 		try {
 			String userId = principal.getName();
-			model.addAttribute("resultMap", memberService.selectBusinessReservation(userId,page, size));
+			Member member = memberService.findbyId(userId) ;
+			model.addAttribute("resultMap", memberService.MyselectBusinessReservation(member ,page, size));
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());
 		}

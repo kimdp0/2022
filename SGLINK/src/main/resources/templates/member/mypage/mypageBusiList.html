@@ -28,17 +28,17 @@
 						<tbody class="">
 							<tr th:each="list,index : ${resultMap.list}"
 								th:with="paging=${resultMap.paging}">
-								<td class="com1 borderside"><span th:text="${list.equiId}"></span></td>
+								<td class="com1 borderside"><span th:text="${list.busiId}"></span></td>
 								<td class="com2 borderside"><span
-									th:text="${list.equiName}"></span></td>
+									th:text="${list.busiName}"></span></td>
 								<td class="com3 borderside"><span
 									th:text="${list.startDate}"></span></td>
 								<td class="com4 borderside"><span
 									th:text="${list.endDate}"></span></td>
 								<td class="com5 borderside"><span class="unapprove"
-									th:if="${list.equiProcess.toString()=='UNAPPROVE'}">승인되지않음</span><span
+									th:if="${list.busiProcess.toString()=='UNAPPROVE'}">승인되지않음</span><span
 									class="approve"
-									th:if="${list.equiProcess.toString()=='APPROVE'}">승인됨</span></td>
+									th:if="${list.busiProcess.toString()=='APPROVE'}">승인됨</span></td>
 							<tr>
 						</tbody>
 					</table>
