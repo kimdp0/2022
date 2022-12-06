@@ -34,9 +34,7 @@ public class EquipmentService {
 	}
 	
 
-	@Transactional
-	public String save(EquipmentRequestDto equipmentRequestDto ,String equiIdck) {
-		validateDuplicateEquipment(equiIdck);
+	public String save(EquipmentRequestDto equipmentRequestDto) {
 		return equipmentRepository.save(equipmentRequestDto.toEntity()).getEquiId();
 	}
 	
@@ -61,13 +59,6 @@ public class EquipmentService {
 	}
 	public EquipmentResponseDto findById(String id) {
 		return new EquipmentResponseDto(equipmentRepository.findByEquiIdAndProcess(id,Process.APPROVE).get());
-	}
-	
-	private void validateDuplicateEquipment(String equiIdck) {
-		Equipment findEquipment = equipmentRepository.findOneByEquiId(equiIdck);
-		if (findEquipment != null) {
-			throw new IllegalStateException("이미 장비가 존재합니다."); // 이미 장비가 있는경우 예외를 발생시킨다.
-		}
 	}
 	
 }
