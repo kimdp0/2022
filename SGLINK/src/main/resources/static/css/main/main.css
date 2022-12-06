@@ -227,11 +227,23 @@ div[class*="cad"]:hover {
 .tb a {
 	text-decoration: none;
 	font-size: 14px;
+	overflow: hidden; 
+	text-overflow: ellipsis;
+	white-space : nowrap;
+	word-break:break-all;
+	 display: inline-block;
+	width:300px;
+	height:20px;
+	color: #ffffff;
 }
 
 .noto {
+	
 	color: #ffffff;
+	
+
 }
+
 
 .active p {
 	width: 420px;
@@ -354,4 +366,19 @@ ul{
     transition: all 0.25s cubic-bezier(1, .01, .32, 1);
 }
  
+ 
+/*  .word {
+        
+    
+        white-space: normal;
+        line-height: 1.2;
 
+        font-weight: bolder !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+        word-wrap: break-word;
+        display: -webkit-box;
+        -webkit-line-clamp: 1 ;
+        -webkit-box-orient: vertical;
+ } */
