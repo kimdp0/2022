@@ -41,6 +41,13 @@ public class BusinessController {
 		model.addAttribute("resultMap", businessService.findAll(page, size));
 		return "/business/business/businessList";
 	}
+	
+	@RequestMapping(value = "/list2", method = RequestMethod.GET)
+	public String viewBusiness2( Model model, @RequestParam(required = false, defaultValue = "0") Integer page,
+			@RequestParam(required = false, defaultValue = "9") Integer size){
+		model.addAttribute("resultMap", businessService.findAll(page, size));
+		return "/pageView/comsup/infra/businessList";
+	}
 
 	@GetMapping(value = "/new")
 	public String newBusiness(Model model, Principal principal) {
@@ -67,7 +74,7 @@ public class BusinessController {
 		String busiId = businessService.save(businessRequestDto);
 		Business business = businessService.findByBusiId(busiId);
 		fileUploadService.addFile(files, busiId, business);
-		return "redirect:/business/list";
+		return "redirect:/business/list2";
 	}
 	
 	@GetMapping("/view")
