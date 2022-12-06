@@ -35,7 +35,7 @@ ul, li {
      position: relative;
      float: left;
      width: 240px;
-     height: 280px;
+     height: 300px;
      margin: 0 35px 35px 0;
      padding: 9px;
      border: 1px solid #d3d3d3;
@@ -64,13 +64,13 @@ ul, li {
 }
 
 .approve{
-	margin-left:60px;
+	margin-left:175px;
 	color:green;
 	font-weight: bold;
 }
 
 .unapprove{
-	margin-left:60px;
+	margin-left:175px;
 	color:red;
 	font-weight: bold;
 }
