@@ -4,7 +4,9 @@ html {
     font-size: 10px;
 }
 
-
+.insert{
+	color:green;
+}
 ul, li {
     list-style: none;
 }

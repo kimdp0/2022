@@ -17,9 +17,12 @@ import com.sglink.board.dto.NoticeBoardRequestDto;
 import com.sglink.board.dto.NoticeBoardResponseDto;
 import com.sglink.board.dto.OpeninoBoardRequestDto;
 import com.sglink.board.dto.OpeninoBoardResponseDto;
+import com.sglink.business.dto.BusinessResponseDto;
 import com.sglink.entity.Board;
+import com.sglink.entity.Business;
 import com.sglink.entity.FileBoard;
 import com.sglink.entity.OpeninoBoard;
+import com.sglink.repository.BusinessRepository;
 import com.sglink.repository.FileBoardRepository;
 import com.sglink.repository.FileRepository;
 import com.sglink.repository.MemberRepository;
@@ -36,6 +39,7 @@ public class BoardService {
 	private final FileRepository fileRepository;
 	private final OpeninoBoardRepository openinoboardRepository;
 	private final MemberRepository memberRepository;
+	private final BusinessRepository businessRepository;
 	
 	
 	public FileBoard boardfindById(Long id) {
@@ -75,6 +79,12 @@ public class BoardService {
 //		게시글 순서를 내림차순으로 변경Sort.by(Sort.Direncion.DESC,"registerTime")
 		Page<Board> list= noticeboardRepository.findAll(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC,"registerTime")));
 		Page<OpeninoBoard> list1= openinoboardRepository.findAll(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC,"registerTime")));
+		Page<Business> list2= businessRepository.findAll(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC,"registerTime")));
+		
+		resultMap.put("list2", list2.stream().map(BusinessResponseDto::new).collect(Collectors.toList()));
+		resultMap.put("paging2", list2.getPageable());
+		resultMap.put("totalCnt2", list2.getTotalElements());
+		resultMap.put("totalPage2", list2.getTotalPages());
 		
 		resultMap.put("list1", list1.stream().map(OpeninoBoardResponseDto::new).collect(Collectors.toList()));
 		resultMap.put("paging1", list1.getPageable());
