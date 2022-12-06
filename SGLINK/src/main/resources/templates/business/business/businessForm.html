@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout=http://www.ultraq.net.nz/thymeleaf/layout
-	layout:decorate="~{layouts/layoutCom}" >
+	layout:decorate="~{layouts/layoutCom}">
 <head>
 <meta charset="UTF-8">
 <title>인프라사업신청페이지</title>
@@ -12,7 +12,7 @@
 
 
 <link rel="stylesheet" href="/resources/demos/style.css">
-	
+
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
 	integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ=="
@@ -20,6 +20,7 @@
 
 
 <script src="https://code.jquery.com/jquery-1.12.4.js">
+	
 </script>
 <script src="/js/popup.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -73,11 +74,14 @@
 						<textarea placeholder="내용을 입력해주세요" name="busiContent"></textarea>
 					</div>
 					<div class="ob2">
-						<p>첨부파일</p>
-						<p class="txt2">* 사업 공고 관련 이미지 필수로 제출해주셔야합니다.</p>
+						<p class="txt2">* 사업 공고 관련 이미지 필수로
+							제출해주셔야합니다.</p>
 						<input type="file" name="files" />
-						<input type="text" id="startDate" name="startDate" readonly>
-			~ <input type="text" id="endDate" name="endDate" readonly>
+						<div style="margin-top:5px;">
+						<p class="txt2" style="margin-top:0px;">* 사업 기간은 필수로 지정해주셔야합니다.</p>
+							<input type="text" id="startDate" name="startDate" readonly>
+							~ <input type="text" id="endDate" name="endDate" readonly>
+						</div>
 
 					</div>
 					<div class="nt">
@@ -90,15 +94,15 @@
 
 
 			</form>
-			
+
 		</div>
-		
+
 		<script th:inline="javascript">
 			function application() {
-				let chkStartDate = $("input[name='startDate']").val();
+				let chkstartDate = $("input[name='startDate']").val();
 				let chkendDate = $("input[name='endDate']").val();
 				let imgchk = $("input[name='files']").val();
-				if (imgchk && chkStartDate != "" && chkendDate != "") {
+				if (imgchk != "" && chkstartDate != "" && chkendDate != "") {
 					if (confirm("신청하시겠습니까?")) {
 						let frm = $("#frm");
 						frm.attr("action", "/business/new");
@@ -106,9 +110,12 @@
 						frm.submit();
 
 					}
-				} else {
+				} else if (imgchk == "") {
 					alert("이미지가 선택되지 않았습니다!")
+				} else if (chkstartDate == "" || chkendDate == "") {
+					alert("사업 날짜가 지정되지 않았습니다!")
 				}
+
 			}
 		</script>
 	</div>
