@@ -49,11 +49,12 @@ public class MemberController {
 			Company company = companyService.findByComId(comId);
 			Member member = Member.createComMember(company, memberFormDto, passwordEncoder);
 			memberService.saveMember(member);
+			model.addAttribute("msg", "정상적으로 회원가입되었습니다.");
 		} catch (IllegalStateException e) {
 			model.addAttribute("errorMessage", e.getMessage());
 			return "member/members/comMemberForm";
 		}
-		return "redirect:/";
+		return "member/members/signupsuc";
 	}
 
 	@GetMapping(value = "/stu/new")
@@ -71,11 +72,12 @@ public class MemberController {
 		try {
 			Member member = Member.createStuMember(memberFormDto, passwordEncoder);
 			memberService.saveMember(member);
+			model.addAttribute("msg", "정상적으로 회원가입되었습니다.");
 		} catch (IllegalStateException e) {
 			model.addAttribute("errorMessage", e.getMessage());
 			return "member/members/stuMemberForm";
 		}
-		return "redirect:/";
+		return "member/members/signupsuc";
 	}
 
 	@GetMapping(value = "/login")

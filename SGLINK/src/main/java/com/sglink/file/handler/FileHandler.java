@@ -31,12 +31,10 @@ public class FileHandler {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
 		String current_date = simpleDateFormat.format(new Date());
 
-		// 프로젝트 폴더에 저장하기 위해 절대경로를 설정 (Window 의 Tomcat 은 Temp 파일을 이용한다)
-		String absolutePath = new File("").getAbsolutePath() + "\\";
 
 		// 경로를 지정하고 그곳에다가 저장할 심산이다
-		String path = "src/main/resources/static/img/fileBoard/" + id +"/" + current_date ;
-		String staticPath = "/img/fileBoard/" + id +"/" + current_date ;
+		String path = "C:\\sglink\\equipment\\" + id +"\\" + current_date ;
+		String staticPath = "/img/sglink/fileBoard/" + id +"/" + current_date ;
 		File file = new File(path);
 		// 저장할 위치의 디렉토리가 존지하지 않을 경우
 		if (!file.exists()) {
@@ -86,7 +84,7 @@ public class FileHandler {
 				fileList.add(fileEntity);
 
 				// 저장된 파일로 변경하여 이를 보여주기 위함
-				file = new File(absolutePath + path + "/" + new_file_name);
+				file = new File(path + "\\" + new_file_name);
 				multipartFile.transferTo(file);
 			}
 		}
@@ -108,12 +106,10 @@ public class FileHandler {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
 		String current_date = simpleDateFormat.format(new Date());
 
-		// 프로젝트 폴더에 저장하기 위해 절대경로를 설정 (Window 의 Tomcat 은 Temp 파일을 이용한다)
-		String absolutePath = new File("").getAbsolutePath() + "\\";
 
 		// 경로를 지정하고 그곳에다가 저장할 심산이다
-		String path = "src/main/resources/static/img/equipment/" + equiId +"/" + current_date ;
-		String staticPath = "/img/equipment/" + equiId +"/" + current_date ;
+		String path = "C:\\sglink\\equipment\\" + equiId +"\\" + current_date ;
+		String staticPath = "/img/sglink/equipment/" + equiId +"/" + current_date ;
 		File file = new File(path);
 		// 저장할 위치의 디렉토리가 존지하지 않을 경우
 		if (!file.exists()) {
@@ -160,7 +156,7 @@ public class FileHandler {
 				fileList.add(fileEntity);
 
 				// 저장된 파일로 변경하여 이를 보여주기 위함
-				file = new File(absolutePath + path + "/" + new_file_name);
+				file = new File(path + "\\" + new_file_name);
 				multipartFile.transferTo(file);
 			}
 		}
@@ -182,12 +178,10 @@ public class FileHandler {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
 		String current_date = simpleDateFormat.format(new Date());
 
-		// 프로젝트 폴더에 저장하기 위해 절대경로를 설정 (Window 의 Tomcat 은 Temp 파일을 이용한다)
-		String absolutePath = new File("").getAbsolutePath() + "\\";
 
 		// 경로를 지정하고 그곳에다가 저장할 심산이다
-		String path = "src/main/resources/static/img/business/" + busiId +"/" + current_date ;
-		String staticPath = "/img/business/" + busiId +"/" + current_date ;
+		String path = "C:\\sglink\\business\\" + busiId +"/" + current_date ;
+		String staticPath = "/img/sglink/business/" + busiId +"/" + current_date ;
 		File file = new File(path);
 		// 저장할 위치의 디렉토리가 존지하지 않을 경우
 		if (!file.exists()) {
@@ -234,7 +228,7 @@ public class FileHandler {
 				fileList.add(fileEntity);
 
 				// 저장된 파일로 변경하여 이를 보여주기 위함
-				file = new File(absolutePath + path + "/" + new_file_name);
+				file = new File(path + "\\" + new_file_name);
 				multipartFile.transferTo(file);
 			}
 		}

@@ -44,6 +44,13 @@ public class EquipmentController {
 		model.addAttribute("resultMap", equipmentService.findAll(page, size));
 		return "/equipment/equipment/equipmentList";
 	}
+	
+	@RequestMapping(value = "/list2", method = RequestMethod.GET)
+	public String viewEquipment2( Model model, @RequestParam(required = false, defaultValue = "0") Integer page,
+			@RequestParam(required = false, defaultValue = "9") Integer size){
+		model.addAttribute("resultMap", equipmentService.findAll(page, size));
+		return "/pageView/comsup/infra/equipmentList";
+	}
 
 	@GetMapping(value = "/new")
 	public String newEquipment(Model model, Principal principal) {
@@ -66,11 +73,12 @@ public class EquipmentController {
 
 	@PostMapping(value = "/new")
 	public String createEquipment(@ModelAttribute("equipmentRequestDto") EquipmentRequestDto equipmentRequestDto,
+
 			Model model, @RequestParam("files") List<MultipartFile> files) throws Exception {
-		String equiId = equipmentService.save(equipmentRequestDto);
-		Equipment equipment = equipmentService.findByEquiId(equiId);
-		fileUploadService.addFile(files, equiId, equipment);
-		return "redirect:/equipment/list";
+			String equiId = equipmentService.save(equipmentRequestDto);
+			Equipment equipment = equipmentService.findByEquiId(equiId);
+			fileUploadService.addFile(files, equiId, equipment);
+		return "redirect:/equipment/list2";
 	}
 	
 	

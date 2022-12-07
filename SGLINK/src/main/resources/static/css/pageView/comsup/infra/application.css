@@ -93,10 +93,15 @@ h2.bl.sq {
 
 .ob2 {
 	position: absolute;
-	font-size: 30px;
+	font-size: 15px;
 	font-weight: bold;
 	left: 30px;
 	top: 780px;
+}
+
+.ob2 p{
+	margin-top:10px;
+	font-size: 15px;
 }
 
 .ct {
@@ -168,4 +173,10 @@ textarea::placeholder {
 
 .readonly {
 	background-color: #f2f2f2;
+}
+
+#startDate, #endDate {
+	width: 100px;
+	border-radius: 5px;
+	text-align: center;
 }

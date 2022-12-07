@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.sglink.common.constant.Process;
 import com.sglink.entity.Equipment;
+import com.sglink.entity.Member;
 import com.sglink.equipment.dto.EquipmentRequestDto;
 import com.sglink.equipment.dto.EquipmentResponseDto;
 import com.sglink.member.dto.EquipmentReservationRequestDto;
@@ -33,7 +34,6 @@ public class EquipmentService {
 	}
 	
 
-	@Transactional
 	public String save(EquipmentRequestDto equipmentRequestDto) {
 		return equipmentRepository.save(equipmentRequestDto.toEntity()).getEquiId();
 	}

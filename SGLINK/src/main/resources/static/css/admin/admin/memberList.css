@@ -1,5 +1,9 @@
-
-
+.delete{
+	color:red;
+}
+.insert{
+	color:green;
+}
 html {
     font-size: 10px;
 }

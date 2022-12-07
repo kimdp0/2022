@@ -1,20 +1,47 @@
-body{
-		background: #b2b2b2;
-}
-
 #popup {
-	width: 345px;
-	overflow-x: hidden;
+	width: 100%;
+	max-width: 400px;
 	border-radius: 10px;
-
-}
-.swal2-title{
-	font-size: 23px !important;
+	overflow: hidden;
 }
 
-#swal2-content{
-	font-size: 17px !important;
+.swal2-title {
+	font-size: 15px !important;
+	text-align:center !important;
 }
+
+#swal2-content {
+	font-size: 12px !important;
+	margin-bottom:-20px !important;
+}
+.swal2-popup{
+	width:250px !important;
+	height:200px !important;
+}
+.swal2-icon{
+	width: 60px !important;
+	height: 60px !important;	
+	top:-10px !important;
+	margin-bottom: 10px !important;
+}
+.swal2-cancel{
+	width:55px !important;
+	height: 30px !important;
+	font-size: 12px !important;
+	line-height: 5px !important;
+	text-align:center !important;
+}
+.swal2-confirm{
+	width:55px !important;
+	height: 30px !important;
+	font-size: 12px !important;
+	line-height: 5px !important;
+}
+
+.swal2-html-container{
+	width:160px !important;
+}
+
 .title {
 	width: 330px;
 	margin: 5px;
@@ -26,7 +53,7 @@ body{
 }
 
 #popup img {
-	border-radius: 15px;
+	border-radius: 10px;
 	margin: 10px;
 	width: 90px;
 	height: 90px;
@@ -37,14 +64,13 @@ body{
 	position: relative;
 	width: 350px;
 	height: 110px;
-	border-bottom: 2px solid #f2f2f2;
 }
 
 .detail p {
 	margin: 0px;
 	position: relative;
 	top: -98px;
-	left: 130px;
+	left: 115px;
 	font-weight: bold;
 	position: relative;
 }
@@ -57,18 +83,15 @@ body{
 	margin: 0px;
 	width: 100px;
 	height: 30px;
-	top: -123px;
-	left: 200px;
+	top: -120px;
+	left: 180px;
 	font-size: 20px;
 	line-height: 23px;
-	color: #848484;
 	margin: 0px;
-	border: 1px solid #A4A4A4;
-	background: #f2f2f2;
-	border-radius: 10px;
 }
 
 .sec_cal {
+	margin-top:10px;
 	width: 300px;
 	padding: 10px;
 	position: relative;
@@ -87,8 +110,8 @@ body{
 }
 
 .input {
+	margin-left:-20px;
 	margin-top: 10px;
-	margin-left: 25px;
 	text-align: center;
 }
 
@@ -116,13 +139,13 @@ body{
 }
 
 .b1 {
-	margin-left: 110px;
-	margin-top: 30px; width : 90px;
+	margin-left: 95px;
+	margin-top: 30px;
+	width: 90px;
 	height: 40px;
 	font-size: 13px;
 	border-radius: 9px;
 	background-color: #f2f2f2;
-	color: white;
 	outline: 0;
 	border: 0;
 	font-weight: bold;
@@ -133,5 +156,5 @@ body{
 }
 
 .b1 a {
-	color: #848484;
+	color:black;
 }
