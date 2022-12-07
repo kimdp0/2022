@@ -2,6 +2,7 @@ package com.sglink.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -49,7 +50,7 @@ public class Equipment extends BaseTimeEntity {
 	@Enumerated(EnumType.STRING)
 	private Reservation reservation;
 
-	@OneToMany(mappedBy = "img")
+	@OneToMany(mappedBy = "img",cascade = CascadeType.ALL)
 	private List<FileEntity> img;
 
 	@Builder
