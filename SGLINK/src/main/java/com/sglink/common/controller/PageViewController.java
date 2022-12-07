@@ -147,7 +147,7 @@ public class PageViewController {
 		}catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
-		return "redirect:/introduce/greeting";
+		return "redirect:/introduce/greeting?id=1";
 	}
 	
 	
