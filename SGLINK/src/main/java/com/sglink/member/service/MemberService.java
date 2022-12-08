@@ -52,6 +52,12 @@ public class MemberService implements UserDetailsService {
 		duplicateMember(member, userId);
 		return memberRepository.updateMember(member,userId);
 	}
+	
+	public void deleteMember(String userId) {
+		memberRepository.deleteById(userId);
+		 equipmentRepository.deleteAllByEquiRegisterId(userId); 
+		businessRepository.deleteAllByBusiRegisterId(userId); 
+	}
 
 	private void validateDuplicateMember(Member member) {
 		Member findMember = memberRepository.findByUserEmail(member.getUserEmail());

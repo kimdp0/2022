@@ -38,4 +38,6 @@ public interface EquipmentRepository extends JpaRepository<Equipment, String> {
 	Page<Equipment> findByEquiRegisterIdAndProcess(Pageable pageable,String userid,Process process);
 	
 	Optional<Equipment> findByEquiIdAndProcess(String id, Process process);
+	
+	int deleteAllByEquiRegisterId(String userId);
 }

@@ -52,6 +52,10 @@ public class Member  extends BaseTimeEntity{
 	private List<EquipmentReservation> equipmentReservation;
 	
 	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "userId")
+	private List<BusinessReservation> businessReservation;
+	
+	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="registerId")
 	private List<Board> board;
 	

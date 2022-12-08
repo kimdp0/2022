@@ -68,6 +68,12 @@ public class MypageController {
 		return "/member/mypage/mypage";
 	}
 	
+	@PostMapping(value="/delete")
+	public String deleteMyMember(@RequestParam("userId")String userId) {
+		memberService.deleteMember(userId);	
+		return "redirect:/members/logout";
+	}
+	
 	@GetMapping(value="/equipment/list")
 	public String equipmentReservationListPage(Model model, @RequestParam(required= false, defaultValue= "0") Integer page,
 			@RequestParam(required = false, defaultValue= "10") Integer size, Principal principal) throws Exception{

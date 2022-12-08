@@ -55,11 +55,9 @@ public class AdminService {
 	}
 
 	public void deleteMember(String userId) {
-		/*
-		 * Member member = memberRepository.findByUserId(userId);
-		 * noticeBoardRepository.deleteByMember(member);
-		 */
 		memberRepository.deleteById(userId);
+		equipmentRepository.deleteAllByEquiRegisterId(userId);
+		businessRepository.deleteAllByBusiRegisterId(userId);
 	}
 
 	@Transactional(readOnly = true)

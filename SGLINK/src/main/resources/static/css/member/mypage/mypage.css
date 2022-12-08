@@ -176,3 +176,10 @@ a:hover{
 	height:20px;
     width: 10%;
 }
+
+.delete{
+	width: 150px;
+	height: 35px;
+	margin-left: 850px;
+	margin-top: 15px;
+}

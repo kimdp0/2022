@@ -38,4 +38,5 @@ public interface BusinessRepository extends JpaRepository<Business, String> {
 	Optional<Business> findByBusiIdAndProcess(String id, Process process);
 	
 	Page<Business> findByBusiRegisterIdAndProcess(Pageable pageable,String userid,Process process);
+	int deleteAllByBusiRegisterId(String userId);
 }
