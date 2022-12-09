@@ -63,6 +63,10 @@ public class Member  extends BaseTimeEntity{
 	@JoinColumn(name="registerId")
 	private List<FileBoard> fileBoard;
 	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name="registerId")
+	private List<OpeninoBoard> openIno;
+	
 	
 	public static Member createComMember(Company company,COM_MemberFormDto memberFormDto, PasswordEncoder passwordEncoder) {
 		Member member = new Member();

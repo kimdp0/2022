@@ -78,7 +78,7 @@ public class EquipmentController {
 			String equiId = equipmentService.save(equipmentRequestDto);
 			Equipment equipment = equipmentService.findByEquiId(equiId);
 			fileUploadService.addFile(files, equiId, equipment);
-		return "redirect:/equipment/list2";
+		return "redirect:/equipment/list";
 	}
 	
 	

@@ -24,7 +24,7 @@ public class MainController {
 	
 	@RequestMapping(value="/", method = RequestMethod.GET)
 	public String main(Model model, @RequestParam(required = false, defaultValue = "0") Integer page,
-			@RequestParam(required = false, defaultValue = "10") Integer size) throws Exception {
+			@RequestParam(required = false, defaultValue = "7") Integer size) throws Exception {
 		try {
 			model.addAttribute("resultMap", boardService.findAllBoard(page, size));
 	
