@@ -54,6 +54,7 @@ public class AdminService {
 		return resultMap;
 	}
 
+	@Transactional 
 	public void deleteMember(String userId) {
 		memberRepository.deleteById(userId);
 		equipmentRepository.deleteAllByEquiRegisterId(userId);
