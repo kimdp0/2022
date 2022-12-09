@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout=http://www.ultraq.net.nz/thymeleaf/layout
-	layout:decorate="~{layouts/layoutCom}">
+	layout:decorate="~{layouts/layoutStu}">
 <head>
 <meta charset="UTF-8">
-<title>사업목록페이지</title>
+<title>장비목록 페이지입니다</title>
 <link th:href="@{/css/equipment/equipment/equipmentList.css}"
 	rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -13,7 +13,7 @@
 	<div layout:fragment="content" id="content">
 		<div id="Title">
 			<p class="subTitle1">인프라</p>
-			<p class="subTitle2">등록사업 화면입니다</p>
+			<p class="subTitle2">보유장비 화면입니다</p>
 		</div>
 		<div class="h1 contents">
 			<div class="article">
@@ -26,12 +26,12 @@
 					<div class="app_list">
 						<ul th:each="list : ${resultMap.list}">
 							<li th:each="imgSrc: ${list.img}"><a
-								th:href="@{./view(busiId=${list.busiId})}"> <span
+								th:href="@{./view(equiId=${list.equiId})}"> <span
 									class="photo"> <img th:src="${imgSrc.stored_file_path}"
 										alt>
-								</span> <br> 사업명 : <span class="title" th:text="${list.busiName}"></span>
-									<br> 등록자명 : <span class="info" th:text="${list.busiRegister}"></span>
-									<br> 담당자전화번호 : <span th:text="${list.busiTel}"></span></a> <span class="unapprove"
+								</span> <br> 장비명 : <span class="title" th:text="${list.equiName}"></span>
+									<br> 담당자명 : <span class="info" th:text="${list.equiRegister}"></span>
+									<br> 등록자전화번호 : <span th:text="${list.equiTel}"></span></a> <span class="unapprove"
 									th:if="${list.reservation.toString()=='IMPOSSIBLE'}">예약불가</span><span
 									class="approve"
 									th:if="${list.reservation.toString()=='POSSIBLE'}">예약가능</span></td><br> 

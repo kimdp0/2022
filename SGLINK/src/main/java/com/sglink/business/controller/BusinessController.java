@@ -46,7 +46,7 @@ public class BusinessController {
 	public String viewBusiness2( Model model, @RequestParam(required = false, defaultValue = "0") Integer page,
 			@RequestParam(required = false, defaultValue = "9") Integer size){
 		model.addAttribute("resultMap", businessService.findAll(page, size));
-		return "/pageView/comsup/infra/businessList";
+		return "/business/business/businessList2";
 	}
 
 	@GetMapping(value = "/new")

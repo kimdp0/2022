@@ -49,7 +49,7 @@ public class EquipmentController {
 	public String viewEquipment2( Model model, @RequestParam(required = false, defaultValue = "0") Integer page,
 			@RequestParam(required = false, defaultValue = "9") Integer size){
 		model.addAttribute("resultMap", equipmentService.findAll(page, size));
-		return "/pageView/comsup/infra/equipmentList";
+		return "/equipment/equipment/equipmentList2";
 	}
 
 	@GetMapping(value = "/new")
