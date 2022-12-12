@@ -35,7 +35,7 @@ public class Business extends BaseTimeEntity {
 	private String busiName;
 
 	private String busiUniname;
-	@Column(nullable = true, length =50000)
+	@Column(nullable = true, length =6000)
 	private String busiContent;
 
 	private String busiRegisterId;

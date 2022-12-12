@@ -23,7 +23,7 @@ public class Introduce{
 	@Id
 	private Long id;
 	
-	@Column(nullable = true, length = 50000)
+	@Column(nullable = true, length = 6000)
 	private String content;
 
 

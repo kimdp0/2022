@@ -27,7 +27,7 @@ public class OpeninoBoard extends BaseTimeEntity {
 	private Long id;
 	@Column(nullable = false)
 	private String title;
-	@Column(nullable = true, length = 50000)
+	@Column(nullable = true, length = 6000)
 	private String content;
 	private int readCnts;
 	
