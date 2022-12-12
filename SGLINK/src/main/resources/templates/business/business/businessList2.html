@@ -26,7 +26,7 @@
 					<div class="app_list">
 						<ul th:each="list : ${resultMap.list}">
 							<li th:each="imgSrc: ${list.img}"><a
-								th:href="@{./view(busiId=${list.busiId})}"> <span
+								th:href="@{./view2(busiId=${list.busiId})}"> <span
 									class="photo"> <img th:src="${imgSrc.stored_file_path}"
 										alt>
 								</span> <br> 사업명 : <span class="title" th:text="${list.busiName}"></span>

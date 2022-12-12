@@ -289,6 +289,7 @@ public class PageViewController {
 				return "";
 			}
 			String userId = principal.getName();
+			System.out.println(userId);
 			return userId;
 		}
 		

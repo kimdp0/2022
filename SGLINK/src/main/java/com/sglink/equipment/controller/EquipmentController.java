@@ -102,6 +102,26 @@ public class EquipmentController {
 
 	}
 	
+	@GetMapping("/view2")
+	public String viewEquipment2(@RequestParam("equiId") String id, Model model,
+			EquipmentRequestDto equipmentRequestDto, Principal principal) throws Exception {
+		try {
+			if (equipmentRequestDto.getEquiId() != null) {
+				Equipment equipment = equipmentService.viewfindById(id).get();
+				String registerId = equipment.getEquiRegisterId();
+				String loginUserId = principal.getName();
+				model.addAttribute("loginUserId", loginUserId);
+				model.addAttribute("registerId", registerId);
+				model.addAttribute("info", equipmentService.findById(id));
+			}
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+
+		return "/equipment/equipment/equipmentView2";
+
+	}
+	
 	@GetMapping(value="/popup")
 	public String equipmentPopup(@RequestParam("equiId")String equiId,Model model, Principal principal) {
 		Equipment  equipment =equipmentService.findByEquiId(equiId);

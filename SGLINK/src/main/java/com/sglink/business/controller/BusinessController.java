@@ -97,6 +97,26 @@ public class BusinessController {
 
 	}
 	
+	@GetMapping("/view2")
+	public String viewBusiness2(@RequestParam("busiId") String id, Model model,
+			BusinessRequestDto businessRequestDto, Principal principal) throws Exception {
+		try {
+			if (businessRequestDto.getBusiId() != null) {
+				Business business = businessService.viewfindById(id).get();
+				String registerId = business.getBusiRegisterId();
+				String loginUserId = principal.getName();
+				model.addAttribute("loginUserId", loginUserId);
+				model.addAttribute("registerId", registerId);
+				model.addAttribute("info", businessService.findById(id));
+			}
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+
+		return "/business/business/businessView2";
+
+	}
+	
 	@GetMapping(value="/popup")
 	public String businessPopup(@RequestParam("busiId")String busiId,Model model, Principal principal) {
 		Business  business =businessService.findByBusiId(busiId);
