@@ -35,7 +35,7 @@ public class Equipment extends BaseTimeEntity {
 	private String equiName;
 
 	private String equiUniname;
-	@Column(nullable = true, length = 3000)
+	@Column(nullable = true, length = 50000)
 	private String equiContent;
 
 	private String equiRegisterId;

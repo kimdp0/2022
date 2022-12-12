@@ -30,7 +30,7 @@ public class FileBoard extends BaseTimeEntity {
 	private Long id;
 	@Column(nullable = false)
 	private String title;
-	@Column(nullable = true, length = 3000)
+	@Column(nullable = true, length = 50000)
 	private String content;
 	private int readCnt;
 

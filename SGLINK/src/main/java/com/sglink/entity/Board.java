@@ -33,7 +33,7 @@ public class Board extends BaseTimeEntity{
 	
 	@NotBlank(message = "제목을 입력하세요")
 	private String title;
-	@Column(nullable = true, length = 3000)
+	@Column(nullable = true, length = 50000)
 	private String content;
 	private int readCnt;
 	private String boardName;
