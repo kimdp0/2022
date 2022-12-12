@@ -61,8 +61,9 @@
 						<p>커뮤니티</p>
 					</div>
 				</div>
+				</a>
 		</div>
-		</a>
+		
 
 
 		<div id="cont">
@@ -106,7 +107,7 @@
 							<p class="tb" th:if="${list.BoardName == 'NoticeBoard'}"
 								th:each="list,index : ${resultMap.list}">
 								<a th:href="@{./boards/notice/view(id=${list.id})}"><span
-									th:text="${'[공지사항] '+list.title}" class="noto word" ></span></a> <span
+									th:text="${'[공지사항] '+list.title}" class="noto word"></span></a> <span
 									class="date"
 									th:text="${#temporals.format(list.registerTime, 'MM-dd')}"></span>
 							</p>
@@ -144,12 +145,12 @@
 						<h2></h2>
 
 						<p class="tb" th:if="${list.BoardName == 'FreeBoard'}"
-								th:each="list,index : ${resultMap.list}">
-								<a th:href="@{./boards/notice/view(id=${list.id})}"><span
-									th:text="${'[자유게시판] '+list.title}" class="noto word"></span></a> <span
-									class="date"
-									th:text="${#temporals.format(list.registerTime, 'MM-dd')}"></span>
-							</p>
+							th:each="list,index : ${resultMap.list}">
+							<a th:href="@{./boards/notice/view(id=${list.id})}"><span
+								th:text="${'[자유게시판] '+list.title}" class="noto word"></span></a> <span
+								class="date"
+								th:text="${#temporals.format(list.registerTime, 'MM-dd')}"></span>
+						</p>
 
 					</div>
 					<script src="/js/tabmenu.js"></script>
