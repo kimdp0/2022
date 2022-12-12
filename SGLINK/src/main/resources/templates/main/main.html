@@ -146,7 +146,7 @@
 
 						<p class="tb" th:if="${list.BoardName == 'FreeBoard'}"
 							th:each="list,index : ${resultMap.list}">
-							<a th:href="@{./boards/notice/view(id=${list.id})}"><span
+							<a th:href="@{./boards/free/view(id=${list.id})}"><span
 								th:text="${'[자유게시판] '+list.title}" class="noto word"></span></a> <span
 								class="date"
 								th:text="${#temporals.format(list.registerTime, 'MM-dd')}"></span>
