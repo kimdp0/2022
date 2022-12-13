@@ -39,8 +39,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       ;
       http.authorizeRequests()
       .mvcMatchers("/", "/members/**","/introduce/**","/layout" ,"/upload/**").permitAll() // 모든 사용자 인증없이 해당경로에 접근하도록 설정
-      .mvcMatchers("/boards/oprnino/**","boards/free/**","/boards/reference/**").hasAnyRole("STU","COM","ADMIN")
-      .mvcMatchers("/comuser/**","/equipment/**").hasAnyRole("COM","ADMIN" ,"STU")
+      .mvcMatchers("/comuser/**","/equipment/**","boards/free/**","/boards/reference/**").hasAnyRole("COM","ADMIN" ,"STU")
+      .mvcMatchers("/boards/openino/write").hasAnyRole("ADMIN","COM")
       .mvcMatchers("/admin/**","/boards/notice/write/**").hasRole("ADMIN") // /admin 경로 접근자는 ADMIN Role일 경우만 접근가능하도록 설정
       .anyRequest().authenticated() // 나머지 경로들은 모두 인증을 요구하도록 설정
       ;
