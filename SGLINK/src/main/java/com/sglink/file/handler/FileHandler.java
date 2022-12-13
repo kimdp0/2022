@@ -33,7 +33,7 @@ public class FileHandler {
 
 
 		// 경로를 지정하고 그곳에다가 저장할 심산이다
-		String path = "C:\\sglink\\equipment\\" + id +"\\" + current_date ;
+		String path = "C:\\sglink\\fileBoard\\" + id +"\\" + current_date ;
 		String staticPath = "/img/sglink/fileBoard/" + id +"/" + current_date ;
 		File file = new File(path);
 		// 저장할 위치의 디렉토리가 존지하지 않을 경우
