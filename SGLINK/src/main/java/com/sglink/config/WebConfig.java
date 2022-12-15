@@ -14,7 +14,7 @@ import org.springframework.web.servlet.resource.PathResourceResolver;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 	  private final String connectPath = "/img/sglink/**";
-	    private final String resourcePath = "file:///sglink/";
+	  private final String resourcePath = "file:///sglink/";
 
 	    @Override
 	    public void addResourceHandlers(ResourceHandlerRegistry registry) {
