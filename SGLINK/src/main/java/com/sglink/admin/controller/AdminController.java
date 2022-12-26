@@ -92,7 +92,7 @@ public class AdminController {
 		adminService.approveBusiness(busiId,busiProcess);
 		String paging = pageNum.substring(21, 23);
 		System.out.println(paging+"================" +pageNum+"==========="+ pageSize);
-		return "redirect:/admin/business/list";
+		return "redirect:/admin/business/list" + "?page=" + paging + "&page=" + pageSize;
 	}
 	
 	
